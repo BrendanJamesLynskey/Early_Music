@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johannes Ockeghem — The Master of Canon &amp; Flowing Polyphony</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- Emblem: two identical voices in canon, one chasing the other on a staff -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="44" x2="340" y2="44"/>
+                <line x1="20" y1="62" x2="340" y2="62"/>
+                <line x1="20" y1="80" x2="340" y2="80"/>
+                <line x1="20" y1="98" x2="340" y2="98"/>
+            </g>
+            <!-- leader voice (purple), a rising-falling line -->
+            <path d="M 46 89 C 90 62, 120 53, 150 71 S 210 44, 250 62 S 310 80, 336 62" fill="none" stroke="#9b72cf" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- follower voice (green), the same shape entered later, offset down & right -->
+            <path d="M 92 98 C 136 71, 166 62, 196 80 S 256 53, 296 71 S 340 89, 360 71" fill="none" stroke="#4ecca3" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+            <!-- entry markers -->
+            <circle cx="46" cy="89" r="4" fill="#9b72cf"/>
+            <circle cx="92" cy="98" r="4" fill="#4ecca3"/>
+            <text x="20" y="128" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">one line, two voices &#8212; the follower chases the leader</text>
+        </svg>
+    </div>
+    <h1>Johannes Ockeghem</h1>
+    <div class="subtitle">c. 1410 – 1497 · Franco-Flemish · The Generation Between Du Fay &amp; Josquin</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The great architect of <span class="accent-purple">seamless, long-breathed polyphony</span> and the
+        supreme puzzle-maker of the age &#8212; whose voices flow without pause and whose canons hide four singers inside two written lines.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 10 — The Franco-Flemish Masters</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS OCKEGHEM ═══════════════════ -->
+<section>
+    <span class="section-number">01 — INTRODUCTION</span>
+    <h2>Who Was Ockeghem?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-purple">Johannes Ockeghem</span> (c.&nbsp;1410&#8211;1497) was the towering
+        Franco-Flemish master of the middle Renaissance &#8212; the leading composer of the generation that
+        links <span class="accent-amber">Guillaume Du Fay</span> to <span class="accent-amber">Josquin des Prez</span>.
+        A celebrated bass singer, he served three kings of France and was revered less for grand landmarks than for
+        the <em>quality</em> of his sound: music that flows on and on, and craft of dazzling ingenuity.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-purple">&#9834;</span><h4 class="accent-purple">Flowing</h4><p>Long-breathed, seamless lines that avoid clear cadences &#8212; a texture that never quite comes to rest.</p></div>
+        <div class="card"><span class="icon accent-green">&#8734;</span><h4 class="accent-green">Canonic</h4><p>A master of canon and musical puzzles: whole Masses generated from a single written line.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9835;</span><h4 class="accent-amber">The Bass</h4><p>Famous for his own deep bass voice; he prized the low register other composers avoided.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9819;</span><h4 class="accent-blue">Royal servant</h4><p>Court composer and treasurer to three successive kings of France across nearly half a century.</p></div>
+    </div>
+    <p class="note-text">His surname is spelt many ways in the sources &#8212; Okeghem, Okegus, Hocquegam &#8212; a hint at how little of his life is firmly documented.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: LIFE & THE THREE KINGS ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE AT COURT</span>
+    <h2>Servant of Three Kings</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Born in the Franco-Flemish lands (the region of Hainaut/Flanders), Ockeghem spent the heart of his
+        career in the service of the French crown, rising to the honoured post of <em>maistre de chapelle</em>
+        and treasurer of the Abbey of Saint-Martin at Tours. He outlived most of his contemporaries and
+        died full of years and fame in 1497.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1410</span><span class="event"><strong>Born in the Franco-Flemish lands</strong>In the region of modern Belgium / northern France, the cradle of the finest singers of the age.</span></div>
+        <div class="timeline-item"><span class="year">1450s</span><span class="event"><strong>Enters the French royal chapel</strong>Serves Charles VII, then Louis XI, then Charles VIII &#8212; three kings across almost fifty years.</span></div>
+        <div class="timeline-item"><span class="year">Tours</span><span class="event"><strong>Treasurer of Saint-Martin</strong>Holds one of the richest benefices in France, a mark of the extraordinary esteem in which he was held.</span></div>
+        <div class="timeline-item"><span class="year">1470s</span><span class="event"><strong>Admired across Europe</strong>The theorist Johannes Tinctoris ranks him among the finest composers and dedicates a treatise to him.</span></div>
+        <div class="timeline-item"><span class="year">1497</span><span class="event"><strong>Death, and a continent in mourning</strong>Poets and composers pour out laments; Josquin sets one as the déploration <em>Nymphes des bois</em>.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE ENDLESS MELODY ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE SOUND</span>
+    <h2>The Endless Melody</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Ockeghem's signature is a <span class="accent-purple">seamless flow</span>. Where earlier music arrived in
+        neat phrases with firm cadences, his voices are spun into long, irregular, overlapping arcs. Just as one
+        line seems about to close, another is already moving on, so the music never quite stops for breath.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Long-breathed lines</h4><p>Melodies unfold in great spans with few resting points &#8212; a continuous, meditative unfolding.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Avoided cadences</h4><p>Cadence points in the different voices are deliberately staggered, so a full stop rarely happens all at once.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Equal voices</h4><p>No single part dominates; all are near-equal partners, weaving a dense, dark-hued web of sound.</p></div>
+    </div>
+    <p class="note-text">Contemporaries prized this quality above showy display &#8212; a "sweet and seamless" richness later writers would struggle to describe.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE SEAMLESS WEB (SVG) ═══════════════════ -->
+<section>
+    <span class="section-number">04 — HOW THE TEXTURE WORKS</span>
+    <h2>The Seamless Web</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.3em; font-size: 0.44em !important;">
+        Picture the four voices as four ribbons. Each has its own phrases and its own cadences &#8212; but Ockeghem
+        offsets them so that <em>no two ribbons rest at the same moment</em>. The joins are hidden; the sound is continuous.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="12">
+                <!-- four voice tracks -->
+                <text x="16" y="42" fill="#9b72cf" font-size="11" font-weight="700">Superius</text>
+                <text x="16" y="90" fill="#4ecca3" font-size="11" font-weight="700">Altus</text>
+                <text x="16" y="138" fill="#d4a053" font-size="11" font-weight="700">Tenor</text>
+                <text x="16" y="186" fill="#5b8cd4" font-size="11" font-weight="700">Bassus</text>
+                <!-- baseline tracks -->
+                <g stroke="#2a2a3a" stroke-width="1">
+                    <line x1="110" y1="38" x2="880" y2="38"/>
+                    <line x1="110" y1="86" x2="880" y2="86"/>
+                    <line x1="110" y1="134" x2="880" y2="134"/>
+                    <line x1="110" y1="182" x2="880" y2="182"/>
+                </g>
+                <!-- phrase arcs, deliberately staggered so cadences (arc-ends) never line up -->
+                <path d="M 120 38 Q 210 10 320 38 Q 410 66 520 38 Q 640 8 760 38 Q 830 54 880 38" fill="none" stroke="#9b72cf" stroke-width="2.4"/>
+                <path d="M 150 86 Q 250 58 360 86 Q 470 114 590 86 Q 700 58 810 86" fill="none" stroke="#4ecca3" stroke-width="2.4"/>
+                <path d="M 120 134 Q 230 162 350 134 Q 450 108 560 134 Q 690 162 820 134 Q 860 124 880 134" fill="none" stroke="#d4a053" stroke-width="2.4"/>
+                <path d="M 190 182 Q 300 154 420 182 Q 520 206 640 182 Q 760 156 880 182" fill="none" stroke="#5b8cd4" stroke-width="2.4"/>
+                <!-- cadence markers (where a voice momentarily rests) -->
+                <g>
+                    <circle cx="320" cy="38" r="4" fill="#9b72cf"/><circle cx="520" cy="38" r="4" fill="#9b72cf"/>
+                    <circle cx="360" cy="86" r="4" fill="#4ecca3"/><circle cx="590" cy="86" r="4" fill="#4ecca3"/>
+                    <circle cx="350" cy="134" r="4" fill="#d4a053"/><circle cx="560" cy="134" r="4" fill="#d4a053"/>
+                    <circle cx="420" cy="182" r="4" fill="#5b8cd4"/><circle cx="640" cy="182" r="4" fill="#5b8cd4"/>
+                </g>
+                <!-- guide line showing the eye no shared vertical cadence -->
+                <text x="300" y="222" fill="#6a6a7a" font-size="11" font-style="italic">the dots (cadences) never fall on the same vertical &#8212; so the flow is unbroken</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> each coloured arc is one voice's phrase; a dot marks where that voice cadences. Because the dots are scattered left-to-right, one voice is always singing through another's rest &#8212; the essence of Ockeghem's continuous texture.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE ART OF CANON ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE PUZZLE-MAKER</span>
+    <h2>The Art of Canon</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        A <span class="accent-purple">canon</span> is a piece in which one voice imitates another exactly, note for note,
+        after a delay &#8212; the principle of a round like <em>Frère Jacques</em>, raised to the level of high art.
+        Ockeghem was its unrivalled master, delighting in canons written as riddles that the singers had to <em>solve</em>.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-purple">Strict canon</h4><p>A second voice enters later and sings precisely the same melody &#8212; the two lines weaving as they overlap.</p></div>
+        <div class="card"><h4 class="accent-green">Mensuration canon</h4><p>One written line read at the same time under <em>different mensuration signs</em>, so the voices move at different speeds.</p></div>
+        <div class="card"><h4 class="accent-amber">Puzzle (riddle) canon</h4><p>Only one line is written down, with a cryptic motto telling the singers how &#8212; and how many times &#8212; to derive the rest.</p></div>
+    </div>
+    <p class="note-text">The Latin word <em>canon</em> itself means "rule": the instruction that unlocks the hidden voices from the single notated line.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: MISSA PROLATIONUM + CANON AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE MASTERWORK</span>
+    <h2>Missa prolationum</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The <span class="accent-purple">Missa prolationum</span> ("Mass of prolations") is one of the marvels of Western music.
+        Every movement is built entirely from <span class="accent-purple">mensuration canons</span>: just <em>two</em> written voices,
+        each read under two different mensuration signs, generate <em>four</em> sounding parts &#8212; two pairs of canons unfolding at once,
+        at ever-widening intervals. It is intellectual architecture that also sounds sublime.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [OCK_CANON_LEADER, OCK_CANON_FOLLOWER], {timbre:'voice', bpm:92, temperament:'pythagorean', tonic:'D3', reverb:0.6, legato:0.98})">&#9654; Hear a strict canon (leader &amp; follower)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Missa+prolationum">&#9834; Listen: Missa prolationum (recording)</a>
+    </div>
+    <p class="audio-caption">The same melody in two voices: the follower enters after the leader and the two identical lines weave together &#8212; synthesised voices, pure Pythagorean tuning</p>
+    <p class="note-text">Prolation is the medieval term for how a beat divides &#8212; into two or into three. Set the <em>same</em> notes under different prolations and one line becomes two at different speeds: the seed of the whole Mass.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: NOTATION — MENSURATION CANON ═══════════════════ -->
+<section>
+    <span class="section-number">07 — READING THE NOTATION</span>
+    <h2>How to Read a Mensuration Canon</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Only <strong>one line of notes</strong> is written. At its start sit <em>two mensuration signs</em> &#8212; and each singer
+        reads the very same notes, but at the speed his sign dictates. One line becomes two voices moving apart.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans">
+                <!-- ROW 1: the single written line -->
+                <text x="20" y="30" fill="#9a9a9a" font-size="12" font-weight="700">THE ONE WRITTEN LINE</text>
+                <g stroke="#6a6a7a" stroke-width="1.1">
+                    <line x1="60" y1="48" x2="860" y2="48"/>
+                    <line x1="60" y1="64" x2="860" y2="64"/>
+                    <line x1="60" y1="80" x2="860" y2="80"/>
+                    <line x1="60" y1="96" x2="860" y2="96"/>
+                    <line x1="60" y1="112" x2="860" y2="112"/>
+                </g>
+                <!-- two mensuration signs: circle (perfect / slow) & semicircle (imperfect / fast) -->
+                <circle cx="82" cy="80" r="12" fill="none" stroke="#9b72cf" stroke-width="2.4"/>
+                <path d="M 118 68 A 12 12 0 1 0 118 92" fill="none" stroke="#4ecca3" stroke-width="2.4"/>
+                <!-- the notes (void mensural noteheads) -->
+                <g fill="none" stroke="#e8e6e3" stroke-width="2">
+                    <ellipse cx="170" cy="96" rx="8" ry="6"/>
+                    <ellipse cx="250" cy="80" rx="8" ry="6"/>
+                    <ellipse cx="330" cy="88" rx="8" ry="6"/>
+                    <ellipse cx="410" cy="72" rx="8" ry="6"/>
+                    <ellipse cx="490" cy="80" rx="8" ry="6"/>
+                    <ellipse cx="570" cy="64" rx="8" ry="6"/>
+                    <ellipse cx="650" cy="80" rx="8" ry="6"/>
+                    <ellipse cx="730" cy="96" rx="8" ry="6"/>
+                </g>
+                <text x="150" y="140" fill="#9b72cf" font-size="11">&#9711; sign 1 = perfect (slower)</text>
+                <text x="420" y="140" fill="#4ecca3" font-size="11">&#9092; sign 2 = imperfect (faster)</text>
+
+                <!-- ROW 2: voice I, slow, notes spread wide -->
+                <text x="20" y="180" fill="#9b72cf" font-size="12" font-weight="700">VOICE I &#8212; slow, spread wide</text>
+                <g stroke="#3a3350" stroke-width="1"><line x1="60" y1="196" x2="860" y2="196"/></g>
+                <g fill="#9b72cf">
+                    <circle cx="120" cy="196" r="6"/><circle cx="230" cy="196" r="6"/><circle cx="340" cy="196" r="6"/><circle cx="450" cy="196" r="6"/><circle cx="560" cy="196" r="6"/><circle cx="670" cy="196" r="6"/>
+                </g>
+
+                <!-- ROW 3: voice II, fast, notes packed tight (runs ahead) -->
+                <text x="20" y="250" fill="#4ecca3" font-size="12" font-weight="700">VOICE II &#8212; fast, packed tight (pulls ahead)</text>
+                <g stroke="#204a3e" stroke-width="1"><line x1="60" y1="266" x2="860" y2="266"/></g>
+                <g fill="#4ecca3">
+                    <circle cx="120" cy="266" r="6"/><circle cx="188" cy="266" r="6"/><circle cx="256" cy="266" r="6"/><circle cx="324" cy="266" r="6"/><circle cx="392" cy="266" r="6"/><circle cx="460" cy="266" r="6"/><circle cx="528" cy="266" r="6"/><circle cx="596" cy="266" r="6"/>
+                </g>
+                <!-- divergence arrow -->
+                <path d="M 690 210 L 690 252" stroke="#d4a053" stroke-width="1.4" marker-end="none" stroke-dasharray="3 3"/>
+                <text x="700" y="238" fill="#d4a053" font-size="11">the gap opens up</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> the two circles are <em>mensuration signs</em> &#8212; a full circle (&#9711;) means the beat divides in three (perfect, slower); a broken circle (&#9092;, the ancestor of our "C") means it divides in two (imperfect, faster). Both singers read the <em>identical</em> notes, but Voice II moves quicker and steadily pulls ahead, so one written line sounds as two independent voices.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: MISSA CUIUSVIS TONI ═══════════════════ -->
+<section>
+    <span class="section-number">08 — ANOTHER RIDDLE</span>
+    <h2>Missa cuiusvis toni — the "Mass in Any Mode"</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Ockeghem's <span class="accent-purple">Missa cuiusvis toni</span> is another feat of ingenuity.
+                It is written <em>without a fixed clef</em>: the singers choose which clef to place at the front, and
+                the very same notes then sound in a <strong>different mode</strong> each time &#8212; the whole Mass shifting its
+                colour and its finals depending on how it is read.
+            </p>
+            <p style="font-size:0.44em !important;">
+                One notated piece, several valid performances. It is a supreme demonstration that, for Ockeghem, the written
+                page was a puzzle-box: the <em>rule</em> a performer applied could unlock more than one piece of music from the same ink.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <g font-family="DM Sans" font-size="12">
+                    <text x="10" y="20" fill="#9a9a9a" font-size="11">one line, chosen clefs &#8594; different modes</text>
+                    <!-- staff -->
+                    <g stroke="#6a6a7a" stroke-width="1"><line x1="20" y1="60" x2="220" y2="60"/><line x1="20" y1="76" x2="220" y2="76"/><line x1="20" y1="92" x2="220" y2="92"/><line x1="20" y1="108" x2="220" y2="108"/></g>
+                    <text x="24" y="70" fill="#9b72cf" font-size="18" font-weight="700">?</text>
+                    <g fill="#e8e6e3"><circle cx="80" cy="92" r="5"/><circle cx="110" cy="76" r="5"/><circle cx="140" cy="84" r="5"/><circle cx="170" cy="68" r="5"/></g>
+                    <!-- read-as chips -->
+                    <rect x="20" y="140" width="90" height="22" rx="4" fill="#161622" stroke="#4ecca3"/><text x="30" y="155" fill="#e8e6e3" font-size="11">read: Dorian</text>
+                    <rect x="130" y="140" width="90" height="22" rx="4" fill="#161622" stroke="#d4a053"/><text x="140" y="155" fill="#e8e6e3" font-size="11">read: Lydian</text>
+                    <rect x="20" y="170" width="90" height="22" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="30" y="185" fill="#e8e6e3" font-size="11">read: Phrygian</text>
+                    <rect x="130" y="170" width="90" height="22" rx="4" fill="#161622" stroke="#9b72cf"/><text x="140" y="185" fill="#e8e6e3" font-size="11">read: Mixolyd.</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <p class="note-text">The title <em>cuiusvis toni</em> is Latin for "of whichever mode": the clef the singers agree upon decides the tonal world of the entire Mass.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE REQUIEM ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE MASS FOR THE DEAD</span>
+    <h2>The Earliest Polyphonic Requiem</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Ockeghem's <span class="accent-purple">Requiem</span> is the <strong>earliest surviving polyphonic setting of the Mass for the Dead</strong>.
+        (An earlier one by Du Fay is documented but lost.) Around the ancient chant melodies he wraps his flowing polyphony,
+        each movement growing organically from the plainsong &#8212; a solemn, dark-hued sound that founds a tradition running through
+        Victoria, Mozart and beyond.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-purple">Chant at its heart</h4><p>The old Gregorian Requiem melodies are held in the texture and paraphrased in the upper voices.</p></div>
+        <div class="card"><h4 class="accent-green">A founding model</h4><p>The first of the great polyphonic Requiems &#8212; the ancestor of every setting composers have written since.</p></div>
+        <div class="card"><h4 class="accent-blue">Shifting textures</h4><p>Ockeghem varies the number of voices movement by movement, from spare duets to full, sombre four-part writing.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Requiem+missa+pro+defunctis">&#9834; Listen: Ockeghem — Requiem (recording)</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: THE VOICE OF THE BASS + DARK BASS AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE LOW VOICE</span>
+    <h2>The Voice of the Bass</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Ockeghem was himself a renowned <span class="accent-purple">bass</span>, and he prized the deep register that many
+        of his contemporaries left thin. His music reaches unusually low, giving his textures a dark, cavernous
+        foundation &#8212; and it loves to settle onto the hollow ring of a bare <span class="accent-purple">open fifth</span>,
+        with no third to sweeten it, the sound of a great stone church.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [OCK_BASS_LOW, OCK_BASS_UPPER], {timbre:'voice', bpm:66, temperament:'pythagorean', tonic:'D2', reverb:0.6, legato:0.98})">&#9654; Hear a low bass phrase resolving to an open fifth</button>
+    </div>
+    <p class="audio-caption">Two low voices descend into the depths and come to rest on a bare fifth (D + A, no third) &#8212; the hollow, ringing medieval cadence, in pure Pythagorean tuning</p>
+    <p class="note-text">The "open fifth" final &#8212; a chord of only the root and the fifth above &#8212; is the characteristic close of medieval and early-Renaissance polyphony, austere and luminous at once.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: DEO GRATIAS — 36 VOICES ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE LEGENDARY FEAT</span>
+    <h2>A Canon in Thirty-Six Voices</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        A canon <span class="accent-purple">Deo gratias</span> in as many as <strong>thirty-six voices</strong> is
+        attributed to Ockeghem &#8212; the ultimate expression of his canonic ambition. Whether or not every one of those
+        parts was ever meant to sound at once, the very idea captures his reputation: the composer for whom no contrapuntal
+        feat was impossible.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- staggered entries: 36 short strokes entering one after another, four blocks of nine -->
+            <g>
+                <text x="10" y="20" fill="#9a9a9a" font-family="DM Sans" font-size="12">36 entries, each a step later &#8212; the same phrase piling into a vast wall of sound</text>
+                <g stroke-width="3" stroke-linecap="round">
+                    <!-- generated visually: rows of diagonal offsets -->
+                    <line x1="40"  y1="120" x2="90"  y2="45" stroke="#9b72cf"/>
+                    <line x1="62"  y1="120" x2="112" y2="45" stroke="#a87fd6"/>
+                    <line x1="84"  y1="120" x2="134" y2="45" stroke="#4ecca3"/>
+                    <line x1="106" y1="120" x2="156" y2="45" stroke="#5cd0aa"/>
+                    <line x1="128" y1="120" x2="178" y2="45" stroke="#d4a053"/>
+                    <line x1="150" y1="120" x2="200" y2="45" stroke="#dcae67"/>
+                    <line x1="172" y1="120" x2="222" y2="45" stroke="#5b8cd4"/>
+                    <line x1="194" y1="120" x2="244" y2="45" stroke="#729edb"/>
+                    <line x1="216" y1="120" x2="266" y2="45" stroke="#cf7272"/>
+                    <line x1="238" y1="120" x2="288" y2="45" stroke="#9b72cf"/>
+                    <line x1="260" y1="120" x2="310" y2="45" stroke="#a87fd6"/>
+                    <line x1="282" y1="120" x2="332" y2="45" stroke="#4ecca3"/>
+                    <line x1="304" y1="120" x2="354" y2="45" stroke="#5cd0aa"/>
+                    <line x1="326" y1="120" x2="376" y2="45" stroke="#d4a053"/>
+                    <line x1="348" y1="120" x2="398" y2="45" stroke="#dcae67"/>
+                    <line x1="370" y1="120" x2="420" y2="45" stroke="#5b8cd4"/>
+                    <line x1="392" y1="120" x2="442" y2="45" stroke="#729edb"/>
+                    <line x1="414" y1="120" x2="464" y2="45" stroke="#cf7272"/>
+                    <line x1="436" y1="120" x2="486" y2="45" stroke="#9b72cf"/>
+                    <line x1="458" y1="120" x2="508" y2="45" stroke="#a87fd6"/>
+                    <line x1="480" y1="120" x2="530" y2="45" stroke="#4ecca3"/>
+                    <line x1="502" y1="120" x2="552" y2="45" stroke="#5cd0aa"/>
+                    <line x1="524" y1="120" x2="574" y2="45" stroke="#d4a053"/>
+                    <line x1="546" y1="120" x2="596" y2="45" stroke="#dcae67"/>
+                    <line x1="568" y1="120" x2="618" y2="45" stroke="#5b8cd4"/>
+                    <line x1="590" y1="120" x2="640" y2="45" stroke="#729edb"/>
+                    <line x1="612" y1="120" x2="662" y2="45" stroke="#cf7272"/>
+                    <line x1="634" y1="120" x2="684" y2="45" stroke="#9b72cf"/>
+                    <line x1="656" y1="120" x2="706" y2="45" stroke="#a87fd6"/>
+                    <line x1="678" y1="120" x2="728" y2="45" stroke="#4ecca3"/>
+                    <line x1="700" y1="120" x2="750" y2="45" stroke="#5cd0aa"/>
+                    <line x1="722" y1="120" x2="772" y2="45" stroke="#d4a053"/>
+                    <line x1="744" y1="120" x2="794" y2="45" stroke="#dcae67"/>
+                    <line x1="766" y1="120" x2="816" y2="45" stroke="#5b8cd4"/>
+                    <line x1="788" y1="120" x2="838" y2="45" stroke="#729edb"/>
+                    <line x1="810" y1="120" x2="860" y2="45" stroke="#cf7272"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Deo+gratias+canon">&#9834; Listen: Deo gratias canon (recording)</a>
+    </div>
+    <p class="note-text">Each diagonal is one voice entering a moment after the last with the same melody &#8212; imitation multiplied until it fills the whole space.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: HIS PLACE IN THE LINE ═══════════════════ -->
+<section>
+    <span class="section-number">12 — THE BRIDGE OF A GENERATION</span>
+    <h2>Between Du Fay and Josquin</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Ockeghem stands at the exact hinge of Renaissance music. He inherited the sweet, radiant idiom of the
+        <span class="accent-amber">Burgundian</span> masters and passed the art of imitative polyphony on to the
+        generation of Josquin, who would perfect the "point of imitation". He was the honoured elder statesman of the age.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">What he inherited</h4>
+            <p>From <strong>Du Fay</strong> and <strong>Binchois</strong>: the smooth consonance and cantus-firmus craft of the Burgundian school &#8212; the foundation on which he built.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);">
+            <h4 class="accent-purple">What he passed on</h4>
+            <p>To <strong>Josquin</strong> and his contemporaries: canon, pervasive imitation and long-range architecture &#8212; the tools of the High Renaissance.</p>
+        </div>
+    </div>
+    <p class="note-text">The theorist Johannes Tinctoris, who dedicated his counterpoint treatise (1477) to Ockeghem, counted him among the very greatest composers then living.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: MOURNED BY A GENERATION ═══════════════════ -->
+<section>
+    <span class="section-number">13 — DÉPLORATION</span>
+    <h2>Mourned by a Generation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        The <span class="accent-purple">déploration</span> &#8212; a lament for a dead composer &#8212; was itself an Ockeghem tradition:
+        he had mourned the death of <span class="accent-rose">Binchois</span> in such a piece. When Ockeghem himself died in 1497,
+        the finest poets and musicians of Europe returned the tribute. <span class="accent-amber">Josquin des Prez</span>
+        set Jean Molinet's lament as <em>Nymphes des bois / La déploration de Johannes Ockeghem</em>, weeping for the man they called their "good father".
+    </p>
+    <div class="card-grid cols-2" style="max-width:88%;">
+        <div class="card"><h4 class="accent-rose">Ockeghem mourns Binchois</h4><p>His own déploration honoured the great Burgundian songsmith &#8212; one master saluting another across the generations.</p></div>
+        <div class="card"><h4 class="accent-amber">Josquin mourns Ockeghem</h4><p>Josquin's <em>Nymphes des bois</em> names the leading composers as grieving "children", wrapping the Requiem chant into the texture.</p></div>
+    </div>
+    <p class="note-text">That the age's greatest composer should be mourned by its rising genius says everything about the esteem Ockeghem commanded.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Ockeghem</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Let go of the phrase: follow the <span class="accent-purple">unbroken flow</span> rather than waiting for tidy cadences &#8212; the music is meant to feel endless.</li>
+        <li>Listen <span class="accent-green">downward</span> &#8212; savour the dark bass and the hollow ring of the open-fifth cadences.</li>
+        <li>In the canonic works, try to catch the <span class="accent-amber">follower</span> chasing the leader with the same tune, slightly behind.</li>
+        <li>Notice how all four voices feel like <span class="accent-blue">equals</span>, none merely accompanying &#8212; a democracy of lines.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Missa+prolationum+Clerks+Group">&#9834; Missa prolationum</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Requiem">&#9834; Requiem</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Deo+gratias">&#9834; Deo gratias canon</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Nymphes+des+bois+deploration+Ockeghem">&#9834; Josquin's déploration</a>
+    </div>
+    <p class="note-text">Ensembles such as The Clerks' Group and the Hilliard Ensemble have made Ockeghem's flowing textures newly audible to modern ears.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The Prince of Music</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Ockeghem showed that counterpoint could be at once a rigorous <span class="accent-purple">intellectual game</span> and
+        a thing of profound beauty &#8212; that a hidden rule could unlock four voices from two, or thirty-six from one, without
+        ever sacrificing the seamless flow of the sound. His canons and his continuous textures pointed the way to Josquin and the
+        High Renaissance, and his Requiem opened a tradition that has never closed.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Canon perfected</h4><p>He raised strict, mensuration and puzzle canon to the summit of the art, inspiring composers for centuries.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The Requiem tradition</h4><p>The earliest surviving polyphonic Mass for the Dead &#8212; the root of every Requiem written since.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">A bridge to Josquin</h4><p>His imitative craft passed directly into the mainstream of Renaissance polyphony.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Put on garments of mourning, Josquin, Brumel, Pierchon, Compère, and weep great tears from your eyes: you have lost your good father."</p>
+        <span class="attribution">— Jean Molinet, lament on the death of Ockeghem, set by Josquin des Prez as <em>Nymphes des bois</em> (1497)</span>
+    </div>
+    <p class="note-text">c. 1410 – 1497 · Franco-Flemish master · the seamless flow and the solved puzzle.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — unique OCK_ vars ── */
+/* SIGNATURE AUDIO: a strict/mensuration canon — the same melody in two voices,
+   the follower entering four beats after the leader, the two identical lines weaving. */
+var OCK_CANON_LEADER   = [{n:'D4',d:2},{n:'F4',d:2},{n:'E4',d:1},{n:'D4',d:1},{n:'G4',d:2},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2},{n:'A4',d:2},{n:'G4',d:2}];
+var OCK_CANON_FOLLOWER = [{n:'rest',d:4},{n:'D4',d:2},{n:'F4',d:2},{n:'E4',d:1},{n:'D4',d:1},{n:'G4',d:2},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2}];
+/* A low, dark bass duet descending into the depths and resting on a bare open fifth (D + A, no third) */
+var OCK_BASS_LOW   = [{n:'D3',d:2},{n:'C3',d:1},{n:'Bb2',d:1},{n:'A2',d:2},{n:'F2',d:2},{n:'G2',d:2},{n:'A2',d:2},{n:'D2',d:4}];
+var OCK_BASS_UPPER = [{n:'A3',d:2},{n:'G3',d:1},{n:'F3',d:1},{n:'E3',d:2},{n:'D3',d:2},{n:'D3',d:2},{n:'E3',d:2},{n:'A2',d:4}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

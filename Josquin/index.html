@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josquin des Prez — Pervasive Imitation &amp; the High Renaissance</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 150px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Emblem: four staggered voice-entries of a single motif (a point of imitation) -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="34" x2="340" y2="34"/>
+                <line x1="20" y1="58" x2="340" y2="58"/>
+                <line x1="20" y1="82" x2="340" y2="82"/>
+                <line x1="20" y1="106" x2="340" y2="106"/>
+            </g>
+            <!-- the same little rising-then-falling motif, entering higher-to-lower, staggered -->
+            <!-- entry 1 (amber) -->
+            <g fill="#d4a053">
+                <ellipse cx="52" cy="46" rx="7" ry="5"/><ellipse cx="72" cy="34" rx="7" ry="5"/><ellipse cx="92" cy="40" rx="7" ry="5"/><ellipse cx="112" cy="46" rx="7" ry="5"/>
+            </g>
+            <!-- entry 2 (green) -->
+            <g fill="#4ecca3">
+                <ellipse cx="112" cy="70" rx="7" ry="5"/><ellipse cx="132" cy="58" rx="7" ry="5"/><ellipse cx="152" cy="64" rx="7" ry="5"/><ellipse cx="172" cy="70" rx="7" ry="5"/>
+            </g>
+            <!-- entry 3 (purple) -->
+            <g fill="#9b72cf">
+                <ellipse cx="172" cy="94" rx="7" ry="5"/><ellipse cx="192" cy="82" rx="7" ry="5"/><ellipse cx="212" cy="88" rx="7" ry="5"/><ellipse cx="232" cy="94" rx="7" ry="5"/>
+            </g>
+            <!-- entry 4 (blue) -->
+            <g fill="#5b8cd4">
+                <ellipse cx="232" cy="118" rx="7" ry="5"/><ellipse cx="252" cy="106" rx="7" ry="5"/><ellipse cx="272" cy="112" rx="7" ry="5"/><ellipse cx="292" cy="118" rx="7" ry="5"/>
+            </g>
+            <text x="20" y="148" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">one motif · four voices · entering one after another</text>
+        </svg>
+    </div>
+    <h1>Josquin des Prez</h1>
+    <div class="subtitle">c. 1450/55–1521 · The High Renaissance</div>
+    <div class="separator"></div>
+    <p style="max-width: 74%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The composer who turned imitation into the very grammar of music — where each phrase of text
+        is passed voice to voice like a caught light — and whom Luther called "the master of the notes".
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 11 — The High Renaissance</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS JOSQUIN ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Who Was Josquin?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-amber">Josquin des Prez</span> (Josquin Lebloitte dit Desprez) was the most famous and
+        most influential composer of his age — a <span class="accent-amber">Franco-Flemish</span> master who carried the
+        northern art of counterpoint into Italy and France, and whose reputation, magnified by the new printing press,
+        made him the first true celebrity of Western music.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#9834;</span><h4 class="accent-amber">Franco-Flemish</h4><p>Born in the borderlands of northern France / the Low Countries — the region that trained Europe's finest singers.</p></div>
+        <div class="card"><span class="icon accent-green">&#9962;</span><h4 class="accent-green">Well-travelled</h4><p>Sang and composed in Milan, Rome (the Sistine Chapel) and Ferrara, and in the service of France.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9835;</span><h4 class="accent-purple">The imitator</h4><p>Perfected <em>pervasive imitation</em> — a whole texture woven from a single shared motif.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9733;</span><h4 class="accent-blue">The celebrity</h4><p>The first composer whose name sold prints — publishers issued whole books under his name alone.</p></div>
+    </div>
+    <p class="note-text">Dates are approximate: he was born around 1450–1455 and died on 27 August 1521 at Condé-sur-l'Escaut, where he was provost of the collegiate church.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: LIFE & CAREER ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE IN MUSIC</span>
+    <h2>A Career Across Europe</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Josquin's movements are only partly documented, and scholarship has revised them repeatedly — but the
+        broad arc is clear: a northern singer drawn south to the wealthy courts and chapels of Italy, then home again.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1450</span><span class="event"><strong>Birth in the north</strong>Born in the Franco-Flemish lands, around 1450–1455; trained as a chorister in the great northern tradition.</span></div>
+        <div class="timeline-item"><span class="year">1480s</span><span class="event"><strong>Milan &amp; Rome</strong>Service in Italy, including years as a singer in the papal chapel — the Sistine Chapel, where a graffito of his name survives.</span></div>
+        <div class="timeline-item"><span class="year">c. 1503</span><span class="event"><strong>Ferrara</strong>Briefly the highest-paid musician at the court of Duke Ercole d'Este — a mark of his fame and his price.</span></div>
+        <div class="timeline-item"><span class="year">1504–1521</span><span class="event"><strong>Condé-sur-l'Escaut</strong>Returns north as provost of Notre-Dame de Condé, where he composed and lived until his death in 1521.</span></div>
+    </div>
+    <p class="note-text">The traditional biography has been much revised: several works once his are now doubted, and his path through Italy is still debated by scholars.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE BIG IDEA — PERVASIVE IMITATION ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE BIG IDEA</span>
+    <h2>Pervasive Imitation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Josquin's signature is the <span class="accent-amber">point of imitation</span>: for each new phrase of text he invents
+        a short motif, then hands it from voice to voice — each entering in turn, staggered in time and at a different pitch.
+        The listener hears the same idea chase itself through the texture before the voices merge into a cadence, and a new
+        point begins. It is music built phrase by phrase, from the words outward.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">A motif per phrase</h4><p>Each line of text gets its own little melodic idea, shaped to the rhythm and meaning of the words.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Voices enter in turn</h4><p>One voice states the motif; the others answer, one after another, usually a fourth or fifth apart.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Equal partners</h4><p>No single voice dominates. All four (or more) share the same material — a texture of true equality.</p></div>
+    </div>
+    <p class="note-text">This "imitative" texture, perfected by Josquin's generation, became the default of Renaissance polyphony for a century — the sound of Palestrina, Lassus and Byrd.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: NOTATION — POINT OF IMITATION + SIGNATURE AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">04 — READING THE MUSIC</span>
+    <h2>Reading a Point of Imitation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Here is one motif — <span class="accent-amber">up a fourth, then stepping down</span> — entering in three voices in turn.
+        Same shape each time; later, and at a different pitch. Follow the colours to see the idea travel down through the texture.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- three voice systems, each a 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <!-- Superius -->
+                <line x1="90" y1="24" x2="860" y2="24"/><line x1="90" y1="34" x2="860" y2="34"/><line x1="90" y1="44" x2="860" y2="44"/><line x1="90" y1="54" x2="860" y2="54"/><line x1="90" y1="64" x2="860" y2="64"/>
+                <!-- Altus -->
+                <line x1="90" y1="104" x2="860" y2="104"/><line x1="90" y1="114" x2="860" y2="114"/><line x1="90" y1="124" x2="860" y2="124"/><line x1="90" y1="134" x2="860" y2="134"/><line x1="90" y1="144" x2="860" y2="144"/>
+                <!-- Bassus -->
+                <line x1="90" y1="184" x2="860" y2="184"/><line x1="90" y1="194" x2="860" y2="194"/><line x1="90" y1="204" x2="860" y2="204"/><line x1="90" y1="214" x2="860" y2="214"/><line x1="90" y1="224" x2="860" y2="224"/>
+            </g>
+            <!-- voice labels -->
+            <g font-family="DM Sans" font-size="11" fill="#9a9a9a" text-anchor="end">
+                <text x="82" y="48">Voice 1</text>
+                <text x="82" y="128">Voice 2</text>
+                <text x="82" y="208">Voice 3</text>
+            </g>
+            <!-- Voice 1 motif — enters first (amber), high -->
+            <g fill="#d4a053">
+                <ellipse cx="140" cy="54" rx="7" ry="5"/><ellipse cx="176" cy="34" rx="7" ry="5"/><ellipse cx="212" cy="44" rx="7" ry="5"/><ellipse cx="248" cy="54" rx="7" ry="5"/>
+            </g>
+            <polyline points="140,54 176,34 212,44 248,54" fill="none" stroke="#d4a053" stroke-width="1" opacity="0.5"/>
+            <text x="140" y="86" fill="#d4a053" font-family="DM Sans" font-size="10">enters here</text>
+            <!-- Voice 2 motif — enters a bar later (green), a step lower on the page -->
+            <g fill="#4ecca3">
+                <ellipse cx="320" cy="134" rx="7" ry="5"/><ellipse cx="356" cy="114" rx="7" ry="5"/><ellipse cx="392" cy="124" rx="7" ry="5"/><ellipse cx="428" cy="134" rx="7" ry="5"/>
+            </g>
+            <polyline points="320,134 356,114 392,124 428,134" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.5"/>
+            <text x="320" y="166" fill="#4ecca3" font-family="DM Sans" font-size="10">same motif, later &amp; lower</text>
+            <!-- Voice 3 motif — enters last (purple), lowest -->
+            <g fill="#9b72cf">
+                <ellipse cx="500" cy="214" rx="7" ry="5"/><ellipse cx="536" cy="194" rx="7" ry="5"/><ellipse cx="572" cy="204" rx="7" ry="5"/><ellipse cx="608" cy="214" rx="7" ry="5"/>
+            </g>
+            <polyline points="500,214 536,194 572,204 608,214" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.5"/>
+            <text x="500" y="246" fill="#9b72cf" font-family="DM Sans" font-size="10">same motif again, later still</text>
+            <!-- entry markers -->
+            <g stroke="#6a6a7a" stroke-dasharray="3 3" stroke-width="1">
+                <line x1="140" y1="20" x2="140" y2="70"/>
+                <line x1="320" y1="100" x2="320" y2="150"/>
+                <line x1="500" y1="180" x2="500" y2="230"/>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, [JQ_IMIT_V1, JQ_IMIT_V2, JQ_IMIT_V3], {timbre:'voice', bpm:100, temperament:'equal', reverb:0.55, legato:0.95})">&#9654; Hear the point of imitation</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Ave+Maria+virgo+serena+Tallis+Scholars">&#9834; Listen: Ave Maria (recording)</a>
+    </div>
+    <p class="audio-caption"><strong>How to read it:</strong> read left&#8594;right; the same motif enters in each voice in turn — later, and at a different pitch. Three synthesised voices.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: AVE MARIA ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE PARADIGM</span>
+    <h2>Ave Maria … virgo serena</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                If one work defines the new imitative art, it is Josquin's motet
+                <span class="accent-amber"><em>Ave Maria … virgo serena</em></span>. It became a textbook example of the style —
+                its opening a limpid cascade of paired voices, each phrase introduced by one voice and answered by the next.
+            </p>
+            <p style="font-size:0.44em !important;">
+                As the text unfolds, Josquin varies the texture with the meaning: flowing imitation for narrative,
+                sudden <span class="accent-green">homophony</span> — all voices together — for moments of address, and a hushed, direct plea at the close.
+                Craft and devotion move as one.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Why it mattered</h4>
+            <p>A model of how to build a whole motet from successive points of imitation, each on a fresh motif shaped to its words.</p>
+            <p style="margin-top:0.4em;">It circulated widely in manuscript and print, teaching a generation of composers the imitative idiom.</p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, [JQ_AVE_TOP, JQ_AVE_LOW], {timbre:'voice', bpm:88, temperament:'equal', reverb:0.6, legato:0.96})">&#9654; Hear a paired-voice opening</button>
+    </div>
+    <p class="audio-caption">Two voices in imitation — the second answers the first at the octave below, in the manner of the motet's opening — synthesised</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: WORD-PAINTING ═══════════════════ -->
+<section>
+    <span class="section-number">06 — MUSIC &amp; MEANING</span>
+    <h2>Painting the Words</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Josquin was a supreme setter of text. Beyond imitation, he bent the music to the <span class="accent-amber">sense of the words</span> —
+        an early, expressive flowering of what later theorists would call <em>word-painting</em>. Rhythm follows Latin accent;
+        rising lines lift at words of ascent; the texture thins to a whisper at moments of grief or intimacy.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Rhythm from speech</h4><p>The music's stresses match the natural accentuation of the Latin, so the words are clearly declaimed.</p></div>
+        <div class="card"><h4 class="accent-green">Texture as meaning</h4><p>Full imitation for flowing narrative; block chords (homophony) to make a key phrase leap out.</p></div>
+        <div class="card"><h4 class="accent-purple">Expressive extremes</h4><p>In laments like <em>Absalon fili mi</em>, dark low writing and pained harmony carry the grief of the text.</p></div>
+    </div>
+    <p class="note-text">Contemporaries prized exactly this marriage of sound and sense — Josquin's ability, as later writers put it, to make the music serve the emotion of the words.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: MILLE REGRETZ — FALLING PHRASE AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE CHANSON</span>
+    <h2>Mille regretz — a Falling Sigh</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Josquin's melancholy chanson <span class="accent-amber"><em>Mille regretz</em></span> ("a thousand regrets") became so
+        beloved that tradition dubbed it "the song of the emperor" — a favourite, it is said, of Charles V.
+        Its pathos lives in a simple gesture: a phrase that <span class="accent-rose">sighs downward</span>, the melody sinking by step
+        as if under the weight of its own sorrow.
+    </p>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="40" y1="30" x2="660" y2="30"/><line x1="40" y1="45" x2="660" y2="45"/><line x1="40" y1="60" x2="660" y2="60"/><line x1="40" y1="75" x2="660" y2="75"/><line x1="40" y1="90" x2="660" y2="90"/>
+            </g>
+            <!-- a descending line -->
+            <g fill="#cf7272">
+                <ellipse cx="90" cy="38" rx="7" ry="5"/><ellipse cx="170" cy="45" rx="7" ry="5"/><ellipse cx="250" cy="53" rx="7" ry="5"/><ellipse cx="330" cy="60" rx="7" ry="5"/><ellipse cx="410" cy="68" rx="7" ry="5"/><ellipse cx="490" cy="75" rx="7" ry="5"/><ellipse cx="590" cy="83" rx="7" ry="5"/>
+            </g>
+            <polyline points="90,38 170,45 250,53 330,60 410,68 490,75 590,83" fill="none" stroke="#cf7272" stroke-width="1" opacity="0.5"/>
+            <text x="40" y="112" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13">the melody sinks step by step — a musical sigh</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, JQ_MILLE, {timbre:'voice', bpm:66, temperament:'equal', reverb:0.6, legato:0.97})">&#9654; Hear a falling <em>Mille regretz</em>-style phrase</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Mille+regretz">&#9834; Listen: Mille regretz (recording)</a>
+    </div>
+    <p class="audio-caption">A single voice descending stepwise to its final — the pathos of the "emperor's song" in miniature — synthesised</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE MASSES ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE GREAT MASSES</span>
+    <h2>The Mass Cycles</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The Mass was the grandest canvas of the age, and Josquin's cycles range across every technique of the day —
+        from strict borrowing of a tune to free paraphrase of a chant, always bent to expressive ends.
+    </p>
+    <div class="card-grid cols-2" style="max-width:88%;">
+        <div class="card"><h4 class="accent-amber">Missa Pange lingua</h4><p>A <em>paraphrase</em> Mass on the plainchant hymn <em>Pange lingua</em>: the chant is not held rigidly in one voice but dissolved, decorated and shared through all the voices as points of imitation.</p></div>
+        <div class="card"><h4 class="accent-green">Missa L'homme armé (two settings)</h4><p><em>super voces musicales</em> and <em>sexti toni</em> — two Masses on the famous secular "armed man" tune that dozens of composers set; feats of ingenuity on a shared cantus firmus.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Missa+Pange+lingua">&#9834; Missa Pange lingua (recording)</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Missa+L%27homme+arme+super+voces+musicales">&#9834; Missa L'homme armé (recording)</a>
+    </div>
+    <p class="note-text">The <em>paraphrase</em> Mass, in which a borrowed melody is woven imitatively through every voice rather than held long in the tenor, is one of Josquin's most influential contributions.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE TOOLKIT ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE TOOLKIT</span>
+    <h2>A Composer's Toolkit</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Josquin commanded the whole inherited armoury of Franco-Flemish craft — and chose among its tools not for
+        display but for expression. Four devices recur across his work.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#8734;</span><h4 class="accent-amber">Imitation</h4><p>The shared motif passed voice to voice — his default texture.</p></div>
+        <div class="card"><span class="icon accent-green">&#9835;</span><h4 class="accent-green">Cantus firmus</h4><p>A borrowed tune held in one voice as the scaffold of a whole cycle.</p></div>
+        <div class="card"><span class="icon accent-purple">&#8646;</span><h4 class="accent-purple">Canon</h4><p>One voice exactly shadowing another — strict imitation as structure.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9776;</span><h4 class="accent-blue">Homophony</h4><p>All voices in block chords, to declaim a phrase with sudden clarity.</p></div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [JQ_CANON_LEAD, JQ_CANON_FOLLOW], {timbre:'voice', bpm:96, temperament:'equal', reverb:0.55, legato:0.96})">&#9654; Hear a strict canon (one voice shadowing another)</button>
+    </div>
+    <p class="audio-caption">The same line in two voices, the second entering later and tracking the first exactly — synthesised</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: PRINTING & FAME ═══════════════════ -->
+<section>
+    <span class="section-number">10 — PRINT &amp; FAME</span>
+    <h2>The First Musical Celebrity</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Josquin's career coincided with a revolution: <span class="accent-amber">music printing</span>. In Venice,
+                <span class="accent-amber">Ottaviano Petrucci</span> issued the first collections of polyphony from movable type,
+                and in <span class="accent-amber">1502</span> devoted an entire book to Josquin's Masses alone — later followed by
+                second and third books. No composer had been so honoured.
+            </p>
+            <p style="font-size:0.44em !important;">
+                Print carried his music across Europe and made his <em>name</em> a selling point. Publishers even attached
+                "Josquin" to works he never wrote — the surest sign that he had become a <span class="accent-green">brand</span>.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">A famous jibe</h4>
+            <p>A quip of the age ran that "now that Josquin is dead, he is putting out more works than when he was alive" — publishers cashing in on his name.</p>
+            <p style="margin-top:0.4em;">The remark is widely reported; treat it as an anecdote of his posthumous fame rather than a documented saying.</p>
+        </div>
+    </div>
+    <p class="note-text">Petrucci's <em>Misse Josquin</em> (Venice, 1502) is often cited as the first printed book devoted to a single named composer — a landmark in music publishing.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: DÉPLORATION ═══════════════════ -->
+<section>
+    <span class="section-number">11 — MASTER MOURNS MASTER</span>
+    <h2>The Lament for Ockeghem</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        When the elder master <span class="accent-purple">Johannes Ockeghem</span> died in 1497, Josquin wrote
+        <span class="accent-amber"><em>Nymphes des bois</em></span> (the <em>Déploration de Johannes Ockeghem</em>) —
+        a lament of extraordinary poise. Over the French poem, the tenor intones the plainchant <em>Requiem</em>,
+        binding the new secular grief to the ancient chant for the dead. It is one composer's homage to another,
+        and a portrait of a whole tradition mourning itself.
+    </p>
+    <div class="card-grid cols-2" style="max-width:82%;">
+        <div class="card"><h4 class="accent-purple">A déploration</h4><p>A memorial song lamenting a departed master — a genre passed down the Franco-Flemish generations.</p></div>
+        <div class="card"><h4 class="accent-amber">Chant within song</h4><p>A borrowed <em>Requiem</em> chant sounds in one voice while the others sing the French poem of loss.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Nymphes+des+bois+Deploration+Ockeghem">&#9834; Nymphes des bois (recording)</a>
+    </div>
+    <p class="note-text">Ockeghem's own generation had taught Josquin the art; the <em>Déploration</em> is the pupil-successor's tribute to the seamless polyphony of his forebear.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">12 — LISTENING GUIDE</span>
+    <h2>How to Listen to Josquin</h2>
+    <div class="separator"></div>
+    <ul style="max-width:80%; margin:0.3em auto; font-size:0.5em;">
+        <li>Catch each <span class="accent-amber">point of imitation</span> — a new motif, then hear the voices enter one by one to answer it.</li>
+        <li>Notice the <span class="accent-green">shift to homophony</span> — when the voices suddenly line up in chords, a key phrase is being underlined.</li>
+        <li>Follow the <span class="accent-purple">words</span> — the rhythm hugs the Latin accent; the mood of the text shapes the sound.</li>
+        <li>Feel the <span class="accent-blue">equality of voices</span> — no single tune on top; the interest is spread through the whole weave.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+Scholars+Josquin">&#9834; The Tallis Scholars</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ensemble+Clement+Janequin+Josquin">&#9834; Ensemble Clément Janequin</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Josquin+Absalon+fili+mi">&#9834; Absalon fili mi</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Josquin_Desprez">&#9834; IMSLP — free scores</a>
+    </div>
+    <p class="note-text">Start with the <em>Ave Maria … virgo serena</em>, then <em>Mille regretz</em> and the <em>Missa Pange lingua</em> — the imitative art at its clearest.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: THE JOSQUIN PROBLEM ═══════════════════ -->
+<section>
+    <span class="section-number">13 — THE JOSQUIN PROBLEM</span>
+    <h2>Fame &amp; the Problem of Attribution</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Josquin's very celebrity created a puzzle for scholars. Because his name sold books, publishers and scribes
+        attached it to music by lesser hands, and the total of works credited to him swelled far beyond what he can have written.
+        Modern research has quietly <span class="accent-amber">shrunk the canon</span>, stripping away doubtful pieces to recover
+        the authentic Josquin — a reminder of how fame can blur the record.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Too many works</h4><p>Far more music was attributed to him than he could have composed — the price of a marketable name.</p></div>
+        <div class="card"><h4 class="accent-green">Careful sifting</h4><p>Scholars weigh sources, style and datings to separate the genuine from the merely "Josquin".</p></div>
+        <div class="card"><h4 class="accent-purple">A leaner Josquin</h4><p>The secure canon is now smaller — and, many argue, all the more astonishing for it.</p></div>
+    </div>
+    <p class="note-text">The "Josquin problem" is a classic case study in musicology: how to establish authorship when fame itself has corrupted the sources.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>The Master of the Notes</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Josquin fused northern counterpoint with Italian clarity and an unprecedented attention to the meaning of words,
+        and left the <span class="accent-amber">imitative style</span> as the common language of the century that followed.
+        Through print his name outlived him as no composer's had before. In him the Renaissance found its
+        <span class="accent-amber">Michelangelo of music</span> — a reputation Martin Luther, a devoted admirer, put memorably.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Imitation</h4><p>Pervasive imitation became the default texture of Renaissance polyphony for a hundred years.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Word &amp; tone</h4><p>His care for text and expression pointed the way to the madrigal and beyond.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Print &amp; fame</h4><p>The first composer whose name alone sold books — the birth of musical celebrity.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Josquin is the master of the notes; they must do as he wills. Other composers must do as the notes will."</p>
+        <span class="attribution">— Martin Luther, on Josquin des Prez (attested)</span>
+    </div>
+    <p class="note-text">c. 1450/55 – 1521 · The imitative art he perfected still shapes how we hear a choir sing.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for THIS presentation (Josquin) — note names, beats ── */
+/* SIGNATURE AUDIO: a point of imitation — one 4-note motif (rising fourth, then step down) in three staggered voices */
+var JQ_IMIT_V1 = [{n:'D4',d:1},{n:'G4',d:1},{n:'F#4',d:1},{n:'E4',d:1},{n:'D4',d:2},{n:'A4',d:1},{n:'G4',d:1},{n:'F#4',d:2}];
+var JQ_IMIT_V2 = [{n:'rest',d:2},{n:'A4',d:1},{n:'D5',d:1},{n:'C5',d:1},{n:'B4',d:1},{n:'A4',d:2},{n:'D5',d:1},{n:'C5',d:1}];
+var JQ_IMIT_V3 = [{n:'rest',d:4},{n:'G3',d:1},{n:'C4',d:1},{n:'B3',d:1},{n:'A3',d:1},{n:'G3',d:2},{n:'D4',d:1},{n:'C4',d:1}];
+/* A paired-voice imitative opening (Ave Maria style): follower answers at the octave below */
+var JQ_AVE_TOP = [{n:'A4',d:2},{n:'A4',d:1},{n:'B4',d:1},{n:'C5',d:2},{n:'A4',d:1},{n:'G4',d:1},{n:'A4',d:2}];
+var JQ_AVE_LOW = [{n:'rest',d:4},{n:'A3',d:2},{n:'A3',d:1},{n:'B3',d:1},{n:'C4',d:2},{n:'A3',d:1},{n:'G3',d:1},{n:'A3',d:2}];
+/* Mille-regretz-style falling phrase — a single voice sighing stepwise to its final */
+var JQ_MILLE = [{n:'A4',d:1.5},{n:'G4',d:0.5},{n:'F4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'C4',d:1},{n:'D4',d:2},{n:'C4',d:1},{n:'B3',d:1},{n:'A3',d:3}];
+/* A strict canon: the same line in two voices, the follower entering later and tracking exactly */
+var JQ_CANON_LEAD   = [{n:'D4',d:2},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:2},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2},{n:'A4',d:2},{n:'G4',d:2}];
+var JQ_CANON_FOLLOW = [{n:'rest',d:4},{n:'D4',d:2},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:2},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2},{n:'A4',d:2}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

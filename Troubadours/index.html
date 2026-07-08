@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troubadours, Trouvères &amp; Minnesänger — The Song of Courtly Love</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- A single monophonic staff line — the courtly song is one voice alone -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="52" x2="340" y2="52"/>
+                <line x1="20" y1="70" x2="340" y2="70"/>
+                <line x1="20" y1="88" x2="340" y2="88"/>
+                <line x1="20" y1="106" x2="340" y2="106"/>
+            </g>
+            <!-- C clef -->
+            <text x="24" y="80" fill="#cf7272" font-family="Playfair Display" font-size="26" font-weight="700">C</text>
+            <!-- a single arching melody of square notes (rose = the lover's line) -->
+            <rect x="66" y="97" width="11" height="11" fill="#cf7272"/>
+            <rect x="94" y="79" width="11" height="11" fill="#cf7272"/>
+            <rect x="122" y="61" width="11" height="11" fill="#e8e6e3"/>
+            <rect x="150" y="52" width="11" height="11" fill="#e8e6e3"/>
+            <rect x="178" y="61" width="11" height="11" fill="#d4a053"/><rect x="192" y="52" width="11" height="11" fill="#d4a053"/>
+            <rect x="228" y="70" width="11" height="11" fill="#e8e6e3"/>
+            <rect x="256" y="88" width="11" height="11" fill="#cf7272"/>
+            <rect x="290" y="97" width="11" height="11" fill="#cf7272"/>
+            <!-- a small lark taking flight above the stave -->
+            <path d="M 300 30 q 10 -12 22 -4 q -12 -2 -20 8 q 12 -3 20 4 q -12 0 -22 -8 z" fill="#9b72cf"/>
+            <text x="20" y="132" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">Can vei la lau &#8212; ze &#8212; ta mo &#8212; ver</text>
+        </svg>
+    </div>
+    <h1>Troubadours, Trouvères &amp; Minnesänger</h1>
+    <div class="subtitle">c. 1100–1300 · The Rise of Named Secular Song</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The first great flowering of song in the everyday tongue — monophonic melodies of
+        <span class="accent-rose"><em>fin&#8217;amor</em></span>, courtly love, sung by named
+        aristocratic poet-composers across mediaeval France and Germany.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 03 — The Voice of Courtly Love</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHAT IS THIS SONG ═══════════════════ -->
+<section>
+    <span class="section-number">01 — DEFINITION</span>
+    <h2>Song Steps Out of the Church</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        For centuries the written melody had belonged to the Latin liturgy. Now, from about
+        <span class="accent-rose">1100</span>, aristocratic poet-musicians began to compose in the
+        <span class="accent-rose">vernacular</span> — and, for the first time, to attach their
+        <em>names</em> to what they made. The subject was not God but earthly, idealised love: <em>fin&#8217;amor</em>.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-rose">&#9834;</span><h4 class="accent-rose">Monophonic</h4><p>A single melodic line, like chant — the manuscripts preserve only the tune, no written harmony.</p></div>
+        <div class="card"><span class="icon accent-amber">&#128220;</span><h4 class="accent-amber">Vernacular</h4><p>Not Latin but the spoken tongue — Occitan in the south, Old French in the north, Middle High German in the Empire.</p></div>
+        <div class="card"><span class="icon accent-purple">&#10084;</span><h4 class="accent-purple">Fin&#8217;amor</h4><p>&#8220;Refined love&#8221;: the poet serves a distant, idealised lady, ennobled by longing and devotion.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9873;</span><h4 class="accent-blue">Named &amp; noble</h4><p>Sung by dukes, countesses and knights — composers we can name, unlike anonymous chant.</p></div>
+    </div>
+    <p class="note-text">These are the ancestors of every later art-song: the moment when the individual voice, and the individual composer, enter secular music.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: THREE TRADITIONS MAP ═══════════════════ -->
+<section>
+    <span class="section-number">02 — THREE TRADITIONS</span>
+    <h2>South, North &amp; the Empire</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        One courtly ideal, three regions and three tongues. The art was born in the sunlit south of France,
+        travelled north, and was taken up by the German-speaking lands.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans">
+                <!-- three region panels -->
+                <rect x="30"  y="30" width="260" height="180" rx="10" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
+                <rect x="320" y="30" width="260" height="180" rx="10" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+                <rect x="610" y="30" width="260" height="180" rx="10" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+                <!-- arrows of transmission -->
+                <path d="M 292 120 L 318 120" stroke="#6a6a7a" stroke-width="2" marker-end="url(#ah)"/>
+                <path d="M 582 120 L 608 120" stroke="#6a6a7a" stroke-width="2" marker-end="url(#ah)"/>
+                <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#6a6a7a"/></marker></defs>
+                <!-- south -->
+                <text x="160" y="66" text-anchor="middle" fill="#cf7272" font-size="17" font-weight="700">Troubadours</text>
+                <text x="160" y="90" text-anchor="middle" fill="#9a9a9a" font-size="12">Southern France</text>
+                <text x="160" y="110" text-anchor="middle" fill="#e8e6e3" font-size="13">langue d&#8217;oc · Occitan</text>
+                <text x="160" y="146" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Guillaume IX of Aquitaine</text>
+                <text x="160" y="166" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Bernart de Ventadorn</text>
+                <text x="160" y="186" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Comtessa de Dia</text>
+                <!-- north -->
+                <text x="450" y="66" text-anchor="middle" fill="#d4a053" font-size="17" font-weight="700">Trouvères</text>
+                <text x="450" y="90" text-anchor="middle" fill="#9a9a9a" font-size="12">Northern France</text>
+                <text x="450" y="110" text-anchor="middle" fill="#e8e6e3" font-size="13">langue d&#8217;o&#239;l · Old French</text>
+                <text x="450" y="146" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Adam de la Halle</text>
+                <text x="450" y="166" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Thibaut IV of Champagne</text>
+                <!-- empire -->
+                <text x="740" y="66" text-anchor="middle" fill="#9b72cf" font-size="17" font-weight="700">Minnesänger</text>
+                <text x="740" y="90" text-anchor="middle" fill="#9a9a9a" font-size="12">German lands</text>
+                <text x="740" y="110" text-anchor="middle" fill="#e8e6e3" font-size="13">Middle High German</text>
+                <text x="740" y="146" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Walther von der</text>
+                <text x="740" y="166" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Vogelweide</text>
+                <text x="740" y="192" text-anchor="middle" fill="#6a6a7a" font-size="10.5" font-style="italic"><tspan>Minne = courtly love</tspan></text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text">The word <em>troubadour</em> comes from Occitan <em>trobar</em>, &#8220;to find, to compose&#8221;; the German <em>Minne</em> means courtly love — hence <em>Minnesänger</em>, &#8220;singers of love&#8221;.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">03 — TWO CENTURIES</span>
+    <h2>From Aquitaine to Arras</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Roughly two hundred years separate the first troubadour from the last great trouvère —
+        an art carried across Europe by crusade, marriage and the wandering of singers.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">1071–1126</span><span class="event"><strong>Guillaume IX of Aquitaine</strong>The earliest troubadour whose songs survive — a great duke who wrote in Occitan.</span></div>
+        <div class="timeline-item"><span class="year">c.1147–70</span><span class="event"><strong>Bernart de Ventadorn flourishes</strong>The supreme melodist of the troubadours; <em>Can vei la lauzeta mover</em> becomes the most copied of all their songs.</span></div>
+        <div class="timeline-item"><span class="year">late 12th c.</span><span class="event"><strong>The trobairitz &amp; the north</strong>The Comtessa de Dia and other women poets sing; the art spreads to the trouvères of northern France.</span></div>
+        <div class="timeline-item"><span class="year">c.1170–1230</span><span class="event"><strong>Walther von der Vogelweide</strong>The greatest Minnesänger carries courtly song into the German-speaking Empire.</span></div>
+        <div class="timeline-item"><span class="year">c.1245–1288</span><span class="event"><strong>Adam de la Halle</strong>The last great trouvère; his <em>Jeu de Robin et Marion</em> weaves songs into an early secular play.</span></div>
+    </div>
+    <p class="note-text">The Albigensian Crusade (1209 onward) devastated the courts of Occitania, scattering the troubadours and hastening the art&#8217;s move north and east.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE TROUBADOURS ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE TROUBADOURS</span>
+    <h2>The Poets of the South</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        In the courts of Occitania the art was born. Its makers ranged from ruling dukes to a woman of the nobility —
+        each shaping the language of longing that all later love-song would inherit.
+    </p>
+    <div class="card-grid cols-2" style="max-width:88%;">
+        <div class="card"><h4 class="accent-rose">Guillaume IX of Aquitaine · 1071–1126</h4><p>Duke of Aquitaine and grandfather of Eleanor of Aquitaine — the first troubadour whose work survives, worldly and bawdy by turns.</p></div>
+        <div class="card"><h4 class="accent-amber">Bernart de Ventadorn · fl. c.1147–70</h4><p>Of humble birth but the greatest melodist of them all; his songs of pure devotion set the model for the classic <em>canso</em>.</p></div>
+        <div class="card"><h4 class="accent-purple">Comtessa de Dia (Beatriz)</h4><p>A <em>trobairitz</em> — a woman troubadour — whose <em>A chantar</em> is the only surviving trobairitz song to keep its music.</p></div>
+        <div class="card"><h4 class="accent-blue">Jaufré Rudel</h4><p>The poet of <em>amor de lonh</em>, &#8220;distant love&#8221; — famed for loving from afar a lady he had never seen.</p></div>
+    </div>
+    <p class="note-text">Occitan was the polished literary language of the Mediterranean south; its poetry set a European fashion imitated for generations.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: BERNART + CANSO AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE CANSO</span>
+    <h2>Bernart de Ventadorn &amp; the Love Song</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The <span class="accent-rose"><em>canso</em></span> — the great love song — was the troubadour&#8217;s central art.
+        Bernart&#8217;s <em>Can vei la lauzeta mover</em> (&#8220;When I see the lark move&#8221;) opens with the poet watching a lark
+        beat its wings for joy in the sunlight, then falling into his own sorrow. Its melody is a gently arching line,
+        rising to a peak and settling back to rest.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, TROUB_CANSO, {timbre:'voice', bpm:60, temperament:'pythagorean', tonic:'D3', reverb:0.5, legato:0.95})">&#9654; Hear a tender <em>canso</em> melody</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Bernart+de+Ventadorn+Can+vei+la+lauzeta">&#9834; Listen: <em>Can vei la lauzeta</em> (recording)</a>
+    </div>
+    <p class="audio-caption">A stepwise, arching love-melody in the style of Bernart — synthesised single voice, free rhythm, pure fifths</p>
+    <div class="quote-box" style="border-left-color:var(--accent-rose); background:rgba(207,114,114,0.05);">
+        <p>&#8220;Can vei la lauzeta mover / de joi sas alas contra&#8217;l rai&#8221; — When I see the lark beat its wings for joy against the sun&#8217;s ray&#8230;</p>
+        <span class="attribution">— Bernart de Ventadorn, opening of his most celebrated <em>canso</em></span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: THE TROBAIRITZ ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE TROBAIRITZ</span>
+    <h2>The Women Troubadours</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Not all troubadours were men. The <span class="accent-purple"><em>trobairitz</em></span> — noblewomen
+                who composed their own <em>cansos</em> — answered the courtly-love convention from the other side,
+                writing with a directness that still startles.
+            </p>
+            <p style="font-size:0.44em !important;">
+                The best known is the <span class="accent-purple">Comtessa de Dia</span> (often called Beatriz).
+                Her song <em>A chantar</em> holds a unique place: it is the <strong>only surviving trobairitz song
+                that keeps its music</strong> as well as its words. In it she sings, with wounded pride, of a lover who has spurned her.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <g font-family="DM Sans">
+                    <circle cx="110" cy="70" r="46" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
+                    <text x="110" y="64" text-anchor="middle" fill="#9b72cf" font-size="15" font-weight="700">A chantar</text>
+                    <text x="110" y="84" text-anchor="middle" fill="#9a9a9a" font-size="10.5">the one that</text>
+                    <text x="110" y="98" text-anchor="middle" fill="#9a9a9a" font-size="10.5">survives</text>
+                    <text x="110" y="150" text-anchor="middle" fill="#e8e6e3" font-size="12.5">Comtessa de Dia</text>
+                    <text x="110" y="170" text-anchor="middle" fill="#6a6a7a" font-size="10.5" font-style="italic">a trobairitz of Occitania</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Comtessa+de+Dia+A+chantar">&#9834; Listen: Comtessa de Dia — <em>A chantar</em> (recording)</a>
+    </div>
+    <p class="note-text">Fewer than two dozen trobairitz are known by name; that only one of their songs survives with music makes <em>A chantar</em> uniquely precious.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: THE TROUVÈRES ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE TROUVÈRES</span>
+    <h2>The Art Travels North</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        In the north of France the courtly song was taken up in the <em>langue d&#8217;o&#239;l</em> — the ancestor of modern French —
+        by the <span class="accent-amber">trouvères</span>. Their name is simply the northern form of &#8220;troubadour&#8221;.
+    </p>
+    <div class="card-grid cols-2" style="max-width:88%;">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Adam de la Halle · c.1245–1288</h4>
+            <p>The last and most versatile of the great trouvères, working in Arras. His <em>Le Jeu de Robin et Marion</em> is an early secular play with songs — a distant ancestor of the musical stage.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Thibaut IV of Champagne</h4>
+            <p>Count of Champagne and King of Navarre — a ruling monarch who was also a gifted and prolific trouvère, showing how deeply song ran through courtly life.</p>
+        </div>
+    </div>
+    <p class="note-text">Because northern courts were wealthier patrons of manuscript-making, far more trouvère melodies survive than troubadour ones.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE MINNESÄNGER ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE MINNESÄNGER</span>
+    <h2>Courtly Love in the German Lands</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The same ideal took root in the German-speaking Empire, where its singers were the
+        <span class="accent-purple">Minnesänger</span> — from <em>Minne</em>, courtly love. They sang of devotion,
+        of nature and the turning seasons, and sometimes of the world&#8217;s affairs.
+    </p>
+    <div class="card-grid cols-2" style="max-width:84%;">
+        <div class="card" style="border-top:2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Walther von der Vogelweide · c.1170–1230</h4>
+            <p>The greatest of the Minnesänger — celebrated for his poetic range, from tender love-songs to sharp verses on politics and morality. A towering figure of mediaeval German literature.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">One European art</h4>
+            <p>Troubadour, trouvère and Minnesänger were branches of a single courtly culture — the ideal of refined love crossing languages and borders across two centuries.</p>
+        </div>
+    </div>
+    <p class="note-text">Later German tradition remembered this age in the legendary song-contest at the Wartburg, dramatised centuries afterwards by Wagner in <em>Tannhäuser</em>.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: GENRES ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE GENRES</span>
+    <h2>Kinds of Song</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The troubadours named and refined a whole family of song-types, each with its own subject and mood.
+        Four of the most important:
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Canso</h4><p>The love song — the central, most prestigious genre, on the theme of <em>fin&#8217;amor</em>.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Sirventes</h4><p>A political or satirical song — moral complaint, praise or attack, often to a borrowed tune.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Alba</h4><p>The &#8220;dawn song&#8221;: lovers must part as day breaks, often warned by a watchman.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Estampie</h4><p>A dance — one of the very earliest surviving instrumental forms, purely melodic and lively.</p></div>
+    </div>
+    <p class="note-text">Most of these were sung; the <em>estampie</em> stands apart as instrumental dance music — a rare survival of mediaeval secular instrumental repertory.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: THE ESTAMPIE + SIGNATURE AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE DANCE</span>
+    <h2>The Estampie — Music to Move To</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Among the very few mediaeval instrumental pieces to survive is the <span class="accent-green"><em>estampie</em></span>,
+        a brisk dance built from repeated phrases (<em>puncta</em>), each played twice with a different ending.
+        Where the love songs were sung to a lady, the estampie set the whole court on its feet.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, TROUB_ESTAMPIE, {timbre:'pluck', bpm:132, temperament:'pythagorean', tonic:'D3', reverb:0.4})">&#9654; Hear an <em>estampie</em> dance</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=medieval+estampie">&#9834; Listen: mediaeval estampie (recording)</a>
+    </div>
+    <p class="audio-caption">A lively plucked dance-tune in the Dorian mode — synthesised · pure Pythagorean tuning makes the fifths ring</p>
+    <p class="note-text">Instruments such as the vielle, harp and early plucked strings would have carried a line like this; the manuscripts, as ever, give only the bare melody.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: READING THE SONG / NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">11 — READING THE PAGE</span>
+    <h2>One Line, Many Rhythms</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Troubadour and trouvère songs were written down much like chant: a single melodic line of
+        <span class="accent-rose">neumes on a staff</span>, giving the <em>pitches</em> but — crucially —
+        <strong>no clear rhythm</strong>. The performer must decide how long each note lasts.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 4-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1.2">
+                <line x1="60" y1="46" x2="860" y2="46"/>
+                <line x1="60" y1="66" x2="860" y2="66"/>
+                <line x1="60" y1="86" x2="860" y2="86"/>
+                <line x1="60" y1="106" x2="860" y2="106"/>
+            </g>
+            <!-- C clef -->
+            <rect x="66" y="76" width="10" height="22" fill="#cf7272"/><rect x="76" y="82" width="16" height="10" fill="#cf7272"/>
+            <text x="66" y="132" fill="#cf7272" font-size="11" font-family="DM Sans">C-clef: this line = Do</text>
+            <!-- a single monophonic line of square neumes -->
+            <rect x="150" y="97" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="200" y="86" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="250" y="66" width="14" height="14" fill="#4ecca3"/><rect x="264" y="56" width="14" height="14" fill="#4ecca3"/>
+            <rect x="320" y="66" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="380" y="86" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="440" y="76" width="12" height="12" fill="#d4a053"/><rect x="452" y="66" width="12" height="12" fill="#d4a053"/><rect x="464" y="76" width="12" height="12" fill="#d4a053"/>
+            <rect x="540" y="97" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="600" y="86" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="660" y="106" width="14" height="14" fill="#cf7272"/>
+            <!-- custos -->
+            <path d="M 820 86 l 10 -8 l 6 8" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="798" y="132" fill="#5b8cd4" font-size="11" font-family="DM Sans">custos &#8594;</text>
+            <!-- text underlay -->
+            <text x="150" y="160" fill="#9a9a9a" font-family="Playfair Display" font-style="italic" font-size="14">A &#8212; mors &#8212; et &#8212; joi &#8212; e</text>
+            <!-- rhythm ambiguity: two readings below -->
+            <text x="150" y="188" fill="#4ecca3" font-size="11" font-family="JetBrains Mono">reading 1 &#9834; even flow: &#9833; &#9833; &#9833; &#9833; &#9833; &#9833;</text>
+            <text x="500" y="188" fill="#d4a053" font-size="11" font-family="JetBrains Mono">reading 2 &#9834; long&#8211;short lilt: &#9833;. &#9834; &#9833;. &#9834;</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="max-width:96%;">
+        <div class="card"><h4 class="accent-rose">1 · Pitch is given</h4><p>Read the neumes off the staff exactly as in chant: the clef names one line, higher on the page means higher in pitch.</p></div>
+        <div class="card"><h4 class="accent-amber">2 · Rhythm is not</h4><p>The notation records <em>no</em> durations. The very same line can be sung in a smooth even flow or a springing long&#8211;short dance lilt.</p></div>
+        <div class="card"><h4 class="accent-blue">3 · The performer chooses</h4><p>Modern singers must interpret — guided by the words, the genre and taste. Two fine recordings of one song may sound utterly different.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: INSTRUMENTS & PERFORMANCE ═══════════════════ -->
+<section>
+    <span class="section-number">12 — IN PERFORMANCE</span>
+    <h2>Voice, Vielle &amp; Harp</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        A troubadour rarely sang entirely alone. Manuscript illuminations and poems describe accompaniment on
+        stringed instruments — yet the sources notate only the melody, leaving the rest to the player&#8217;s art.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><span class="icon accent-amber">&#127931;</span><h4 class="accent-amber">The vielle</h4><p>The bowed mediaeval fiddle — the favoured instrument of the courtly singer, able to double or answer the voice.</p></div>
+        <div class="card"><span class="icon accent-rose">&#127929;</span><h4 class="accent-rose">Plucked strings</h4><p>The harp and early plucked instruments carried melodies and dance-tunes; the lute would rise to prominence a little later.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9998;</span><h4 class="accent-blue">Only the tune survives</h4><p>Because manuscripts give a bare line, all accompaniment, drones and ornament in a modern performance are reconstruction.</p></div>
+    </div>
+    <p class="note-text">This is why two ensembles can realise the same song so differently — everything but the melody itself is an informed act of imagination.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — LISTENING GUIDE</span>
+    <h2>How to Listen to Courtly Song</h2>
+    <div class="separator"></div>
+    <ul style="max-width:80%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-rose">words</span> — the melody exists to carry a poem of longing; feel how the tune rises with the emotion of the verse.</li>
+        <li>Notice each ensemble&#8217;s <span class="accent-amber">rhythmic choice</span> — even and flowing, or a dancing long&#8211;short lilt: the notation leaves it open.</li>
+        <li>Hear the <span class="accent-green">accompaniment as invention</span> — drones, vielle and harp are the performers&#8217; reconstruction, not the manuscript.</li>
+        <li>Compare a <span class="accent-blue">canso and an estampie</span> — the same courtly world in its tender and its dancing moods.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Bernart+de+Ventadorn+Can+vei+la+lauzeta">&#9834; Bernart — <em>Can vei la lauzeta</em></a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Comtessa+de+Dia+A+chantar">&#9834; Comtessa de Dia — <em>A chantar</em></a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Adam+de+la+Halle+Robin+et+Marion">&#9834; Adam de la Halle — <em>Robin et Marion</em></a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=medieval+estampie">&#9834; Mediaeval estampie</a>
+    </div>
+    <p class="note-text">Because rhythm and accompaniment are unnotated, recordings of a single song vary widely — part of the pleasure is comparing interpretations.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>Where All Love-Song Begins</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        The troubadours and their heirs invented something that never left Western music: the named composer
+        singing, in his own tongue, of earthly love. The ideal of <span class="accent-rose"><em>fin&#8217;amor</em></span> shaped
+        European poetry for centuries; the melodic craft of the <em>canso</em> fed into the later art of the chanson and, in time, the whole tradition of song.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">The named composer</h4><p>For the first time secular music has authors — dukes, countesses and knights whose songs we can name and sing.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">The vernacular</h4><p>Song in the everyday tongue, on themes of love and the world — the seed of every later art-song and chanson.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">The courtly ideal</h4><p>The code of refined love that shaped mediaeval and Renaissance poetry, and echoes in love-song to this day.</p></div>
+    </div>
+    <div class="quote-box" style="border-left-color:var(--accent-rose); background:rgba(207,114,114,0.05);">
+        <p>&#8220;Chantars no pot gaire valer, si d&#8217;ins dal cor no mou lo chans&#8221; — Singing can be worth little if the song does not move from within the heart.</p>
+        <span class="attribution">— Bernart de Ventadorn, opening of a <em>canso</em></span>
+    </div>
+    <p class="note-text">c. 1100 – 1300 · the first age of named secular song in the languages of Europe.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) ── */
+/* A tender, stepwise arching canso melody in the style of Bernart de Ventadorn (Mode I, on D) */
+var TROUB_CANSO = [
+  {n:'A4',d:2},{n:'G4',d:1},{n:'F4',d:1},{n:'G4',d:2},{n:'A4',d:2},
+  {n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:2},{n:'D4',d:2},
+  {n:'F4',d:2},{n:'E4',d:1},{n:'D4',d:1},{n:'E4',d:2},{n:'D4',d:4}
+];
+/* SIGNATURE AUDIO — a lively estampie dance (from the brief) */
+var TROUB_ESTAMPIE = [
+  {n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},
+  {n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:2},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

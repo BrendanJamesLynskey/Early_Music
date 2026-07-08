@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gilles Binchois — The Master of the Burgundian Chanson</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 260px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- courtly lozenge frame -->
+            <path d="M130 8 L246 75 L130 142 L14 75 Z" fill="none" stroke="#cf7272" stroke-width="1.4"/>
+            <path d="M130 22 L232 75 L130 128 L28 75 Z" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+            <!-- a lilting chanson line drawn as a flourish -->
+            <path d="M54 96 C 84 62, 108 62, 130 78 S 178 58, 208 84" fill="none" stroke="#d4a053" stroke-width="1.6"/>
+            <!-- void mensural noteheads (diamonds) riding the line -->
+            <rect x="58" y="88" width="11" height="11" fill="none" stroke="#e8e6e3" stroke-width="1.5" transform="rotate(45 63.5 93.5)"/>
+            <rect x="94" y="66" width="11" height="11" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(45 99.5 71.5)"/>
+            <rect x="124" y="72" width="11" height="11" fill="none" stroke="#cf7272" stroke-width="1.5" transform="rotate(45 129.5 77.5)"/>
+            <rect x="160" y="62" width="11" height="11" fill="none" stroke="#5b8cd4" stroke-width="1.5" transform="rotate(45 165.5 67.5)"/>
+            <rect x="198" y="80" width="11" height="11" fill="none" stroke="#e8e6e3" stroke-width="1.5" transform="rotate(45 203.5 85.5)"/>
+            <!-- a small courtly rose at the crown -->
+            <g transform="translate(130 30)">
+                <circle r="3.4" fill="#cf7272"/>
+                <circle r="8" fill="none" stroke="#cf7272" stroke-width="1.1"/>
+                <circle r="12.5" fill="none" stroke="#cf7272" stroke-width="0.8" opacity="0.6"/>
+            </g>
+        </svg>
+    </div>
+    <h1>Gilles Binchois</h1>
+    <div class="subtitle">c. 1400–1460 · The Burgundian School · The Age of Philip the Good</div>
+    <div class="separator"></div>
+    <p style="max-width: 74%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The supreme miniaturist of the courtly song — a former soldier turned chaplain whose
+        tender rondeaux gave the fifteenth-century love lyric its most perfect and graceful melodies.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 08 — The Burgundian Songsmith</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS BINCHOIS ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Who Was Binchois?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-rose">Gilles de Bins, called Binchois</span> (c. 1400–1460), was — with
+        <span class="accent-amber">Guillaume Du Fay</span> — one of the two leading composers of the
+        <span class="accent-rose">Burgundian School</span>, the brilliant musical culture of the court of
+        <span class="accent-amber">Philip the Good</span>, Duke of Burgundy. A former soldier who later took holy
+        orders as a chaplain, he became the age's supreme master of the <em>secular chanson</em>.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-rose">&#9876;</span><h4 class="accent-rose">Soldier first</h4><p>He is thought to have served as a soldier in his youth before turning to a life in the Church and in music.</p></div>
+        <div class="card"><span class="icon accent-amber">&#10013;</span><h4 class="accent-amber">Chaplain</h4><p>He took holy orders and served in the ducal chapel of Burgundy, holding church benefices.</p></div>
+        <div class="card"><span class="icon accent-green">&#9834;</span><h4 class="accent-green">Songsmith</h4><p>His fame rests on his exquisite chansons — above all the <em>rondeau</em>, the courtly love-song par excellence.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9829;</span><h4 class="accent-blue">The miniaturist</h4><p>Where Du Fay was grand and cosmopolitan, Binchois was the poet of the intimate, perfectly-shaped small form.</p></div>
+    </div>
+    <p class="note-text">His name comes from Binche, in modern Belgium; "Gilles de Bins dit Binchois" is how the sources record him.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: THE BURGUNDIAN COURT ═══════════════════ -->
+<section>
+    <span class="section-number">02 — THE COURT</span>
+    <h2>The Court of Philip the Good</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        The Dukes of Burgundy ruled one of the richest and most cultured courts in fifteenth-century Europe,
+        stretching across parts of eastern France and the Low Countries. Under <span class="accent-amber">Philip the Good</span>
+        (reigned 1419–1467), the court became a magnet for painters, poets and musicians — a world of chivalry,
+        pageantry and refined <em>fin'amor</em> in which Binchois's chansons were exactly at home.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-rose">A splendid chapel</h4><p>The dukes maintained a lavish musical chapel; its singers and composers were prized ornaments of court life.</p></div>
+        <div class="card"><h4 class="accent-amber">Art &amp; luxury</h4><p>The same court that fostered Netherlandish painting (the world of Jan van Eyck) fostered its music.</p></div>
+        <div class="card"><h4 class="accent-blue">Courtly love</h4><p>Elegant French poetry of longing and devotion gave the chanson its texts and its tender emotional world.</p></div>
+    </div>
+    <p class="note-text">The Burgundian style — sweet, graceful, treble-dominated song — set the tone for the whole mid-century.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: LIFE / TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">03 — A LIFE</span>
+    <h2>A Soldier Turned Chaplain</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The documentary record of Binchois's life is sparse, as it is for most musicians of his time. What survives
+        sketches a career that moved from arms to the altar, and into the service of the Burgundian dukes.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1400</span><span class="event"><strong>Born near Mons / Binche</strong>In the Hainaut region of the Burgundian Low Countries (modern Belgium).</span></div>
+        <div class="timeline-item"><span class="year">1420s</span><span class="event"><strong>Early service</strong>Traditionally thought to have served as a soldier before entering the Church as a chaplain.</span></div>
+        <div class="timeline-item"><span class="year">c. 1427</span><span class="event"><strong>The ducal chapel</strong>Enters the service of the court of Burgundy, where he would spend the greater part of his career.</span></div>
+        <div class="timeline-item"><span class="year">1441/2</span><span class="event"><strong>Praised by Martin le Franc</strong>The poet names Binchois with Du Fay as the leaders of the new, sweeter musical manner.</span></div>
+        <div class="timeline-item"><span class="year">1460</span><span class="event"><strong>Death, mourned in song</strong>Johannes Ockeghem commemorates him in a famous <em>déploration</em>, a lament for a lost master.</span></div>
+    </div>
+    <p class="note-text">Dates are given with "c." where the sources are uncertain; much of the biography is reconstructed from court and church records.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE BURGUNDIAN SCHOOL ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE SCHOOL</span>
+    <h2>Two Masters: Du Fay &amp; Binchois</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The Burgundian School is usually spoken of through its two great names. They were near-contemporaries and
+        admired one another, yet their gifts pointed in different directions.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Guillaume Du Fay</h4>
+            <p>Cosmopolitan and grand: he travelled to Italy and served the papal chapel, and wrote large ceremonial motets and unified cyclic Masses as well as chansons.</p>
+            <p style="margin-top:0.4em;">The public, architectural imagination of the age.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Gilles Binchois</h4>
+            <p>The intimate miniaturist: his genius was for the small, perfect secular song — melodies of tenderness and grace, shaped to the courtly love lyric.</p>
+            <p style="margin-top:0.4em;">The private, lyric voice of the age.</p>
+        </div>
+    </div>
+    <p class="note-text">Both were held up as models of the new "sweet" style — full of thirds and sixths — that swept mid-century Europe.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: FIN'AMOR / COURTLY LOVE ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE LYRIC WORLD</span>
+    <h2>Fin'amor — the Courtly Love Lyric</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Binchois's songs set the polished French verse of <span class="accent-rose">courtly love</span> — the poetry of the
+        devoted lover, of longing, faithfulness, and gentle sorrow. The music does not shout its feeling; it
+        distils it. A single graceful <em>cantus</em> line carries the whole emotional weight, and every turn of the
+        melody answers a turn of the words.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-rose">Devotion</h4><p>The lover's constancy and service to the beloved — the central theme inherited from the troubadours.</p></div>
+        <div class="card"><h4 class="accent-amber">Longing</h4><p>Absence, distance and hope: emotions perfectly suited to a tender, arching melodic line.</p></div>
+        <div class="card"><h4 class="accent-blue">Refinement</h4><p>Elegance and restraint prized above display — the courtly ideal of measured, graceful feeling.</p></div>
+    </div>
+    <p class="note-text">The chanson was chamber music of the court: sung by a soloist, often with instruments taking the lower parts.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: THE ART OF THE CHANSON ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE FORMS</span>
+    <h2>The Art of the Chanson</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The polyphonic chanson of Binchois's day used the <span class="accent-rose">formes fixes</span> — the "fixed forms"
+        of French poetry, each with its own pattern of refrain and stanza. Binchois wrote in all of them, but the
+        <span class="accent-rose">rondeau</span> was his supreme vehicle.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Rondeau</h4><p>A single stanza framed by a returning refrain, built on just two musical phrases. Binchois's speciality.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Ballade</h4><p>A grander, more expansive form of several stanzas, each ending with the same refrain line.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Virelai</h4><p>A dance-derived form with a refrain that returns between the verses, lighter in character.</p></div>
+    </div>
+    <p class="note-text">The "fixed" in <em>formes fixes</em> means the pattern of repeats and refrain is prescribed — the composer's art lies in filling it with grace.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: INSIDE THE RONDEAU + SIGNATURE AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">07 — INSIDE THE RONDEAU</span>
+    <h2>Two Tunes, One Perfect Shape</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The rondeau is a marvel of economy: the whole poem is carried by only <strong>two musical phrases</strong>
+        (call them <span class="accent-rose">A</span> and <span class="accent-amber">B</span>), arranged so that the opening refrain keeps returning.
+        A common eight-line scheme runs <em>A B a A a b A B</em> — capitals mark the refrain.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="15" text-anchor="middle">
+                <!-- 8 blocks: music 1 = rose, music 2 = amber; refrain outlined -->
+                <!-- A -->
+                <rect x="20"  y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.85"/><rect x="20"  y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="68"  y="60" fill="#0a0a0f" font-weight="700">A</text>
+                <!-- B -->
+                <rect x="128" y="34" width="96" height="40" rx="5" fill="#d4a053" opacity="0.85"/><rect x="128" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="176" y="60" fill="#0a0a0f" font-weight="700">B</text>
+                <!-- a -->
+                <rect x="236" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.5"/><text x="284" y="60" fill="#e8e6e3" font-weight="700">a</text>
+                <!-- A -->
+                <rect x="344" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.85"/><rect x="344" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="392" y="60" fill="#0a0a0f" font-weight="700">A</text>
+                <!-- a -->
+                <rect x="452" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.5"/><text x="500" y="60" fill="#e8e6e3" font-weight="700">a</text>
+                <!-- b -->
+                <rect x="560" y="34" width="96" height="40" rx="5" fill="#d4a053" opacity="0.5"/><text x="608" y="60" fill="#e8e6e3" font-weight="700">b</text>
+                <!-- A -->
+                <rect x="668" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.85"/><rect x="668" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="716" y="60" fill="#0a0a0f" font-weight="700">A</text>
+                <!-- B -->
+                <rect x="776" y="34" width="96" height="40" rx="5" fill="#d4a053" opacity="0.85"/><rect x="776" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="824" y="60" fill="#0a0a0f" font-weight="700">B</text>
+                <!-- legend -->
+                <text x="20" y="20" fill="#cf7272" font-size="12" text-anchor="start">&#9632; music phrase A</text>
+                <text x="180" y="20" fill="#d4a053" font-size="12" text-anchor="start">&#9632; music phrase B</text>
+                <text x="330" y="20" fill="#e8e6e3" font-size="12" text-anchor="start">outlined = the returning refrain</text>
+                <text x="20" y="100" fill="#6a6a7a" font-size="11" text-anchor="start">Only two tunes are ever heard — the refrain (capitals) binds the single stanza (lower-case) into a rounded whole.</text>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, BIN_RONDEAU, {timbre:'voice', bpm:84, temperament:'equal', reverb:0.5, legato:0.95})">&#9654; Hear a Burgundian rondeau melody</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Binchois+De+plus+en+plus+rondeau">&#9834; Listen: Binchois — De plus en plus</a>
+    </div>
+    <p class="audio-caption">A tender <em>cantus</em> line in gentle triple time, arching up and settling softly on the final — synthesised voice</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE FAMOUS CHANSONS ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE SONGS</span>
+    <h2>The Chansons You Should Know</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-3" style="max-width:90%;">
+        <div class="card"><h4 class="accent-rose">De plus en plus</h4><p>A rondeau, and perhaps his most celebrated song: "more and more" — a lover's growing devotion, set to a melody of exquisite poise.</p></div>
+        <div class="card"><h4 class="accent-amber">Adieu m'amour</h4><p>A farewell to the beloved — tender, restrained sorrow distilled into a single graceful vocal line.</p></div>
+        <div class="card"><h4 class="accent-green">Filles à marier</h4><p>A livelier chanson ("girls of marrying age") — showing that Binchois's art was not only melancholy but could smile.</p></div>
+    </div>
+    <p style="max-width: 84%; margin: 0.4em auto 0.2em; font-size: 0.44em !important;">
+        These songs travelled far beyond Burgundy in the fifteenth-century songbooks, copied and treasured across Europe —
+        proof of how widely his gift for melody was loved.
+    </p>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Binchois+chansons+ensemble">&#9834; Binchois — chansons (recordings)</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Binchois+Adieu+m%27amour">&#9834; Adieu m'amour</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Binchois,_Gilles">&#9834; IMSLP — Binchois scores</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THREE VOICES ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE TEXTURE</span>
+    <h2>Three Voices: Cantus, Tenor, Contratenor</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The typical Burgundian chanson is written in <span class="accent-rose">three parts</span>, and they are not equal partners.
+        The top voice — the <span class="accent-rose">cantus</span> — carries the tune and the words; the lower two provide a supporting frame.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Cantus (superius)</h4><p>The highest voice: the melody, the sung poem, the line the ear follows. The heart of the song.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Tenor</h4><p>The structural foundation beneath the cantus; with the top voice it forms the essential two-part framework.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Contratenor</h4><p>A third voice weaving in the same range as the tenor, filling out the harmony — often given to an instrument.</p></div>
+    </div>
+    <p class="note-text">In performance the cantus was usually sung while the tenor and contratenor might be played on instruments such as vielle, lute or harp — though the manuscripts write only the notes, not who plays them.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: READING WHITE MENSURAL NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">10 — READING THE PAGE</span>
+    <h2>Reading the Chanson on the Page</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        A Binchois chanson was written in <span class="accent-rose">white mensural notation</span> — the notation of the fifteenth
+        century. Note-shapes fix duration, the <span class="accent-amber">circle</span> at the start signals <em>perfect</em> (triple) time, and
+        there are <strong>no bar-lines</strong>. Here is the three-voice layout, cantus on top.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- CANTUS staff -->
+            <g stroke="#6a6a7a" stroke-width="1"><line x1="120" y1="24" x2="880" y2="24"/><line x1="120" y1="36" x2="880" y2="36"/><line x1="120" y1="48" x2="880" y2="48"/><line x1="120" y1="60" x2="880" y2="60"/><line x1="120" y1="72" x2="880" y2="72"/></g>
+            <text x="20" y="52" fill="#cf7272" font-family="DM Sans" font-size="14" font-weight="700">Cantus</text>
+            <!-- C-clef + mensuration circle (perfect / triple) -->
+            <rect x="124" y="36" width="8" height="24" fill="#d4a053"/><rect x="132" y="42" width="12" height="8" fill="#d4a053"/>
+            <circle cx="162" cy="48" r="9" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <!-- void noteheads (semibreves = diamonds), lilting line -->
+            <rect x="196" y="55" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 201 60)"/>
+            <rect x="246" y="43" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 251 48)"/>
+            <rect x="296" y="31" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 301 36)"/>
+            <!-- a minim = void diamond with stem -->
+            <rect x="346" y="43" width="10" height="10" fill="none" stroke="#4ecca3" stroke-width="1.6" transform="rotate(45 351 48)"/><line x1="356" y1="48" x2="356" y2="22" stroke="#4ecca3" stroke-width="1.6"/>
+            <rect x="410" y="55" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 415 60)"/>
+            <rect x="470" y="67" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 475 72)"/>
+            <!-- a breve = void square (longer) -->
+            <rect x="536" y="42" width="18" height="12" fill="none" stroke="#cf7272" stroke-width="1.8"/>
+
+            <!-- TENOR staff -->
+            <g stroke="#6a6a7a" stroke-width="1"><line x1="120" y1="130" x2="880" y2="130"/><line x1="120" y1="142" x2="880" y2="142"/><line x1="120" y1="154" x2="880" y2="154"/><line x1="120" y1="166" x2="880" y2="166"/><line x1="120" y1="178" x2="880" y2="178"/></g>
+            <text x="20" y="158" fill="#d4a053" font-family="DM Sans" font-size="14" font-weight="700">Tenor</text>
+            <rect x="124" y="142" width="8" height="24" fill="#d4a053"/><rect x="132" y="148" width="12" height="8" fill="#d4a053"/>
+            <circle cx="162" cy="154" r="9" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <rect x="200" y="161" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 205 166)"/>
+            <rect x="300" y="149" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 305 154)"/>
+            <rect x="410" y="161" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 415 166)"/>
+            <!-- longa = void rect with descending stem -->
+            <rect x="530" y="148" width="16" height="12" fill="none" stroke="#5b8cd4" stroke-width="1.8"/><line x1="546" y1="160" x2="546" y2="184" stroke="#5b8cd4" stroke-width="1.8"/>
+
+            <!-- CONTRATENOR staff -->
+            <g stroke="#6a6a7a" stroke-width="1"><line x1="120" y1="236" x2="880" y2="236"/><line x1="120" y1="248" x2="880" y2="248"/><line x1="120" y1="260" x2="880" y2="260"/><line x1="120" y1="272" x2="880" y2="272"/><line x1="120" y1="284" x2="880" y2="284"/></g>
+            <text x="20" y="264" fill="#5b8cd4" font-family="DM Sans" font-size="14" font-weight="700">Contratenor</text>
+            <rect x="124" y="248" width="8" height="24" fill="#d4a053"/><rect x="132" y="254" width="12" height="8" fill="#d4a053"/>
+            <circle cx="162" cy="260" r="9" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <rect x="200" y="267" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 205 272)"/>
+            <rect x="300" y="255" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 305 260)"/>
+            <rect x="410" y="267" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 415 272)"/>
+            <rect x="530" y="254" width="16" height="12" fill="none" stroke="#9b72cf" stroke-width="1.8"/>
+
+            <!-- labels for note shapes -->
+            <text x="596" y="48" fill="#cf7272" font-family="DM Sans" font-size="11">&#8592; breve (void square)</text>
+            <text x="596" y="160" fill="#5b8cd4" font-family="DM Sans" font-size="11">&#8592; longa (with stem)</text>
+            <text x="370" y="20" fill="#4ecca3" font-family="DM Sans" font-size="11">&#8593; minim (stemmed)</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-4" style="max-width:96%;">
+        <div class="card"><h4 class="accent-amber">1 · The clef</h4><p>A C-clef names one line; every other pitch is read from it. The staff can sit high or low to fit each voice's range.</p></div>
+        <div class="card"><h4 class="accent-rose">2 · Note-shapes = length</h4><p>Shape fixes duration: longa &gt; breve &gt; semibreve (void diamond) &gt; minim (diamond + stem). "White" means the heads are hollow.</p></div>
+        <div class="card"><h4 class="accent-green">3 · Perfect time</h4><p>The <em>circle</em> means <strong>perfect</strong> (triple) mensuration — three beats to the unit. A half-circle would mean duple.</p></div>
+        <div class="card"><h4 class="accent-blue">4 · No bar-lines</h4><p>There are no bars and no full score: each voice was copied separately. The metre is felt, not ruled off.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: THE SWEETNESS OF THE CADENCE ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE CADENCE</span>
+    <h2>The Sweetness of Burgundian Counterpoint</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        What makes this music sound so <em>sweet</em> is how it approaches its resting points. At a cadence the top voice
+        often makes a little dip to the sixth degree before leaping up to the octave — the graceful melodic turn known as
+        the <span class="accent-rose">Landini cadence</span> — while the tenor steps down beneath it into a pure, ringing close.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [BIN_CANT, BIN_TEN], {timbre:'voice', bpm:84, temperament:'equal', reverb:0.5, legato:0.96})">&#9654; Hear a two-voice cadence (cantus + tenor)</button>
+    </div>
+    <p class="audio-caption">Listen for the top voice's little dip-and-leap onto the final octave, over the tenor's gentle descent — synthesised voices</p>
+    <p style="max-width: 84%; margin: 0.4em auto 0; font-size: 0.44em !important;">
+        This melodic figure, named for the blind Florentine <span class="accent-amber">Francesco Landini</span>, pervades late-medieval song;
+        in Binchois's hands it becomes the very signature of tenderness — the sound of a courtly phrase coming softly to rest.
+    </p>
+    <p class="note-text">The cantus and tenor form the essential two-voice frame; get their cadence right and the whole song feels finished.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: SACRED MUSIC ═══════════════════ -->
+<section>
+    <span class="section-number">12 — THE SACRED SIDE</span>
+    <h2>Not Only Songs: the Sacred Music</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Binchois is remembered above all as a songwriter, but as a chaplain he also composed a substantial body of
+        <span class="accent-rose">sacred music</span> for the liturgy — carrying the same gift for graceful, singable melody
+        into the service of the Church.
+    </p>
+    <div class="card-grid cols-2" style="max-width:82%;">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Magnificats</h4><p>Settings of the Virgin's canticle for Vespers — a natural home for his lyrical, tender manner.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Motets &amp; Mass movements</h4><p>Liturgical polyphony in the same sweet, treble-led Burgundian idiom that made his chansons famous.</p></div>
+    </div>
+    <p class="note-text">His sacred works share the chanson's textures — three voices, a singing top line, the new consonant sweetness of thirds and sixths.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: THE CONTENANCE ANGLOISE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — THE SWEET NEW STYLE</span>
+    <h2>The <em>Contenance Angloise</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        In 1441/2 the poet <span class="accent-amber">Martin le Franc</span> praised Du Fay and Binchois for having taken up the
+        <span class="accent-rose">contenance angloise</span> — the "English manner" — associated with the English composer
+        <span class="accent-blue">John Dunstaple</span>. Its hallmark was a fuller, sweeter harmony: the pervasive use of
+        <strong>thirds and sixths</strong>, consonances that earlier theory had treated as imperfect.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-blue">The English seed</h4><p>Dunstaple's full, triadic harmony gave the Continent a new, warmer sound to admire and absorb.</p></div>
+        <div class="card"><h4 class="accent-rose">Burgundy adopts it</h4><p>Du Fay and Binchois made this sweetness their own — the foundation of the whole Burgundian sound.</p></div>
+        <div class="card"><h4 class="accent-amber">A new consonance</h4><p>After centuries of open fourths and fifths, thirds and sixths sounded rich and mellow — genuinely "sweet".</p></div>
+    </div>
+    <p class="note-text">Le Franc's praise is one of the most quoted passages in music history: a rare contemporary verdict on who the great composers were.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Binchois</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-rose">cantus</span> — the top voice carries the tune and the words; let the lower parts be its gentle frame.</li>
+        <li>Feel the <span class="accent-amber">lilt of triple time</span> — the graceful, dance-like swing beneath the melody.</li>
+        <li>Hear the <span class="accent-green">sweetness of the thirds and sixths</span> — the warm new harmony of the contenance angloise.</li>
+        <li>Wait for the <span class="accent-blue">cadences</span> — the little melodic turn onto each resting point is Binchois at his most tender.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Binchois+De+plus+en+plus">&#9834; De plus en plus</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Binchois+chansons+recording">&#9834; Chansons (ensembles)</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Binchois+Adieu+m%27amour">&#9834; Adieu m'amour</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ockeghem+Mort+tu+as+navre+Binchois+deploration">&#9834; Ockeghem's lament for Binchois</a>
+    </div>
+    <p class="note-text">Look for ensembles that mix a solo voice with soft instruments on the lower parts — the historically likely sound of the courtly chanson.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The Father of Joyfulness</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Binchois taught the fifteenth century how to write a perfect small song. His tender, treble-led chansons
+        set the model for the courtly love-song for a generation, and his sweetness passed into the mainstream of
+        European music. When he died in <span class="accent-rose">1460</span>, the young <span class="accent-purple">Johannes Ockeghem</span> — soon to be the
+        master of the next age — mourned him in a famous <em>déploration</em>, one composer's lament for another.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">The chanson</h4><p>He perfected the three-voice courtly song, above all the rondeau — a model imitated across Europe.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">The sweet style</h4><p>With Du Fay he carried the contenance angloise into the heart of Continental music.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">A mourned master</h4><p>Ockeghem's lament shows the reverence he commanded from the very composers who would surpass him.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Mort, tu as navré de ton dart / Le père de joyeuseté" — Death, you have wounded with your dart the father of joyfulness.</p>
+        <span class="attribution">— Johannes Ockeghem, opening of his <em>déploration</em> on the death of Binchois</span>
+    </div>
+    <p class="note-text">c. 1400 – 1460 · The songsmith of the Burgundian court.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) ── */
+/* SIGNATURE AUDIO — a tender Burgundian rondeau melody in gentle triple time */
+var BIN_RONDEAU = [
+  {n:'D4',d:1},{n:'F4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:0.5},{n:'E4',d:0.5},{n:'D4',d:1},{n:'E4',d:2},
+  {n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},{n:'B4',d:1},{n:'A4',d:2},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:3}
+];
+/* A two-voice cadence (cantus + tenor) with a Landini-style turn onto the octave on G */
+var BIN_CANT = [{n:'A4',d:1},{n:'B4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F#4',d:1},{n:'E4',d:0.5},{n:'G4',d:2.5}];
+var BIN_TEN  = [{n:'D4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'D4',d:1},{n:'A3',d:1},{n:'G3',d:3}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

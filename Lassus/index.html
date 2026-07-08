@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orlando di Lasso — The Cosmopolitan Genius of the Late Renaissance</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- A 5-line staff carrying a rising CHROMATIC figure — Lassus's signature -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="36" x2="340" y2="36"/>
+                <line x1="20" y1="52" x2="340" y2="52"/>
+                <line x1="20" y1="68" x2="340" y2="68"/>
+                <line x1="20" y1="84" x2="340" y2="84"/>
+                <line x1="20" y1="100" x2="340" y2="100"/>
+            </g>
+            <!-- stylised clef -->
+            <path d="M 30 96 C 44 96 44 74 34 74 C 24 74 26 92 40 92 C 54 92 52 60 36 56" fill="none" stroke="#9b72cf" stroke-width="2.4"/>
+            <!-- rising chromatic run: notes creep up by semitone with sharps -->
+            <g>
+                <ellipse cx="80" cy="100" rx="7" ry="5" fill="#e8e6e3"/>
+                <text x="66" y="105" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
+                <ellipse cx="120" cy="92" rx="7" ry="5" fill="#9b72cf"/>
+                <text x="106" y="97" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
+                <ellipse cx="160" cy="84" rx="7" ry="5" fill="#e8e6e3"/>
+                <ellipse cx="200" cy="76" rx="7" ry="5" fill="#9b72cf"/>
+                <text x="186" y="81" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
+                <ellipse cx="240" cy="68" rx="7" ry="5" fill="#e8e6e3"/>
+                <ellipse cx="280" cy="60" rx="7" ry="5" fill="#9b72cf"/>
+                <text x="266" y="65" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
+                <ellipse cx="320" cy="52" rx="7" ry="5" fill="#d4a053"/>
+            </g>
+            <path d="M 80 100 Q 200 30 320 52" fill="none" stroke="#9b72cf" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6"/>
+            <text x="20" y="128" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">Carmina chromatico &#8230; modulata tenore</text>
+        </svg>
+    </div>
+    <h1>Orlando di Lasso</h1>
+    <div class="subtitle">1532–1594 · The Cosmopolitan Genius of the Late Renaissance</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The most versatile and prolific master of the sixteenth century — over two thousand works in
+        every genre and tongue of Europe — matching music to word and mood with wit, drama and a daring, tear-bright chromaticism.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 13 — The Late Renaissance</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS LASSUS ═══════════════════ -->
+<section>
+    <span class="section-number">01 — INTRODUCTION</span>
+    <h2>Who Was Orlando di Lasso?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Known by as many names as the lands he served — <span class="accent-purple">Roland de Lassus</span> in French,
+        <span class="accent-purple">Orlando di Lasso</span> in Italian, <span class="accent-purple">Orlandus Lassus</span> in
+        the Latin of his prints — he was the towering all-rounder of the late Renaissance. Where his contemporary Palestrina
+        cultivated one serene ideal, Lassus poured himself into <em>every</em> style, language and mood the age could offer.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-purple">&#9835;</span><h4 class="accent-purple">Prolific</h4><p>Over 2,000 surviving works — motets, Masses, madrigals, chansons and Lieder — one of the largest outputs of any Renaissance composer.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9992;</span><h4 class="accent-amber">Cosmopolitan</h4><p>Franco-Flemish by birth, Italian by training, Bavarian by service — fluent in the music of four nations.</p></div>
+        <div class="card"><span class="icon accent-rose">&#10022;</span><h4 class="accent-rose">Dramatic</h4><p>Vivid and pictorial, he bent every device — rhythm, colour, chromaticism — to paint the meaning of his texts.</p></div>
+        <div class="card"><span class="icon accent-green">&#9819;</span><h4 class="accent-green">Celebrated</h4><p>The most famous musician of his day, sought by popes and princes, and honoured across the courts of Europe.</p></div>
+    </div>
+    <p class="note-text">Franco-Flemish composers dominated European music for a century; Lassus was the last and most universal of the great line.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: LIFE / TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE ACROSS EUROPE</span>
+    <h2>From Mons to Munich</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        A childhood voice so beautiful that, tradition holds, he was <span class="accent-purple">kidnapped three times</span> for it
+        carried the young Roland out of his native Hainaut and across the courts of Italy — before he settled for forty years
+        in Bavaria as the most honoured musician in Europe.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">1532</span><span class="event"><strong>Born in Mons</strong>In the Franco-Flemish county of Hainaut (now Belgium); as a choirboy his exceptional voice made him a prize to be seized.</span></div>
+        <div class="timeline-item"><span class="year">1540s–50s</span><span class="event"><strong>Years in Italy</strong>He served noble households in Sicily, Naples and Rome, absorbing the Italian madrigal at its source.</span></div>
+        <div class="timeline-item"><span class="year">c. 1556</span><span class="event"><strong>To the Munich court</strong>He entered the chapel of the Bavarian dukes, rising to <em>maestro di cappella</em> — and stayed for the rest of his life.</span></div>
+        <div class="timeline-item"><span class="year">1560s–80s</span><span class="event"><strong>European fame</strong>His prints poured from presses in Venice, Paris, Munich and Antwerp; kings, popes and emperors courted him.</span></div>
+        <div class="timeline-item"><span class="year">1594</span><span class="event"><strong>Death in Munich</strong>He died having completed his last, darkest masterpiece only weeks before — the <em>Lagrime di San Pietro</em>.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE FOUR LANGUAGES ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE UNIVERSAL VOICE</span>
+    <h2>Master of Every Tongue</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        No composer of the century ranged so freely across languages and genres. Lassus wrote as convincingly a solemn Latin motet
+        as a bawdy Italian villanella or a witty French chanson — each idiom caught to the life.
+    </p>
+    <div class="card-grid cols-3" style="max-width:92%;">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Latin — sacred</h4><p>Hundreds of <strong>motets</strong> and dozens of <strong>Masses</strong>: the grand liturgical repertory that made his European name.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Italian — madrigals</h4><p>From polished madrigals to earthy villanelle, learnt first-hand in Naples and Rome.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">French — chansons</h4><p>Elegant and often comic <strong>chansons</strong>, quick-witted in their word-setting and rhythm.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">German — Lieder</h4><p>Sturdy polyphonic <strong>Lieder</strong> for his Bavarian patrons and the German-speaking market.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Every mood</h4><p>Devotion, grief, laughter, satire — he commanded the whole emotional gamut of the Renaissance.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Every scale</h4><p>From an intimate three-voice song to vast polychoral splendour for great occasions.</p></div>
+    </div>
+    <p class="note-text">This universality is his signature: contemporaries called such a composer <em>divino</em> — the "divine Orlando".</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: PROPHETIAE SIBYLLARUM (CHROMATIC AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE CHROMATIC PROLOGUE</span>
+    <h2>Prophetiae Sibyllarum</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        His most radical experiment. In the <span class="accent-purple">Prophetiae Sibyllarum</span> — settings of the prophecies of the
+        pagan Sibyls foretelling Christ — the famous <strong>prologue</strong> announces its own strangeness: <em>"these songs you hear are
+        modulated in a chromatic strain"</em>. The harmony lurches through keys and accidentals with a boldness that would not be matched for centuries.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, LASSUS_SIBYL, {timbre:'organ', bpm:66, temperament:'equal', reverb:0.55, legato:0.95})">&#9654; Hear the chromatic progression</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Prophetiae+Sibyllarum+prologue">&#9834; Listen: sung recording</a>
+    </div>
+    <p class="audio-caption">A chromatically rising top line over restlessly shifting triads — equal temperament, in the spirit of the prologue</p>
+    <p class="note-text">The prologue's Latin verse literally describes its own technique — a manifesto in music for the "chromatic" style then fascinating Italian theorists.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: NOTATION — CHROMATICISM vs DIATONIC ═══════════════════ -->
+<section>
+    <span class="section-number">05 — HOW TO READ IT</span>
+    <h2>Chromatic vs Diatonic</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The heart of Lassus's daring is <span class="accent-purple">chromaticism</span> — melody that moves by <em>semitones</em>,
+        the smallest step, calling in notes outside the plain scale by writing <strong>accidentals</strong> (&#9839; sharp, &#9837; flat).
+        Set it against the <span class="accent-green">diatonic</span> norm — the seven "white-note" steps of the mode — and the difference is plain to see and hear.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="40" y1="50" x2="860" y2="50"/>
+                <line x1="40" y1="66" x2="860" y2="66"/>
+                <line x1="40" y1="82" x2="860" y2="82"/>
+                <line x1="40" y1="98" x2="860" y2="98"/>
+                <line x1="40" y1="114" x2="860" y2="114"/>
+            </g>
+            <!-- divider -->
+            <line x1="450" y1="40" x2="450" y2="124" stroke="#2a2a3a" stroke-width="1.4" stroke-dasharray="4 4"/>
+            <text x="50" y="34" fill="#4ecca3" font-family="DM Sans" font-size="13" font-weight="700">DIATONIC &#8212; whole steps &amp; the mode's own semitones</text>
+            <text x="470" y="34" fill="#9b72cf" font-family="DM Sans" font-size="13" font-weight="700">CHROMATIC &#8212; a rising ladder of semitones</text>
+            <!-- DIATONIC: C D E F G A B C climbing (green) -->
+            <g fill="#4ecca3">
+                <ellipse cx="80"  cy="122" rx="8" ry="5.5"/>
+                <ellipse cx="130" cy="114" rx="8" ry="5.5"/>
+                <ellipse cx="180" cy="106" rx="8" ry="5.5"/>
+                <ellipse cx="230" cy="98"  rx="8" ry="5.5"/>
+                <ellipse cx="280" cy="90"  rx="8" ry="5.5"/>
+                <ellipse cx="330" cy="82"  rx="8" ry="5.5"/>
+                <ellipse cx="380" cy="74"  rx="8" ry="5.5"/>
+                <ellipse cx="420" cy="66"  rx="8" ry="5.5"/>
+            </g>
+            <!-- CHROMATIC: rising, with sharps piling up (purple) -->
+            <g fill="#9b72cf">
+                <ellipse cx="490" cy="122" rx="8" ry="5.5"/>
+                <ellipse cx="540" cy="114" rx="8" ry="5.5"/>
+                <ellipse cx="590" cy="110" rx="8" ry="5.5"/>
+                <ellipse cx="640" cy="102" rx="8" ry="5.5"/>
+                <ellipse cx="690" cy="94"  rx="8" ry="5.5"/>
+                <ellipse cx="740" cy="86"  rx="8" ry="5.5"/>
+                <ellipse cx="790" cy="82"  rx="8" ry="5.5"/>
+                <ellipse cx="840" cy="74"  rx="8" ry="5.5"/>
+            </g>
+            <!-- accidentals in front of the chromatic notes -->
+            <g fill="#cf7272" font-family="Playfair Display" font-size="20">
+                <text x="524" y="120">&#9839;</text>
+                <text x="624" y="108">&#9839;</text>
+                <text x="724" y="92">&#9839;</text>
+                <text x="824" y="80">&#9839;</text>
+            </g>
+            <text x="80"  y="150" fill="#6a6a7a" font-family="JetBrains Mono" font-size="11">C  D  E  F  G  A  B  C</text>
+            <text x="490" y="150" fill="#6a6a7a" font-family="JetBrains Mono" font-size="11">C C# D D# E F F# G</text>
+            <text x="80"  y="172" fill="#4ecca3" font-family="DM Sans" font-size="11">seven uneven steps to the octave</text>
+            <text x="490" y="172" fill="#9b72cf" font-family="DM Sans" font-size="11">twelve equal half-steps &#8212; every crack of the keyboard</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, LASSUS_DIATONIC, {timbre:'voice', bpm:120, temperament:'equal', reverb:0.5})">&#9654; Hear the diatonic scale</button>
+        <button class="audio-btn purple" onclick="EM.toggle(this, LASSUS_CHROMATIC, {timbre:'voice', bpm:120, temperament:'equal', reverb:0.5})">&#9654; Hear the chromatic climb</button>
+    </div>
+    <p class="audio-caption"><strong>How to read it:</strong> a sharp (&#9839;) raises the next note a semitone, a flat (&#9837;) lowers it. Where the diatonic line skips, the chromatic line creeps — every step half the size.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: WORD-PAINTING / PICTORIALISM (PATTER AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">06 — MUSIC PAINTS THE WORD</span>
+    <h2>Wit, Colour &amp; Word-Painting</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Lassus is the supreme <span class="accent-purple">pictorialist</span>: he makes the notes <em>do</em> what the words say. A phrase about
+        laughter breaks into quick, chattering patter; a sigh droops chromatically; a rising hope climbs the stave; a word for depth plunges the bass.
+        In his lighter madrigals and chansons this becomes pure comic delight.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Running words</h4><p>Fast, repeated syllables set to rapid equal notes — the voices tumble over one another like speech in a hurry.</p></div>
+        <div class="card"><h4 class="accent-rose">Falling grief</h4><p>Sorrow and death drawn as drooping, chromatic descents — the sound leans downward with the sense.</p></div>
+        <div class="card"><h4 class="accent-green">Rising joy</h4><p>Praise, heaven and hope lifted by ascending lines and bright, open sonorities.</p></div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, LASSUS_PATTER, {timbre:'reed', bpm:150, temperament:'equal', reverb:0.4, legato:0.85})">&#9654; Hear a lively madrigal patter</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+chanson+madrigal+ensemble">&#9834; Listen: a Lassus chanson</a>
+    </div>
+    <p class="audio-caption">Quick, bouncing repeated notes in a brisk triple-ish lilt — the chattering, comic manner of his secular songs</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: PENITENTIAL PSALMS ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE GREAT SACRED CYCLE</span>
+    <h2>The Penitential Psalms</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.46em !important;">
+                For his patron <span class="accent-purple">Duke Albrecht V of Bavaria</span>, Lassus composed the
+                <span class="accent-purple">Psalmi Davidis poenitentiales</span> — settings of the seven Penitential Psalms of David, the
+                traditional prayers of repentance.
+            </p>
+            <p style="font-size:0.46em !important;">
+                It is one of the monuments of Renaissance sacred music: grave, deeply expressive, and copied into two sumptuous illuminated volumes kept as
+                a treasure of the Munich court. Here Lassus turns his pictorial gift inward, painting sin, sorrow and the longing for mercy.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);">
+            <h4 class="accent-purple">Why "penitential"?</h4>
+            <p>Seven psalms — including the great <em>Miserere</em> — long grouped by the Church as prayers of contrition.</p>
+            <p style="margin-top:0.4em;"><strong>Expressive means:</strong> shifting textures, dark low sonorities and telling dissonance to mirror the pleading text.</p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Penitential+Psalms+Psalmi+poenitentiales">&#9834; Listen: Penitential Psalms (recording)</a>
+    </div>
+    <p class="note-text">The manuscript sets are famed as much for their painted miniatures as for their music — devotional art in every sense.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: SACRED MOTETS ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE MOTETS</span>
+    <h2>The Latin Motets</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The core of his fame rests on the <span class="accent-purple">motets</span> — hundreds of them, gathered in life and posthumously in the
+        great collection his sons published as the <em>Magnum opus musicum</em>. They range from serene devotion to raw, trembling drama.
+    </p>
+    <div class="card-grid cols-2" style="max-width:86%;">
+        <div class="card"><h4 class="accent-rose">Timor et tremor</h4><p>"Fear and trembling" — a celebrated motet of anguished supplication, its dissonances and shifting harmony making the terror audible. A model of Lassus's dramatic sacred manner.</p></div>
+        <div class="card"><h4 class="accent-amber">Music for the word</h4><p>Each phrase of text draws its own musical gesture — clarity of declamation wedded to bold expressive colour.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Timor+et+tremor+motet">&#9834; Listen: Timor et tremor</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/Orlando_di_Lasso">&#9834; CPDL — free Lassus scores</a>
+    </div>
+    <p class="note-text">Where Palestrina smooths dissonance away, Lassus seizes it — the same era, two utterly different temperaments.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: SECULAR SONG ═══════════════════ -->
+<section>
+    <span class="section-number">09 — SONGS OF THREE NATIONS</span>
+    <h2>Madrigals, Chansons &amp; Lieder</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Alongside the sacred grandeur ran a torrent of secular song — and here Lassus is at his most human: tender, satirical, tipsy, heartbroken by turns.
+        The same hand that wrote the Penitential Psalms wrote riotous drinking songs.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Italian madrigals &amp; villanelle</h4><p>Refined settings of love-poetry beside earthy, quick-fire comic songs picked up in Naples.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">French chansons</h4><p>Sparkling, sharply characterised — from courtly grace to broad Rabelaisian humour.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">German Lieder</h4><p>Sturdy, singable part-songs that helped shape the German secular tradition.</p></div>
+    </div>
+    <p class="note-text">This effortless code-switching between languages and moods is exactly what "cosmopolitan" means in his art.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: LAGRIME DI SAN PIETRO ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE LAST TESTAMENT</span>
+    <h2>Lagrime di San Pietro (1594)</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        His final work, finished only weeks before his death and dedicated to the Pope: the <span class="accent-purple">Lagrime di San Pietro</span> —
+        "The Tears of St Peter" — a cycle of madrigals on the apostle's remorse after denying Christ. Ageing and unwell, Lassus poured a lifetime's
+        expressive mastery into this profound meditation on guilt and grief. It is a farewell in music.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Spiritual madrigal</h4><p>Secular madrigal art turned to sacred penitence — the two halves of his life reconciled at the end.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Tears &amp; remorse</h4><p>Each movement dwells on Peter's weeping — restrained, searching, harmonically subtle music of contrition.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">A composer's last word</h4><p>Completed in 1594, the year he died — a valediction of extraordinary intensity and control.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Lagrime+di+San+Pietro">&#9834; Listen: Lagrime di San Pietro</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: THE MUNICH COURT ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE BAVARIAN COURT</span>
+    <h2>Forty Years in Munich</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        For four decades Lassus led the chapel of the <span class="accent-purple">Bavarian dukes</span> at Munich — first under
+        <span class="accent-purple">Albrecht V</span>, a lavish patron of the arts, then his successor. The court gave him one of the finest musical
+        establishments in Europe and the freedom to write on the grandest scale.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">A princely chapel</h4>
+            <p>Skilled singers and instrumentalists at his command, and generous funds for lavish, illuminated manuscripts.</p>
+            <p style="margin-top:0.4em;">His fame drew visitors and commissions from across the continent to this Bavarian capital.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">Honoured everywhere</h4>
+            <p>The most celebrated musician of his generation, courted by rulers and honoured by pope and emperor alike.</p>
+            <p style="margin-top:0.4em;">Prints of his music circulated from Antwerp to Venice, spreading his style across Europe.</p>
+        </div>
+    </div>
+    <p class="note-text">Stability at Munich let a restless, universal talent build an output of staggering size and range.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: PALESTRINA vs LASSUS ═══════════════════ -->
+<section>
+    <span class="section-number">12 — TWO POLES OF AN AGE</span>
+    <h2>Palestrina &amp; Lassus</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The two supreme masters of the later sixteenth century were exact contemporaries — and near-opposites. To hear one against the other
+        is to hear the two directions Renaissance polyphony could take.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="13">
+                <rect x="30" y="20" width="390" height="150" rx="8" fill="#161622" stroke="#4ecca3"/>
+                <rect x="480" y="20" width="390" height="150" rx="8" fill="#161622" stroke="#9b72cf"/>
+                <text x="50" y="48" fill="#4ecca3" font-size="16" font-weight="700">Palestrina</text>
+                <text x="500" y="48" fill="#9b72cf" font-size="16" font-weight="700">Lassus</text>
+                <g fill="#e8e6e3">
+                    <text x="50" y="78">Serene, abstract, balanced</text>
+                    <text x="50" y="104">Smooth, controlled dissonance</text>
+                    <text x="50" y="130">Sacred Latin, one ideal</text>
+                    <text x="50" y="156">Roman, rooted in one city</text>
+                </g>
+                <g fill="#e8e6e3">
+                    <text x="500" y="78">Dramatic, vivid, pictorial</text>
+                    <text x="500" y="104">Bold chromaticism &amp; contrast</text>
+                    <text x="500" y="130">Every language &amp; genre</text>
+                    <text x="500" y="156">Cosmopolitan, roamed Europe</text>
+                </g>
+                <text x="435" y="100" fill="#6a6a7a" font-size="22" text-anchor="middle">vs</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text">Both born in the 1530s, both dead in 1594 — the calm and the fire of the late Renaissance, side by side.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — LISTENING GUIDE</span>
+    <h2>How to Listen to Lassus</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-purple">words</span> — Lassus always sets the <em>meaning</em>; watch the music mimic each image and mood.</li>
+        <li>Listen for the <span class="accent-rose">chromatic shivers</span> at moments of grief, fear or wonder — notes sliding by half-steps.</li>
+        <li>Enjoy the <span class="accent-amber">contrast</span>: from one line to the next he can swing between solemnity and laughter.</li>
+        <li>Sample his <span class="accent-green">range</span> — a Penitential Psalm, then a comic chanson — to feel the breadth of one imagination.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Prophetiae+Sibyllarum+prologue">&#9834; Prophetiae Sibyllarum</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Lagrime+di+San+Pietro">&#9834; Lagrime di San Pietro</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Lassus+Penitential+Psalms">&#9834; Penitential Psalms</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/Orlando_di_Lasso">&#9834; CPDL — scores</a>
+    </div>
+    <p class="note-text">Try the same ensemble in a motet and a chanson to hear how completely Lassus changes register between the sacred and the secular.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>The Divine Orlando</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Lassus stands at the summit and the sunset of the Franco-Flemish tradition that had ruled European music for a hundred years.
+        No one matched his combination of <span class="accent-purple">volume</span>, <span class="accent-purple">variety</span> and
+        <span class="accent-purple">dramatic power</span>. His pictorial word-setting and daring chromaticism pointed toward the expressive
+        madrigal and, beyond it, the coming Baroque — even as his mastery of counterpoint crowned everything the Renaissance had learned.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Universality</h4><p>He proved one composer could master every genre and language of Europe — the model of the cosmopolitan musician.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Expression</h4><p>His pictorial, text-driven drama and chromatic daring opened the road to the madrigal and the Baroque.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Culmination</h4><p>The last great Franco-Flemish master — the tradition's brilliant close, and its widest embrace.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Carmina chromatico quae audis modulata tenore — the songs which you hear, modulated in a chromatic strain, these are they in which our twelve Sibyls once sang the secrets of salvation."</p>
+        <span class="attribution">— the Latin prologue to Lassus's Prophetiae Sibyllarum</span>
+    </div>
+    <p class="note-text">1532 – 1594 · over two thousand works · the most versatile master of the late Renaissance.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — unique vars ── */
+/* SIGNATURE AUDIO: a chromatically rising top line over shifting triads,
+   in the spirit of the Prophetiae Sibyllarum prologue */
+var LASSUS_SIBYL = [
+  {n:['C4','E4','G4'],d:2},{n:['C4','E4','G#4'],d:2},{n:['A3','C#4','A4'],d:2},
+  {n:['A3','D4','F#4'],d:2},{n:['B3','D4','G4'],d:2},{n:['B3','E4','G#4'],d:2},
+  {n:['A3','E4','A4'],d:3}
+];
+/* Plain diatonic scale (C major) for the "how to read it" contrast */
+var LASSUS_DIATONIC = [{n:'C4',d:1},{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},{n:'B4',d:1},{n:'C5',d:2}];
+/* A rising chromatic ladder — every semitone — for the contrast */
+var LASSUS_CHROMATIC = [{n:'C4',d:1},{n:'C#4',d:1},{n:'D4',d:1},{n:'D#4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'F#4',d:1},{n:'G4',d:2}];
+/* A lively, pictorial madrigal/chanson patter — quick chattering repeated notes */
+var LASSUS_PATTER = [
+  {n:'G4',d:0.5},{n:'G4',d:0.5},{n:'A4',d:0.5},{n:'B4',d:0.5},{n:'B4',d:0.5},{n:'A4',d:0.5},{n:'G4',d:1},
+  {n:'D4',d:0.5},{n:'E4',d:0.5},{n:'F#4',d:0.5},{n:'G4',d:0.5},{n:'A4',d:0.5},{n:'B4',d:0.5},{n:'A4',d:1},
+  {n:'B4',d:0.5},{n:'B4',d:0.5},{n:'C5',d:0.5},{n:'B4',d:0.5},{n:'A4',d:0.5},{n:'G4',d:0.5},{n:'F#4',d:0.5},{n:'G4',d:1.5}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

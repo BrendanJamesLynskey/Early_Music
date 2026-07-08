@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claudio Monteverdi — The Seconda Pratica &amp; the Dawn of Opera</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- A 5-line staff with a bass line, figures, and a bright rising fanfare -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="34" x2="340" y2="34"/>
+                <line x1="20" y1="48" x2="340" y2="48"/>
+                <line x1="20" y1="62" x2="340" y2="62"/>
+                <line x1="20" y1="76" x2="340" y2="76"/>
+                <line x1="20" y1="90" x2="340" y2="90"/>
+            </g>
+            <!-- barlines: the new metre -->
+            <g stroke="#2a2a3a" stroke-width="1.4">
+                <line x1="120" y1="34" x2="120" y2="90"/>
+                <line x1="220" y1="34" x2="220" y2="90"/>
+            </g>
+            <!-- G-clef spiral, stylised -->
+            <path d="M40 92 C 30 78, 52 70, 52 58 C 52 46, 38 46, 38 58 C 38 72, 60 76, 60 90" fill="none" stroke="#d4a053" stroke-width="2.4"/>
+            <!-- a rising fanfare gesture (the Orfeo Toccata spirit) -->
+            <ellipse cx="86" cy="76" rx="7" ry="5" fill="#e8e6e3"/>
+            <ellipse cx="150" cy="62" rx="7" ry="5" fill="#4ecca3"/>
+            <ellipse cx="190" cy="55" rx="7" ry="5" fill="#4ecca3"/>
+            <ellipse cx="250" cy="48" rx="7" ry="5" fill="#9b72cf"/>
+            <ellipse cx="300" cy="41" rx="7" ry="5" fill="#d4a053"/>
+            <!-- figured-bass numbers under the stave -->
+            <text x="82" y="112" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12">5</text>
+            <text x="146" y="112" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12">6</text>
+            <text x="246" y="112" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12">7</text>
+            <text x="20" y="132" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">the bass sustains &#8212; the words command</text>
+        </svg>
+    </div>
+    <h1>Claudio Monteverdi</h1>
+    <div class="subtitle">1567–1643 · The Doorway from Renaissance to Baroque</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The composer who declared that <em>the words must rule the music</em> — and in doing so
+        loosed dissonance from its chains, forged the recitative, and gave Europe its first great opera.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 17 — The Threshold of the Baroque</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: OVERVIEW ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>A Composer on the Threshold</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-amber">Claudio Monteverdi</span> (1567–1643) stands astride the great divide of Western music.
+        Trained in the flawless polyphony of the late Renaissance, he broke it open from within — making music
+        that <em>speaks</em>, that argues and weeps and rages — and carried the art into the age we call the <span class="accent-amber">Baroque</span>.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#9834;</span><h4 class="accent-amber">Madrigalist</h4><p>Nine books of madrigals chart his whole journey, from pure polyphony to dramatic song with instruments.</p></div>
+        <div class="card"><span class="icon accent-green">&#9836;</span><h4 class="accent-green">Opera pioneer</h4><p><em>L'Orfeo</em> (1607) is the earliest opera still in the repertory — theatre made wholly of music.</p></div>
+        <div class="card"><span class="icon accent-purple">&#10010;</span><h4 class="accent-purple">Church master</h4><p>Thirty years as <em>maestro di cappella</em> at St Mark's, Venice, and the towering <em>Vespers</em> of 1610.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9998;</span><h4 class="accent-blue">Theorist-rebel</h4><p>His <em>seconda pratica</em> made the text the master of the harmony — a manifesto for a new music.</p></div>
+    </div>
+    <p class="note-text">He was born the year before Palestrina's fame peaked and died the decade Corelli was born — one life spanning two musical worlds.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE</span>
+    <h2>A Life in Two Worlds</h2>
+    <div class="separator"></div>
+    <div style="max-width: 84%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">1567</span><span class="event"><strong>Born in Cremona</strong>The city of the great violin-makers; he trained there and issued his first published music as a teenager.</span></div>
+        <div class="timeline-item"><span class="year">c. 1590</span><span class="event"><strong>To the court of Mantua</strong>Enters the service of the Gonzaga dukes as a string player, later <em>maestro</em>; the great madrigal books take shape.</span></div>
+        <div class="timeline-item"><span class="year">1607</span><span class="event"><strong>L'Orfeo</strong>His first opera, staged for the Mantuan court, opens with a blazing brass <em>Toccata</em> fanfare.</span></div>
+        <div class="timeline-item"><span class="year">1610</span><span class="event"><strong>Vespro della Beata Vergine</strong>The monumental <em>Vespers</em> published — sacred music of unprecedented scale and variety.</span></div>
+        <div class="timeline-item"><span class="year">1613</span><span class="event"><strong>Maestro at St Mark's, Venice</strong>Appointed to the most prestigious church post in Italy; he holds it for the rest of his life.</span></div>
+        <div class="timeline-item"><span class="year">1643</span><span class="event"><strong>Death in Venice</strong>After the late Venetian operas — <em>Il ritorno d'Ulisse</em> and <em>L'incoronazione di Poppea</em> — he dies aged 76.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: MANTUA & VENICE ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE TWO COURTS</span>
+    <h2>Mantua &amp; Venice</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Monteverdi's career unfolds between two great Italian centres — the private splendour of a ducal court,
+        and the public grandeur of the greatest church in the Republic of Venice.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Gonzaga Court, Mantua</h4>
+            <p>Here, in the service of the ruling <strong>Gonzaga</strong> family, Monteverdi matured as a madrigalist and wrote <em>L'Orfeo</em> for a courtly audience.</p>
+            <p style="margin-top:0.4em;">Court music was intimate and lavish at once — made to dazzle a prince and his guests in a single hall.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);">
+            <h4 class="accent-purple">St Mark's, Venice</h4>
+            <p>From 1613 he was <em>maestro di cappella</em> at <strong>St Mark's</strong> — the summit of church musicianship in Italy — for some thirty years.</p>
+            <p style="margin-top:0.4em;">Its galleries and organs invited music of splendour; Venice also gave him its new <em>public</em> opera houses.</p>
+        </div>
+    </div>
+    <p class="note-text">The move from Mantua to Venice is also a move from the closed world of the court to the open, ticket-buying public of a great city.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE ARTUSI CONTROVERSY ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE QUARREL</span>
+    <h2>The Artusi Controversy</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Around 1600 the conservative theorist <span class="accent-rose">Giovanni Maria Artusi</span> attacked Monteverdi's madrigals
+        for their unprepared, "incorrect" dissonances — sounds that broke the rules of Renaissance counterpoint.
+        Monteverdi answered not with an apology but with a <em>manifesto</em>.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Artusi's charge</h4>
+            <p>The dissonances are errors: they violate the settled laws of counterpoint that govern how voices may clash and resolve.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Monteverdi's reply</h4>
+            <p>They are no errors but <em>expression</em>: the harshness serves the meaning of the words. A new practice needs new liberties.</p>
+        </div>
+    </div>
+    <p class="note-text">The exchange, aired in print, is one of the most famous debates in music history — the old rules against a new expressive freedom.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: PRIMA vs SECONDA PRATICA ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE DOCTRINE</span>
+    <h2>Prima Pratica &amp; Seconda Pratica</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Monteverdi did not reject the old art — he named it and set it beside a new one. Two practices, he argued,
+        could stand side by side: the perfect polyphony of the past, and a freer music ruled by the word.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Prima pratica</h4>
+            <p>The "first practice" — the flawless vocal counterpoint of the Renaissance, epitomised by Palestrina, where the <em>music</em> governs and the harmony obeys its own strict laws.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Seconda pratica</h4>
+            <p>The "second practice" — where the <em>words</em> govern: the sense and feeling of the text may license dissonance and freedom that the old rules forbade.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"The text should be the mistress of the harmony, and not its servant."</p>
+        <span class="attribution">— the guiding principle of the <em>seconda pratica</em>, set out by Giulio Cesare Monteverdi (the composer's brother) in defence of Claudio, 1607</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: THE MADRIGAL TRANSFORMED ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE MADRIGALS</span>
+    <h2>The Madrigal Transformed</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Across his later books of madrigals (Books 4–8) Monteverdi carries the form from a cappella polyphony
+        toward dramatic song: solo voices, expressive dissonance, and eventually instruments and a basso continuo.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-blue">Books 4 &amp; 5</h4><p>The daring dissonances that drew Artusi's fire; Book 5 begins to admit a written basso continuo.</p></div>
+        <div class="card"><h4 class="accent-purple">Books 6 &amp; 7</h4><p>Laments, duets and concertato textures — voices paired with instruments, the madrigal becoming chamber drama.</p></div>
+        <div class="card"><h4 class="accent-amber">Book 8</h4><p><em>Madrigali guerrieri et amorosi</em> — "madrigals of war and love" — the summa of his dramatic style, home of the <em>stile concitato</em>.</p></div>
+    </div>
+    <p class="note-text">The madrigal is Monteverdi's laboratory: a private, word-driven form in which he tests every idea that will remake music.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: STILE CONCITATO (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">07 — A NEW STYLE</span>
+    <h2>Stile Concitato — the Agitated Style</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        In Book 8 Monteverdi announced his invention of the <span class="accent-amber">stile concitato</span> ("agitated style"):
+        to depict warlike passion and anger, a single note is repeated in a rapid, drumming stream of quick equal notes.
+        For the first time, music sets out to portray the <em>fury</em> of the soul directly.
+    </p>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 720 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="30" x2="700" y2="30"/><line x1="20" y1="42" x2="700" y2="42"/>
+                <line x1="20" y1="54" x2="700" y2="54"/><line x1="20" y1="66" x2="700" y2="66"/><line x1="20" y1="78" x2="700" y2="78"/>
+            </g>
+            <!-- rapid repeated notes -->
+            <g fill="#d4a053">
+                <ellipse cx="70" cy="54" rx="6" ry="4"/><ellipse cx="110" cy="54" rx="6" ry="4"/><ellipse cx="150" cy="54" rx="6" ry="4"/><ellipse cx="190" cy="54" rx="6" ry="4"/>
+                <ellipse cx="230" cy="54" rx="6" ry="4"/><ellipse cx="270" cy="54" rx="6" ry="4"/><ellipse cx="310" cy="54" rx="6" ry="4"/><ellipse cx="350" cy="54" rx="6" ry="4"/>
+                <ellipse cx="390" cy="54" rx="6" ry="4"/><ellipse cx="430" cy="54" rx="6" ry="4"/><ellipse cx="470" cy="54" rx="6" ry="4"/><ellipse cx="510" cy="54" rx="6" ry="4"/>
+            </g>
+            <ellipse cx="600" cy="30" rx="7" ry="5" fill="#cf7272"/>
+            <text x="70" y="20" fill="#6a6a7a" font-family="DM Sans" font-size="12">sixteen rapid repeated notes on one pitch &#8230;</text>
+            <text x="560" y="20" fill="#cf7272" font-family="DM Sans" font-size="12">&#8230; then a leap</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, MV_CONCITATO, {timbre:'reed', bpm:130, temperament:'equal', reverb:0.4})">&#9654; Hear the <em>stile concitato</em></button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+Combattimento+di+Tancredi+e+Clorinda">&#9834; Listen: Il Combattimento (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised · a drumming stream of quick equal notes bursting into a leap — the sound of martial passion</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: L'ORFEO / BIRTH OF OPERA (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE FIRST OPERA</span>
+    <h2>L'Orfeo &amp; the Birth of Opera</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Staged at Mantua in <span class="accent-amber">1607</span>, <em>L'Orfeo</em> tells the myth of Orpheus, who charms the underworld with
+        his song. It is the earliest opera still regularly performed — a whole drama carried by music alone. It opens with a
+        blazing brass <span class="accent-amber">Toccata</span>: a bright fanfare, sounded three times, over a single held bass.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, [MV_TOCCATA, MV_TOCCATA_BASS], {timbre:'reed', bpm:120, temperament:'equal', reverb:0.4})">&#9654; Hear the Orfeo Toccata fanfare</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+Orfeo+Toccata+fanfare">&#9834; Listen: Orfeo — Toccata (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised brass · a ringing C-major fanfare over a sustained bass drone — the curtain-raiser of opera itself</p>
+    <div class="card-grid cols-3" style="margin-top:0.5em;">
+        <div class="card"><h4 class="accent-amber">A sung drama</h4><p>Recitative, aria, chorus and dance are welded into a single continuous theatrical whole.</p></div>
+        <div class="card"><h4 class="accent-green">A vivid orchestra</h4><p>A large, varied band of strings, brass and continuo instruments colours each scene and character.</p></div>
+        <div class="card"><h4 class="accent-purple">Music as feeling</h4><p>Orpheus's plea to the underworld shows music itself as the power that moves the heart.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: RECITATIVE & MONODY ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE NEW SONG</span>
+    <h2>Recitative &amp; Monody</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Opera needed a way to make a single voice <em>tell a story</em>. The answer was <span class="accent-amber">monody</span>: one solo voice
+        singing a flexible, speech-like line over a simple sustaining bass. In <span class="accent-amber">recitative</span> the melody bends
+        to the rhythm and rise-and-fall of the words — halfway between speech and song.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">One voice, one line</h4><p>After centuries of interwoven polyphony, a single melody carries the drama, freed to follow the text exactly.</p></div>
+        <div class="card"><h4 class="accent-green">A supporting bass</h4><p>Beneath it, the basso continuo holds the harmony — present but subordinate, so the words stay clear.</p></div>
+        <div class="card"><h4 class="accent-purple">Speech made music</h4><p>Recitative mirrors the natural cadence of Italian speech; the aria blossoms where feeling overflows into melody.</p></div>
+    </div>
+    <p class="note-text">Monody was pioneered by the Florentine <em>Camerata</em> circle; Monteverdi seized it and gave it dramatic depth and lyric beauty.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: BASSO CONTINUO / FIGURED BASS (NOTATION) ═══════════════════ -->
+<section>
+    <span class="section-number">10 — NOTATION · I</span>
+    <h2>Reading the Basso Continuo</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The Baroque runs on the <span class="accent-amber">basso continuo</span>: a single written bass line, played by a low instrument,
+        with small <span class="accent-blue">figures</span> (numbers) beneath telling a keyboard or lute player which chords to build above it.
+        The player "realises" the shorthand into full harmony on the spot. Here is how to read it.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- Top staff: the REALISED chords -->
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="60" y1="30" x2="840" y2="30"/><line x1="60" y1="44" x2="840" y2="44"/>
+                <line x1="60" y1="58" x2="840" y2="58"/><line x1="60" y1="72" x2="840" y2="72"/><line x1="60" y1="86" x2="840" y2="86"/>
+            </g>
+            <text x="66" y="24" fill="#4ecca3" font-family="DM Sans" font-size="11">what the player builds &#8594; realised chords</text>
+            <!-- realised chords (stacked noteheads) above each bass note -->
+            <g fill="#4ecca3">
+                <ellipse cx="200" cy="86" rx="6" ry="4"/><ellipse cx="200" cy="72" rx="6" ry="4"/><ellipse cx="200" cy="58" rx="6" ry="4"/>
+                <ellipse cx="400" cy="79" rx="6" ry="4"/><ellipse cx="400" cy="65" rx="6" ry="4"/><ellipse cx="400" cy="44" rx="6" ry="4"/>
+                <ellipse cx="600" cy="86" rx="6" ry="4"/><ellipse cx="600" cy="65" rx="6" ry="4"/><ellipse cx="600" cy="51" rx="6" ry="4"/>
+                <ellipse cx="760" cy="79" rx="6" ry="4"/><ellipse cx="760" cy="58" rx="6" ry="4"/><ellipse cx="760" cy="44" rx="6" ry="4"/>
+            </g>
+            <!-- realise arrow -->
+            <text x="30" y="150" fill="#d4a053" font-family="Playfair Display" font-style="italic" font-size="16">realise &#8595;</text>
+            <!-- Bottom staff: the WRITTEN bass line + figures -->
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="60" y1="160" x2="840" y2="160"/><line x1="60" y1="174" x2="840" y2="174"/>
+                <line x1="60" y1="188" x2="840" y2="188"/><line x1="60" y1="202" x2="840" y2="202"/><line x1="60" y1="216" x2="840" y2="216"/>
+            </g>
+            <!-- F-clef dots (bass clef marker) -->
+            <circle cx="86" cy="171" r="2.4" fill="#d4a053"/><circle cx="86" cy="181" r="2.4" fill="#d4a053"/>
+            <text x="68" y="240" fill="#d4a053" font-family="DM Sans" font-size="11">F-clef: the written bass line</text>
+            <!-- bass notes -->
+            <g fill="#e8e6e3">
+                <ellipse cx="200" cy="188" rx="7" ry="5"/>
+                <ellipse cx="400" cy="181" rx="7" ry="5"/>
+                <ellipse cx="600" cy="195" rx="7" ry="5"/>
+                <ellipse cx="760" cy="202" rx="7" ry="5"/>
+            </g>
+            <!-- figures under the bass notes -->
+            <g fill="#5b8cd4" font-family="JetBrains Mono" font-size="16" text-anchor="middle">
+                <text x="200" y="242">5</text>
+                <text x="400" y="242">6</text>
+                <text x="600" y="238">7</text>
+                <text x="760" y="238">6</text>
+                <text x="760" y="254">4</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> read the <span class="accent-amber">bass note</span> first, then its <span class="accent-blue">figure</span>. A blank or "5" means the plain triad (a 5th and a 3rd above the bass); "6" means use the 6th instead of the 5th (a first-inversion chord); "7" adds a 7th; stacked figures like "6 4" name the exact intervals to stack. The player fills in the rest by taste — no two realisations are quite alike.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: BARLINES & METRE (NOTATION) ═══════════════════ -->
+<section>
+    <span class="section-number">11 — NOTATION · II</span>
+    <h2>The Arrival of Barlines</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Renaissance polyphony was written without <span class="accent-amber">barlines</span> — each voice flowed in its own part-book,
+        its rhythm shaped by the words. As music became more chordal and dance-driven, the score gained regular
+        <span class="accent-amber">barlines</span> and a governing <span class="accent-amber">metre</span>: a steady pulse grouped into measures of equal length.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- staff -->
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="60" y1="40" x2="840" y2="40"/><line x1="60" y1="56" x2="840" y2="56"/>
+                <line x1="60" y1="72" x2="840" y2="72"/><line x1="60" y1="88" x2="840" y2="88"/><line x1="60" y1="104" x2="840" y2="104"/>
+            </g>
+            <!-- time signature: 3 over 4 (triple metre) -->
+            <text x="72" y="66" fill="#d4a053" font-family="Playfair Display" font-weight="700" font-size="24">3</text>
+            <text x="72" y="98" fill="#d4a053" font-family="Playfair Display" font-weight="700" font-size="24">4</text>
+            <!-- barlines dividing measures -->
+            <g stroke="#4ecca3" stroke-width="1.6">
+                <line x1="300" y1="40" x2="300" y2="104"/>
+                <line x1="540" y1="40" x2="540" y2="104"/>
+            </g>
+            <!-- final double barline -->
+            <g stroke="#4ecca3" stroke-width="1.6">
+                <line x1="828" y1="40" x2="828" y2="104"/><line x1="836" y1="40" x2="836" y2="104"/>
+            </g>
+            <!-- notes, three per measure -->
+            <g fill="#e8e6e3">
+                <ellipse cx="150" cy="72" rx="7" ry="5"/><ellipse cx="210" cy="64" rx="7" ry="5"/><ellipse cx="260" cy="56" rx="7" ry="5"/>
+                <ellipse cx="360" cy="64" rx="7" ry="5"/><ellipse cx="420" cy="72" rx="7" ry="5"/><ellipse cx="490" cy="80" rx="7" ry="5"/>
+                <ellipse cx="600" cy="72" rx="7" ry="5"/><ellipse cx="660" cy="64" rx="7" ry="5"/><ellipse cx="740" cy="88" rx="7" ry="5"/>
+            </g>
+            <text x="120" y="132" fill="#4ecca3" font-family="DM Sans" font-size="12">measure 1</text>
+            <text x="380" y="132" fill="#4ecca3" font-family="DM Sans" font-size="12">measure 2</text>
+            <text x="620" y="132" fill="#4ecca3" font-family="DM Sans" font-size="12">measure 3</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> the <span class="accent-amber">time signature</span> (here 3/4) sets how many beats fill each measure; the vertical <span class="accent-green">barlines</span> mark off those equal measures, and a thick double bar closes the piece. The first beat after each barline carries a natural stress — the "downbeat" that gives Baroque music its dancing, driving pulse.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: THE VESPERS OF 1610 ═══════════════════ -->
+<section>
+    <span class="section-number">12 — SACRED SUMMIT</span>
+    <h2>The Vespers of 1610</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        The <span class="accent-amber">Vespro della Beata Vergine</span> — the "Vespers of the Blessed Virgin" of 1610 — is Monteverdi's
+        great sacred monument. It gathers the whole range of his art into one collection: ancient chant, dazzling virtuoso
+        solos, echoing double choirs and instrumental sonatas, bound together over a basso continuo.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Old &amp; new</h4><p>Plainchant melodies (the <em>cantus firmus</em>) anchor music of the most modern, theatrical brilliance.</p></div>
+        <div class="card"><h4 class="accent-green">Voices &amp; instruments</h4><p>Soloists, choirs and a colourful instrumental band answer each other across the space of the church.</p></div>
+        <div class="card"><h4 class="accent-purple">Sacred drama</h4><p>The expressive devices of opera — echo, ornament, the affetti of the text — are turned to worship.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+Vespers+1610+Vespro+della+Beata+Vergine">&#9834; Listen: Monteverdi — Vespers of 1610 (recording)</a>
+    </div>
+    <p class="note-text">Published while he was still at Mantua, the Vespers helped win him the coveted post at St Mark's in Venice.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: VENETIAN OPERAS / PUR TI MIRO (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">13 — THE LATE OPERAS</span>
+    <h2>The Venetian Operas</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        In old age, with Venice's new <em>public</em> opera houses opening, Monteverdi returned to the stage.
+        <span class="accent-amber">Il ritorno d'Ulisse in patria</span> and <span class="accent-amber">L'incoronazione di Poppea</span> (1643) — one of the first
+        operas on a historical rather than mythological subject — crown his life's work. <em>Poppea</em> closes with the
+        sublime love duet <span class="accent-amber">Pur ti miro</span> ("I gaze on you"), two voices entwining over a gently descending bass.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [MV_PURTIMIRO_HI, MV_PURTIMIRO_LO], {timbre:'voice', bpm:60, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear a <em>Pur ti miro</em>-style duet</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+Poppea+Pur+ti+miro">&#9834; Listen: Poppea — Pur ti miro (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised · two voices weaving in tender thirds and sixths above a slowly descending bass — the close of Poppea</p>
+    <p class="note-text">That an opera should end not with the virtuous rewarded but with two lovers (Nero and Poppea) in ecstasy is itself startlingly new.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Monteverdi</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-amber">words</span> — Monteverdi's music is built to serve them; feel how a dissonance lands exactly on a word of pain.</li>
+        <li>Listen for the <span class="accent-green">basso continuo</span> murmuring beneath the voice — the harmonic ground on which everything is built.</li>
+        <li>Feel the <span class="accent-rose">stile concitato</span> quicken the pulse in the warlike passages, then relax into tender song.</li>
+        <li>In the operas, notice the shift between <span class="accent-purple">recitative</span> (speech-like) and <span class="accent-blue">aria</span> (lyrical) as feeling rises and falls.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+Orfeo+John+Eliot+Gardiner">&#9834; L'Orfeo (Gardiner)</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+madrigals+Book+8+Concerto+Italiano">&#9834; Madrigals, Book 8</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Monteverdi+L%27incoronazione+di+Poppea">&#9834; L'incoronazione di Poppea</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Monteverdi,_Claudio">&#9834; IMSLP — scores</a>
+    </div>
+    <p class="note-text">His music sits at the frontier: performers may lean toward Renaissance restraint or Baroque theatre, and both are defensible.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The Door He Opened</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Monteverdi took the perfected polyphony of the Renaissance and turned it toward the future. From his hands come
+        the <span class="accent-amber">seconda pratica</span>'s licence of expression, the <span class="accent-green">basso continuo</span> that would underpin all Baroque music,
+        the <span class="accent-purple">recitative</span> and the opera. Every opera composer from Cavalli to Handel — and beyond — walks through the door he opened.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Opera</h4><p><em>L'Orfeo</em> and <em>Poppea</em> found a living art form; sung drama has never since fallen silent.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Expression</h4><p>The idea that music exists to move the passions and serve the word shapes everything that follows.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Harmony</h4><p>The basso continuo and figured bass become the engine of Baroque music for a century and a half.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"The text should be the mistress of the harmony, and not its servant."</p>
+        <span class="attribution">— the motto of the <em>seconda pratica</em>, set out by Giulio Cesare Monteverdi in defence of his brother Claudio, 1607</span>
+    </div>
+    <p class="note-text">1567–1643 · From the last Renaissance madrigal to the first Baroque opera, in a single life.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — Monteverdi ── */
+/* The Orfeo Toccata fanfare: a bright C-major fanfare over a single held bass */
+var MV_TOCCATA = [
+  {n:'G4',d:1},{n:'G4',d:0.5},{n:'G4',d:0.5},{n:'C5',d:1},{n:'B4',d:0.5},{n:'C5',d:0.5},
+  {n:'D5',d:1},{n:'C5',d:0.5},{n:'B4',d:0.5},{n:'C5',d:2},
+  {n:'E5',d:1},{n:'D5',d:0.5},{n:'C5',d:0.5},{n:'G4',d:2}
+];
+var MV_TOCCATA_BASS = [{n:'C3',d:12}];
+/* Stile concitato: a drumming stream of rapid repeated notes, then a leap and fall */
+var MV_CONCITATO = [
+  {n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},
+  {n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},
+  {n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},
+  {n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},{n:'D4',d:0.25},
+  {n:'A4',d:1},{n:'G4',d:0.5},{n:'F4',d:0.5},{n:'E4',d:1},{n:'D4',d:2}
+];
+/* A "Pur ti miro"-style tender duet: two voices weaving in 3rds/6ths over a
+   gently descending bass line — the close of L'incoronazione di Poppea */
+var MV_PURTIMIRO_HI = [
+  {n:'D5',d:2},{n:'C5',d:1},{n:'B4',d:1},{n:'C5',d:2},
+  {n:'A4',d:2},{n:'B4',d:1},{n:'A4',d:1},{n:'G4',d:2},
+  {n:'A4',d:1},{n:'B4',d:1},{n:'A4',d:2},{n:'G4',d:4}
+];
+var MV_PURTIMIRO_LO = [
+  {n:'B4',d:2},{n:'A4',d:1},{n:'G4',d:1},{n:'A4',d:2},
+  {n:'F4',d:2},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:2},
+  {n:'F4',d:1},{n:'G4',d:1},{n:'F4',d:2},{n:'D4',d:4}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

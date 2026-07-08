@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Francesco Landini — The Italian Trecento &amp; the Sweet Cadence</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 300px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Landini's emblem: a portative organ (organetto), his signature instrument -->
+            <!-- graded pipes -->
+            <g fill="#d4a053">
+                <rect x="120" y="34" width="7" height="52"/>
+                <rect x="131" y="26" width="7" height="60"/>
+                <rect x="142" y="19" width="7" height="67"/>
+                <rect x="153" y="13" width="7" height="73"/>
+                <rect x="164" y="19" width="7" height="67"/>
+                <rect x="175" y="26" width="7" height="60"/>
+                <rect x="186" y="34" width="7" height="52"/>
+            </g>
+            <!-- wind-chest / body -->
+            <rect x="110" y="86" width="92" height="20" rx="3" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <!-- keyboard -->
+            <g fill="#e8e6e3">
+                <rect x="114" y="107" width="5" height="12"/>
+                <rect x="121" y="107" width="5" height="12"/>
+                <rect x="128" y="107" width="5" height="12"/>
+                <rect x="135" y="107" width="5" height="12"/>
+                <rect x="142" y="107" width="5" height="12"/>
+                <rect x="149" y="107" width="5" height="12"/>
+                <rect x="156" y="107" width="5" height="12"/>
+                <rect x="163" y="107" width="5" height="12"/>
+            </g>
+            <!-- bellows behind -->
+            <path d="M 202 90 q 34 4 34 20 q 0 16 -34 12" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+            <path d="M 202 96 q 22 3 22 14 q 0 10 -22 8" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+            <!-- laurel branches (crowned with laurel) -->
+            <g stroke="#4ecca3" stroke-width="1.6" fill="none">
+                <path d="M 70 120 q 12 -34 30 -52"/>
+                <path d="M 230 120 q -12 -34 -30 -52"/>
+            </g>
+            <g fill="#4ecca3" opacity="0.85">
+                <ellipse cx="78" cy="106" rx="5" ry="2.4" transform="rotate(-40 78 106)"/>
+                <ellipse cx="84" cy="96" rx="5" ry="2.4" transform="rotate(-48 84 96)"/>
+                <ellipse cx="90" cy="86" rx="5" ry="2.4" transform="rotate(-56 90 86)"/>
+                <ellipse cx="222" cy="106" rx="5" ry="2.4" transform="rotate(40 222 106)"/>
+                <ellipse cx="216" cy="96" rx="5" ry="2.4" transform="rotate(48 216 96)"/>
+                <ellipse cx="210" cy="86" rx="5" ry="2.4" transform="rotate(56 210 86)"/>
+            </g>
+        </svg>
+    </div>
+    <h1>Francesco Landini</h1>
+    <div class="subtitle">c. 1325–1397 · The Italian Trecento — Florence's Blind Master</div>
+    <div class="separator"></div>
+    <p style="max-width: 74%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The organist crowned with laurel, celebrated poet and instrument-maker whose sweet
+        two- and three-voice <em>ballate</em> gave the fourteenth century one of its most tender sounds —
+        and lent his name to a cadence that would charm all Europe.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 05 — The Trecento</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS LANDINI ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Who Was Francesco Landini?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-green">Francesco Landini</span> (c. 1325–1397) was the greatest composer of the
+        Italian <span class="accent-green">Trecento</span> — the fourteenth-century flowering of secular art-song
+        that is Italy's answer to the French Ars Nova. Blinded by smallpox in childhood, he became the most
+        admired musician in Florence: a virtuoso organist, poet, and maker of instruments, publicly crowned
+        with the laurel wreath of a poet.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-green">&#9834;</span><h4 class="accent-green">Composer</h4><p>Around 150 surviving works — the largest secular output of any Trecento musician, almost all of it song.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9836;</span><h4 class="accent-amber">Organist</h4><p>Famed for the <em>organetto</em>, the small portable organ he played on his knee; also builder and tuner of organs.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9998;</span><h4 class="accent-purple">Poet</h4><p>Wrote much of his own verse; crowned with laurel, in the manner of Petrarch, for his artistry.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9737;</span><h4 class="accent-blue">Florentine</h4><p>Lived his life in Florence at the dawn of the Renaissance, admired by the city's humanist circles.</p></div>
+    </div>
+    <p class="note-text">Blind from early childhood, Landini never read or wrote a note on the page as we do; he composed, played and dictated entirely by ear and memory.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: LIFE TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE IN FLORENCE</span>
+    <h2>A Life in the City of the Lily</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Landini's years span the fraught, brilliant middle of the fourteenth century — plague, upheaval,
+        and the first stirrings of Renaissance humanism — all lived out within the walls of one city.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1325</span><span class="event"><strong>Born, probably near Florence</strong>Son of a painter; loses his sight to smallpox while still a boy and turns wholly to music.</span></div>
+        <div class="timeline-item"><span class="year">1348</span><span class="event"><strong>The Black Death</strong>Plague devastates Florence — the backdrop to Boccaccio's <em>Decameron</em> and to Landini's generation.</span></div>
+        <div class="timeline-item"><span class="year">mid-century</span><span class="event"><strong>Rises to fame</strong>Becomes the most celebrated organist and song-composer in Florence; crowned with the poet's laurel.</span></div>
+        <div class="timeline-item"><span class="year">1375–1397</span><span class="event"><strong>At San Lorenzo</strong>Serves as organist at the Florentine church of San Lorenzo; his works are gathered and prized.</span></div>
+        <div class="timeline-item"><span class="year">1397</span><span class="event"><strong>Dies in Florence</strong>Buried at San Lorenzo; his tomb-slab, showing him with his portative organ, survives to this day.</span></div>
+    </div>
+    <p class="note-text">Much of what we know comes from the humanist chronicler Filippo Villani, who wrote an admiring biography of Landini among the "famous citizens" of Florence.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE ITALIAN TRECENTO ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE ERA</span>
+    <h2>The Italian Trecento</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        <em>Trecento</em> — literally "three hundred", the Italian shorthand for the <strong>1300s</strong> — names both a
+        century and a musical golden age. While France pursued the intricate rhythms of the Ars Nova, Italy grew
+        its own refined, lyrical polyphony: graceful, singable, and unmistakably Italian in its sweetness.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">The Italian way</h4>
+            <p>Flowing melody in the top voice, warm and vocal; long ornamental runs; a taste for consonant thirds and sixths that would soon sound "sweet" all over Europe.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">The French Ars Nova</h4>
+            <p>More abstract and cerebral — isorhythm, complex proportional rhythms, the great motets of Machaut. Late in the century its notation would absorb Italy's.</p>
+        </div>
+    </div>
+    <p class="note-text">The Trecento repertory is overwhelmingly <em>secular</em> — love songs and dances in the vernacular, not liturgical Latin. Landini stands at its very summit.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: BLIND ORGANIST, CROWNED WITH LAUREL ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE ORGANETTO</span>
+    <h2>The Blind Organist Crowned With Laurel</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Landini's fame rested first on his playing. His instrument was the <span class="accent-green">organetto</span>
+                (portative organ): a small keyboard organ held on the lap, the left hand working the bellows while the
+                right hand played the melody. It is the instrument shown beside him in his manuscript portrait and carved
+                on his tomb.
+            </p>
+            <p style="font-size:0.44em !important;">
+                A famous scene in Giovanni da Prato's <em>Il Paradiso degli Alberti</em> (written c. 1425) recalls Landini
+                playing his organetto in a Florentine garden on a summer's day — and the company falling silent, spellbound,
+                as if the very birds gathered to listen. For his artistry he was crowned, like a poet, with <span class="accent-amber">laurel</span>.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <!-- portative organ, larger -->
+                <g fill="#d4a053">
+                    <rect x="60" y="52" width="8" height="60"/>
+                    <rect x="72" y="42" width="8" height="70"/>
+                    <rect x="84" y="34" width="8" height="78"/>
+                    <rect x="96" y="28" width="8" height="84"/>
+                    <rect x="108" y="34" width="8" height="78"/>
+                    <rect x="120" y="42" width="8" height="70"/>
+                    <rect x="132" y="52" width="8" height="60"/>
+                </g>
+                <rect x="50" y="112" width="100" height="24" rx="3" fill="#161622" stroke="#4ecca3" stroke-width="1.6"/>
+                <g fill="#e8e6e3">
+                    <rect x="55" y="137" width="6" height="16"/>
+                    <rect x="63" y="137" width="6" height="16"/>
+                    <rect x="71" y="137" width="6" height="16"/>
+                    <rect x="79" y="137" width="6" height="16"/>
+                    <rect x="87" y="137" width="6" height="16"/>
+                    <rect x="95" y="137" width="6" height="16"/>
+                    <rect x="103" y="137" width="6" height="16"/>
+                    <rect x="111" y="137" width="6" height="16"/>
+                </g>
+                <path d="M 150 116 q 34 4 34 22 q 0 18 -34 14" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+                <text x="100" y="182" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">the <tspan fill="#4ecca3">organetto</tspan></text>
+            </svg>
+        </div>
+    </div>
+    <p class="note-text">His manuscript portrait appears at the head of his section in the great Squarcialupi Codex, organetto in hand — the image by which we still picture him.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: GENRES OF THE TRECENTO ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE FORMS</span>
+    <h2>Song-Forms of the Trecento</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Trecento composers worked in three great secular forms. Landini touched all of them, but poured his
+        genius above all into the last.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Madrigal</h4><p>The earlier Trecento form: two or three stanzas set to the same music, capped by a contrasting <em>ritornello</em>. Often pastoral verse.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Caccia</h4><p>A "chase": two voices in strict <em>canon</em> over a slower tenor, the words painting hunts, fishing or bustling markets — music as lively picture.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Ballata</h4><p>Descended from a sung dance. By Landini's day the leading form of Italian love-song — and the heart of his art.</p></div>
+    </div>
+    <p class="note-text">Of Landini's roughly 150 surviving pieces, the overwhelming majority are ballate, alongside a smaller group of madrigals.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: THE BALLATA ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE BALLATA</span>
+    <h2>The Ballata — Landini's Form</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The <span class="accent-green">ballata</span> began as music for dancing (from <em>ballare</em>, "to dance") and grew into
+        a refined song of courtly love, for two or three voices. Its shape is a neat rounded scheme built on a refrain,
+        the <em>ripresa</em>, that returns to frame each verse.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="13">
+                <!-- form blocks: A bb a A -->
+                <rect x="40"  y="40" width="150" height="44" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="115" y="60" text-anchor="middle" fill="#4ecca3" font-weight="700" font-size="15">A · Ripresa</text>
+                <text x="115" y="77" text-anchor="middle" fill="#9a9a9a" font-size="10">refrain</text>
+
+                <rect x="210" y="40" width="115" height="44" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="267" y="60" text-anchor="middle" fill="#9b72cf" font-weight="700" font-size="15">b · Piede</text>
+                <rect x="335" y="40" width="115" height="44" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+                <text x="392" y="60" text-anchor="middle" fill="#9b72cf" font-weight="700" font-size="15">b · Piede</text>
+                <text x="330" y="102" text-anchor="middle" fill="#9a9a9a" font-size="10">two "feet" — new music, sung twice</text>
+
+                <rect x="460" y="40" width="150" height="44" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+                <text x="535" y="60" text-anchor="middle" fill="#d4a053" font-weight="700" font-size="15">a · Volta</text>
+                <text x="535" y="102" text-anchor="middle" fill="#9a9a9a" font-size="10">new words, ripresa's music</text>
+
+                <rect x="630" y="40" width="150" height="44" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+                <text x="705" y="60" text-anchor="middle" fill="#4ecca3" font-weight="700" font-size="15">A · Ripresa</text>
+                <text x="705" y="77" text-anchor="middle" fill="#9a9a9a" font-size="10">refrain returns</text>
+
+                <text x="410" y="128" text-anchor="middle" fill="#6a6a7a" font-size="12">Form:  A &#8211; b b &#8211; a &#8211; A   (the ripresa's melody frames the verse)</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text">The <em>volta</em> reuses the music of the ripresa, so the tune circles back on itself — a satisfying rounded shape that made the ballata perfect for song.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: ECCO LA PRIMAVERA AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">07 — HEAR A BALLATA</span>
+    <h2>&ldquo;Ecco la primavera&rdquo; — Here Comes Spring</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Landini's best-loved ballata, <span class="accent-green"><em>Ecco la primavera</em></span> ("Here comes the spring, that
+        makes the heart rejoice"), bubbles with a bright, lilting dance rhythm. Below is a short tune written in its
+        spirit: a bouncy triple-time melody of the kind that opens such a ballata.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, LAND_BALLATA, {timbre:'pluck', bpm:120, temperament:'pythagorean', tonic:'G3', reverb:0.4})">&#9654; Hear a spring-ballata tune</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Landini+Ecco+la+primavera">&#9834; Listen: Landini — Ecco la primavera (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised plucked strings · a lively triple lilt in the manner of an opening ballata phrase</p>
+    <div class="card-grid cols-3" style="max-width:88%; margin-top:0.6em;">
+        <div class="card"><h4 class="accent-green">Dance roots</h4><p>The swinging triple pulse recalls the ballata's origin as music to dance and clap to.</p></div>
+        <div class="card"><h4 class="accent-amber">Vernacular joy</h4><p>The text is Tuscan Italian, not Latin — a springtime love-lyric, worldly and warm.</p></div>
+        <div class="card"><h4 class="accent-blue">Singable top line</h4><p>The tune sits high and clear over its supporting voices, the Italian hallmark.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE LANDINI CADENCE — NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE SWEET CADENCE</span>
+    <h2>The Landini Cadence — Reading the Turn</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        At a cadence, medieval melody usually pushed the <span class="accent-amber">leading tone (7)</span> straight up to the
+        <span class="accent-green">octave (8)</span>. Landini's signature is a graceful detour: the top voice first dips down to the
+        <span class="accent-blue">sixth (6)</span>, then leaps up a third to the octave — the sweet <strong>7&#8211;6&#8211;8</strong>
+        "under-third" turn that bears his name.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#9a9a9a" stroke-width="1.1">
+                <line x1="70" y1="40"  x2="840" y2="40"/>
+                <line x1="70" y1="58"  x2="840" y2="58"/>
+                <line x1="70" y1="76"  x2="840" y2="76"/>
+                <line x1="70" y1="94"  x2="840" y2="94"/>
+                <line x1="70" y1="112" x2="840" y2="112"/>
+            </g>
+            <!-- lines bottom->top: E4(112) G4(94) B4(76) D5(58) F5(40); spaces F4(103) A4(85) C5(67) E5(49); G5 above =31 -->
+            <!-- Upper voice (cantus): A4 - B4 - A4 - [7]F#4 - [6]E4 - [8]G4 -->
+            <g fill="#e8e6e3">
+                <ellipse cx="150" cy="85"  rx="9" ry="7"/>
+                <ellipse cx="230" cy="76"  rx="9" ry="7"/>
+                <ellipse cx="310" cy="85"  rx="9" ry="7"/>
+            </g>
+            <!-- 7 : F#4 (space y103) highlighted amber -->
+            <ellipse cx="430" cy="103" rx="9" ry="7" fill="#d4a053"/>
+            <text x="430" y="103" text-anchor="middle" dominant-baseline="central" fill="#0a0a0f" font-family="DM Sans" font-size="11" font-weight="700">&#9839;</text>
+            <!-- 6 : E4 (line y112) highlighted blue -->
+            <ellipse cx="540" cy="112" rx="9" ry="7" fill="#5b8cd4"/>
+            <!-- 8 : G4 (line y94) highlighted green -->
+            <ellipse cx="660" cy="94"  rx="10" ry="7.5" fill="#4ecca3"/>
+
+            <!-- the under-third leap arrow: from E4 up to G4 -->
+            <path d="M 552 108 q 55 -34 96 -12" fill="none" stroke="#4ecca3" stroke-width="1.6" marker-end="url(#ah)"/>
+            <defs>
+                <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto">
+                    <path d="M0,0 L8,4 L0,8 Z" fill="#4ecca3"/>
+                </marker>
+            </defs>
+
+            <!-- degree labels -->
+            <text x="430" y="140" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="14" font-weight="700">7</text>
+            <text x="540" y="140" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="14" font-weight="700">6</text>
+            <text x="660" y="140" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="14" font-weight="700">8</text>
+            <text x="430" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">leading tone</text>
+            <text x="540" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">dip to 6th</text>
+            <text x="660" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">leap a 3rd to octave</text>
+            <text x="600" y="66" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-style="italic" font-size="11">the "under-third"</text>
+
+            <!-- tenor moving to the final G (an octave below) -->
+            <g fill="#9a9a9a">
+                <ellipse cx="430" cy="185" rx="8" ry="6"/>
+                <ellipse cx="540" cy="176" rx="8" ry="6"/>
+                <ellipse cx="660" cy="185" rx="8" ry="6"/>
+            </g>
+            <text x="80" y="205" fill="#6a6a7a" font-family="DM Sans" font-size="11">tenor &#8594; steps down to the final</text>
+            <text x="80" y="30"  fill="#6a6a7a" font-family="DM Sans" font-size="11">cantus (top voice)</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> follow the top voice left to right. After the leading tone (7, amber) it does <em>not</em> resolve straight up; it drops to the 6th (6, blue), then springs up a third to the octave (8, green) as the lower voice settles onto the final. That little dip-and-leap is the Landini cadence.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: HEAR THE LANDINI CADENCE ═══════════════════ -->
+<section>
+    <span class="section-number">09 — HEAR THE CADENCE</span>
+    <h2>Hear the Sweet Cadence</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Compare the two endings below. First the plain cadence — the leading tone climbing straight up. Then the
+        <span class="accent-green">Landini cadence</span>, with its extra dip to the sixth before the leap. Listen for
+        that gentle turn at the very end: it is the sound that gave the fourteenth century its sweetness.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, [LAND_PLAIN_UP, LAND_CAD_LOW], {timbre:'reed', bpm:88, temperament:'pythagorean', tonic:'G3', reverb:0.45})">&#9654; Plain cadence (7&#8211;8)</button>
+        <button class="audio-btn green" onclick="EM.toggle(this, [LAND_CAD_UP, LAND_CAD_LOW], {timbre:'reed', bpm:88, temperament:'pythagorean', tonic:'G3', reverb:0.45})">&#9654; Landini cadence (7&#8211;6&#8211;8)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Landini+ballata+La+Reverdie">&#9834; Listen: Landini ballate — La Reverdie</a>
+    </div>
+    <p class="audio-caption">Two voices, reed timbre, pure Pythagorean fifths · the difference is only the top voice's final turn</p>
+    <p class="note-text">The figure so charmed musicians that it spread far beyond Italy: you meet "Landini cadences" throughout the songs of Du Fay, Binchois and the early fifteenth century.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: THE SQUARCIALUPI CODEX ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE GREAT SOURCE</span>
+    <h2>The Squarcialupi Codex</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Almost everything we have of Landini reaches us through one magnificent book. The
+        <span class="accent-green">Squarcialupi Codex</span> — a lavish, gold-illuminated Florentine anthology of Trecento
+        song, copied in the early 1400s — is the single greatest source of Italian fourteenth-century music. It is named
+        for the later Florentine organist Antonio Squarcialupi, who once owned it.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-green">Landini's book</h4><p>Its largest section by far is devoted to Landini — around 145 of his works, more than any other composer in the manuscript.</p></div>
+        <div class="card"><h4 class="accent-amber">His portrait</h4><p>An illuminated miniature heads his section, depicting Landini seated with his portative organ — a rare medieval "author portrait".</p></div>
+        <div class="card"><h4 class="accent-blue">A gallery of masters</h4><p>It preserves many Trecento composers, each with a portrait — a visual roll-call of Italy's musical golden age.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Squarcialupi+Codex+Landini">&#9834; The Squarcialupi Codex — Landini (recordings)</a>
+    </div>
+    <p class="note-text">Without this book, Landini's name would survive but most of his music would be lost — a reminder how thin the thread of medieval survival can be.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: TRECENTO NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">11 — READING THE PAGE</span>
+    <h2>Italian Trecento Notation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Italy wrote its rhythm differently from France. In the system set out by the theorist
+        <span class="accent-amber">Marchetto da Padova</span> (c. 1318), a <em>breve</em> was split into groups of smaller notes
+        called <span class="accent-green">divisiones</span> — and a letter marked how many notes each group held. Dots kept the
+        groups apart, in place of bar-lines.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#9a9a9a" stroke-width="1.1">
+                <line x1="60" y1="46" x2="840" y2="46"/>
+                <line x1="60" y1="64" x2="840" y2="64"/>
+                <line x1="60" y1="82" x2="840" y2="82"/>
+                <line x1="60" y1="100" x2="840" y2="100"/>
+                <line x1="60" y1="118" x2="840" y2="118"/>
+            </g>
+            <!-- divisio marker letters -->
+            <text x="70" y="34" fill="#d4a053" font-family="JetBrains Mono" font-size="13">.q. quaternaria (4)</text>
+            <text x="470" y="34" fill="#4ecca3" font-family="JetBrains Mono" font-size="13">.o. octonaria (8)</text>
+            <!-- group 1: 4 notes, separated by a dot -->
+            <g fill="#d4a053">
+                <ellipse cx="110" cy="91" rx="8" ry="6"/>
+                <ellipse cx="150" cy="82" rx="8" ry="6"/>
+                <ellipse cx="190" cy="73" rx="8" ry="6"/>
+                <ellipse cx="230" cy="82" rx="8" ry="6"/>
+            </g>
+            <circle cx="270" cy="82" r="3.5" fill="#e8e6e3"/>
+            <!-- another quaternaria group -->
+            <g fill="#d4a053">
+                <ellipse cx="310" cy="91" rx="8" ry="6"/>
+                <ellipse cx="350" cy="100" rx="8" ry="6"/>
+                <ellipse cx="390" cy="91" rx="8" ry="6"/>
+                <ellipse cx="430" cy="82" rx="8" ry="6"/>
+            </g>
+            <circle cx="455" cy="82" r="3.5" fill="#e8e6e3"/>
+            <!-- octonaria group: 8 quicker notes -->
+            <g fill="#4ecca3">
+                <ellipse cx="490" cy="82" rx="7" ry="5.5"/>
+                <ellipse cx="522" cy="73" rx="7" ry="5.5"/>
+                <ellipse cx="554" cy="82" rx="7" ry="5.5"/>
+                <ellipse cx="586" cy="91" rx="7" ry="5.5"/>
+                <ellipse cx="618" cy="82" rx="7" ry="5.5"/>
+                <ellipse cx="650" cy="73" rx="7" ry="5.5"/>
+                <ellipse cx="682" cy="64" rx="7" ry="5.5"/>
+                <ellipse cx="714" cy="73" rx="7" ry="5.5"/>
+            </g>
+            <text x="60" y="146" fill="#6a6a7a" font-family="DM Sans" font-size="11">each dotted group = one breve, subdivided as the letter tells you · read left &#8594; right, higher = higher</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> find the little letter marking the <em>divisione</em> — it says how many notes fill one breve. Read each dot-bounded group as a single beat's worth of notes. Late in the century Italian scribes increasingly borrowed the French mensural signs, and the two systems merged.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: FAMOUS WORKS ═══════════════════ -->
+<section>
+    <span class="section-number">12 — THE MUSIC</span>
+    <h2>Songs That Survive</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Landini's ballate range from sunlit and dancing to grave and grieving — always with that singing top line and
+        the sweet cadences that are his fingerprint. A few have become the best-known music of the whole Trecento.
+    </p>
+    <div class="card-grid cols-3" style="max-width:90%;">
+        <div class="card"><h4 class="accent-green">Ecco la primavera</h4><p>"Here comes the spring" — a joyful two-voice ballata, his most famous song and a byword for Trecento freshness.</p></div>
+        <div class="card"><h4 class="accent-rose">Gran piant' agli occhi</h4><p>"Great weeping to the eyes" — a tender, sorrowing love-ballata showing his more inward, expressive vein.</p></div>
+        <div class="card"><h4 class="accent-amber">Non avrà ma' pietà</h4><p>"She will never have pity" — a much-admired ballata of courtly longing, elegant and finely wrought.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Landini+Gran+piant+agli+occhi">&#9834; Gran piant' agli occhi</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Landini+Non+avra+ma+pieta+ballata">&#9834; Non avrà ma' pietà</a>
+    </div>
+    <p class="note-text">These are worldly love-songs in Tuscan Italian for two or three voices — chamber music for the cultured circles of late-Trecento Florence.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — LISTENING GUIDE</span>
+    <h2>How to Listen to Landini</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-green">top voice</span> — it carries the tune, high and ornamental, over its supporting voices.</li>
+        <li>Wait for the <span class="accent-amber">cadences</span>: catch the little dip-and-leap of the Landini turn as each phrase comes to rest.</li>
+        <li>Feel the <span class="accent-blue">triple lilt</span> of the ballata's dance origins beneath the flowing melody.</li>
+        <li>Notice how <span class="accent-purple">consonant</span> it sounds — the thirds and sixths that make Trecento music feel so sweet to modern ears.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=La+Reverdie+Landini">&#9834; La Reverdie</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Ensemble+Micrologus+Landini">&#9834; Ensemble Micrologus</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=La+Morra+Trecento+Landini">&#9834; La Morra</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Landini,_Francesco">&#9834; IMSLP — Landini scores</a>
+    </div>
+    <p class="note-text">Ensembles vary the scoring freely — all voices sung, or the lower voices played on vielle, lute or organetto as they may well have been in Landini's day.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>The Sweetness That Spread</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Landini gathered the Italian Trecento into its finest achievement and left it a lasting gift. His
+        <span class="accent-green">cadence</span> travelled north into the songs of the next generation; his ballate remain the
+        best-loved music of the century; and his portrait, organetto in hand, has become the very face of the age. When
+        Florence buried him at San Lorenzo in 1397, an era of song went with him.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The cadence</h4><p>The 7&#8211;6&#8211;8 "Landini cadence" outlived him by generations, sweetening cadences across all of fifteenth-century Europe.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">The ballata</h4><p>He brought the two- and three-voice ballata to its peak; his songs are the summit of Trecento secular art.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">The image</h4><p>Blind organist crowned with laurel, he embodies the meeting of music, poetry and the new humanism of Florence.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Ecco la primavera, che 'l cor fa rallegrare" — Here comes the spring, that makes the heart rejoice.</p>
+        <span class="attribution">— Francesco Landini, opening of the ballata <em>Ecco la primavera</em></span>
+    </div>
+    <p class="note-text">c. 1325 – 1397 · Florence's blind master, and the sweetest voice of the Italian Trecento.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — Landini ── */
+/* A bright, triple-lilt "Ecco la primavera"-style ballata tune (monophonic) */
+var LAND_BALLATA = [
+  {n:'G4',d:1},{n:'A4',d:0.5},{n:'B4',d:0.5},{n:'A4',d:1},{n:'G4',d:1},
+  {n:'D5',d:1},{n:'B4',d:0.5},{n:'C5',d:0.5},{n:'D5',d:1},{n:'B4',d:1},
+  {n:'A4',d:1},{n:'G4',d:0.5},{n:'A4',d:0.5},{n:'B4',d:1},{n:'A4',d:1},{n:'G4',d:2}
+];
+/* The Landini (under-third) cadence to a G octave. Upper: 7(F#)-6(E)-8(G). */
+var LAND_CAD_UP  = [{n:'A4',d:1},{n:'B4',d:1},{n:'A4',d:1},{n:'F#4',d:1},{n:'E4',d:1},{n:'G5',d:2}];
+/* A plain cadence for comparison: leading tone (F#) straight up to the octave (G). */
+var LAND_PLAIN_UP= [{n:'A4',d:1},{n:'B4',d:1},{n:'A4',d:1},{n:'F#4',d:2},{n:'G5',d:2}];
+/* Lower voice steps down to the final G. */
+var LAND_CAD_LOW = [{n:'D4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'D4',d:1},{n:'A3',d:1},{n:'G3',d:2}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

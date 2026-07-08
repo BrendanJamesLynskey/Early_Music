@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Dunstaple — The Contenance Angloise &amp; the Sweetness of Thirds</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- A small staff carrying a sweet, glowing triad -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="30" y1="34" x2="330" y2="34"/>
+                <line x1="30" y1="52" x2="330" y2="52"/>
+                <line x1="30" y1="70" x2="330" y2="70"/>
+                <line x1="30" y1="88" x2="330" y2="88"/>
+                <line x1="30" y1="106" x2="330" y2="106"/>
+            </g>
+            <!-- soft halo behind the triad -->
+            <circle cx="180" cy="70" r="46" fill="#5b8cd4" opacity="0.10"/>
+            <!-- a full triad stacked in thirds: root, third, fifth -->
+            <ellipse cx="180" cy="97" rx="12" ry="9" fill="#5b8cd4" transform="rotate(-20 180 97)"/>
+            <ellipse cx="180" cy="79" rx="12" ry="9" fill="#4ecca3" transform="rotate(-20 180 79)"/>
+            <ellipse cx="180" cy="61" rx="12" ry="9" fill="#d4a053" transform="rotate(-20 180 61)"/>
+            <!-- interval brackets -->
+            <text x="205" y="72" fill="#4ecca3" font-family="JetBrains Mono" font-size="12">3rd</text>
+            <text x="205" y="90" fill="#5b8cd4" font-family="JetBrains Mono" font-size="12">3rd</text>
+            <text x="70" y="128" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13">the sweet, full sound of the English triad</text>
+        </svg>
+    </div>
+    <h1>John Dunstaple</h1>
+    <div class="subtitle">c. 1390–1453 · The Contenance Angloise &amp; the Sweetness of Thirds</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The English master whose full, sweet triadic harmony crossed the Channel and
+        gave Continental music a new sound — the <span class="accent-blue">contenance angloise</span>,
+        the "English manner" that Du Fay and Binchois were said to have made their model.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 06 — The English Sweetness</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS DUNSTAPLE ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Who Was John Dunstaple?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-blue">John Dunstaple</span> (also spelt <em>Dunstable</em>, c. 1390–1453) was the leading
+        English composer of the early fifteenth century — a musician so admired abroad that his name became
+        shorthand for a whole new, sweeter way of writing music. He was also an <span class="accent-blue">astronomer
+        and mathematician</span>, and served in the household of <span class="accent-blue">John, Duke of Bedford</span>,
+        the English regent in France.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-blue">&#9835;</span><h4 class="accent-blue">English</h4><p>Almost certainly from Dunstable in Bedfordshire; active in England and, through his patron, in Lancastrian France.</p></div>
+        <div class="card"><span class="icon accent-green">&#9737;</span><h4 class="accent-green">Polymath</h4><p>A serious astronomer and mathematician as well as a composer — his epitaph praised both his skills.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9819;</span><h4 class="accent-amber">Courtly service</h4><p>Linked to the household of John, Duke of Bedford, and to noble and royal patronage of his day.</p></div>
+        <div class="card"><span class="icon accent-purple">&#10084;</span><h4 class="accent-purple">Sacred music</h4><p>Best known for motets and Mass movements — sweet, consonant, and widely copied on the Continent.</p></div>
+    </div>
+    <p class="note-text">Much about his life is uncertain; the spelling of his own name varies in the sources, and dates are approximate.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE IN OUTLINE</span>
+    <h2>Dunstaple in His Century</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Dunstaple's life spans the Hundred Years' War and the height of English power in France — the very
+        conditions that carried his music across the Channel to the Burgundian and French courts.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1390</span><span class="event"><strong>Born</strong>Probably at or near Dunstable, Bedfordshire — hence the name. The early life is largely undocumented.</span></div>
+        <div class="timeline-item"><span class="year">1420s–30s</span><span class="event"><strong>Bedford's service</strong>Associated with John, Duke of Bedford, regent of Lancastrian France — a plausible route for English style to reach the Continent.</span></div>
+        <div class="timeline-item"><span class="year">1441/2</span><span class="event"><strong>Martin le Franc names him</strong>The poet's <em>Le Champion des dames</em> credits the <em>contenance angloise</em> and says Du Fay and Binchois followed Dunstaple.</span></div>
+        <div class="timeline-item"><span class="year">24 Dec 1453</span><span class="event"><strong>Death in London</strong>His tomb in the church of St Stephen Walbrook recorded his death and hailed him as an astronomer and musician.</span></div>
+        <div class="timeline-item"><span class="year">c. 1477</span><span class="event"><strong>Tinctoris looks back</strong>The theorist Johannes Tinctoris names Dunstaple as the head of the English who founded a "new art".</span></div>
+    </div>
+    <p class="note-text">The famous epitaph was lost when the church burned in the Great Fire of London (1666), but its text survives in copies.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE CONTENANCE ANGLOISE ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE ENGLISH MANNER</span>
+    <h2>The <em>Contenance Angloise</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Around 1441–2 the poet <span class="accent-blue">Martin le Franc</span>, in his long poem
+        <em>Le Champion des dames</em>, described a fresh, joyful sound in the music of
+        <span class="accent-amber">Guillaume Du Fay</span> and <span class="accent-rose">Gilles Binchois</span>.
+        Its source, he said, was English — the <em>contenance angloise</em>, the "English countenance" or manner —
+        and its model was <span class="accent-blue">Dunstaple</span>.
+    </p>
+    <div class="quote-box" style="border-left-color: var(--accent-blue); background: rgba(91,140,212,0.05);">
+        <p>"For they have a new way of making lively concord... They took on the English guise and followed Dunstaple, and thereby a marvellous pleasingness makes their music joyous and remarkable."</p>
+        <span class="attribution">— Martin le Franc, <em>Le Champion des dames</em>, c. 1441–2 (translated from the Old French)</span>
+    </div>
+    <p class="note-text">This is one of the earliest moments a national "style" is named in Western music — and it is named after an Englishman.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: PERFECT VS IMPERFECT CONSONANCE ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE EAR BEFORE DUNSTAPLE</span>
+    <h2>Perfect Fifths, Imperfect Thirds</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        To hear why Dunstaple sounded new, remember what came before. Medieval theory ranked intervals: the
+        <span class="accent-green">unison, octave, fifth and fourth</span> were the <em>perfect</em> consonances —
+        the open, ringing pillars of the sound. <span class="accent-blue">Thirds and sixths</span> were only
+        <em>imperfect</em> consonances, colourful but restless, never the goal of a phrase.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="13">
+                <text x="30" y="30" fill="#4ecca3" font-size="12" font-weight="700">PERFECT CONSONANCES — the medieval pillars</text>
+                <rect x="30" y="42" width="150" height="34" rx="5" fill="#161622" stroke="#4ecca3"/><text x="45" y="64" fill="#e8e6e3">Unison &amp; Octave</text>
+                <rect x="195" y="42" width="120" height="34" rx="5" fill="#161622" stroke="#4ecca3"/><text x="210" y="64" fill="#e8e6e3">Fifth (3:2)</text>
+                <rect x="330" y="42" width="120" height="34" rx="5" fill="#161622" stroke="#4ecca3"/><text x="345" y="64" fill="#e8e6e3">Fourth (4:3)</text>
+                <text x="500" y="64" fill="#6a6a7a" font-size="11" font-style="italic">open, hollow, "finished"</text>
+
+                <text x="30" y="112" fill="#5b8cd4" font-size="12" font-weight="700">IMPERFECT CONSONANCES — colour, not rest</text>
+                <rect x="30" y="124" width="150" height="34" rx="5" fill="#161622" stroke="#5b8cd4"/><text x="45" y="146" fill="#e8e6e3">Third (major/minor)</text>
+                <rect x="195" y="124" width="150" height="34" rx="5" fill="#161622" stroke="#5b8cd4"/><text x="210" y="146" fill="#e8e6e3">Sixth (major/minor)</text>
+                <text x="500" y="146" fill="#6a6a7a" font-size="11" font-style="italic">warm, "sweet" — but leaning onward</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text">The English fondness for thirds and sixths was noted well before Dunstaple, but his generation raised it into a whole harmonic style.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE SWEETNESS OF THIRDS (AUDIO 1) ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE NEW SOUND</span>
+    <h2>The Sweetness of Thirds &amp; Sixths</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Dunstaple and his English contemporaries filled their music with <span class="accent-blue">full triads</span> —
+        the root, its third and its fifth sounding together — moving in smooth, consonant chains. To ears trained on
+        bare fifths and fourths, this warm, saturated sound was a revelation: it seemed to <em>glow</em>.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, DUN_TRIADS, {timbre:'organ', bpm:72, temperament:'equal', tonic:'G3', reverb:0.55, legato:0.95})">&#9654; Hear a chain of full triads</button>
+        <button class="audio-btn green" onclick="EM.toggle(this, DUN_TRIADS, {timbre:'voice', bpm:72, temperament:'equal', tonic:'G3', reverb:0.6, legato:0.98})">&#9654; The same, sung by voices</button>
+    </div>
+    <p class="audio-caption">Five ascending root-position triads, in equal temperament, so the thirds ring sweet and in tune — this is the English sound</p>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="30" y1="24" x2="730" y2="24"/><line x1="30" y1="42" x2="730" y2="42"/><line x1="30" y1="60" x2="730" y2="60"/><line x1="30" y1="78" x2="730" y2="78"/><line x1="30" y1="96" x2="730" y2="96"/>
+            </g>
+            <!-- five triads climbing; each a stack of three noteheads -->
+            <g>
+              <ellipse cx="120" cy="96" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="120" cy="78" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="120" cy="60" rx="9" ry="7" fill="#d4a053"/>
+              <ellipse cx="240" cy="87" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="240" cy="69" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="240" cy="51" rx="9" ry="7" fill="#d4a053"/>
+              <ellipse cx="360" cy="78" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="360" cy="60" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="360" cy="42" rx="9" ry="7" fill="#d4a053"/>
+              <ellipse cx="480" cy="69" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="480" cy="51" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="480" cy="33" rx="9" ry="7" fill="#d4a053"/>
+              <ellipse cx="600" cy="60" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="600" cy="42" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="600" cy="24" rx="9" ry="7" fill="#d4a053"/>
+            </g>
+            <text x="640" y="66" fill="#6a6a7a" font-family="JetBrains Mono" font-size="12">G · A · B · C · D</text>
+        </svg>
+    </div>
+    <p class="staff-note">Each chord = root (blue) + third (green) + fifth (amber), stacked and rising together.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: WHY IT SOUNDS SWEET — TUNING ═══════════════════ -->
+<section>
+    <span class="section-number">06 — WHY IT SOUNDS SWEET</span>
+    <h2>Tuning: Why the Third Turned Sweet</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The third's bad medieval reputation was partly a matter of <span class="accent-blue">tuning</span>. In the old
+        <span class="accent-amber">Pythagorean</span> system, built from pure fifths, the major third is wide and
+        buzzing — genuinely harsh. Sweeten the thirds (as English singers did by ear, and as our modern
+        <span class="accent-green">equal temperament</span> approximates) and the very same chords turn mellow and pure.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, DUN_TRIADS, {timbre:'organ', bpm:72, temperament:'pythagorean', tonic:'G3', reverb:0.5})">&#9654; The triads in Pythagorean tuning (harsh thirds)</button>
+        <button class="audio-btn green" onclick="EM.toggle(this, DUN_TRIADS, {timbre:'organ', bpm:72, temperament:'equal', tonic:'G3', reverb:0.55})">&#9654; The same in sweet, equal tuning</button>
+    </div>
+    <p class="audio-caption">Play them one after the other: the identical chords, first with the medieval wide thirds, then softened into the "English" sweetness</p>
+    <div class="two-col" style="margin-top:0.4em;">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Pythagorean thirds</h4><p>Derived from stacked pure fifths, the major third (ratio 81:64) is noticeably wide and restless — which is why theory kept it "imperfect".</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Sweetened thirds</h4><p>Pull the third close to the pure ratio 5:4 and it locks into place — calm, consonant, "sweet". This is the sound the English cultivated.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: FABURDEN — NOTATION SVG ═══════════════════ -->
+<section>
+    <span class="section-number">07 — READING THE MUSIC</span>
+    <h2>Faburden: A Chain of 6–3 Chords</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The English technique of <span class="accent-blue">faburden</span> harmonised a plainchant almost entirely in
+        sweet triadic sonorities. The result is a chain of <span class="accent-blue">6–3 chords</span> — what we would
+        call first-inversion triads. Here is how to read one on the staff.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="60" y1="40" x2="860" y2="40"/><line x1="60" y1="60" x2="860" y2="60"/><line x1="60" y1="80" x2="860" y2="80"/><line x1="60" y1="100" x2="860" y2="100"/><line x1="60" y1="120" x2="860" y2="120"/>
+            </g>
+            <!-- five parallel 6-3 chords: bottom, middle a 3rd up, top a 6th above bottom -->
+            <!-- chord positions (bottom y) descending in parallel -->
+            <!-- chord 1 -->
+            <ellipse cx="150" cy="120" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="150" cy="100" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="150" cy="60" rx="9" ry="7" fill="#d4a053"/>
+            <!-- chord 2 -->
+            <ellipse cx="290" cy="110" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="290" cy="90" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="290" cy="50" rx="9" ry="7" fill="#d4a053"/>
+            <!-- chord 3 -->
+            <ellipse cx="430" cy="120" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="430" cy="100" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="430" cy="60" rx="9" ry="7" fill="#d4a053"/>
+            <!-- chord 4 -->
+            <ellipse cx="570" cy="130" rx="9" ry="7" fill="#5b8cd4"/><ellipse cx="570" cy="110" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="570" cy="70" rx="9" ry="7" fill="#d4a053"/>
+            <!-- chord 5 (cadence: bottom drops to a 5th below -> open octave/fifth) -->
+            <ellipse cx="710" cy="150" rx="9" ry="7" fill="#cf7272"/><ellipse cx="710" cy="90" rx="9" ry="7" fill="#4ecca3"/><ellipse cx="710" cy="30" rx="9" ry="7" fill="#d4a053"/>
+            <!-- interval brackets on chord 1 -->
+            <path d="M 172 60 q 14 30 0 60" fill="none" stroke="#d4a053" stroke-width="1.4"/>
+            <text x="188" y="94" fill="#d4a053" font-family="JetBrains Mono" font-size="13">6</text>
+            <path d="M 132 100 q -14 -20 0 -40" fill="none" stroke="#4ecca3" stroke-width="1.4"/>
+            <text x="104" y="86" fill="#4ecca3" font-family="JetBrains Mono" font-size="13">3</text>
+            <!-- labels -->
+            <text x="60" y="185" fill="#d4a053" font-family="DM Sans" font-size="11">top voice</text>
+            <text x="60" y="200" fill="#4ecca3" font-family="DM Sans" font-size="11">chant (middle)</text>
+            <text x="640" y="185" fill="#cf7272" font-family="DM Sans" font-size="11">cadence: bottom drops</text>
+            <text x="640" y="200" fill="#cf7272" font-family="DM Sans" font-size="11">to an open 5th/8ve</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="max-width:96%;">
+        <div class="card"><h4 class="accent-green">The chant sits in the middle</h4><p>The borrowed plainsong melody (green) is the <em>mean</em> — everything is built around it.</p></div>
+        <div class="card"><h4 class="accent-blue">A third below, a sixth above</h4><p>A voice runs a third under the chant; another a fourth above it — so the outer voices are a sixth apart. Read each stack top-to-bottom.</p></div>
+        <div class="card"><h4 class="accent-rose">Open at the cadence</h4><p>At phrase-ends the lowest voice drops to a fifth below, opening the sweet chords onto a hollow, "perfect" close.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: FABURDEN VS FAUXBOURDON ═══════════════════ -->
+<section>
+    <span class="section-number">08 — TWO SIDES OF A COIN</span>
+    <h2>Faburden &amp; Fauxbourdon</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The Continent had its own way of spinning out these sweet parallel chords —
+        <span class="accent-amber">fauxbourdon</span>, prominent in Du Fay. It reaches the identical 6–3 sound as English
+        <span class="accent-blue">faburden</span>, but arranges the given melody differently: two cousins, one family resemblance.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">Faburden (English)</h4>
+            <p>The plainchant is the <strong>middle</strong> voice. A voice sings a fourth above it, another mostly a third below — an improvised English descant, sung from the chant book by ear.</p>
+            <p style="margin-top:0.4em;">Result: a stream of 6–3 chords, opening to a 5th/octave at cadences.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Fauxbourdon (Continental)</h4>
+            <p>The chant-derived melody is on <strong>top</strong>. The lowest voice is written a sixth below it; a middle voice is improvised a fourth beneath the top.</p>
+            <p style="margin-top:0.4em;">Result: the same parallel 6–3 chords — sweetness, arrived at from the other direction.</p>
+        </div>
+    </div>
+    <p class="note-text">Scholars still debate which came first and how they influenced each other — but both belong to the same mid-fifteenth-century taste for full, consonant harmony.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: QUAM PULCHRA ES (AUDIO 2) ═══════════════════ -->
+<section>
+    <span class="section-number">09 — A MASTERPIECE</span>
+    <h2><em>Quam pulchra es</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Dunstaple's motet <span class="accent-blue"><em>Quam pulchra es</em></span> ("How beautiful you are") sets words from
+        the <span class="accent-blue">Song of Songs</span>. Instead of an elaborate cantus firmus, it is largely
+        <span class="accent-blue">note-against-note</span>: the voices declaim the text together, moving in gentle
+        thirds and sixths. The sweetness <em>is</em> the argument — harmony as devotion.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, [DUN_QUAM_UP, DUN_QUAM_LO], {timbre:'voice', bpm:66, temperament:'equal', tonic:'D3', reverb:0.6, legato:0.98})">&#9654; Hear two voices in thirds &amp; sixths</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dunstaple+Quam+pulchra+es">&#9834; Listen: Dunstaple — Quam pulchra es (recording)</a>
+    </div>
+    <p class="audio-caption">A serene, <em>Quam pulchra es</em>-style duet: the two voices open a sixth apart, then glide in parallel thirds — equal temperament keeps them sweet</p>
+    <p class="note-text">The style is often called "declamatory" — the words drive the rhythm, and the harmony simply glows around them.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: VENI SANCTE SPIRITUS ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE LEARNED SIDE</span>
+    <h2><em>Veni Sancte Spiritus</em> &amp; the Isorhythmic Motet</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Dunstaple was no mere melodist. His four-voice motet <span class="accent-blue"><em>Veni Sancte Spiritus</em></span>
+        shows him a master of the old intellectual craft too: the <span class="accent-blue">isorhythmic motet</span>,
+        where a repeating rhythmic pattern (<em>talea</em>) is laid over a repeating melody (<em>color</em>) in the
+        tenor, structuring the whole work like architecture in sound.
+    </p>
+    <div class="diagram-container" style="max-width:80%;">
+        <svg viewBox="0 0 820 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="12">
+                <text x="20" y="30" fill="#5b8cd4" font-size="11" font-weight="700">TALEA — the repeating rhythm</text>
+                <g fill="#5b8cd4">
+                    <rect x="20" y="40" width="40" height="14"/><rect x="70" y="40" width="18" height="14"/><rect x="98" y="40" width="18" height="14"/><rect x="126" y="40" width="60" height="14"/>
+                    <rect x="210" y="40" width="40" height="14" opacity="0.6"/><rect x="260" y="40" width="18" height="14" opacity="0.6"/><rect x="288" y="40" width="18" height="14" opacity="0.6"/><rect x="316" y="40" width="60" height="14" opacity="0.6"/>
+                </g>
+                <text x="90" y="70" fill="#6a6a7a" font-size="10">same rhythm, stated again &#8594;</text>
+                <text x="20" y="100" fill="#4ecca3" font-size="11" font-weight="700">COLOR — the repeating melody (tenor pitches)</text>
+                <g fill="#4ecca3">
+                    <circle cx="30" cy="115" r="6"/><circle cx="80" cy="110" r="6"/><circle cx="130" cy="118" r="6"/><circle cx="180" cy="108" r="6"/><circle cx="230" cy="115" r="6"/>
+                    <circle cx="300" cy="115" r="6" opacity="0.6"/><circle cx="350" cy="110" r="6" opacity="0.6"/><circle cx="400" cy="118" r="6" opacity="0.6"/>
+                </g>
+                <text x="460" y="118" fill="#6a6a7a" font-size="10">talea and color cycle at different lengths, weaving the structure</text>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dunstable+Veni+Sancte+Spiritus+motet">&#9834; Listen: Dunstable — Veni Sancte Spiritus (recording)</a>
+    </div>
+    <p class="note-text">Isorhythm was the great structural device of the Ars Nova; Dunstaple pours the new English sweetness into its rigorous frame.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: ASTRONOMER & MATHEMATICIAN ═══════════════════ -->
+<section>
+    <span class="section-number">11 — BEYOND MUSIC</span>
+    <h2>The Astronomer-Composer</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.46em !important;">
+                Dunstaple belonged to an age when music was still a branch of <span class="accent-blue">mathematics</span> —
+                one of the seven liberal arts, sister to arithmetic, geometry and astronomy. He was a serious
+                <span class="accent-blue">astronomer and mathematician</span>: manuscripts of astronomical tables and
+                treatises are associated with his name.
+            </p>
+            <p style="font-size:0.46em !important;">
+                His lost epitaph praised him as a man who had "shut up the heavens in his breast" — an astrologer and
+                mathematician as much as a <em>musicus</em>. The proportion and balance we hear in his music are of a
+                piece with that ordered, number-loving mind.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <!-- an astrolabe-like emblem -->
+                <circle cx="110" cy="110" r="78" fill="none" stroke="#5b8cd4" stroke-width="1.5"/>
+                <circle cx="110" cy="110" r="58" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+                <circle cx="110" cy="110" r="34" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="32" y1="110" x2="188" y2="110" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="110" y1="32" x2="110" y2="188" stroke="#6a6a7a" stroke-width="1"/>
+                <line x1="55" y1="55" x2="165" y2="165" stroke="#2a2a3a" stroke-width="1"/>
+                <line x1="165" y1="55" x2="55" y2="165" stroke="#2a2a3a" stroke-width="1"/>
+                <!-- a rule / alidade -->
+                <line x1="48" y1="150" x2="172" y2="70" stroke="#d4a053" stroke-width="2"/>
+                <circle cx="110" cy="110" r="5" fill="#d4a053"/>
+                <!-- stars -->
+                <text x="150" y="60" fill="#4ecca3" font-size="14">&#10022;</text>
+                <text x="66" y="72" fill="#e8e6e3" font-size="11">&#10022;</text>
+                <text x="150" y="160" fill="#e8e6e3" font-size="11">&#10022;</text>
+            </svg>
+        </div>
+    </div>
+    <p class="note-text">A reminder that the "sweetness" of his harmony rested on the same numerical understanding of intervals that governed his study of the stars.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: THE ENGLISH SEED ON THE CONTINENT ═══════════════════ -->
+<section>
+    <span class="section-number">12 — THE INFLUENCE</span>
+    <h2>The English Seed on the Continent</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Carried abroad by war, diplomacy and the copying of manuscripts, the English sound helped shape the
+        <span class="accent-amber">Burgundian</span> style that dominated the next generation. What le Franc heard in
+        1441 became the mainstream of European music.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Guillaume Du Fay</h4><p>The towering Burgundian master, said to have taken the <em>contenance angloise</em> as a model; a great cultivator of fauxbourdon.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Gilles Binchois</h4><p>The supreme songsmith of the Burgundian court, named alongside Du Fay as heir to the sweet English manner.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">A new default</h4><p>Full triadic harmony, thirds and sixths as the norm — the foundation on which Ockeghem, Josquin and the whole Renaissance would build.</p></div>
+    </div>
+    <p class="note-text">From here, the "imperfect" consonances become the very heart of Western harmony — and never look back.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: WHERE THE MUSIC SURVIVES ═══════════════════ -->
+<section>
+    <span class="section-number">13 — THE SOURCES</span>
+    <h2>Where the Music Survives</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        A telling irony: much of Dunstaple's music comes down to us not through English books but through
+        <span class="accent-blue">Continental manuscripts</span>. English liturgical books were largely destroyed in the
+        Reformation — so the very copies that prove how far his fame travelled are the ones that saved his work.
+    </p>
+    <div class="card-grid cols-2" style="max-width:86%;">
+        <div class="card"><h4 class="accent-amber">The Trent Codices</h4><p>A vast mid-fifteenth-century group of manuscripts from the Alps, preserving a huge amount of the sacred polyphony of the age — including English music.</p></div>
+        <div class="card"><h4 class="accent-green">Continental copies</h4><p>Sources in Italy and elsewhere transmit motets and Mass movements attributed to Dunstaple, showing how widely he was sung abroad.</p></div>
+        <div class="card"><h4 class="accent-blue">Attribution puzzles</h4><p>The same piece can appear under different names in different books, so scholars must weigh conflicting attributions with care.</p></div>
+        <div class="card"><h4 class="accent-purple">A lost home tradition</h4><p>The near-total loss of English sources makes these foreign witnesses precious — and reminds us how much has vanished.</p></div>
+    </div>
+    <p class="note-text">Modern collected editions reconstruct his output by comparing these scattered, and sometimes disagreeing, manuscript sources.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Dunstaple</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Listen for the <span class="accent-blue">full chords</span> — root, third and fifth all sounding — and notice how <em>settled</em> and warm they feel.</li>
+        <li>Follow the <span class="accent-green">parallel motion</span> of faburden/fauxbourdon: whole phrases gliding in sweet 6–3 sonorities.</li>
+        <li>Hear how the voices <span class="accent-amber">declaim the words together</span> in <em>Quam pulchra es</em> — harmony serving the text.</li>
+        <li>At cadences, catch the chords <span class="accent-purple">opening onto a hollow fifth or octave</span> — the old medieval "perfect" close, kept for the finish.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dunstaple+Quam+pulchra+es">&#9834; Quam pulchra es</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dunstable+Veni+Sancte+Spiritus">&#9834; Veni Sancte Spiritus</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=contenance+angloise+Dunstable+Hilliard+Ensemble">&#9834; Contenance angloise</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Orlando+Consort+Dunstaple">&#9834; Orlando Consort</a>
+    </div>
+    <p class="note-text">Ensembles specialising in medieval English polyphony bring out the ringing thirds best in resonant, church-like acoustics.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The Man Who Made Harmony Sweet</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        With Dunstaple, the <span class="accent-blue">third and the sixth</span> step out of the shadows and become the
+        warm centre of Western harmony. The <span class="accent-blue">contenance angloise</span> he embodied reshaped
+        Continental music; the full triad he loved is, quite simply, the chord we still hear today. To follow the sweetness
+        of thirds is to trace the birth of the sound of the Renaissance.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Sweet harmony</h4><p>Thirds and sixths, once "imperfect", become the everyday consonances of European music.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">A named style</h4><p>The <em>contenance angloise</em> is among the first national manners consciously imitated across Europe.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The road to Du Fay</h4><p>Dunstaple's sweetness feeds directly into the Burgundian school and the whole Renaissance to come.</p></div>
+    </div>
+    <div class="quote-box" style="border-left-color: var(--accent-blue); background: rgba(91,140,212,0.05);">
+        <p>"The fount and origin of this new art is held to be among the English, of whom Dunstaple stood forth as the chief."</p>
+        <span class="attribution">— Johannes Tinctoris, <em>Proportionale musices</em>, c. 1476–7 (paraphrased from the Latin)</span>
+    </div>
+    <p class="note-text">c. 1390 – 1453 · the Englishman who taught Europe to love the third.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — Dunstaple ── */
+/* SIGNATURE AUDIO: a chain of full triads / parallel 6-3 chords — the English sweetness.
+   Use EQUAL temperament so the thirds sound sweet and in tune. */
+var DUN_TRIADS = [
+  {n:['G3','B3','D4'],d:2},
+  {n:['A3','C4','E4'],d:2},
+  {n:['B3','D4','F#4'],d:2},
+  {n:['C4','E4','G4'],d:2},
+  {n:['D4','F#4','A4'],d:3}
+];
+/* A serene, Quam-pulchra-es-style note-against-note duet moving in thirds & sixths.
+   Opens a sixth apart, then glides in parallel thirds; ends on a sweet major third. */
+var DUN_QUAM_UP = [{n:'D5',d:2},{n:'C5',d:2},{n:'D5',d:2},{n:'E5',d:2},{n:'D5',d:2},{n:'C5',d:2},{n:'B4',d:2},{n:'A4',d:4}];
+var DUN_QUAM_LO = [{n:'F4',d:2},{n:'A4',d:2},{n:'B4',d:2},{n:'C5',d:2},{n:'B4',d:2},{n:'A4',d:2},{n:'G4',d:2},{n:'F4',d:4}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

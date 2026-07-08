@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palestrina — The Serene Counterpoint of the Counter-Reformation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- faint 5-line staff -->
+            <g stroke="#2a2a3a" stroke-width="1">
+                <line x1="20" y1="34" x2="340" y2="34"/>
+                <line x1="20" y1="49" x2="340" y2="49"/>
+                <line x1="20" y1="64" x2="340" y2="64"/>
+                <line x1="20" y1="79" x2="340" y2="79"/>
+                <line x1="20" y1="94" x2="340" y2="94"/>
+            </g>
+            <!-- two interweaving contrapuntal voices, meeting at a suspension -->
+            <path d="M28 84 C 70 40, 110 40, 150 64 S 230 92, 270 64 S 330 40, 336 46" fill="none" stroke="#4ecca3" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+            <path d="M28 46 C 70 92, 110 92, 150 64 S 230 40, 270 64 S 330 92, 336 84" fill="none" stroke="#d4a053" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+            <!-- the suspension "knot" where the two lines lean and resolve -->
+            <circle cx="150" cy="64" r="4.5" fill="#e8e6e3"/>
+            <circle cx="270" cy="64" r="4.5" fill="#e8e6e3"/>
+            <!-- voice endpoints -->
+            <circle cx="28" cy="84" r="3.5" fill="#4ecca3"/><circle cx="28" cy="46" r="3.5" fill="#d4a053"/>
+            <circle cx="336" cy="46" r="3.5" fill="#4ecca3"/><circle cx="336" cy="84" r="3.5" fill="#d4a053"/>
+            <text x="180" y="122" text-anchor="middle" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">two voices, leaning and resolving</text>
+        </svg>
+    </div>
+    <h1>Palestrina</h1>
+    <div class="subtitle">c. 1525–1594 · The Sound of the Counter-Reformation</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The serene, flawless vocal counterpoint that became the very model of how voices should
+        move together — dissonance always prepared, always resolved, the words shining through.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · The High Renaissance in Rome</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS PALESTRINA ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Who Was Palestrina?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-green">Giovanni Pierluigi da Palestrina</span> (c. 1525–1594) took his name from the small
+        hill-town near Rome where he was born, the ancient <em>Praeneste</em>. He spent almost his whole life in the
+        service of the great Roman basilicas, and by the time he died he was hailed as the supreme master of sacred
+        polyphony — the composer whose name would come to <em>mean</em> counterpoint itself.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-green">&#9962;</span><h4 class="accent-green">A Roman life</h4><p>Choirboy, organist, then choirmaster at St Peter's, St John Lateran and Santa Maria Maggiore.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9834;</span><h4 class="accent-amber">Vast output</h4><p>Over 100 Masses and hundreds of motets, plus hymns, Magnificats, offertories and madrigals.</p></div>
+        <div class="card"><span class="icon accent-purple">&#10015;</span><h4 class="accent-purple">Sacred purpose</h4><p>His art served the reformed Catholic liturgy — clear, dignified, devout, never showy.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9998;</span><h4 class="accent-blue">The model</h4><p>His style became the textbook of counterpoint, taught to students to this very day.</p></div>
+    </div>
+    <p class="note-text">"Pierluigi" was his family surname; "da Palestrina" simply means "of Palestrina", the town — the name by which the whole world now knows him.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: ROME & COUNTER-REFORMATION ═══════════════════ -->
+<section>
+    <span class="section-number">02 — THE MOMENT</span>
+    <h2>Rome &amp; the Counter-Reformation</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.46em !important;">
+                Palestrina worked at the heart of the <span class="accent-green">Counter-Reformation</span> — the Catholic
+                Church's sweeping response to the Protestant Reformation. In an age of religious upheaval, Rome sought a
+                sacred music that was <em>dignified, orderly and above all intelligible</em>: the holy words were not to be
+                lost in a tangle of voices.
+            </p>
+            <p style="font-size:0.46em !important;">
+                His answer was a polyphony of extraordinary balance and calm — many independent voices woven together, yet
+                so smoothly that the sung Latin remains clear. It sounded, to his contemporaries and to us, like the very
+                voice of an ordered, luminous faith.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">The church's wish list</h4>
+            <p style="margin-bottom:0.35em;"><strong>Clarity</strong> — the words must be understood.</p>
+            <p style="margin-bottom:0.35em;"><strong>Purity</strong> — no secular or "lascivious" tunes hidden in sacred music.</p>
+            <p style="margin-bottom:0.35em;"><strong>Reverence</strong> — beauty in the service of devotion, not display.</p>
+            <p>Palestrina met all three without sacrificing an ounce of artistry.</p>
+        </div>
+    </div>
+    <p class="note-text">The reforming Council of Trent (1545–1563) set the tone; Palestrina became, in retrospect, the composer who best embodied its ideals for church music.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE COUNCIL OF TRENT & THE MYTH ═══════════════════ -->
+<section>
+    <span class="section-number">03 — LEGEND vs FACT</span>
+    <h2>The Council of Trent &amp; a Famous Myth</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        A beloved story says that the <span class="accent-green">Council of Trent</span> was about to ban all polyphony from
+        the Mass — until Palestrina proved, with a single perfect work, that complex counterpoint <em>could</em> set the
+        words clearly. He is said to have "saved polyphony". It is a wonderful tale. It is also <span class="accent-rose">a myth</span>.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">The legend</h4>
+            <p>Trent nearly outlawed polyphony; Palestrina's <em>Missa Papae Marcelli</em> single-handedly changed the cardinals' minds and rescued the whole art. Later dramatised in Pfitzner's 1917 opera <em>Palestrina</em>.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">The history</h4>
+            <p>Trent's 1562 session urged clarity and the removal of anything profane, but planned no outright ban. No single Mass "saved" polyphony. The romantic rescue story grew up long after the fact.</p>
+        </div>
+    </div>
+    <p class="note-text">Why it stuck: the Mass really <em>is</em> a marvel of clarity, so it feels like the perfect answer to Trent — history and legend flatter each other.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: MISSA PAPAE MARCELLI ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE MASTERWORK</span>
+    <h2><em>Missa Papae Marcelli</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Legend aside, the <span class="accent-green">Pope Marcellus Mass</span> is real and sublime. Published in 1567 in his
+        Second Book of Masses, it is named for <span class="accent-amber">Pope Marcellus II</span>, who reigned for barely
+        three weeks in 1555. Scored for six voices, it is celebrated precisely for the quality the reformers longed for:
+        the sacred text is <em>audible</em> throughout.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Six voices</h4><p>Superius, alto, two tenors and two basses — rich yet transparent, often moving in clear, declaimed blocks.</p></div>
+        <div class="card"><h4 class="accent-green">Words first</h4><p>Homophonic passages let whole phrases of Latin be heard at once; imitation returns without ever clouding the sense.</p></div>
+        <div class="card"><h4 class="accent-purple">Serene arch</h4><p>Smooth, mostly stepwise lines rise to gentle peaks and fall back — the hallmark Palestrina calm.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Missa+Papae+Marcelli+Tallis+Scholars">&#9834; Listen: Missa Papae Marcelli — The Tallis Scholars</a>
+    </div>
+    <p class="note-text">The Mass Ordinary — Kyrie, Gloria, Credo, Sanctus, Agnus Dei — set with a clarity that made it the emblem of "correct" church polyphony.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE PALESTRINA STYLE ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE STYLE</span>
+    <h2>The Palestrina Style</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        His music is governed by a handful of principles so consistent that they could be — and were — turned into rules.
+        Together they produce that unmistakable smooth, floating sound.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Stepwise motion</h4><p>Melodies move mostly by step; leaps are rare, and a leap is answered by a step in the opposite direction.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Controlled dissonance</h4><p>Clashes appear only on weak beats or as prepared suspensions — never harsh, always resolved by step.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Balanced arches</h4><p>Each line rises to a single peak and gently descends; the whole texture breathes as one.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Independent voices</h4><p>Every part is singable and shapely in its own right, yet all combine into pure consonance.</p></div>
+    </div>
+    <p class="note-text">This became the <em>stile antico</em> — the "old style" — a timeless ideal that composers would study for centuries after his death.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: CONTROLLED DISSONANCE — THE SUSPENSION (AUDIO 1) ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE HEART OF THE STYLE</span>
+    <h2>Controlled Dissonance: the Suspension</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The single most characteristic gesture in Palestrina is the <span class="accent-green">suspension</span>: one voice
+        <em>holds</em> a note while another moves beneath it, creating a momentary dissonance — a gentle "leaning" tension —
+        which then <em>resolves</em> downward by step into sweetness. Chained together, suspensions give his cadences their
+        yearning, serene glow.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, PAL_SUSP_UPPER_LOWER, {timbre:'voice', bpm:72, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear a suspension-chain cadence</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Sicut+cervus">&#9834; Listen: Palestrina — Sicut cervus</a>
+    </div>
+    <p class="audio-caption">Two synthesised voices · the upper voice leans on a dissonance, then resolves down a step onto a full triad</p>
+    <p class="note-text">Listen for the tiny "sigh" as the held note leans and then settles — that suspended-and-resolved dissonance is the emotional engine of the whole style.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: NOTATION — READING A 4–3 SUSPENSION ═══════════════════ -->
+<section>
+    <span class="section-number">07 — HOW TO READ IT</span>
+    <h2>Reading a 4&#8211;3 Suspension</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The classic suspension has three steps, named for what they do. The label "4&#8211;3" describes the interval between
+        the two voices: the upper voice sounds a <em>fourth</em> above the lower (a dissonance), then resolves to a
+        <em>third</em> (a consonance).
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#9a9a9a" stroke-width="1.1">
+                <line x1="70" y1="50" x2="840" y2="50"/>
+                <line x1="70" y1="68" x2="840" y2="68"/>
+                <line x1="70" y1="86" x2="840" y2="86"/>
+                <line x1="70" y1="104" x2="840" y2="104"/>
+                <line x1="70" y1="122" x2="840" y2="122"/>
+            </g>
+            <!-- three phase zones -->
+            <g font-family="DM Sans" font-size="13" text-anchor="middle">
+                <text x="215" y="34" fill="#4ecca3" font-weight="700">1 · PREPARE</text>
+                <text x="450" y="34" fill="#cf7272" font-weight="700">2 · SUSPEND</text>
+                <text x="690" y="34" fill="#d4a053" font-weight="700">3 · RESOLVE</text>
+            </g>
+            <line x1="330" y1="42" x2="330" y2="150" stroke="#2a2a3a" stroke-width="1"/>
+            <line x1="575" y1="42" x2="575" y2="150" stroke="#2a2a3a" stroke-width="1"/>
+            <!-- UPPER VOICE: C5 (consonant 3rd) — tied C5 (dissonant 4th) — B4 (consonant 3rd) -->
+            <!-- C5 sits on the 3rd space region; use ellipse noteheads -->
+            <ellipse cx="215" cy="77" rx="11" ry="8" fill="#4ecca3"/>
+            <ellipse cx="450" cy="77" rx="11" ry="8" fill="#cf7272"/>
+            <ellipse cx="690" cy="86" rx="11" ry="8" fill="#d4a053"/>
+            <!-- tie linking the two upper notes (held note) -->
+            <path d="M 228 70 Q 332 54 437 70" fill="none" stroke="#e8e6e3" stroke-width="1.6"/>
+            <text x="332" y="60" text-anchor="middle" fill="#e8e6e3" font-size="11">held (tied)</text>
+            <!-- LOWER VOICE: A3 — G3 (moves down) — G3 -->
+            <ellipse cx="215" cy="122" rx="11" ry="8" fill="#5b8cd4"/>
+            <ellipse cx="450" cy="131" rx="11" ry="8" fill="#5b8cd4"/>
+            <ellipse cx="690" cy="131" rx="11" ry="8" fill="#5b8cd4"/>
+            <!-- resolution arrow on upper voice -->
+            <path d="M 460 84 q 60 22 220 6" fill="none" stroke="#d4a053" stroke-width="1.4" stroke-dasharray="3,3"/>
+            <text x="565" y="112" text-anchor="middle" fill="#d4a053" font-size="11">down a step &#8595;</text>
+            <!-- interval labels between the voices -->
+            <text x="215" y="160" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="700">3rd</text>
+            <text x="215" y="176" text-anchor="middle" fill="#9a9a9a" font-size="10">consonant</text>
+            <text x="450" y="160" text-anchor="middle" fill="#cf7272" font-size="13" font-weight="700">4th</text>
+            <text x="450" y="176" text-anchor="middle" fill="#9a9a9a" font-size="10">dissonant &#8212; the "lean"</text>
+            <text x="690" y="160" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="700">3rd</text>
+            <text x="690" y="176" text-anchor="middle" fill="#9a9a9a" font-size="10">consonant &#8212; rest</text>
+            <!-- voice labels -->
+            <text x="55" y="80" text-anchor="end" fill="#6a6a7a" font-size="11">upper</text>
+            <text x="55" y="126" text-anchor="end" fill="#6a6a7a" font-size="11">lower</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="max-width:94%;">
+        <div class="card"><h4 class="accent-green">1 · Prepare</h4><p>The note that will clash is first sounded as a <em>consonance</em> — here a comfortable third. The ear accepts it.</p></div>
+        <div class="card"><h4 class="accent-rose">2 · Suspend</h4><p>The lower voice moves down; the upper voice is <em>held over</em>, so the same note is now a dissonant fourth — the tension.</p></div>
+        <div class="card"><h4 class="accent-amber">3 · Resolve</h4><p>The held voice steps <em>down</em> to the third. The dissonance melts into consonance — the sigh of relief.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE WARM CADENCE (AUDIO 2) ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE GOAL OF EVERY PHRASE</span>
+    <h2>The Warm Full-Triad Cadence</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Where medieval cadences often landed on hollow, open fifths, Palestrina closes on a <span class="accent-green">full,
+        sweet triad</span> — root, third and fifth all sounding. A phrase of imitation gathers, a suspension leans, and the
+        voices settle onto a rich major chord: the sound of the word "<em>Amen</em>".
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, PAL_AMEN_CADENCE, {timbre:'voice', bpm:60, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear a warm "Amen" cadence</button>
+    </div>
+    <p class="audio-caption">Synthesised choir · a plagal "Amen" with a 4&#8211;3 suspension leaning into a glowing full G-major triad</p>
+    <p class="note-text">Equal temperament lets the thirds ring pure and mellow — the sweetness that defines Renaissance harmony after the open sonorities of the Middle Ages.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE SMOOTH LINE (AUDIO 3) ═══════════════════ -->
+<section>
+    <span class="section-number">09 — MELODY</span>
+    <h2>The Smooth, Singing Line</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Every Palestrina melody is designed to be <em>sung</em> with ease. It moves mostly by step, rises to a single high
+        point, and curves gently back down — a balanced arch. Large leaps are used sparingly and always smoothed over by a
+        step in the opposite direction. The famous opening of the motet <em>Sicut cervus</em> is the perfect example.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, PAL_SMOOTH_LINE, {timbre:'voice', bpm:80, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear a smooth arching subject</button>
+    </div>
+    <p class="audio-caption">Synthesised voice · a stepwise line rising to a peak and gently falling — the shape of a Palestrina point of imitation</p>
+    <p class="note-text">Each voice enters with this same shapely subject in turn ("imitation"), so the whole texture is woven from one graceful idea.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: A VAST OUTPUT ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE OUTPUT</span>
+    <h2>A Vast, Ordered Output</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Palestrina's productivity was prodigious and almost entirely sacred — the fruit of a lifetime inside the Roman
+        liturgy. His works were printed and treasured across Catholic Europe.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-green">Over 100 Masses</h4><p>More than any other composer of the age — built on chant, on his own motets, and on the famous <em>L'homme armé</em> and parody techniques.</p></div>
+        <div class="card"><h4 class="accent-amber">Hundreds of motets</h4><p>Including settings of the Song of Songs and the widely loved <em>Sicut cervus</em> ("As the deer longs for the water").</p></div>
+        <div class="card"><h4 class="accent-purple">Hymns &amp; Magnificats</h4><p>Complete cycles of office hymns, Magnificats, offertories, lamentations — a working repertory for the whole church year.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Stabat+Mater">&#9834; Listen: Palestrina — Stabat Mater</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Sicut+cervus+motet">&#9834; Listen: Sicut cervus (motet)</a>
+    </div>
+    <p class="note-text">He also wrote secular madrigals early in his career — and later publicly regretted them as unworthy of a church musician.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: FUX & GRADUS AD PARNASSUM ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE TEXTBOOK</span>
+    <h2>Fux &amp; the Rules of Counterpoint</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.46em !important;">
+                Palestrina's practice was so consistent that, over a century after his death, the Austrian composer
+                <span class="accent-green">Johann Joseph Fux</span> distilled it into a teaching method:
+                <em>Gradus ad Parnassum</em> ("Steps to Parnassus", 1725). Written as a dialogue, its wise master is named
+                <em>Aloysius</em> — the Latin for Luigi — an open homage to Palestrina.
+            </p>
+            <p style="font-size:0.46em !important;">
+                Fux's system of <span class="accent-amber">species counterpoint</span> — adding voices in graded stages of
+                complexity — is <em>still taught today</em>. It shaped Haydn, Mozart and Beethoven, all of whom studied from
+                it. Through Fux, the Palestrina style became the grammar of Western music.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The five species</h4>
+            <p style="margin-bottom:0.3em;"><strong>1st</strong> — note against note</p>
+            <p style="margin-bottom:0.3em;"><strong>2nd</strong> — two notes against one</p>
+            <p style="margin-bottom:0.3em;"><strong>3rd</strong> — four notes against one</p>
+            <p style="margin-bottom:0.3em;"><strong>4th</strong> — syncopation &amp; suspensions</p>
+            <p><strong>5th</strong> — florid: all combined</p>
+        </div>
+    </div>
+    <p class="note-text">The suspension you heard earlier is the very heart of Fux's fourth species — Palestrina's leaning dissonance, made into a lesson.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: PRIMA PRATICA / THE IMMORTAL MODEL ═══════════════════ -->
+<section>
+    <span class="section-number">12 — THE OLD STYLE</span>
+    <h2>The <em>Stile Antico</em> — the Immortal Model</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Within a generation of Palestrina's death, music changed radically: Monteverdi's expressive
+        <span class="accent-green">seconda pratica</span> unleashed dramatic dissonance, and the Baroque was born. But
+        Palestrina's manner did not die — it became the revered <span class="accent-amber">prima pratica</span> or
+        <em>stile antico</em>, the "old style" deliberately kept alive for sacred music.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-green">A living reference</h4><p>Composers switched into the "old style" for church works long after it had ceased to be modern — a mark of gravity and reverence.</p></div>
+        <div class="card"><h4 class="accent-amber">Bach &amp; Mozart</h4><p>Both studied Palestrina's counterpoint; Bach copied out and performed his music, and echoes of the <em>stile antico</em> run through their sacred works.</p></div>
+        <div class="card"><h4 class="accent-purple">The Cecilian revival</h4><p>In the 19th century a movement took Palestrina as the ideal of pure church music, restoring and imitating his style anew.</p></div>
+    </div>
+    <p class="note-text">Few composers become a permanent "style" that later ages consciously return to. Palestrina is one of the very few.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: LIFE & THE CHURCHES ═══════════════════ -->
+<section>
+    <span class="section-number">13 — A LIFE IN ROME</span>
+    <h2>A Life Among the Basilicas</h2>
+    <div class="separator"></div>
+    <div style="max-width: 84%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1525</span><span class="event"><strong>Born at Palestrina</strong>In the hill-town near Rome; trained as a choirboy, most likely at Santa Maria Maggiore.</span></div>
+        <div class="timeline-item"><span class="year">1551</span><span class="event"><strong>St Peter's</strong>Appointed maestro of the Cappella Giulia, the choir of St Peter's Basilica — the start of his great Roman career.</span></div>
+        <div class="timeline-item"><span class="year">1555</span><span class="event"><strong>A turbulent year</strong>Briefly a papal singer in the Sistine Chapel, then dismissed (he was married); moved to St John Lateran.</span></div>
+        <div class="timeline-item"><span class="year">1561–1566</span><span class="event"><strong>Santa Maria Maggiore</strong>Choirmaster at another of Rome's great basilicas, in his full maturity.</span></div>
+        <div class="timeline-item"><span class="year">1571–1594</span><span class="event"><strong>Return to St Peter's</strong>Back at the Cappella Giulia until his death, the acknowledged head of Roman church music.</span></div>
+        <div class="timeline-item"><span class="year">1594</span><span class="event"><strong>Death in Rome</strong>He died on 2 February; his coffin plate named him <em>Musicae Princeps</em> — "Prince of Music".</span></div>
+    </div>
+    <p class="note-text">He survived plague, the loss of his first wife and sons, and near-poverty; a prosperous second marriage let him print his great late collections of Masses.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Palestrina</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow one <span class="accent-green">voice</span> at a time — hear how singable and shapely each line is on its own.</li>
+        <li>Wait for the <span class="accent-amber">suspensions</span> at cadences: the held note that leans, then resolves down with a sigh.</li>
+        <li>Notice the <span class="accent-purple">balance</span> — no voice dominates; the texture floats, weightless and serene.</li>
+        <li>Listen for the <span class="accent-blue">words</span>: even in six parts, the Latin stays remarkably clear.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Missa+Papae+Marcelli+Tallis+Scholars">&#9834; The Tallis Scholars</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Sicut+cervus+Sixteen">&#9834; The Sixteen — Sicut cervus</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Palestrina+Stabat+Mater">&#9834; Stabat Mater</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/Giovanni_Pierluigi_da_Palestrina">&#9834; CPDL — free scores</a>
+    </div>
+    <p class="note-text">A cappella early-music choirs bring out the transparency; try the same work sung one-to-a-part and by a full choir to hear the difference.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The Prince of Music</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        More than any composer before him, Palestrina turned polyphony into a serene, self-contained perfection — and then,
+        through Fux and the <em>stile antico</em>, that perfection became the <span class="accent-green">grammar every later
+        composer learned</span>. To study counterpoint at all is, still today, to study Palestrina. His calm remains, four
+        centuries on, the very sound of ordered beauty.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The model</h4><p>His style, codified by Fux, is the foundation of counterpoint teaching from Bach's day to the conservatoire of today.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">The sound</h4><p>Smooth lines, prepared dissonance and full triads define, for most listeners, the very sound of "Renaissance church music".</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">The ideal</h4><p>For the Cecilian reformers and countless choirs since, Palestrina is the enduring emblem of pure, prayerful music.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Johannes Petraloysius Praenestinus — Musicae Princeps."<br>(John Pierluigi of Palestrina — Prince of Music.)</p>
+        <span class="attribution">— inscription on Palestrina's coffin, St Peter's, Rome, 1594</span>
+    </div>
+    <p class="note-text">c. 1525 – 1594 · The serene voice of the Counter-Reformation, still the teacher of every counterpoint student.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — unique vars ── */
+/* SIGNATURE AUDIO: a 4–3 suspension-chain cadence; upper voice leans and resolves,
+   both voices settle onto a full G-major-ish triad. Pass [UPPER, LOWER]. */
+var PAL_SUSP_UPPER = [{n:'A4',d:2},{n:'A4',d:1},{n:'G4',d:1},{n:'F#4',d:2},{n:'G4',d:2}];
+var PAL_SUSP_LOWER = [{n:'F4',d:2},{n:'D4',d:2},{n:'D4',d:2},{n:'D4',d:1},{n:'G3',d:1}];
+var PAL_SUSP_UPPER_LOWER = [PAL_SUSP_UPPER, PAL_SUSP_LOWER];
+/* A warm plagal "Amen": subdominant C major → tonic G major, with a 4–3 suspension
+   (the held top C5 leans as a 4th above G, then resolves down to B4) — full triads. */
+var PAL_AMEN_CADENCE = [
+  {n:['C4','E4','G4','C5'],d:3},   /* "A-"  — full, warm C-major (subdominant) */
+  {n:['G3','D4','G4','C5'],d:1},   /* bass drops to G; C5 now a suspended 4th above G */
+  {n:['G3','D4','G4','B4'],d:4}    /* "-men" — C5 resolves to B4: glowing G-major triad */
+];
+/* A smooth, arching stepwise subject (Sicut-cervus-style point of imitation) */
+var PAL_SMOOTH_LINE = [
+  {n:'G4',d:2},{n:'A4',d:1},{n:'B4',d:1},{n:'C5',d:2},
+  {n:'B4',d:1},{n:'A4',d:1},{n:'B4',d:2},{n:'G4',d:2}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Dowland — The Melancholy Lutenist &amp; the English Ayre</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 260px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 260 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- Renaissance lute: rounded body, neck, bent-back pegbox -->
+            <!-- body (rounded back) -->
+            <ellipse cx="92" cy="112" rx="52" ry="42" fill="#12121a" stroke="#d4a053" stroke-width="2"/>
+            <!-- soundboard belly line -->
+            <path d="M 44 96 Q 92 84 140 96" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+            <!-- the rose (soundhole rosette) -->
+            <circle cx="92" cy="112" r="15" fill="none" stroke="#5b8cd4" stroke-width="1.2"/>
+            <circle cx="92" cy="112" r="9" fill="none" stroke="#5b8cd4" stroke-width="0.8"/>
+            <path d="M 92 100 L 92 124 M 80 112 L 104 112 M 84 104 L 100 120 M 100 104 L 84 120" stroke="#5b8cd4" stroke-width="0.6"/>
+            <!-- neck -->
+            <rect x="120" y="60" width="86" height="14" rx="3" transform="rotate(-24 120 67)" fill="#161622" stroke="#d4a053" stroke-width="1.6"/>
+            <!-- frets on neck -->
+            <g stroke="#6a6a7a" stroke-width="0.8">
+                <line x1="138" y1="52" x2="150" y2="76"/>
+                <line x1="152" y1="46" x2="164" y2="70"/>
+                <line x1="166" y1="40" x2="178" y2="64"/>
+                <line x1="180" y1="34" x2="192" y2="58"/>
+            </g>
+            <!-- bent-back pegbox -->
+            <path d="M 196 42 L 234 20 L 240 30 L 206 54 Z" fill="#161622" stroke="#d4a053" stroke-width="1.6"/>
+            <!-- pegs -->
+            <g fill="#d4a053"><circle cx="214" cy="24" r="2.4"/><circle cx="222" cy="20" r="2.4"/><circle cx="230" cy="16" r="2.4"/></g>
+            <!-- strings (courses) from bridge to nut -->
+            <g stroke="#9a9a9a" stroke-width="0.5">
+                <line x1="70" y1="130" x2="200" y2="46"/>
+                <line x1="78" y1="132" x2="203" y2="49"/>
+                <line x1="86" y1="133" x2="206" y2="52"/>
+            </g>
+            <!-- bridge -->
+            <rect x="66" y="128" width="30" height="4" rx="1.5" fill="#d4a053"/>
+        </svg>
+    </div>
+    <h1>John Dowland</h1>
+    <div class="subtitle">1563–1626 · The English Lute Song &amp; the Art of Melancholy</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The supreme composer of the English <em>ayre</em> — who turned sorrow into the most exquisite
+        art of the Elizabethan and Jacobean age, and whose falling "tears" still drop, note by note, four centuries on.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · The English Ayre &amp; the Lute</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS DOWLAND ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Who Was John Dowland?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Born in <span class="accent-blue">1563</span>, Dowland was the age's greatest virtuoso of the <span class="accent-blue">lute</span> and the
+        supreme composer of the <span class="accent-blue">ayre</span> — the accompanied English solo song. Widely travelled and long denied a
+        post at the English court, he served abroad before finally becoming one of the <span class="accent-blue">King's Lutes</span> under James I.
+        Above all he cultivated an artful <em>melancholy</em> that became his signature and his brand.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-blue">&#9834;</span><h4 class="accent-blue">Lutenist</h4><p>A performing virtuoso of European fame on the lute — the guitar's aristocratic Renaissance ancestor.</p></div>
+        <div class="card"><span class="icon accent-green">&#9835;</span><h4 class="accent-green">Song-maker</h4><p>Master of the <em>ayre</em>: a single voice over lute, printed so it could also be sung by four.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9788;</span><h4 class="accent-purple">Melancholic</h4><p>His motto punned on his name: <em>Semper Dowland, semper dolens</em> — "always Dowland, always grieving".</p></div>
+        <div class="card"><span class="icon accent-amber">&#9873;</span><h4 class="accent-amber">Traveller</h4><p>Worked on the Continent, notably at the Danish court, before gaining royal service at home.</p></div>
+    </div>
+    <p class="note-text">The lute song flowered briefly and brilliantly in England around 1600; Dowland is its towering figure.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: LIFE & TRAVELS ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE</span>
+    <h2>A Life Between Courts</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Dowland's career traces the restless path of a musician seeking patronage across Protestant and Catholic Europe —
+        celebrated everywhere, yet kept waiting for the royal post he craved at home.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">1563</span><span class="event"><strong>Born</strong>John Dowland is born — probably in or near London.</span></div>
+        <div class="timeline-item"><span class="year">1597</span><span class="event"><strong>The First Booke of Songes or Ayres</strong>His landmark songbook is printed in London and becomes a runaway success.</span></div>
+        <div class="timeline-item"><span class="year">c. 1598</span><span class="event"><strong>To the Danish court</strong>Enters the service of King Christian IV of Denmark as a highly paid lutenist.</span></div>
+        <div class="timeline-item"><span class="year">1604</span><span class="event"><strong>Lachrimae, or Seaven Teares</strong>Publishes his great instrumental collection of seven pavans on the "tear" motif.</span></div>
+        <div class="timeline-item"><span class="year">1612</span><span class="event"><strong>One of the King's Lutes</strong>At last gains a coveted post in the royal music of James I.</span></div>
+        <div class="timeline-item"><span class="year">1626</span><span class="event"><strong>Died</strong>Dowland dies in London, the acknowledged master of the English lute song.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: THE ENGLISH AYRE ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE GENRE</span>
+    <h2>What Is an "Ayre"?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The <span class="accent-blue">ayre</span> (air) is the English solo song of Dowland's generation: a single, shapely melody carried by one
+        voice, supported by the lute. Where the Italian madrigal spun its poetry across several interweaving voices, the
+        ayre keeps the words <em>clear</em>, the top line <em>singable</em>, and the mood <em>intimate</em>.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">One voice + lute</h4><p>A soloist sings the tune; the lute weaves an accompaniment beneath — chamber music for a single listener.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Words first</h4><p>Clear, syllabic text-setting lets the poetry — love, loss, longing — be heard and felt directly.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Strophic + through-composed</h4><p>Many ayres repeat the music for each verse; the darkest, like his laments, follow the words freely.</p></div>
+    </div>
+    <p class="note-text">The English ayre is the direct ancestor of the art song — Schubert's Lied and beyond all descend from this intimate marriage of poem and accompaniment.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE FIRST BOOKE 1597 ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE SONGBOOK</span>
+    <h2>The First Booke of Songes (1597)</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Dowland's <span class="accent-blue">First Booke of Songes or Ayres</span> (1597) was a publishing sensation, reprinted again and again.
+                Its genius lay partly in a clever <em>page layout</em>: each opening was printed so the piece could be performed
+                <em>either</em> by a single singer with lute, <em>or</em> by four singers seated around a table, each reading their own part
+                from where they sat. One book, two ways to make music.
+            </p>
+            <p style="font-size:0.44em !important;">
+                This "table-book" format made the ayre sociable — a whole household or company of friends could gather round and sing.
+            </p>
+        </div>
+        <div>
+            <!-- Table-book layout diagram: parts facing outward around a table -->
+            <svg viewBox="0 0 260 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <rect x="60" y="60" width="140" height="90" rx="6" fill="#161622" stroke="#2a2a3a"/>
+                <text x="130" y="108" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">the open book</text>
+                <!-- Cantus (top, upright) -->
+                <text x="130" y="46" text-anchor="middle" fill="#5b8cd4" font-family="DM Sans" font-size="11" font-weight="700">CANTUS + Lute</text>
+                <!-- Bassus (bottom, inverted) -->
+                <text x="130" y="176" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="11" font-weight="700" transform="rotate(180 130 172)">BASSUS</text>
+                <!-- Altus (left, rotated) -->
+                <text x="34" y="105" text-anchor="middle" fill="#9b72cf" font-family="DM Sans" font-size="11" font-weight="700" transform="rotate(-90 34 105)">ALTUS</text>
+                <!-- Tenor (right, rotated) -->
+                <text x="226" y="105" text-anchor="middle" fill="#cf7272" font-family="DM Sans" font-size="11" font-weight="700" transform="rotate(90 226 105)">TENOR</text>
+                <!-- seat markers -->
+                <g fill="#2a2a3a"><circle cx="130" cy="28" r="4"/><circle cx="130" cy="188" r="4"/><circle cx="20" cy="105" r="4"/><circle cx="240" cy="105" r="4"/></g>
+            </svg>
+        </div>
+    </div>
+    <p class="note-text">Each singer reads a part turned toward their own chair: solo song and part-song from one printed opening.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE LUTE ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE INSTRUMENT</span>
+    <h2>The Lute</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        The <span class="accent-blue">lute</span> was the Renaissance's most beloved domestic instrument — a rounded, pear-shaped body of thin wooden
+        ribs, a flat soundboard pierced by a carved <em>rose</em>, and a pegbox bent sharply back. Its strings run in paired
+        <span class="accent-blue">courses</span>, plucked with the fingers; the neck carries gut <span class="accent-blue">frets</span> tied around it.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><h4 class="accent-blue">Courses</h4><p>Strings run mostly in pairs (a "course"), tuned in unison or octaves for a full, ringing sound.</p></div>
+        <div class="card"><h4 class="accent-green">Frets</h4><p>Movable gut frets are tied around the neck — the player can even adjust the tuning of a fret.</p></div>
+        <div class="card"><h4 class="accent-purple">The rose</h4><p>An intricately carved soundhole rosette, unique to each instrument, cut straight into the belly.</p></div>
+        <div class="card"><h4 class="accent-amber">Plucked</h4><p>Fingers, not a plectrum: this lets the lutenist voice several parts at once, like a tiny keyboard.</p></div>
+    </div>
+    <p class="note-text">Because the lute plays chords, melody and bass together, one player can accompany a singer — the whole ayre lives on a single instrument.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: READING LUTE TABLATURE ═══════════════════ -->
+<section>
+    <span class="section-number">06 — NOTATION · TABLATURE</span>
+    <h2>How to Read Lute Tablature</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Lute music is written not in staff notes but in <span class="accent-blue">tablature</span> — a picture of the <em>fingerboard</em>. The lines are
+        not pitches: they are the lute's <span class="accent-blue">courses</span> (strings). A letter on a line tells you which <span class="accent-blue">fret</span> to stop; the flags above give the rhythm.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 6 course lines (English/French tab: top line = highest course) -->
+            <g stroke="#9a9a9a" stroke-width="1">
+                <line x1="120" y1="70" x2="840" y2="70"/>
+                <line x1="120" y1="90" x2="840" y2="90"/>
+                <line x1="120" y1="110" x2="840" y2="110"/>
+                <line x1="120" y1="130" x2="840" y2="130"/>
+                <line x1="120" y1="150" x2="840" y2="150"/>
+                <line x1="120" y1="170" x2="840" y2="170"/>
+            </g>
+            <text x="112" y="74" text-anchor="end" fill="#6a6a7a" font-family="DM Sans" font-size="11">1st (highest)</text>
+            <text x="112" y="174" text-anchor="end" fill="#6a6a7a" font-family="DM Sans" font-size="11">6th (lowest)</text>
+            <!-- rhythm flags row above the staff -->
+            <g stroke="#d4a053" stroke-width="1.4" fill="none">
+                <!-- crotchet: stem + one flag -->
+                <line x1="180" y1="34" x2="180" y2="58"/><path d="M180 34 l10 6"/>
+                <line x1="300" y1="34" x2="300" y2="58"/><path d="M300 34 l10 6"/>
+                <!-- quaver pair: two flags -->
+                <line x1="420" y1="34" x2="420" y2="58"/><path d="M420 34 l10 6"/><path d="M420 41 l10 6"/>
+                <line x1="510" y1="34" x2="510" y2="58"/><path d="M510 34 l10 6"/><path d="M510 41 l10 6"/>
+                <!-- longer note: stem only -->
+                <line x1="640" y1="34" x2="640" y2="58"/>
+            </g>
+            <text x="700" y="46" fill="#d4a053" font-family="DM Sans" font-size="11">&#8592; rhythm flags (duration)</text>
+            <!-- letters on courses = frets. a=open, b=1st fret, c=2nd fret ... -->
+            <g font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#e8e6e3" text-anchor="middle">
+                <!-- beat 1: a chord (open 1st, 2nd fret on 3rd course, open bass) -->
+                <text x="180" y="76">a</text>
+                <text x="180" y="116">c</text>
+                <text x="180" y="176">a</text>
+                <!-- beat 2: melody note on top course, 2nd fret -->
+                <text x="300" y="76">c</text>
+                <!-- beat 3-4: quavers descending on top course -->
+                <text x="420" y="76" fill="#5b8cd4">b</text>
+                <text x="510" y="76" fill="#5b8cd4">a</text>
+                <!-- final long chord -->
+                <text x="640" y="76">a</text>
+                <text x="640" y="136">c</text>
+                <text x="640" y="176">a</text>
+            </g>
+            <!-- annotation callout -->
+            <line x1="300" y1="82" x2="300" y2="198" stroke="#4ecca3" stroke-width="0.8" stroke-dasharray="3 3"/>
+            <text x="300" y="212" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="11">"c" on the top line = 2nd fret of the highest course</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="max-width:94%;">
+        <div class="card"><h4 class="accent-blue">Lines = courses</h4><p>Six lines = six courses of strings. The <em>top</em> line is the <em>highest</em>-sounding course — not a pitch on a staff.</p></div>
+        <div class="card"><h4 class="accent-green">Letters = frets</h4><p><span class="accent-green">a</span> = open string, <span class="accent-green">b</span> = 1st fret, <span class="accent-green">c</span> = 2nd fret, and so on up the alphabet. Stack letters = a chord, plucked together.</p></div>
+        <div class="card"><h4 class="accent-amber">Flags = rhythm</h4><p>The little stems and flags <em>above</em> the staff give the timing; a flag holds until the next one appears.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: FLOW MY TEARS ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE MASTERPIECE</span>
+    <h2>Flow, My Tears</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        <span class="accent-blue">Flow, my tears</span> (also known by its Latin name <em>Lachrimae</em>) is Dowland's most famous ayre and one of the
+        best-loved songs of the age. It opens with a slow, falling figure — the musical image of tears dropping — that became
+        so celebrated it circulated across Europe and was borrowed, quoted and arranged by countless musicians.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, DOW_TEARS_MEL, {timbre:'pluck', bpm:66, temperament:'equal', reverb:0.45, legato:0.85})">&#9654; Hear the falling "tear" motif</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+Flow+my+tears+Sting">&#9834; Listen: Flow my tears (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised lute · the melody sinks step by step — A · G · F · E — the "falling tear"</p>
+    <p class="note-text" style="max-width:84%;margin-left:auto;margin-right:auto;">The song's four opening words — "Flow, my tears, fall" — are set to that very descent, so the music enacts the meaning of the poem.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE TEAR MOTIF ═══════════════════ -->
+<section>
+    <span class="section-number">08 — NOTATION · THE MOTIF</span>
+    <h2>The "Tear" Motif: a Falling Tetrachord</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The emotional signature of <em>Lachrimae</em> is a <span class="accent-blue">falling tetrachord</span> — four notes descending stepwise,
+        <span class="accent-blue">A&#8211;G&#8211;F&#8211;E</span>. This gentle four-step slide downward was, for the age, the very sound of grief. Read it left to right on the staff:
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 820 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="70" y1="50" x2="770" y2="50"/>
+                <line x1="70" y1="66" x2="770" y2="66"/>
+                <line x1="70" y1="82" x2="770" y2="82"/>
+                <line x1="70" y1="98" x2="770" y2="98"/>
+                <line x1="70" y1="114" x2="770" y2="114"/>
+            </g>
+            <!-- simple treble clef marker (stylised) -->
+            <text x="78" y="104" fill="#d4a053" font-family="Playfair Display" font-size="46" font-weight="700">&#119070;</text>
+            <!-- four descending noteheads: A (space) G F E going down -->
+            <g>
+                <!-- A4: second space from top -->
+                <ellipse cx="220" cy="66" rx="12" ry="9" fill="#5b8cd4" transform="rotate(-20 220 66)"/>
+                <text x="220" y="150" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="16" font-weight="700">A</text>
+                <!-- G4: top line -->
+                <ellipse cx="360" cy="74" rx="12" ry="9" fill="#4ecca3" transform="rotate(-20 360 74)"/>
+                <text x="360" y="150" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="16" font-weight="700">G</text>
+                <!-- F4: space below top line -->
+                <ellipse cx="500" cy="82" rx="12" ry="9" fill="#d4a053" transform="rotate(-20 500 82)"/>
+                <text x="500" y="150" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="16" font-weight="700">F</text>
+                <!-- E4: middle line -->
+                <ellipse cx="640" cy="90" rx="12" ry="9" fill="#cf7272" transform="rotate(-20 640 90)"/>
+                <text x="640" y="150" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="16" font-weight="700">E</text>
+            </g>
+            <!-- descending arrow bracket -->
+            <path d="M 220 40 Q 430 24 640 40" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="430" y="22" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="12">four steps down = "the tear"</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, [DOW_TEARS_MEL, DOW_TEARS_BASS], {timbre:'pluck', bpm:66, temperament:'equal', reverb:0.5, legato:0.85})">&#9654; Hear it harmonised over a lute bass</button>
+    </div>
+    <p class="audio-caption">The same descent, now with a supporting bass beneath — how the motif sounds within the song</p>
+    <p class="note-text"><strong>How to read it:</strong> higher on the staff = higher in pitch. These four noteheads step steadily <em>down</em> — A to G to F to E — the shape the ear hears as weeping.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: COME AGAIN ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE OTHER SIDE</span>
+    <h2>Come Again, Sweet Love</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Dowland was not only sorrow. <span class="accent-green">Come again, sweet love doth now invite</span> is his most beguiling love-ayre —
+        and it holds a famous stroke of word-painting. On the words <em>"to see, to hear, to touch, to kiss, to die"</em> the melody
+        <span class="accent-green">rises stepwise</span>, five little climbing notes of mounting desire, the exact opposite of the falling tear.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, DOW_COME, {timbre:'pluck', bpm:84, temperament:'equal', reverb:0.4, legato:0.8})">&#9654; Hear the rising ayre phrase</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+Come+again+sweet+love">&#9834; Listen: Come again (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised lute · the tune climbs — "to see, to hear, to touch, to kiss, to die" — then gently falls away</p>
+    <p class="note-text">Where <em>Flow my tears</em> falls, <em>Come again</em> rises: the same composer's two directions of feeling, drawn as musical shapes.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: LACHRIMAE OR SEAVEN TEARES ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE INSTRUMENTAL BOOK</span>
+    <h2>Lachrimae, or Seaven Teares (1604)</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        In 1604 Dowland gathered his tear-music into a great instrumental collection: <span class="accent-blue">Lachrimae, or Seaven Teares</span>,
+        <em>figured in seaven passionate pavans</em>. It takes the falling motif of <em>Flow my tears</em> and spins from it <span class="accent-blue">seven</span>
+        stately pavans for a consort of viols (or violins) with lute — a whole meditation built on a single descending figure.
+    </p>
+    <div class="diagram-container">
+        <!-- Seven falling drops, each a stepwise descent, as a visual "seven tears" -->
+        <svg viewBox="0 0 860 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="10" fill="#6a6a7a">
+                <!-- baseline -->
+                <line x1="30" y1="96" x2="840" y2="96" stroke="#2a2a3a" stroke-width="1"/>
+            </g>
+            <!-- seven teardrops descending in a gentle arc -->
+            <g fill="none" stroke="#5b8cd4" stroke-width="1.6">
+                <path d="M110 26 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4"/>
+                <path d="M220 32 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4" opacity="0.92"/>
+                <path d="M330 40 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4" opacity="0.84"/>
+                <path d="M440 48 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4" opacity="0.76"/>
+                <path d="M550 56 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4" opacity="0.68"/>
+                <path d="M660 64 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4" opacity="0.6"/>
+                <path d="M770 72 q 9 12 0 20 q -9 -8 0 -20 Z" fill="#5b8cd4" opacity="0.52"/>
+            </g>
+            <text x="435" y="114" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">seven pavans, each falling from the same "tear"</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+Lachrimae+or+Seaven+Teares">&#9834; Listen: Lachrimae (recording)</a>
+    </div>
+    <p class="note-text">The pavan is a slow, grave processional dance in duple time — the perfect vessel for Dowland's contemplative sorrow.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: IN DARKNESS LET ME DWELL ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE DARKEST AYRE</span>
+    <h2>In Darkness Let Me Dwell</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        If <em>Flow my tears</em> is beautiful sorrow, <span class="accent-purple">In darkness let me dwell</span> is Dowland at his most extreme — a
+        through-composed lament of astonishing intensity, its harmony restless and its voice, at the close, simply breaking off
+        unresolved. It is one of the most searching songs in all early music: melancholy pushed to the edge of despair.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Through-composed</h4><p>No repeating verses — the music follows every turn of the poem's descent into darkness.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Anguished harmony</h4><p>Dissonances lean and clash, colouring words of grief far beyond the sweet consonance of the madrigal.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">The unfinished close</h4><p>The voice ends by repeating its opening words and stopping mid-thought — grief left hanging in the air.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+In+darkness+let+me+dwell">&#9834; Listen: In darkness let me dwell (recording)</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: THE CULT OF MELANCHOLY ═══════════════════ -->
+<section>
+    <span class="section-number">12 — MELANCHOLY AS ART</span>
+    <h2>Semper Dowland, Semper Dolens</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        In Elizabethan and Jacobean England, <span class="accent-purple">melancholy</span> was not merely gloom — it was a fashionable pose of the
+        thoughtful, the poetic, the deep-souled. Dowland made it his artistic signature and even his personal brand, coining the
+        Latin pun on his own name: <span class="accent-purple">Semper Dowland, semper dolens</span> — "always Dowland, always grieving".
+    </p>
+    <div class="quote-box" style="border-left-color: var(--accent-purple); background: rgba(155,114,207,0.05);">
+        <p>Semper Dowland, semper dolens.</p>
+        <span class="attribution">— John Dowland's motto, punning on his own name: "Always Dowland, always grieving"</span>
+    </div>
+    <p class="note-text">To be melancholy, in this age, was to be a person of feeling and refinement — and no one gave that mood a more exquisite voice than Dowland.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: ABROAD & THE KING'S LUTES ═══════════════════ -->
+<section>
+    <span class="section-number">13 — THE WANDERING LUTENIST</span>
+    <h2>Abroad, and Home at Last</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        For much of his life Dowland's fame ran ahead of his fortunes. Passed over for a post at the English court, he made his
+        career on the Continent — most notably as a lavishly paid lutenist to <span class="accent-blue">King Christian IV of Denmark</span> — before
+        finally, under <span class="accent-blue">James I</span>, being appointed one of the <span class="accent-blue">King's Lutes</span>, the royal recognition he had long sought.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">The Danish years</h4>
+            <p>At the court of Christian IV, Dowland was among the highest-paid musicians in Europe — proof of the lutenist's international renown.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">One of the King's Lutes</h4>
+            <p>In 1612 he gained a place in the royal music of James I of England — the home appointment that had eluded him for decades.</p>
+        </div>
+    </div>
+    <p class="note-text">A musician's life in this age depended wholly on patronage; Dowland's travels map the courts wealthy enough to prize a virtuoso.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Dowland</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-blue">words</span> — the ayre keeps text clear, so let the poem and the melody move together.</li>
+        <li>Feel the <span class="accent-purple">falling</span> shapes in the sad songs and the <span class="accent-green">rising</span> ones in the joyful — the music draws the feeling.</li>
+        <li>Listen to the <span class="accent-amber">lute</span> beneath the voice: it is not mere backing but a second, conversing part.</li>
+        <li>Notice how a single motif — the "tear" — can generate a whole song and even a whole book of pavans.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+Flow+my+tears+Sting">&#9834; Flow my tears</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+Lachrimae">&#9834; Lachrimae</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+Come+again+sweet+love">&#9834; Come again</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Dowland,_John">&#9834; IMSLP — Dowland scores</a>
+    </div>
+    <p class="note-text">The lute song rewards close, quiet listening: it was written for a room, not a hall — for one voice and one instrument, near at hand.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The Sweetest Sorrow</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Dowland stands at the golden close of the English Renaissance — the last, greatest master of an intimate art that would
+        soon give way to the Baroque. His <span class="accent-blue">ayres</span> perfected the union of poem and accompaniment that the whole later
+        history of song would inherit; his falling <span class="accent-blue">"tears"</span> became a shared European language of feeling; and his lute
+        music remains the summit of the instrument's repertoire. In him, melancholy became one of music's most beautiful gifts.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">The art song</h4><p>The ayre's marriage of voice and instrument is the direct ancestor of the Lied and every song recital since.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The lute repertoire</h4><p>His pavans, galliards and fantasias remain the heart of what lutenists play — and the model of the instrument's poetry.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Melancholy's voice</h4><p>Dowland proved that sorrow, shaped by art, could be as moving and as sought-after as joy.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>Semper Dowland, semper dolens — "Always Dowland, always grieving."</p>
+        <span class="attribution">— Dowland's own motto: the melancholy he wore as a name, and gave to the world as song</span>
+    </div>
+    <p class="note-text">1563 – 1626 · The tears are still falling.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — unique DOW_ vars ── */
+/* The falling "tear" motif of Flow my tears / Lachrimae — the descending tetrachord elaborated */
+var DOW_TEARS_MEL = [{n:'A4',d:2},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:3},{n:'E4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'C#4',d:3}];
+/* A simple lute bass to harmonise the tear motif */
+var DOW_TEARS_BASS = [{n:'A2',d:4},{n:'D3',d:2},{n:'E3',d:2},{n:'A2',d:4}];
+/* Come again — the rising ayre phrase ("to see, to hear, to touch, to kiss, to die"), climbing then falling */
+var DOW_COME = [{n:'D4',d:1.5},{n:'E4',d:0.5},{n:'F#4',d:1.5},{n:'G4',d:0.5},{n:'A4',d:2},{n:'B4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F#4',d:1},{n:'E4',d:1},{n:'D4',d:2}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

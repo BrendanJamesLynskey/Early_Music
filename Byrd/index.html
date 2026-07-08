@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William Byrd — Master of Two Worlds &amp; the English Virginals</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 360 170" xmlns="http://www.w3.org/2000/svg">
+            <!-- Virginals: a decorative lidded keyboard emblem -->
+            <!-- outer case -->
+            <rect x="26" y="34" width="308" height="96" rx="8" fill="#12121a" stroke="#d4a053" stroke-width="2"/>
+            <!-- inner lid line / soundhole rose -->
+            <line x1="26" y1="56" x2="334" y2="56" stroke="#6a6a7a" stroke-width="1"/>
+            <circle cx="286" cy="46" r="7" fill="none" stroke="#9b72cf" stroke-width="1.2"/>
+            <path d="M286 40 v12 M280 46 h12 M282 42 l8 8 M290 42 l-8 8" stroke="#9b72cf" stroke-width="0.8"/>
+            <!-- white keys -->
+            <g>
+                <rect x="40" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="58" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="76" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="94" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="112" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="130" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="148" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="166" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="184" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="202" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="220" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="238" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="256" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="274" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+                <rect x="292" y="66" width="18" height="52" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1"/>
+            </g>
+            <!-- black keys -->
+            <g fill="#161622" stroke="#0a0a0f" stroke-width="1">
+                <rect x="52" y="66" width="12" height="32"/>
+                <rect x="70" y="66" width="12" height="32"/>
+                <rect x="106" y="66" width="12" height="32"/>
+                <rect x="124" y="66" width="12" height="32"/>
+                <rect x="142" y="66" width="12" height="32"/>
+                <rect x="196" y="66" width="12" height="32"/>
+                <rect x="214" y="66" width="12" height="32"/>
+                <rect x="250" y="66" width="12" height="32"/>
+                <rect x="268" y="66" width="12" height="32"/>
+                <rect x="286" y="66" width="12" height="32"/>
+            </g>
+            <!-- little sprig of notes rising from the keys -->
+            <ellipse cx="150" cy="24" rx="6" ry="4" fill="#d4a053" transform="rotate(-18 150 24)"/>
+            <line x1="155" y1="23" x2="155" y2="6" stroke="#d4a053" stroke-width="1.6"/>
+            <ellipse cx="176" cy="18" rx="6" ry="4" fill="#4ecca3" transform="rotate(-18 176 18)"/>
+            <line x1="181" y1="17" x2="181" y2="2" stroke="#4ecca3" stroke-width="1.6"/>
+            <path d="M155 6 q13 -4 26 -4" stroke="#6a6a7a" stroke-width="1" fill="none"/>
+        </svg>
+    </div>
+    <h1>William Byrd</h1>
+    <div class="subtitle">c. 1540 – 1623 · The English Renaissance</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        A recusant Catholic in a Protestant realm, he wrote sublime music for two irreconcilable
+        churches — and all but invented the English art of writing for the keyboard.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · The Tudor Master</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS BYRD ═══════════════════ -->
+<section>
+    <span class="section-number">01 — INTRODUCTION</span>
+    <h2>Who Was William Byrd?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        The <span class="accent-amber">greatest English composer of his age</span> — pupil of Thomas Tallis, organist of
+        the Chapel Royal, and the towering figure of the Elizabethan and Jacobean musical world. He was master
+        of every form his century knew: Latin polyphony, English anthems, songs, viol consorts and, above all,
+        the keyboard.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#9819;</span><h4 class="accent-amber">Chapel Royal</h4><p>Gentleman and organist of the Queen's own chapel, at the very centre of Tudor music.</p></div>
+        <div class="card"><span class="icon accent-green">&#10013;</span><h4 class="accent-green">Recusant Catholic</h4><p>He kept the old faith when it was illegal, yet served a Protestant queen.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9834;</span><h4 class="accent-purple">The Virginals</h4><p>Founder of the English keyboard school — pavans, grounds and dazzling variations.</p></div>
+        <div class="card"><span class="icon accent-blue">&#128220;</span><h4 class="accent-blue">Music Printer</h4><p>Held, with Tallis, a royal monopoly on printing music and ruled paper.</p></div>
+    </div>
+    <p class="note-text">The Cheque Book of the Chapel Royal, recording his death in 1623, calls him simply "a Father of Musick".</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — LIFE &amp; TIMES</span>
+    <h2>A Long Life Across Four Reigns</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Byrd's eighty-odd years span the whole turbulent Reformation century — born under Henry VIII,
+        dying under James I — and he built a reputation that reached far beyond England.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1540</span><span class="event"><strong>Born in London</strong>Very likely trained under Thomas Tallis, and perhaps a chorister of the Chapel Royal.</span></div>
+        <div class="timeline-item"><span class="year">1563</span><span class="event"><strong>Organist at Lincoln</strong>Appointed organist and master of the choristers at Lincoln Cathedral while still young.</span></div>
+        <div class="timeline-item"><span class="year">1572</span><span class="event"><strong>Sworn of the Chapel Royal</strong>Joins the Queen's chapel in London, sharing organ duties with his old master Tallis.</span></div>
+        <div class="timeline-item"><span class="year">1575</span><span class="event"><strong>The printing monopoly</strong>Elizabeth I grants Tallis and Byrd sole rights to print music; they issue the <em>Cantiones Sacrae</em>.</span></div>
+        <div class="timeline-item"><span class="year">c. 1594</span><span class="event"><strong>Retreat to Essex</strong>Settles at Stondon Massey, near recusant friends, pouring his last decades into Catholic music.</span></div>
+        <div class="timeline-item"><span class="year">1623</span><span class="event"><strong>Death</strong>Dies "a Father of Musick", having composed to the very end of his long life.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: MASTER OF TWO WORLDS ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE CENTRAL PARADOX</span>
+    <h2>Master of Two Worlds</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Byrd's genius was split, of necessity, between two hostile churches. He wrote glorious
+        <span class="accent-rose">Latin music for the outlawed Catholic Mass</span> and, at the same time, dignified
+        <span class="accent-blue">English music for the Protestant liturgy</span> he was employed to serve. He excelled at both.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">&#10013; The Old Faith (Latin)</h4>
+            <p>For clandestine Catholic worship in the houses of the gentry: the three <strong>Latin Masses</strong> (for three, four and five voices) and the two great books of <strong>Gradualia</strong> — motets for the Church year.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">&#9819; The Queen's Church (English)</h4>
+            <p>For the Chapel Royal and the Anglican rite: the magnificent <strong>Great Service</strong>, verse and full <strong>anthems</strong>, and settings of the English liturgy.</p>
+        </div>
+    </div>
+    <p class="note-text">That one man could serve both worlds so completely is the abiding wonder of his career — and a measure of how highly he was protected.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: A RECUSANT'S COURAGE ═══════════════════ -->
+<section>
+    <span class="section-number">04 — FAITH &amp; RISK</span>
+    <h2>A Recusant's Courage</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        A <span class="accent-amber">recusant</span> was one who refused to attend the services of the established Church —
+        a criminal offence in Elizabethan England, punishable by ruinous fines and worse. Byrd and his family
+        were repeatedly cited for recusancy, their names on the court rolls for years. Yet he was never destroyed:
+        the Queen's own regard, and powerful Catholic friends, shielded her finest musician.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-rose">The danger</h4><p>Priests were hunted and executed; hearing Mass was treasonous. To print Latin Mass music was audacious.</p></div>
+        <div class="card"><h4 class="accent-amber">The protection</h4><p>His standing at court and among the recusant nobility kept him at liberty and composing.</p></div>
+        <div class="card"><h4 class="accent-green">The conviction</h4><p>His secret sacred works are charged with a personal urgency — the music of a persecuted faith.</p></div>
+    </div>
+    <p class="note-text">His Catholic Masses were printed c. 1592–1595 with no title page and no publisher's name — discreet enough to be denied, defiant enough to exist at all.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE LATIN MASSES + AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE SECRET CATHOLIC · I</span>
+    <h2>The Three Latin Masses</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Byrd's supreme act of devotion is his set of <span class="accent-amber">three Masses — for three, four and five voices</span>,
+        printed in the 1590s for singing in secret, intimate gatherings. They are compact, intensely expressive and
+        perfectly wrought: dense imitative polyphony flowering into radiant, full-voiced cadences on the holiest words.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Mass for Three Voices</h4><p>The most intimate — three lines only, ideal for a handful of singers around a table.</p></div>
+        <div class="card"><h4 class="accent-green">Mass for Four Voices</h4><p>The best known: taut, poignant, its "Agnus Dei" one of the great pages of Tudor music.</p></div>
+        <div class="card"><h4 class="accent-blue">Mass for Five Voices</h4><p>The grandest and most sonorous of the three, rich in overlapping suspensions.</p></div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, BYRD_CADENCE, {timbre:'voice', bpm:60, temperament:'equal', reverb:0.55, legato:0.98})">&#9654; Hear a solemn Latin-Mass cadence</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Mass+for+four+voices+Tallis+Scholars">&#9834; Listen: Byrd — Mass for Four Voices</a>
+    </div>
+    <p class="audio-caption">Synthesised voices · a leaning suspension resolves onto a radiant major triad — the "Amen" glow of Byrd's Mass style</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: GRADUALIA & AVE VERUM ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE SECRET CATHOLIC · II</span>
+    <h2>Gradualia &amp; the Jewel of <em>Ave verum corpus</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Beyond the Masses, Byrd set out to provide music for the entire Catholic Church year. The two books of the
+        <span class="accent-amber">Gradualia</span> (1605, 1607) gather motets for the Proper of the Mass — feasts, votive
+        observances, the great seasons — a monumental, systematic act of liturgical love.
+    </p>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Its most beloved page is <span class="accent-amber"><em>Ave verum corpus</em></span> — a short, hushed motet
+                whose gently aching dissonances on "<em>miserere mei</em>" ("have mercy on me") distil a whole persecuted
+                faith into a few unforgettable bars. It remains one of the best-loved pieces in all choral music.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Gradualia at a glance</h4>
+            <p>&#8250; Two books, 1605 &amp; 1607<br>&#8250; Motets for the Church year<br>&#8250; For Byrd's own recusant circle<br>&#8250; Home of <em>Ave verum corpus</em></p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Ave+verum+corpus">&#9834; Listen: Byrd — Ave verum corpus</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/William_Byrd">&#9834; Scores: William Byrd on CPDL</a>
+    </div>
+    <p class="note-text">The word-driven "sweet dissonance" of <em>Ave verum</em> is Byrd's own commentary on his creed: music as prayer.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: THE QUEEN'S CHURCH ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE ANGLICAN BYRD</span>
+    <h2>For the Queen's Church</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        As a paid servant of the Chapel Royal, Byrd also gave the new Protestant liturgy some of its noblest music —
+        proving that his art could clothe English words as splendidly as Latin.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">The Great Service</h4>
+            <p>His most ambitious English work: a full setting of the Anglican canticles for the divided choir of a great cathedral — spacious, sonorous, magnificent.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">The Anthems</h4>
+            <p>Both the <strong>full anthem</strong> (all voices together) and the newer <strong>verse anthem</strong> (solo voices alternating with choir and instruments), which he helped shape into an English art form.</p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Great+Service">&#9834; Listen: Byrd — The Great Service</a>
+    </div>
+    <p class="note-text">The English verse anthem, with its dialogue of soloist and chorus, points forward to the whole later tradition of English cathedral music — and to Purcell.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE VIRGINALISTS + KEYBOARD SVG ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE KEYBOARD MASTER</span>
+    <h2>Father of the English Virginalists</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.3em; font-size: 0.44em !important;">
+        Byrd founded the <span class="accent-amber">English virginalist school</span> — the first great flowering of solo
+        keyboard music anywhere in Europe. The <em>virginals</em> was a small plucked keyboard instrument (a kind of table
+        harpsichord), beloved in Tudor households. Byrd wrote pavans and galliards, dance-pairs, fantasias, and dazzling
+        sets of variations for it.
+    </p>
+    <div class="diagram-container" style="max-width:56%;">
+        <svg viewBox="0 0 460 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- one octave of virginals keys, labelled -->
+            <g>
+                <rect x="20" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+                <rect x="76" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+                <rect x="132" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+                <rect x="188" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+                <rect x="244" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+                <rect x="300" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+                <rect x="356" y="14" width="56" height="86" fill="#e8e6e3" stroke="#0a0a0f" stroke-width="1.5"/>
+            </g>
+            <g fill="#161622" stroke="#0a0a0f" stroke-width="1.5">
+                <rect x="60" y="14" width="32" height="54"/>
+                <rect x="116" y="14" width="32" height="54"/>
+                <rect x="228" y="14" width="32" height="54"/>
+                <rect x="284" y="14" width="32" height="54"/>
+                <rect x="340" y="14" width="32" height="54"/>
+            </g>
+            <g font-family="JetBrains Mono" font-size="12" fill="#6a6a7a" text-anchor="middle">
+                <text x="48" y="94">C</text><text x="104" y="94">D</text><text x="160" y="94">E</text>
+                <text x="216" y="94">F</text><text x="272" y="94">G</text><text x="328" y="94">A</text><text x="384" y="94">B</text>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, BYRD_PAVAN, {timbre:'pluck', bpm:58, temperament:'equal', reverb:0.4})">&#9654; Hear a stately pavan chord phrase</button>
+    </div>
+    <p class="audio-caption">Synthesised plucked virginals · the grave, processional tread of a Tudor pavan</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: DIVISION ON A GROUND (NOTATION SVG + SIGNATURE AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">09 — NOTATION &amp; FORM</span>
+    <h2>Division on a Ground</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        A favourite virginalist form. A short bass line — the <span class="accent-amber">ground</span> — repeats over and over,
+        while the right hand spins ever busier <span class="accent-green">divisions</span> (variations, literally the "division"
+        of long notes into quick ones) above it. Below: the ground on the lower staff loops; the upper line grows florid.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- TREBLE staff (divisions) -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="60" y1="30" x2="860" y2="30"/>
+                <line x1="60" y1="42" x2="860" y2="42"/>
+                <line x1="60" y1="54" x2="860" y2="54"/>
+                <line x1="60" y1="66" x2="860" y2="66"/>
+                <line x1="60" y1="78" x2="860" y2="78"/>
+            </g>
+            <text x="66" y="70" fill="#d4a053" font-family="Playfair Display" font-size="34" font-weight="700">&#119070;</text>
+            <text x="70" y="22" fill="#4ecca3" font-family="DM Sans" font-size="12">DIVISIONS &#8212; the florid right-hand variations</text>
+            <!-- florid run of small noteheads -->
+            <g fill="#e8e6e3">
+                <ellipse cx="120" cy="54" rx="6" ry="4.5"/><ellipse cx="150" cy="48" rx="6" ry="4.5"/>
+                <ellipse cx="180" cy="42" rx="6" ry="4.5"/><ellipse cx="210" cy="48" rx="6" ry="4.5"/>
+                <ellipse cx="240" cy="54" rx="6" ry="4.5"/><ellipse cx="270" cy="60" rx="6" ry="4.5"/>
+                <ellipse cx="300" cy="66" rx="6" ry="4.5"/><ellipse cx="330" cy="72" rx="6" ry="4.5"/>
+                <ellipse cx="470" cy="66" rx="6" ry="4.5"/><ellipse cx="500" cy="60" rx="6" ry="4.5"/>
+                <ellipse cx="530" cy="54" rx="6" ry="4.5"/><ellipse cx="560" cy="72" rx="6" ry="4.5"/>
+                <ellipse cx="590" cy="60" rx="6" ry="4.5"/><ellipse cx="620" cy="72" rx="6" ry="4.5"/>
+                <ellipse cx="650" cy="78" rx="6" ry="4.5"/><ellipse cx="680" cy="72" rx="6" ry="4.5"/>
+            </g>
+            <g stroke="#e8e6e3" stroke-width="1.2">
+                <line x1="126" y1="54" x2="126" y2="34"/><line x1="156" y1="48" x2="156" y2="28"/>
+                <line x1="186" y1="42" x2="186" y2="22"/><line x1="216" y1="48" x2="216" y2="28"/>
+                <line x1="246" y1="54" x2="246" y2="34"/><line x1="276" y1="60" x2="276" y2="40"/>
+            </g>
+            <!-- BASS staff (ground) -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="60" y1="150" x2="860" y2="150"/>
+                <line x1="60" y1="162" x2="860" y2="162"/>
+                <line x1="60" y1="174" x2="860" y2="174"/>
+                <line x1="60" y1="186" x2="860" y2="186"/>
+                <line x1="60" y1="198" x2="860" y2="198"/>
+            </g>
+            <text x="66" y="172" fill="#d4a053" font-family="Playfair Display" font-size="30" font-weight="700">&#119074;</text>
+            <text x="70" y="142" fill="#5b8cd4" font-family="DM Sans" font-size="12">THE GROUND &#8212; a short bass that repeats unchanged</text>
+            <!-- ground: G D E C, then repeat, with a bracket -->
+            <g fill="#5b8cd4">
+                <ellipse cx="150" cy="162" rx="8" ry="6"/><ellipse cx="230" cy="186" rx="8" ry="6"/>
+                <ellipse cx="310" cy="180" rx="8" ry="6"/><ellipse cx="390" cy="192" rx="8" ry="6"/>
+                <ellipse cx="510" cy="162" rx="8" ry="6"/><ellipse cx="590" cy="186" rx="8" ry="6"/>
+                <ellipse cx="670" cy="180" rx="8" ry="6"/><ellipse cx="750" cy="192" rx="8" ry="6"/>
+            </g>
+            <!-- repeat bracket -->
+            <path d="M120 214 h330" stroke="#4ecca3" stroke-width="1.5" fill="none"/>
+            <path d="M120 214 v-8 M450 214 v-8" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="285" y="232" fill="#4ecca3" font-family="DM Sans" font-size="12" text-anchor="middle">one statement of the ground</text>
+            <path d="M480 214 h330" stroke="#4ecca3" stroke-width="1.5" fill="none"/>
+            <path d="M480 214 v-8 M810 214 v-8" stroke="#4ecca3" stroke-width="1.5"/>
+            <text x="645" y="232" fill="#4ecca3" font-family="DM Sans" font-size="12" text-anchor="middle">&#8230; repeated, and repeated</text>
+        </svg>
+    </div>
+    <p class="note-text" style="margin-top:0.2em;"><strong>How to read it:</strong> read left&#8594;right. The lower staff (F-clef) plays the same four bass notes again and again — that fixed loop is the <em>ground</em>. Above it (G-clef) the melody is different every time round, breaking into faster and faster notes: each pass is a "division". Higher on the staff = higher pitch; there are no bar-lines to slow the eye.</p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, [BYRD_DIVISION, BYRD_GROUND], {timbre:'pluck', bpm:104, temperament:'equal', reverb:0.4})">&#9654; Hear a division over the ground</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+The+Bells+virginals">&#9834; Listen: Byrd — The Bells (virginals)</a>
+    </div>
+    <p class="audio-caption">Synthesised virginals · the plodding bass loops while a lively tune dances above — pure Byrd keyboard writing</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: READING KEYBOARD NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">10 — HOW TO READ IT</span>
+    <h2>Reading Keyboard Notation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Keyboard music needs <span class="accent-amber">two staves at once</span>, braced together into a "grand staff" —
+        one for each hand. This two-hand layout, which Byrd's generation helped standardise, is still exactly how piano
+        music is written today.
+    </p>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- brace -->
+            <path d="M40 24 q-14 46 0 92 q-14 46 0 92" stroke="#d4a053" stroke-width="2.5" fill="none"/>
+            <line x1="52" y1="24" x2="52" y2="208" stroke="#6a6a7a" stroke-width="1.5"/>
+            <!-- treble staff -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="52" y1="24" x2="660" y2="24"/>
+                <line x1="52" y1="40" x2="660" y2="40"/>
+                <line x1="52" y1="56" x2="660" y2="56"/>
+                <line x1="52" y1="72" x2="660" y2="72"/>
+                <line x1="52" y1="88" x2="660" y2="88"/>
+            </g>
+            <text x="60" y="82" fill="#4ecca3" font-family="Playfair Display" font-size="40" font-weight="700">&#119070;</text>
+            <text x="118" y="16" fill="#4ecca3" font-family="DM Sans" font-size="12">TREBLE (G-clef) &#8212; right hand</text>
+            <!-- bass staff -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="52" y1="144" x2="660" y2="144"/>
+                <line x1="52" y1="160" x2="660" y2="160"/>
+                <line x1="52" y1="176" x2="660" y2="176"/>
+                <line x1="52" y1="192" x2="660" y2="192"/>
+                <line x1="52" y1="208" x2="660" y2="208"/>
+            </g>
+            <text x="60" y="170" fill="#5b8cd4" font-family="Playfair Display" font-size="34" font-weight="700">&#119074;</text>
+            <text x="118" y="136" fill="#5b8cd4" font-family="DM Sans" font-size="12">BASS (F-clef) &#8212; left hand</text>
+            <!-- middle C ledger line marker -->
+            <line x1="300" y1="116" x2="340" y2="116" stroke="#9a9a9a" stroke-width="1"/>
+            <ellipse cx="320" cy="116" rx="7" ry="5" fill="#d4a053"/>
+            <text x="352" y="120" fill="#d4a053" font-family="DM Sans" font-size="12">middle C sits between the staves</text>
+            <!-- a few notes each hand -->
+            <ellipse cx="200" cy="56" rx="7" ry="5" fill="#e8e6e3"/><line x1="207" y1="56" x2="207" y2="30" stroke="#e8e6e3" stroke-width="1.4"/>
+            <ellipse cx="440" cy="40" rx="7" ry="5" fill="#e8e6e3"/><line x1="447" y1="40" x2="447" y2="14" stroke="#e8e6e3" stroke-width="1.4"/>
+            <ellipse cx="200" cy="176" rx="7" ry="5" fill="#e8e6e3"/><line x1="193" y1="176" x2="193" y2="202" stroke="#e8e6e3" stroke-width="1.4"/>
+            <ellipse cx="440" cy="192" rx="7" ry="5" fill="#e8e6e3"/><line x1="433" y1="192" x2="433" y2="218" stroke="#e8e6e3" stroke-width="1.4"/>
+        </svg>
+    </div>
+    <div class="card-grid cols-4" style="max-width:96%;">
+        <div class="card"><h4 class="accent-green">1 · Two staves</h4><p>The top staff is usually the right hand, the lower the left. They are read at the same moment, top and bottom aligned.</p></div>
+        <div class="card"><h4 class="accent-blue">2 · Two clefs</h4><p>Treble (G-clef) for the higher hand, bass (F-clef) for the lower. Each names the pitches on its own staff.</p></div>
+        <div class="card"><h4 class="accent-amber">3 · Middle C</h4><p>The two staves meet at middle C, which floats on a short ledger line between them — the hinge of the keyboard.</p></div>
+        <div class="card"><h4 class="accent-purple">4 · Chords</h4><p>Notes stacked vertically sound together; a hand can strike several keys at once, so Byrd's textures are rich.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: SONGS & CONSORT ═══════════════════ -->
+<section>
+    <span class="section-number">11 — SONGS &amp; CONSORT</span>
+    <h2>Songs, Viols &amp; the 1588 Songbook</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Byrd was also the great English pioneer of secular and domestic music. His <span class="accent-amber">consort songs</span> —
+        a solo voice weaving through a consort of viols — are a distinctively English genre he did much to perfect.
+        In 1588 he published <span class="accent-amber"><em>Psalmes, Sonets &amp; Songs of Sadnes and Pietie</em></span>,
+        a landmark printed collection for voices.
+    </p>
+    <div class="two-col wide-right">
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">The consort song</h4>
+            <p>A single expressive voice supported by a quartet or quintet of viols — private, intimate music for the Elizabethan household.</p>
+        </div>
+        <div>
+            <p style="font-size:0.44em !important;">
+                In the preface to the 1588 songbook Byrd set out his famous "<em>Reasons briefly set down&#8230; to persuade
+                every one to learn to sing</em>", extolling music's power to gladden and to heal — one of the earliest English
+                arguments for musical education. He championed, above all, <span class="accent-amber">the human voice</span>.
+            </p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>"The exercise of singing is delightful to Nature, and good to preserve the health of Man."</p>
+        <span class="attribution">— William Byrd, <em>Psalmes, Sonets &amp; Songs</em> (1588)</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: TALLIS & THE MONOPOLY ═══════════════════ -->
+<section>
+    <span class="section-number">12 — MASTER &amp; PUPIL</span>
+    <h2>Tallis, Byrd &amp; the Printing Monopoly</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        In <span class="accent-amber">1575</span> Elizabeth I granted Thomas Tallis and his pupil Byrd an extraordinary
+        privilege: a <span class="accent-amber">monopoly on printing music and ruled music-paper</span> in England.
+        Together they marked it with the <em>Cantiones Sacrae</em> of that year — Latin motets dedicated to the Queen.
+        It was a business venture as much as an honour, and it bound master and pupil for life.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">The privilege</h4><p>Sole right to print polyphonic music and music-paper — a rare royal favour, and a commercial gamble.</p></div>
+        <div class="card"><h4 class="accent-green">Cantiones Sacrae 1575</h4><p>Their joint publication of Latin motets, offered to Elizabeth I, launched the enterprise.</p></div>
+        <div class="card"><h4 class="accent-blue">The bond</h4><p>When Tallis died in 1585, Byrd mourned him in the elegy <em>Ye sacred Muses</em> — "Tallis is dead, and Music dies."</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Ye+sacred+muses+Tallis+is+dead">&#9834; Listen: Byrd — Ye sacred Muses (elegy for Tallis)</a>
+    </div>
+    <p class="note-text">The venture lost money at first — English demand for printed part-music was small — but it made Byrd the dominant published composer of his age.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: THE CRAFT ═══════════════════ -->
+<section>
+    <span class="section-number">13 — THE CRAFT</span>
+    <h2>Words First, Then Notes</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        What unites Byrd's Latin motets, English anthems and keyboard grounds is a rigorous, deeply serious craft:
+        supple <span class="accent-amber">imitative counterpoint</span>, harmony of great expressive weight, and above all a
+        conviction that music must grow from the <span class="accent-amber">meaning of its words</span>. He wrote that the
+        very sense of a sacred text seemed to summon the right notes of its own accord.
+    </p>
+    <div class="quote-box">
+        <p>"There is a certain hidden power in the thoughts underlying the words themselves; so that, as one
+        meditates upon the sacred words and constantly and seriously considers them, the right notes, in some
+        inexplicable fashion, suggest themselves quite spontaneously."</p>
+        <span class="attribution">— William Byrd, preface to <em>Gradualia</em> (1605)</span>
+    </div>
+    <p class="note-text">This word-driven ideal aligns Byrd with the great Continental masters — Lassus, Victoria, Palestrina — while his voice remains unmistakably English.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Byrd</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>In the <span class="accent-amber">Masses</span>, follow how each phrase of text enters voice by voice, then blooms into a full-voiced cadence at the holiest words.</li>
+        <li>In <span class="accent-green">Ave verum corpus</span>, listen for the tender clashes on "<em>miserere mei</em>" — dissonance used as pure feeling.</li>
+        <li>In the <span class="accent-purple">keyboard music</span>, catch the repeating <em>ground</em> bass and hear the right hand grow busier with each variation.</li>
+        <li>In the <span class="accent-blue">verse anthems</span>, enjoy the dialogue of solo voices answered by the full choir.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Mass+for+four+voices">&#9834; The Masses</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Ave+verum+corpus+choir">&#9834; Ave verum corpus</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+The+Bells+virginals+harpsichord">&#9834; The Bells (virginals)</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byrd+Great+Service+choir">&#9834; The Great Service</a>
+    </div>
+    <p class="note-text">Try one work from each of his worlds — a Latin Mass movement, an English anthem, a keyboard ground — to hear the full span of his art.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>A Father of Musick</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Byrd stands as the summit of English music before Purcell. He gave the <span class="accent-amber">verse anthem</span>
+        and the <span class="accent-amber">English keyboard tradition</span> their classic shape, wrote sacred music of a depth
+        rivalling any on the Continent, and did it all while quietly keeping a forbidden faith. His pupils and the
+        virginalists after him — Bull, Gibbons, Tomkins — built directly on his foundation.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Sacred polyphony</h4><p>The three Masses and the <em>Gradualia</em> are the crown of English Catholic music — sung the world over today.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The keyboard</h4><p>The pavans, grounds and variations founded a school of keyboard writing that leads on to Bull, Gibbons and beyond.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">The anthem</h4><p>His English church music shaped a tradition that runs unbroken to Purcell and the modern cathedral repertory.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"In mourning weeds, with tears in eyes: Tallis is dead, and Music dies."</p>
+        <span class="attribution">— William Byrd, <em>Ye sacred Muses</em>, his elegy for Thomas Tallis (1585)</span>
+    </div>
+    <p class="note-text">c. 1540 – 1623 · Master of two worlds, and father of the English keyboard.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — Byrd ── */
+/* SIGNATURE AUDIO: a division on a ground — repeating bass, livelier melody above */
+var BYRD_GROUND   = [{n:'G3',d:2},{n:'D3',d:2},{n:'E3',d:2},{n:'C3',d:2},  {n:'G3',d:2},{n:'D3',d:2},{n:'E3',d:2},{n:'C3',d:2}];
+var BYRD_DIVISION = [{n:'G4',d:1},{n:'A4',d:1},{n:'B4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F#4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'E4',d:1},{n:'F#4',d:1},{n:'G4',d:1},{n:'D4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'C4',d:1},{n:'B3',d:1}];
+/* A solemn Latin-Mass cadence: leaning suspension resolving to a radiant G-major chord */
+var BYRD_CADENCE  = [{n:['D4','A4','D5'],d:2},{n:['G3','B3','G4'],d:2},{n:['C4','E4','A4'],d:1},{n:['C4','E4','G4'],d:1},{n:['D4','F#4','A4'],d:2},{n:['G3','D4','B4','G4'],d:4}];
+/* A stately pavan chord phrase for the virginals */
+var BYRD_PAVAN    = [{n:['G3','D4','B4'],d:2},{n:['C4','E4','C5'],d:2},{n:['D4','A4','D5'],d:1},{n:['D4','A4','C5'],d:1},{n:['G3','D4','B4'],d:2},{n:['A3','E4','C5'],d:2},{n:['D4','F#4','A4'],d:2},{n:['G3','D4','B4'],d:4}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

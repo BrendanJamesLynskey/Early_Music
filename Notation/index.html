@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Early Music Notation — From Gesture to Grid</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 420px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- LEFT: the free gesture — a hand-drawn neume contour above a word -->
+            <path d="M 20 70 q 20 -40 40 -8 q 14 24 30 -18 q 12 -26 26 6 q 10 26 26 -2"
+                  fill="none" stroke="#9b72cf" stroke-width="2.4" stroke-linecap="round"/>
+            <text x="24" y="120" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13">gesture &#8212; contour only</text>
+            <!-- arrow morphing -->
+            <path d="M 176 78 L 224 78" stroke="#d4a053" stroke-width="2" marker-end="url(#ah)"/>
+            <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#d4a053"/></marker></defs>
+            <!-- RIGHT: the fixed grid — a 4-line staff with square notes -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="248" y1="46" x2="460" y2="46"/>
+                <line x1="248" y1="64" x2="460" y2="64"/>
+                <line x1="248" y1="82" x2="460" y2="82"/>
+                <line x1="248" y1="100" x2="460" y2="100"/>
+            </g>
+            <text x="252" y="72" fill="#d4a053" font-family="Playfair Display" font-size="22" font-weight="700">C</text>
+            <rect x="296" y="91" width="11" height="11" fill="#e8e6e3"/>
+            <rect x="322" y="73" width="11" height="11" fill="#4ecca3"/><rect x="322" y="55" width="11" height="11" fill="#4ecca3"/>
+            <rect x="356" y="64" width="11" height="11" fill="#e8e6e3"/>
+            <rect x="386" y="55" width="11" height="11" fill="#d4a053"/><rect x="400" y="73" width="11" height="11" fill="#d4a053"/>
+            <rect x="434" y="64" width="11" height="11" fill="#e8e6e3"/>
+            <text x="252" y="128" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13">grid &#8212; exact pitch</text>
+        </svg>
+    </div>
+    <h1>Reading Early Music Notation</h1>
+    <div class="subtitle">c. 900 – 1600 · From Gesture to Grid</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        A guided tour of how the West learned to write music down &#8212; and a practical, stage-by-stage
+        lesson in <em>how to read</em> each notation you will meet in a chant book, a mensural manuscript or a lute tablature.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · A Didactic Guide to the Notation</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHY NOTATION? ═══════════════════ -->
+<section>
+    <span class="section-number">01 — WHY WRITE MUSIC DOWN?</span>
+    <h2>Before the Page: Music as Memory</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        For most of history music was <span class="accent-amber">purely oral</span>. The vast chant repertory of the
+        early Church &#8212; thousands of melodies &#8212; was held entirely in the memory of singers and passed on by ear,
+        cantor to novice, over a lifetime. The first notation was not a recording but a <em>memory aid</em>: a set of
+        reminders scribbled above words a singer already half-knew.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><span class="icon accent-amber">&#128173;</span><h4 class="accent-amber">Learned by ear</h4><p>A chanter memorised the entire repertory. Charlemagne wanted one uniform chant across his empire &#8212; but sound cannot travel far by memory alone.</p></div>
+        <div class="card"><span class="icon accent-green">&#9997;</span><h4 class="accent-green">A jog to memory</h4><p>The earliest signs only <em>reminded</em> you of a tune you knew. They fixed nothing precisely &#8212; contour, not content.</p></div>
+        <div class="card"><span class="icon accent-blue">&#128220;</span><h4 class="accent-blue">Toward exactness</h4><p>Six centuries of invention slowly added pitch, then rhythm, then metre &#8212; until a stranger could sing a tune never heard before, at sight.</p></div>
+    </div>
+    <p class="note-text">The story that follows is the gradual pinning-down of two things sound refuses to hold still: <strong>how high</strong> and <strong>how long</strong>.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: NEUMES ═══════════════════ -->
+<section>
+    <span class="section-number">02 — c. 900 · NEUMES</span>
+    <h2>Neumes: Drawing the Shape of a Voice</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.35em; font-size: 0.43em !important;">
+        The first written signs &#8212; <span class="accent-amber">neumes</span> (Greek <em>neuma</em>, "gesture") &#8212; appear
+        in manuscripts around 900 CE. They are <em>cheironomic</em>: they trace the hand-gestures a cantor used to conduct,
+        showing only the <strong>contour</strong> of the melody. Each neume tells you how many notes fall on a syllable and which way the voice turns.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="12" fill="#9a9a9a">
+                <rect x="40" y="58" width="16" height="16" fill="#e8e6e3"/>
+                <text x="48" y="96" text-anchor="middle" fill="#e8e6e3" font-size="13" font-weight="700">Punctum</text>
+                <text x="48" y="114" text-anchor="middle">one note</text>
+                <rect x="150" y="48" width="16" height="16" fill="#e8e6e3"/><line x1="150" y1="48" x2="150" y2="86" stroke="#e8e6e3" stroke-width="2"/>
+                <text x="158" y="96" text-anchor="middle" fill="#e8e6e3" font-size="13" font-weight="700">Virga</text>
+                <text x="158" y="114" text-anchor="middle">one higher note</text>
+                <rect x="270" y="64" width="16" height="16" fill="#4ecca3"/><rect x="270" y="46" width="16" height="16" fill="#4ecca3"/>
+                <text x="278" y="96" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="700">Podatus</text>
+                <text x="278" y="114" text-anchor="middle">two rising</text>
+                <rect x="390" y="46" width="16" height="16" fill="#cf7272"/><rect x="404" y="64" width="16" height="16" fill="#cf7272"/>
+                <text x="405" y="96" text-anchor="middle" fill="#cf7272" font-size="13" font-weight="700">Clivis</text>
+                <text x="405" y="114" text-anchor="middle">two falling</text>
+                <rect x="520" y="60" width="14" height="14" fill="#9b72cf"/><rect x="534" y="44" width="14" height="14" fill="#9b72cf"/><rect x="548" y="60" width="14" height="14" fill="#9b72cf"/>
+                <text x="541" y="96" text-anchor="middle" fill="#9b72cf" font-size="13" font-weight="700">Torculus</text>
+                <text x="541" y="114" text-anchor="middle">up then down</text>
+                <rect x="660" y="44" width="14" height="14" fill="#5b8cd4"/><rect x="674" y="60" width="14" height="14" fill="#5b8cd4"/><rect x="688" y="44" width="14" height="14" fill="#5b8cd4"/>
+                <text x="681" y="96" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="700">Porrectus</text>
+                <text x="681" y="114" text-anchor="middle">down then up</text>
+                <rect x="790" y="40" width="14" height="14" fill="#d4a053"/><rect x="804" y="54" width="12" height="12" fill="#d4a053"/><rect x="816" y="66" width="12" height="12" fill="#d4a053"/>
+                <text x="808" y="96" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="700">Climacus</text>
+                <text x="808" y="114" text-anchor="middle">a falling run</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> a neume sits over its syllable; read left&#8594;right, higher on the page = higher in pitch. But these earliest neumes give <span class="accent-rose">no exact pitch and no rhythm</span> &#8212; only the melodic gesture. You had to know the tune already.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: HEIGHTENED NEUMES ═══════════════════ -->
+<section>
+    <span class="section-number">03 — c. 1000 · HEIGHTENED NEUMES</span>
+    <h2>Pitch Made Visible: the Reference Line</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.35em; font-size: 0.43em !important;">
+        The great weakness of neumes was pitch. Scribes fixed it in two steps. First they placed the neumes at
+        careful <span class="accent-amber">heights</span> above the text (<em>diastematic</em> or "heightened" neumes).
+        Then they scratched a single <span class="accent-green">reference line</span> into the parchment with a dry point,
+        and later drew it in colour &#8212; <span class="accent-rose">red for F</span>, <span class="accent-amber">yellow for C</span>.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 860 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- the single coloured reference line (F, red) -->
+            <line x1="40" y1="86" x2="820" y2="86" stroke="#cf7272" stroke-width="1.6"/>
+            <text x="822" y="90" fill="#cf7272" font-family="DM Sans" font-size="13" font-weight="700">F</text>
+            <!-- faint dry-point line (C) above -->
+            <line x1="40" y1="50" x2="820" y2="50" stroke="#6a6a7a" stroke-width="1" stroke-dasharray="3 4"/>
+            <text x="822" y="54" fill="#d4a053" font-family="DM Sans" font-size="13" font-weight="700">C</text>
+            <!-- neumes placed by height around the F line -->
+            <g fill="#e8e6e3">
+                <rect x="90" y="96" width="12" height="12"/>
+                <rect x="150" y="80" width="12" height="12"/><rect x="150" y="62" width="12" height="12"/>
+                <rect x="220" y="44" width="12" height="12"/>
+                <rect x="290" y="62" width="12" height="12"/><rect x="304" y="80" width="12" height="12"/>
+                <rect x="380" y="96" width="12" height="12"/>
+                <rect x="450" y="62" width="12" height="12"/><rect x="464" y="44" width="12" height="12"/><rect x="478" y="62" width="12" height="12"/>
+                <rect x="560" y="80" width="12" height="12"/>
+                <rect x="630" y="44" width="12" height="12"/><rect x="644" y="62" width="12" height="12"/><rect x="658" y="80" width="12" height="12"/>
+                <rect x="740" y="96" width="12" height="12"/>
+            </g>
+            <text x="40" y="150" fill="#9a9a9a" font-family="Playfair Display" font-style="italic" font-size="15">Now every sign's <tspan fill="#4ecca3">height</tspan> against the coloured line names its exact pitch.</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> measure each neume's height <em>against the coloured line</em>. A note on the red line is F; two steps above it is A, and so on. The dry-point / coloured line is the direct ancestor of the modern staff line &#8212; one certainty at last.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: GUIDO'S STAFF & CLEFS ═══════════════════ -->
+<section>
+    <span class="section-number">04 — c. 1030 · GUIDO'S STAFF</span>
+    <h2>Guido of Arezzo: Lines, Spaces &amp; Clefs</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.43em !important;">
+        Around 1030 the monk <span class="accent-amber">Guido of Arezzo</span> ruled a whole ladder of lines &#8212; his
+        four-line <span class="accent-amber">staff</span> &#8212; and put a <span class="accent-green">clef</span> at the front
+        to name one of them. A singer could now read an <em>unfamiliar</em> melody at sight. Below, a C-clef fixes the bottom line as C; every other pitch is counted from it.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1.2">
+                <line x1="70" y1="50" x2="600" y2="50"/>
+                <line x1="70" y1="68" x2="600" y2="68"/>
+                <line x1="70" y1="86" x2="600" y2="86"/>
+                <line x1="70" y1="104" x2="600" y2="104"/>
+            </g>
+            <!-- C-clef marking the bottom line = C -->
+            <rect x="76" y="97" width="9" height="14" fill="#4ecca3"/><rect x="85" y="100" width="13" height="8" fill="#4ecca3"/>
+            <text x="70" y="132" fill="#4ecca3" font-size="11" font-family="DM Sans">C-clef: this line = C (Do)</text>
+            <!-- ascending scale C4..C5 : bottom line C4 (y104), step by 9px -->
+            <g>
+                <rect x="150" y="98" width="13" height="13" fill="#d4a053"/><text x="156" y="152" text-anchor="middle" fill="#d4a053" font-size="12" font-family="JetBrains Mono">C</text>
+                <rect x="205" y="89" width="13" height="13" fill="#e8e6e3"/><text x="211" y="152" text-anchor="middle" fill="#9a9a9a" font-size="12" font-family="JetBrains Mono">D</text>
+                <rect x="260" y="80" width="13" height="13" fill="#e8e6e3"/><text x="266" y="152" text-anchor="middle" fill="#9a9a9a" font-size="12" font-family="JetBrains Mono">E</text>
+                <rect x="315" y="71" width="13" height="13" fill="#e8e6e3"/><text x="321" y="152" text-anchor="middle" fill="#9a9a9a" font-size="12" font-family="JetBrains Mono">F</text>
+                <rect x="370" y="62" width="13" height="13" fill="#e8e6e3"/><text x="376" y="152" text-anchor="middle" fill="#9a9a9a" font-size="12" font-family="JetBrains Mono">G</text>
+                <rect x="425" y="53" width="13" height="13" fill="#e8e6e3"/><text x="431" y="152" text-anchor="middle" fill="#9a9a9a" font-size="12" font-family="JetBrains Mono">A</text>
+                <rect x="480" y="44" width="13" height="13" fill="#e8e6e3"/><text x="486" y="152" text-anchor="middle" fill="#9a9a9a" font-size="12" font-family="JetBrains Mono">B</text>
+                <rect x="535" y="35" width="13" height="13" fill="#d4a053"/><text x="541" y="152" text-anchor="middle" fill="#d4a053" font-size="12" font-family="JetBrains Mono">C</text>
+            </g>
+            <!-- F-clef alternative note -->
+            <text x="640" y="60" fill="#5b8cd4" font-size="12" font-family="DM Sans" font-weight="700">The clef is movable.</text>
+            <text x="640" y="80" fill="#9a9a9a" font-size="11" font-family="DM Sans">An <tspan fill="#5b8cd4">F-clef</tspan> instead names an F line,</text>
+            <text x="640" y="96" fill="#9a9a9a" font-size="11" font-family="DM Sans">so a low chant fits the same four lines.</text>
+            <text x="640" y="118" fill="#9a9a9a" font-size="11" font-family="DM Sans">A line = a step; the space above = the next.</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, NB_SCALE, {timbre:'voice', bpm:150, temperament:'pythagorean', tonic:'C3', reverb:0.5})">&#9654; Read the scale off the staff (C&#8594;C)</button>
+    </div>
+    <p class="audio-caption">Hear exactly what the eye reads: eight notes climbing line&#8211;space&#8211;line from C to C, in medieval Pythagorean tuning</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: HEXACHORDS & GUIDONIAN HAND ═══════════════════ -->
+<section>
+    <span class="section-number">05 — SOLMISATION</span>
+    <h2>Hexachords &amp; the Guidonian Hand</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <p style="font-size:0.43em !important;">
+                Guido also gave the notes <em>names</em>. From the hymn <em>Ut queant laxis</em>, whose six phrases each start
+                a step higher, he drew the syllables <span class="accent-green">Ut&#8211;Re&#8211;Mi&#8211;Fa&#8211;Sol&#8211;La</span> &#8212;
+                the six-note <span class="accent-amber">hexachord</span>. Its one secret: the single semitone always falls between
+                <span class="accent-rose">Mi&#8211;Fa</span>.
+            </p>
+            <p style="font-size:0.43em !important;">
+                To sing beyond six notes you <span class="accent-purple">mutate</span> &#8212; slide into an overlapping hexachord
+                mid-scale. Where a B had to be flattened (soft, <em>b molle</em>) or kept natural (hard, <em>b durum</em>) gave us
+                "flat" and "natural", and the editorial sharps/flats we call <span class="accent-blue">musica ficta</span>.
+                Guido mapped the whole system onto the joints of the left <span class="accent-amber">hand</span>, a memory palace.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 240 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <g font-family="DM Sans" font-size="13">
+                    <line x1="46" y1="24" x2="46" y2="224" stroke="#2a2a3a" stroke-width="1"/>
+                    <circle cx="46" cy="214" r="6" fill="#d4a053"/><text x="62" y="219" fill="#e8e6e3">Ut &#8212; C</text>
+                    <circle cx="46" cy="178" r="6" fill="#d4a053"/><text x="62" y="183" fill="#e8e6e3">Re &#8212; D</text>
+                    <circle cx="46" cy="142" r="6" fill="#4ecca3"/><text x="62" y="147" fill="#e8e6e3">Mi &#8212; E</text>
+                    <circle cx="46" cy="118" r="6" fill="#cf7272"/><text x="62" y="123" fill="#e8e6e3">Fa &#8212; F</text>
+                    <text x="120" y="132" fill="#cf7272" font-size="10">&#8592; semitone</text>
+                    <circle cx="46" cy="82" r="6" fill="#5b8cd4"/><text x="62" y="87" fill="#e8e6e3">Sol &#8212; G</text>
+                    <circle cx="46" cy="46" r="6" fill="#9b72cf"/><text x="62" y="51" fill="#e8e6e3">La &#8212; A</text>
+                    <text x="20" y="244" fill="#6a6a7a" font-size="10">the six-step hexachord</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, NB_HEX, {timbre:'voice', bpm:120, temperament:'pythagorean', tonic:'C3', reverb:0.5})">&#9654; Sing the hexachord: Ut&#8211;Re&#8211;Mi&#8211;Fa&#8211;Sol&#8211;La</button>
+    </div>
+    <p class="audio-caption">Six rising notes on C; listen for the one narrow step, Mi&#8211;Fa (E&#8211;F), that anchors the whole system</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: SQUARE NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">06 — 12th–13th c. · SQUARE NOTATION</span>
+    <h2>The Chant Book: Square Notation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The neume shapes hardened into <span class="accent-amber">square notes</span> on Guido's four-line staff. This is the
+        very notation you still meet in a modern chant book (the <em>Graduale</em>). Here is a worked <em>Alleluia</em> incipit &#8212; decode it part by part.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1.2">
+                <line x1="60" y1="60" x2="860" y2="60"/>
+                <line x1="60" y1="82" x2="860" y2="82"/>
+                <line x1="60" y1="104" x2="860" y2="104"/>
+                <line x1="60" y1="126" x2="860" y2="126"/>
+            </g>
+            <rect x="66" y="93" width="10" height="22" fill="#d4a053"/><rect x="76" y="99" width="16" height="10" fill="#d4a053"/>
+            <text x="66" y="150" fill="#d4a053" font-size="11" font-family="DM Sans">C-clef: 3rd line = Do (C)</text>
+            <rect x="150" y="115" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="200" y="126" width="14" height="14" fill="#4ecca3"/><rect x="200" y="104" width="14" height="14" fill="#4ecca3"/>
+            <rect x="260" y="93" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="320" y="82" width="14" height="14" fill="#cf7272"/><rect x="334" y="104" width="14" height="14" fill="#cf7272"/>
+            <rect x="400" y="93" width="12" height="12" fill="#9b72cf"/><rect x="412" y="82" width="12" height="12" fill="#9b72cf"/><rect x="424" y="93" width="12" height="12" fill="#9b72cf"/>
+            <rect x="500" y="104" width="14" height="14" fill="#e8e6e3"/>
+            <path d="M 820 104 l 10 -8 l 6 8" fill="none" stroke="#5b8cd4" stroke-width="2"/>
+            <text x="792" y="150" fill="#5b8cd4" font-size="11" font-family="DM Sans">custos &#8594;</text>
+            <text x="150" y="182" fill="#9a9a9a" font-family="Playfair Display" font-style="italic" font-size="15">Al &#8212; le &#8212; &#8212; lu &#8212; ia</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-4" style="max-width:96%;">
+        <div class="card"><h4 class="accent-amber">1 · The clef</h4><p>The C-clef (or F-clef) names one line. Every pitch is read relative to it &#8212; the staff can sit anywhere on the page.</p></div>
+        <div class="card"><h4 class="accent-green">2 · The neumes</h4><p>Squares grouped together belong to one syllable. Read a stacked group <em>bottom-to-top</em>, a spread group left-to-right.</p></div>
+        <div class="card"><h4 class="accent-purple">3 · The rhythm</h4><p>None is written. Notes are broadly equal; word and phrase shape the flow. There are no bar-lines.</p></div>
+        <div class="card"><h4 class="accent-blue">4 · The custos</h4><p>The little hook at a line's end predicts the first note of the next line &#8212; a page-turn cue.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: RHYTHMIC MODES ═══════════════════ -->
+<section>
+    <span class="section-number">07 — c. 1200 · RHYTHMIC MODES</span>
+    <h2>Notre-Dame &amp; the Birth of Notated Rhythm</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.43em !important;">
+        The composers of <span class="accent-green">Notre-Dame</span> (Léonin, Pérotin, c.1200) needed voices to move
+        <em>together in time</em>. Their solution: six <span class="accent-amber">rhythmic modes</span>, fixed patterns of
+        long (<em>longa</em>) and short (<em>brevis</em>) &#8212; and, crucially, you signalled which mode by the
+        <strong>pattern of ligatures</strong> (joined note-groups). For the first time, <span class="accent-green">rhythm itself was written</span>.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="JetBrains Mono" font-size="12">
+                <text x="20" y="26" fill="#6a6a7a" font-size="11">MODE</text>
+                <text x="150" y="26" fill="#6a6a7a" font-size="11">PATTERN (&#9644; long · &#9642; short)</text>
+                <!-- rows -->
+                <text x="20" y="52" fill="#d4a053" font-weight="700">I</text><rect x="150" y="42" width="22" height="12" fill="#4ecca3"/><rect x="180" y="45" width="9" height="9" fill="#9b72cf"/><text x="330" y="52" fill="#9a9a9a" font-size="11">long&#8211;short (trochaic)</text>
+                <text x="20" y="76" fill="#d4a053" font-weight="700">II</text><rect x="150" y="69" width="9" height="9" fill="#9b72cf"/><rect x="168" y="66" width="22" height="12" fill="#4ecca3"/><text x="330" y="76" fill="#9a9a9a" font-size="11">short&#8211;long (iambic)</text>
+                <text x="20" y="100" fill="#d4a053" font-weight="700">III</text><rect x="150" y="90" width="26" height="12" fill="#4ecca3"/><rect x="184" y="93" width="9" height="9" fill="#9b72cf"/><rect x="197" y="90" width="14" height="12" fill="#4ecca3"/><text x="330" y="100" fill="#9a9a9a" font-size="11">long&#8211;short&#8211;long (dactylic)</text>
+                <text x="20" y="124" fill="#d4a053" font-weight="700">IV&#8211;VI</text><rect x="150" y="117" width="9" height="9" fill="#9b72cf"/><rect x="164" y="117" width="9" height="9" fill="#9b72cf"/><rect x="178" y="114" width="22" height="12" fill="#4ecca3"/><text x="330" y="124" fill="#9a9a9a" font-size="11">the remaining permutations of long &amp; short</text>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, NB_MODE1, {timbre:'organ', bpm:150, temperament:'pythagorean', tonic:'D3', reverb:0.55})">&#9654; Hear Mode 1 (long&#8211;short) in motion</button>
+    </div>
+    <p class="audio-caption">The lilting long&#8211;short of Mode 1 &#8212; the same trochaic gait shown in the top row of the chart</p>
+    <p class="note-text"><strong>How to read it:</strong> you do not read the rhythm from a note's shape yet &#8212; you infer it from the <em>ligature pattern</em>, which tells you the mode; the mode then tells you the long&#8211;short sequence to apply.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: FRANCONIAN MENSURAL ═══════════════════ -->
+<section>
+    <span class="section-number">08 — c. 1260 · FRANCONIAN NOTATION</span>
+    <h2>Franco of Cologne: Shape Now Fixes Duration</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.35em; font-size: 0.43em !important;">
+        Around 1260 <span class="accent-amber">Franco of Cologne</span> made the decisive leap in his <em>Ars cantus mensurabilis</em>:
+        a single note's <strong>shape</strong> now tells you its <strong>length</strong> &#8212; no mode to infer, no context needed.
+        This is <span class="accent-green">mensural</span> ("measured") notation, the true root of our system.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 860 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans">
+                <!-- Longa: square body + descending stem -->
+                <rect x="90" y="50" width="26" height="22" fill="#d4a053"/><line x1="116" y1="50" x2="116" y2="112" stroke="#d4a053" stroke-width="2.5"/>
+                <text x="103" y="132" text-anchor="middle" fill="#d4a053" font-size="14" font-weight="700">Longa</text>
+                <text x="103" y="150" text-anchor="middle" fill="#9a9a9a" font-size="11">longest &#8212; 2 or 3 breves</text>
+                <!-- Brevis: plain square -->
+                <rect x="330" y="50" width="24" height="22" fill="#4ecca3"/>
+                <text x="342" y="132" text-anchor="middle" fill="#4ecca3" font-size="14" font-weight="700">Brevis</text>
+                <text x="342" y="150" text-anchor="middle" fill="#9a9a9a" font-size="11">the "short" &#8212; 1 unit</text>
+                <!-- Semibrevis: diamond (rotated square) -->
+                <g transform="translate(575 61) rotate(45)"><rect x="-11" y="-11" width="22" height="22" fill="#9b72cf"/></g>
+                <text x="575" y="132" text-anchor="middle" fill="#9b72cf" font-size="14" font-weight="700">Semibrevis</text>
+                <text x="575" y="150" text-anchor="middle" fill="#9a9a9a" font-size="11">shortest &#8212; a fraction of a breve</text>
+                <!-- arrow long->short -->
+                <path d="M 150 90 L 300 90" stroke="#6a6a7a" stroke-width="1.2" stroke-dasharray="4 4"/>
+                <path d="M 380 90 L 540 90" stroke="#6a6a7a" stroke-width="1.2" stroke-dasharray="4 4"/>
+                <text x="700" y="70" fill="#5b8cd4" font-size="12" font-weight="700" font-family="DM Sans">Context still counts:</text>
+                <text x="700" y="90" fill="#9a9a9a" font-size="11" font-family="DM Sans">a longa is "perfect" (=3)</text>
+                <text x="700" y="106" fill="#9a9a9a" font-size="11" font-family="DM Sans">or "imperfect" (=2)</text>
+                <text x="700" y="122" fill="#9a9a9a" font-size="11" font-family="DM Sans">by the note that follows.</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> learn three shapes &#8212; stemmed square = <span class="accent-amber">longa</span>, plain square = <span class="accent-green">breve</span>, diamond = <span class="accent-purple">semibreve</span>. Longest to shortest, left to right. Triple grouping ("perfect") is the medieval norm, a nod to the Holy Trinity.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: ARS NOVA MENSURATION & PROLATION ═══════════════════ -->
+<section>
+    <span class="section-number">09 — c. 1320 · ARS NOVA</span>
+    <h2>Prolation: Triple <em>or</em> Duple, at Every Level</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Philippe de Vitry's <em>Ars Nova</em> (c.1320) freed rhythm completely: each note could divide into <strong>three</strong>
+        (<span class="accent-amber">perfect</span>) <em>or</em> <strong>two</strong> (<span class="accent-blue">imperfect</span>), and a
+        <span class="accent-green">mensuration sign</span> at the front declared which. The <span class="accent-blue">semicircle</span>
+        for imperfect time is the direct ancestor of our modern <strong>C</strong> time-signature.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans">
+                <!-- perfect: full circle + dot -->
+                <circle cx="90" cy="70" r="26" fill="none" stroke="#d4a053" stroke-width="3"/><circle cx="90" cy="70" r="3.5" fill="#d4a053"/>
+                <text x="90" y="120" text-anchor="middle" fill="#d4a053" font-size="12" font-weight="700">&#9711; perfect</text>
+                <text x="90" y="137" text-anchor="middle" fill="#9a9a9a" font-size="10">breve = 3 semibreves</text>
+                <!-- 1 breve -> 3 semibreves -->
+                <rect x="150" y="59" width="22" height="22" fill="#4ecca3"/>
+                <text x="182" y="76" fill="#6a6a7a" font-size="16">=</text>
+                <g transform="translate(214 70) rotate(45)"><rect x="-8" y="-8" width="16" height="16" fill="#9b72cf"/></g>
+                <g transform="translate(246 70) rotate(45)"><rect x="-8" y="-8" width="16" height="16" fill="#9b72cf"/></g>
+                <g transform="translate(278 70) rotate(45)"><rect x="-8" y="-8" width="16" height="16" fill="#9b72cf"/></g>
+                <!-- divider -->
+                <line x1="330" y1="30" x2="330" y2="120" stroke="#2a2a3a" stroke-width="1"/>
+                <!-- imperfect: semicircle -->
+                <path d="M 420 46 A 26 26 0 1 0 420 96" fill="none" stroke="#5b8cd4" stroke-width="3"/>
+                <text x="410" y="120" text-anchor="middle" fill="#5b8cd4" font-size="12" font-weight="700">&#119008; imperfect &#8594; C</text>
+                <text x="410" y="137" text-anchor="middle" fill="#9a9a9a" font-size="10">breve = 2 semibreves</text>
+                <rect x="470" y="59" width="22" height="22" fill="#4ecca3"/>
+                <text x="502" y="76" fill="#6a6a7a" font-size="16">=</text>
+                <g transform="translate(534 70) rotate(45)"><rect x="-8" y="-8" width="16" height="16" fill="#9b72cf"/></g>
+                <g transform="translate(566 70) rotate(45)"><rect x="-8" y="-8" width="16" height="16" fill="#9b72cf"/></g>
+                <!-- coloration note -->
+                <g transform="translate(690 70) rotate(45)"><rect x="-9" y="-9" width="18" height="18" fill="#cf7272"/></g>
+                <text x="760" y="60" fill="#cf7272" font-size="12" font-weight="700">Coloration</text>
+                <text x="760" y="78" fill="#9a9a9a" font-size="10">a red (or filled) note</text>
+                <text x="760" y="93" fill="#9a9a9a" font-size="10">shrinks a perfect group</text>
+                <text x="760" y="108" fill="#9a9a9a" font-size="10">to an imperfect one.</text>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, NB_TRIPLE, {timbre:'reed', bpm:150, temperament:'pythagorean', tonic:'C3', reverb:0.45})">&#9654; Same notes &#8212; PERFECT (triple)</button>
+        <button class="audio-btn blue" onclick="EM.toggle(this, NB_DUPLE, {timbre:'reed', bpm:150, temperament:'pythagorean', tonic:'C3', reverb:0.45})">&#9654; Same notes &#8212; IMPERFECT (duple)</button>
+    </div>
+    <p class="audio-caption">Identical pitches, two mensurations: first a lilting triple grouping, then an even duple &#8212; the sign at the front decides which</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: WHITE MENSURAL NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">10 — 15th–16th c. · WHITE MENSURAL</span>
+    <h2>White Notation &amp; the Part-Book</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        As paper replaced parchment, filled black notes tore the page, so scribes drew them <span class="accent-amber">void</span>
+        (outline only) &#8212; <em>white mensural notation</em>, the look of a Josquin or Palestrina source. Two things still surprise a modern eye:
+        there are <span class="accent-rose">no bar-lines</span>, and singers read from separate <span class="accent-green">part-books</span>, not a score.
+    </p>
+    <div class="two-col">
+        <div>
+            <svg viewBox="0 0 380 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <g font-family="DM Sans">
+                    <!-- void breve -->
+                    <rect x="30" y="46" width="26" height="20" fill="none" stroke="#e8e6e3" stroke-width="2"/>
+                    <text x="43" y="92" text-anchor="middle" fill="#e8e6e3" font-size="11" font-weight="700">Breve</text>
+                    <!-- void semibreve diamond -->
+                    <g transform="translate(140 56) rotate(45)"><rect x="-11" y="-11" width="22" height="22" fill="none" stroke="#4ecca3" stroke-width="2"/></g>
+                    <text x="140" y="92" text-anchor="middle" fill="#4ecca3" font-size="11" font-weight="700">Semibreve</text>
+                    <!-- void minim diamond + stem -->
+                    <g transform="translate(250 56) rotate(45)"><rect x="-9" y="-9" width="18" height="18" fill="none" stroke="#9b72cf" stroke-width="2"/></g>
+                    <line x1="262" y1="48" x2="262" y2="8" stroke="#9b72cf" stroke-width="2"/>
+                    <text x="250" y="92" text-anchor="middle" fill="#9b72cf" font-size="11" font-weight="700">Minim</text>
+                    <text x="190" y="128" text-anchor="middle" fill="#6a6a7a" font-size="10">void note-heads; the stemmed minim is our shortest ancestor</text>
+                </g>
+            </svg>
+        </div>
+        <div>
+            <svg viewBox="0 0 380 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <g font-family="DM Sans">
+                    <rect x="20" y="20" width="150" height="110" rx="6" fill="#161622" stroke="#4ecca3"/>
+                    <text x="95" y="40" text-anchor="middle" fill="#4ecca3" font-size="11" font-weight="700">CANTUS book</text>
+                    <line x1="34" y1="58" x2="156" y2="58" stroke="#6a6a7a"/><line x1="34" y1="74" x2="156" y2="74" stroke="#6a6a7a"/><line x1="34" y1="90" x2="156" y2="90" stroke="#6a6a7a"/>
+                    <rect x="210" y="20" width="150" height="110" rx="6" fill="#161622" stroke="#5b8cd4"/>
+                    <text x="285" y="40" text-anchor="middle" fill="#5b8cd4" font-size="11" font-weight="700">TENOR book</text>
+                    <line x1="224" y1="58" x2="346" y2="58" stroke="#6a6a7a"/><line x1="224" y1="74" x2="346" y2="74" stroke="#6a6a7a"/><line x1="224" y1="90" x2="346" y2="90" stroke="#6a6a7a"/>
+                    <text x="190" y="126" text-anchor="middle" fill="#6a6a7a" font-size="10">each singer sees only their own line &#8212; no full score exists</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> the shapes are the mensural ones, only hollow. With no bar-lines you keep your place by counting the beat (<em>tactus</em>); with no score, you must <em>listen</em> across the room to fit your part to the others.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: TABLATURE ═══════════════════ -->
+<section>
+    <span class="section-number">11 — 16th c. · TABLATURE</span>
+    <h2>Tablature: Read the Hand, Not the Pitch</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        For instruments a different logic won out. Lute <span class="accent-amber">tablature</span> does not tell you <em>which pitch</em> &#8212;
+        it tells you <em>where to put your fingers</em>. The lines are the lute's <span class="accent-green">courses</span> (strings),
+        a letter says which <span class="accent-blue">fret</span> to stop, and rhythm flags float <em>above</em> the grid.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 6 courses -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="70" y1="60" x2="620" y2="60"/><line x1="70" y1="80" x2="620" y2="80"/>
+                <line x1="70" y1="100" x2="620" y2="100"/><line x1="70" y1="120" x2="620" y2="120"/>
+                <line x1="70" y1="140" x2="620" y2="140"/><line x1="70" y1="160" x2="620" y2="160"/>
+            </g>
+            <text x="30" y="64" fill="#6a6a7a" font-size="11" font-family="DM Sans">1st (g')</text>
+            <text x="30" y="84" fill="#6a6a7a" font-size="11" font-family="DM Sans">2nd (d')</text>
+            <!-- rhythm flags above -->
+            <g stroke="#d4a053" stroke-width="1.6">
+                <line x1="96" y1="40" x2="96" y2="54"/><line x1="146" y1="40" x2="146" y2="54"/><line x1="196" y1="40" x2="196" y2="54"/><line x1="246" y1="40" x2="246" y2="54"/><line x1="300" y1="36" x2="300" y2="54"/>
+            </g>
+            <text x="150" y="28" fill="#d4a053" font-size="11" font-family="DM Sans">&#9835; rhythm flags (how long each pluck lasts)</text>
+            <!-- fret letters : A4=c on course1(y60); G4=a on course1; F4=d on course2(y80); E4=c course2; D4=a course2 -->
+            <text x="90" y="65" fill="#e8e6e3" font-size="16" font-family="JetBrains Mono" font-weight="700">c</text>
+            <text x="140" y="65" fill="#e8e6e3" font-size="16" font-family="JetBrains Mono" font-weight="700">a</text>
+            <text x="190" y="85" fill="#e8e6e3" font-size="16" font-family="JetBrains Mono" font-weight="700">d</text>
+            <text x="240" y="85" fill="#e8e6e3" font-size="16" font-family="JetBrains Mono" font-weight="700">c</text>
+            <text x="294" y="85" fill="#e8e6e3" font-size="16" font-family="JetBrains Mono" font-weight="700">a</text>
+            <!-- decode arrow -->
+            <text x="360" y="88" fill="#4ecca3" font-size="13" font-family="DM Sans">&#8594; decodes to the pitches:</text>
+            <text x="360" y="112" fill="#e8e6e3" font-size="15" font-family="JetBrains Mono">A4  G4  F4  E4  D4</text>
+            <text x="70" y="192" fill="#6a6a7a" font-size="11" font-family="DM Sans">Letters: a = open string · b = 1st fret · c = 2nd fret · d = 3rd fret &#8230;</text>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, NB_TAB, {timbre:'pluck', bpm:120, temperament:'equal', reverb:0.4})">&#9654; Pluck the tabbed notes</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dowland+lute+tablature+explained">&#9834; Watch: lute tablature explained</a>
+    </div>
+    <p class="audio-caption">The five letters above become five plucked pitches &#8212; A&#8211;G&#8211;F&#8211;E&#8211;D, a little falling "tear" phrase, on a lute timbre</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: ROAD TO MODERN NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">12 — 17th c. → · THE MODERN GRID</span>
+    <h2>The Road to Modern Notation</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        By the 1600s the last pieces fell into place: filled note-heads with flags for short values, the <span class="accent-amber">five-line staff</span>,
+        <span class="accent-green">bar-lines</span> dividing a regular metre, a <span class="accent-blue">time signature</span>, and the
+        <strong>score</strong> stacking every voice so one reader sees the whole. Nothing was invented from nothing &#8212; each stage kept something.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="80" y1="46" x2="720" y2="46"/><line x1="80" y1="64" x2="720" y2="64"/><line x1="80" y1="82" x2="720" y2="82"/><line x1="80" y1="100" x2="720" y2="100"/><line x1="80" y1="118" x2="720" y2="118"/>
+            </g>
+            <!-- stylised G clef -->
+            <path d="M 108 116 C 92 104 100 84 116 84 C 132 84 134 108 112 112 C 96 115 96 60 118 56" fill="none" stroke="#d4a053" stroke-width="2.4"/>
+            <text x="96" y="140" fill="#d4a053" font-size="10" font-family="DM Sans">clef (from Guido)</text>
+            <!-- time signature -->
+            <text x="150" y="78" fill="#4ecca3" font-size="20" font-family="JetBrains Mono" font-weight="700">3</text>
+            <text x="150" y="102" fill="#4ecca3" font-size="20" font-family="JetBrains Mono" font-weight="700">4</text>
+            <text x="140" y="140" fill="#4ecca3" font-size="10" font-family="DM Sans">metre (from prolation)</text>
+            <!-- bar lines -->
+            <line x1="320" y1="46" x2="320" y2="118" stroke="#5b8cd4" stroke-width="1.6"/>
+            <line x1="500" y1="46" x2="500" y2="118" stroke="#5b8cd4" stroke-width="1.6"/>
+            <text x="330" y="140" fill="#5b8cd4" font-size="10" font-family="DM Sans">bar-lines (new)</text>
+            <!-- filled noteheads with stems -->
+            <g fill="#e8e6e3">
+                <ellipse cx="220" cy="100" rx="8" ry="6"/><line x1="228" y1="100" x2="228" y2="64" stroke="#e8e6e3" stroke-width="2"/>
+                <ellipse cx="270" cy="91" rx="8" ry="6"/><line x1="278" y1="91" x2="278" y2="55" stroke="#e8e6e3" stroke-width="2"/>
+                <ellipse cx="380" cy="82" rx="8" ry="6"/><line x1="388" y1="82" x2="388" y2="46" stroke="#e8e6e3" stroke-width="2"/>
+                <ellipse cx="440" cy="73" rx="8" ry="6"/><line x1="448" y1="73" x2="448" y2="37" stroke="#e8e6e3" stroke-width="2"/>
+                <ellipse cx="560" cy="91" rx="8" ry="6"/><line x1="568" y1="91" x2="568" y2="55" stroke="#e8e6e3" stroke-width="2"/>
+            </g>
+            <text x="560" y="140" fill="#9a9a9a" font-size="10" font-family="DM Sans">note-heads (from mensural shapes)</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-4" style="max-width:96%;">
+        <div class="card"><h4 class="accent-amber">Kept: the staff</h4><p>Guido's ruled lines, grown from four to five, and his movable clefs.</p></div>
+        <div class="card"><h4 class="accent-green">Kept: note values</h4><p>The mensural family &#8212; breve, semibreve, minim &#8212; survives as our whole, half and quarter notes.</p></div>
+        <div class="card"><h4 class="accent-blue">Kept: metre</h4><p>Ars Nova's perfect/imperfect become simple and compound time; the semicircle became <strong>C</strong>.</p></div>
+        <div class="card"><h4 class="accent-purple">New: bar-lines</h4><p>Regular bar-lines and the vertical score are Baroque additions &#8212; not medieval at all.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: PRACTICAL READING TIPS ═══════════════════ -->
+<section>
+    <span class="section-number">13 — IN PRACTICE</span>
+    <h2>Reading a Chant Book or a Renaissance Edition</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.35em; font-size: 0.44em !important;">
+        Four practical habits will let you open almost any early-music score &#8212; original or modern transcription &#8212; and find your way.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">In a chant book</h4>
+            <p><strong>Find the clef first.</strong> A C- or F-clef names one of the four lines; read every square from there. Groups on one syllable, no bar-lines, roughly equal notes, and a <em>custos</em> at each line-end.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">In a modern early-music edition</h4>
+            <p><strong>Expect no bar-lines,</strong> or only faint <em>mensurstriche</em> between the staves. Note-values are often halved or quartered from the original so the maths looks familiar.</p>
+        </div>
+    </div>
+    <div class="diagram-container" style="max-width:70%;">
+        <svg viewBox="0 0 620 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="30" y1="22" x2="590" y2="22"/><line x1="30" y1="36" x2="590" y2="36"/><line x1="30" y1="50" x2="590" y2="50"/><line x1="30" y1="64" x2="590" y2="64"/><line x1="30" y1="78" x2="590" y2="78"/>
+            </g>
+            <ellipse cx="120" cy="50" rx="7" ry="5" fill="#e8e6e3"/>
+            <!-- editorial accidental in brackets above a note -->
+            <ellipse cx="300" cy="43" rx="7" ry="5" fill="#e8e6e3"/>
+            <text x="272" y="30" fill="#4ecca3" font-size="15" font-family="JetBrains Mono">[&#9839;]</text>
+            <text x="330" y="30" fill="#4ecca3" font-size="11" font-family="DM Sans">&#8592; editorial accidental in brackets = <tspan fill="#9b72cf">musica ficta</tspan></text>
+            <ellipse cx="470" cy="57" rx="7" ry="5" fill="#e8e6e3"/>
+        </svg>
+    </div>
+    <p class="note-text"><strong>The bracket rule:</strong> an accidental printed <em>above</em> a note or in [square brackets] was <span class="accent-purple">not in the source</span> &#8212; it is the editor's suggested <em>musica ficta</em>, the sharp or flat a Renaissance singer would have added by convention. Take it as advice, not law.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — CLOSING</span>
+    <h2>Notation as Frozen Memory</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Seven centuries of invention turned a fleeting gesture of the hand into an exact grid of pitch and time. Each stage solved one
+        problem and handed the rest on: neumes caught the <span class="accent-amber">contour</span>, Guido fixed the <span class="accent-green">pitch</span>,
+        Notre-Dame and Franco fixed the <span class="accent-purple">rhythm</span>, Ars Nova freed the <span class="accent-blue">metre</span>. To read early
+        music is to read that memory, thawed.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">How high</h4><p>Neumes &#8594; heightened neumes &#8594; the coloured line &#8594; Guido's staff &amp; clefs. Pitch, made certain.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">How long</h4><p>Rhythmic modes &#8594; Franconian shapes &#8594; Ars Nova prolation. Duration, made visible.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">How it looks now</h4><p>Five lines, bar-lines, a score &#8212; the modern page is a museum of every earlier idea.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Nisi enim ab homine memoria teneantur soni, pereunt, quia scribi non possunt." &#8212; "For unless sounds are held in the memory by man, they perish, because they cannot be written down."</p>
+        <span class="attribution">&#8212; Isidore of Seville, <em>Etymologiae</em> (c. 625) &#8212; the very problem that all notation was invented to solve</span>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=medieval+music+notation+explained">&#9834; Medieval notation explained</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://gregobase.selapa.net/">&#9834; GregoBase — chant scores</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/">&#9834; IMSLP — free scores &amp; facsimiles</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Fitzwilliam+Virginal+Book">&#9834; Fitzwilliam Virginal Book</a>
+    </div>
+    <p class="note-text">c. 900 – 1600 · from gesture to grid</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for THIS presentation (note names, beats) — unique NB_ vars ── */
+/* Slide 05 — an octave scale read straight off the four-line staff (C4 up to C5) */
+var NB_SCALE  = [{n:'C4',d:1},{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},{n:'B4',d:1},{n:'C5',d:2}];
+/* Slide 06 — the six-note hexachord Ut-Re-Mi-Fa-Sol-La (C D E F G A) */
+var NB_HEX    = [{n:'C4',d:1},{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:2}];
+/* Slide 08 — Mode 1 (trochaic long-short) melody, as shown in the chart's top row */
+var NB_MODE1  = [{n:'D4',d:1.5},{n:'F4',d:0.5},{n:'E4',d:1.5},{n:'D4',d:0.5},{n:'F4',d:1.5},{n:'G4',d:0.5},{n:'A4',d:1.5},{n:'G4',d:0.5},{n:'F4',d:1.5},{n:'E4',d:0.5},{n:'D4',d:2}];
+/* Slide 10 — the SAME pitches, first in perfect (triple) then imperfect (duple) mensuration */
+var NB_TRIPLE = [{n:'C5',d:2},{n:'D5',d:1},{n:'E5',d:2},{n:'D5',d:1},{n:'C5',d:2},{n:'D5',d:1},{n:'E5',d:3}];
+var NB_DUPLE  = [{n:'C5',d:1},{n:'D5',d:1},{n:'E5',d:1},{n:'D5',d:1},{n:'C5',d:1},{n:'D5',d:1},{n:'E5',d:2}];
+/* Slide 12 — the exact notes decoded from the lute tablature (A4 G4 F4 E4 D4) */
+var NB_TAB    = [{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

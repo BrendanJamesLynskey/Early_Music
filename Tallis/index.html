@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Tallis — The English Survivor &amp; the 40-Voice Motet</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 140px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- small crown: servant of four monarchs -->
+            <g fill="none" stroke="#5b8cd4" stroke-width="2">
+                <path d="M150 22 l6 14 l8 -12 l8 12 l8 -12 l8 12 l6 -14 v18 h-52 z"/>
+            </g>
+            <circle cx="150" cy="20" r="2.4" fill="#5b8cd4"/><circle cx="180" cy="16" r="2.4" fill="#5b8cd4"/><circle cx="210" cy="20" r="2.4" fill="#5b8cd4"/>
+            <!-- a 5-line staff carrying a canon: one line and its shadow -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="66" x2="340" y2="66"/>
+                <line x1="20" y1="78" x2="340" y2="78"/>
+                <line x1="20" y1="90" x2="340" y2="90"/>
+                <line x1="20" y1="102" x2="340" y2="102"/>
+                <line x1="20" y1="114" x2="340" y2="114"/>
+            </g>
+            <!-- leader melody (blue) -->
+            <polyline points="40,108 70,108 100,96 130,108 160,84 190,72 220,96 250,108" fill="none" stroke="#5b8cd4" stroke-width="2.4"/>
+            <g fill="#5b8cd4"><circle cx="40" cy="108" r="3.5"/><circle cx="70" cy="108" r="3.5"/><circle cx="100" cy="96" r="3.5"/><circle cx="130" cy="108" r="3.5"/><circle cx="160" cy="84" r="3.5"/><circle cx="190" cy="72" r="3.5"/><circle cx="220" cy="96" r="3.5"/><circle cx="250" cy="108" r="3.5"/></g>
+            <!-- follower: same contour, entering later, faint (the canon) -->
+            <polyline points="100,120 130,120 160,108 190,120 220,96 250,84 280,108 310,120" fill="none" stroke="#9b72cf" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
+            <g fill="#9b72cf" opacity="0.85"><circle cx="100" cy="120" r="3"/><circle cx="130" cy="120" r="3"/><circle cx="160" cy="108" r="3"/><circle cx="190" cy="120" r="3"/><circle cx="220" cy="96" r="3"/><circle cx="250" cy="84" r="3"/><circle cx="280" cy="108" r="3"/><circle cx="310" cy="120" r="3"/></g>
+            <text x="20" y="142" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">one tune, chasing itself &#8212; a canon</text>
+        </svg>
+    </div>
+    <h1>Thomas Tallis</h1>
+    <div class="subtitle">c. 1505–1585 · The English Survivor of the Reformation</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The composer who served <span class="accent-blue">four Tudor monarchs</span> and bent his art
+        through the whiplash of the English Reformation — from Latin splendour to plain English prayer and back —
+        and who conjured a motet in <span class="accent-blue">forty independent voices</span>.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 12 — The Tudor Church</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: THE ENGLISH SURVIVOR ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>A Life Built for Survival</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-blue">Thomas Tallis</span> (c. 1505–1585) spent his long career at the heart of English music
+        while the ground shifted violently beneath it. As the crown lurched between Catholic and Protestant,
+        the very language, style and purpose of church music were remade — twice over. Tallis adapted to each
+        turn without ever losing his voice, and died respected, wealthy, and still in royal service.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-blue">&#9819;</span><h4 class="accent-blue">Four monarchs</h4><p>Henry VIII, Edward VI, Mary I and Elizabeth I — Tallis served the Chapel Royal through all four reigns.</p></div>
+        <div class="card"><span class="icon accent-green">&#9834;</span><h4 class="accent-green">Two languages</h4><p>Elaborate Latin polyphony for the old rite; plain, syllabic English for the new reformed worship.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9733;</span><h4 class="accent-purple">Royal monopoly</h4><p>In 1575 he and his pupil William Byrd held Elizabeth's patent to print music in England.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9836;</span><h4 class="accent-amber">Forty voices</h4><p>His <em>Spem in alium</em> — eight five-part choirs — remains the most famous feat of Tudor polyphony.</p></div>
+    </div>
+    <p class="note-text">Little of his early life is documented; his gift was for endurance as much as for beauty — the art of the survivor.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE IN FOUR REIGNS</span>
+    <h2>The Shifting Ground</h2>
+    <div class="separator"></div>
+    <div style="max-width: 84%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1505</span><span class="event"><strong>Born</strong>Probably in Kent; details of his origins are lost. He rises through posts at Dover Priory, London, and Waltham Abbey.</span></div>
+        <div class="timeline-item"><span class="year">1540</span><span class="event"><strong>Waltham Abbey dissolved</strong>Henry VIII's dissolution of the monasteries throws Tallis out of work; he soon joins the Chapel Royal.</span></div>
+        <div class="timeline-item"><span class="year">1547–53</span><span class="event"><strong>Edward VI</strong>The Protestant turn: Latin banished, English prayer-book worship demands plain, word-clear music.</span></div>
+        <div class="timeline-item"><span class="year">1553–58</span><span class="event"><strong>Mary I</strong>Catholicism restored; the grand Latin polyphony returns for a few short years.</span></div>
+        <div class="timeline-item"><span class="year">1575</span><span class="event"><strong>The royal patent</strong>Elizabeth I grants Tallis and Byrd the monopoly on printing music; they issue the <em>Cantiones Sacrae</em>.</span></div>
+        <div class="timeline-item"><span class="year">1585</span><span class="event"><strong>Dies at Greenwich</strong>Buried in the parish church of St Alfege; mourned as the elder statesman of English music.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: FOUR MONARCHS, FOUR STYLES ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE WHIPLASH</span>
+    <h2>Four Monarchs, Four Styles</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        No English composer had to reinvent his craft so often. Each reign redefined what church music was
+        <em>allowed</em> to be — and Tallis wrote convincingly in every one of these opposing styles.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Henry VIII</h4><p>Break with Rome, but the liturgy stays Latin. Rich, florid Catholic polyphony in the old English style.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Edward VI</h4><p>Radical Protestant reform. English texts, homophony, one note per syllable — the birth of the anthem.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Mary I</h4><p>Catholicism restored. Latin and elaborate polyphony come flooding back for five brief years.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Elizabeth I</h4><p>The middle way. Latin motets tolerated at court alongside English service music; stability at last.</p></div>
+    </div>
+    <p class="note-text">To be caught in the wrong style at the wrong moment could cost a musician his post — or worse. Tallis read the weather perfectly.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: CHAPEL ROYAL ═══════════════════ -->
+<section>
+    <span class="section-number">04 — HIS POSITION</span>
+    <h2>Servant of the Chapel Royal</h2>
+    <div class="separator"></div>
+    <div class="two-col">
+        <div>
+            <p style="font-size:0.46em !important;">
+                From the 1540s Tallis was a <span class="accent-blue">Gentleman of the Chapel Royal</span> — the elite body of
+                singers and organists that travelled with the sovereign and provided music for the crown's own worship.
+                He served as organist and composer, at the very centre of English musical life.
+            </p>
+            <p style="font-size:0.46em !important;">
+                It was the ideal vantage point for a survivor: close enough to the throne to sense each change of policy
+                before it broke, and valued enough to be kept on through every upheaval. There he also taught the young
+                <span class="accent-amber">William Byrd</span>, his greatest pupil and future partner.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">The Chapel Royal</h4>
+            <p>Not a building but an institution — a corps of the finest singers and keyboard players in England.</p>
+            <p style="margin-top:0.4em;">Its Gentlemen sang the daily services of the monarch's household and provided music for coronations, funerals and state occasions.</p>
+            <p style="margin-top:0.4em;">Tallis and Byrd are jointly commemorated as its two greatest Tudor composers.</p>
+        </div>
+    </div>
+    <p class="note-text">Byrd's own later greatness — Latin Masses for recusant Catholics alongside Anglican service music — grew directly out of Tallis's example.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: WORD-SETTING / CRANMER ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE REFORMED IDEAL</span>
+    <h2>"A Plain and Distinct Note"</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        When Edward VI's reformers demanded English-language worship, they wanted the words to be
+        <em>understood</em>. Archbishop Thomas Cranmer set out the new ideal for church music: not the
+        old clouds of overlapping Latin, but clear, syllabic English that any congregation could follow.
+    </p>
+    <div class="quote-box">
+        <p>"The song that shall be made thereunto would not be full of notes, but, as near as may be, for every syllable a note; so that it may be sung distinctly and devoutly."</p>
+        <span class="attribution">— Thomas Cranmer, Archbishop of Canterbury, letter to Henry VIII, 1544</span>
+    </div>
+    <p style="max-width: 86%; margin: 0.3em auto 0; font-size: 0.44em !important;">
+        Tallis answered this challenge better than anyone — and the English <span class="accent-green">anthem</span> was born
+        from it. His response, <em>If ye love me</em>, is the model of the reformed style.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: IF YE LOVE ME (AUDIO — HOMOPHONIC) ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE ENGLISH ANTHEM</span>
+    <h2><em>If ye love me</em> — Words You Can Hear</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Tallis's four-part anthem <em>If ye love me</em> (published 1565) is the reformed ideal made beautiful.
+        It opens in <span class="accent-green">homophony</span> — all voices moving together in block chords, one syllable at a time —
+        so every word rings out clearly, before a gentle flowering of imitation at the close. Sweetness without excess.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, TAL_ANTHEM, {timbre:'voice', bpm:84, temperament:'equal', reverb:0.55, legato:0.95})">&#9654; Hear a homophonic anthem phrase</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+If+ye+love+me">&#9834; Listen: Tallis — <em>If ye love me</em></a>
+    </div>
+    <p class="audio-caption">Synthesised four-part voices · block chords in equal temperament so the words and triads sound clear and consonant</p>
+    <div class="card-grid cols-3" style="max-width:90%;">
+        <div class="card"><h4 class="accent-green">Homophonic</h4><p>All voices sing the same rhythm together — the text is delivered as one, perfectly audible.</p></div>
+        <div class="card"><h4 class="accent-blue">Syllabic</h4><p>Broadly one note per syllable, exactly as Cranmer's reformers had asked for.</p></div>
+        <div class="card"><h4 class="accent-amber">English</h4><p>A scripture text (John 14) in the vernacular — worship the whole congregation can follow.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: 1575 MONOPOLY ═══════════════════ -->
+<section>
+    <span class="section-number">07 — PATRONAGE &amp; PRINT</span>
+    <h2>1575 — A Royal Monopoly</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        In <span class="accent-blue">1575</span> Elizabeth I granted Tallis and William Byrd an extraordinary privilege:
+        a <span class="accent-blue">royal monopoly on printing polyphonic music</span> and the ruled paper to write it on,
+        for twenty-one years. It was a mark of the crown's esteem — and a bold commercial venture.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">The patent</h4>
+            <p>The exclusive right to print and sell part-music in England, granted jointly to master and pupil.</p>
+            <p style="margin-top:0.4em;">Commercially it struggled at first — the English market for printed polyphony was still small.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Cantiones Sacrae (1575)</h4>
+            <p>Their first publication under the patent: a joint volume of Latin motets, each composer contributing works to mark the seventeen years of Elizabeth's reign.</p>
+            <p style="margin-top:0.4em;">A dignified display of Latin sacred music, dedicated to the Queen.</p>
+        </div>
+    </div>
+    <p class="note-text">That Latin motets could be dedicated to a Protestant queen shows the pragmatic breadth of the Elizabethan settlement — and of Tallis himself.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: SPEM IN ALIUM OVERVIEW ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE GREAT MOTET</span>
+    <h2><em>Spem in alium</em> — Forty Voices in One</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Tallis's most astonishing achievement is the motet <span class="accent-blue"><em>Spem in alium</em></span> —
+        "Hope in any other" — scored for <span class="accent-blue">forty independent voices</span>, arranged as
+        <strong>eight choirs of five singers</strong> (soprano, alto, tenor, baritone, bass). No mere doubling:
+        every one of the forty parts is its own line.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-blue">8 × 5 = 40</h4><p>Eight five-part choirs, each a complete vocal group, spread in a great arc around the listener.</p></div>
+        <div class="card"><h4 class="accent-green">Antiphony</h4><p>Sound is tossed from choir to choir — voices enter in a wave, roll around the room, then fall silent as the next choir answers.</p></div>
+        <div class="card"><h4 class="accent-amber">The great tutti</h4><p>At climactic moments all forty voices sound at once — an overwhelming wall of harmony unique in the period.</p></div>
+    </div>
+    <p style="max-width: 88%; margin: 0.3em auto 0; font-size: 0.44em !important;">
+        It may have been written c. 1570, possibly for a royal birthday; the exact occasion is debated. However it came about,
+        nothing else in Renaissance England attempts anything on this scale.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: READING THE 8-CHOIR GRID (NOTATION SVG) ═══════════════════ -->
+<section>
+    <span class="section-number">09 — READING THE PAGE · I</span>
+    <h2>Reading the Eight-Choir Grid</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Picture the forty voices as a grid: eight choirs (I–VIII), five voices each. The music does not move all
+        at once — a phrase begins in Choir I and passes hand to hand around the ensemble, like a wave, before the tutti.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 920 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans">
+                <!-- 8 choir boxes, two rows of four -->
+                <!-- helper: each box shows 5 dots for S A T Bar B -->
+                <!-- Row 1: choirs I-IV -->
+                <g>
+                    <rect x="30" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
+                    <text x="40" y="58" fill="#5b8cd4" font-size="12" font-weight="700">CHOIR I</text>
+                    <g fill="#e8e6e3"><circle cx="55" cy="88" r="6"/><circle cx="90" cy="88" r="6"/><circle cx="125" cy="88" r="6"/><circle cx="160" cy="88" r="6"/><circle cx="195" cy="88" r="6"/></g>
+                    <text x="40" y="128" fill="#6a6a7a" font-size="10">S · A · T · Bar · B</text>
+                </g>
+                <g>
+                    <rect x="240" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
+                    <text x="250" y="58" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR II</text>
+                    <g fill="#9a9a9a"><circle cx="265" cy="88" r="6"/><circle cx="300" cy="88" r="6"/><circle cx="335" cy="88" r="6"/><circle cx="370" cy="88" r="6"/><circle cx="405" cy="88" r="6"/></g>
+                </g>
+                <g>
+                    <rect x="450" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
+                    <text x="460" y="58" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR III</text>
+                    <g fill="#9a9a9a"><circle cx="475" cy="88" r="6"/><circle cx="510" cy="88" r="6"/><circle cx="545" cy="88" r="6"/><circle cx="580" cy="88" r="6"/><circle cx="615" cy="88" r="6"/></g>
+                </g>
+                <g>
+                    <rect x="660" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
+                    <text x="670" y="58" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR IV</text>
+                    <g fill="#9a9a9a"><circle cx="685" cy="88" r="6"/><circle cx="720" cy="88" r="6"/><circle cx="755" cy="88" r="6"/><circle cx="790" cy="88" r="6"/><circle cx="825" cy="88" r="6"/></g>
+                </g>
+                <!-- Row 2: choirs V-VIII -->
+                <g>
+                    <rect x="30" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
+                    <text x="40" y="158" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR V</text>
+                    <g fill="#9a9a9a"><circle cx="55" cy="188" r="6"/><circle cx="90" cy="188" r="6"/><circle cx="125" cy="188" r="6"/><circle cx="160" cy="188" r="6"/><circle cx="195" cy="188" r="6"/></g>
+                </g>
+                <g>
+                    <rect x="240" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
+                    <text x="250" y="158" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR VI</text>
+                    <g fill="#9a9a9a"><circle cx="265" cy="188" r="6"/><circle cx="300" cy="188" r="6"/><circle cx="335" cy="188" r="6"/><circle cx="370" cy="188" r="6"/><circle cx="405" cy="188" r="6"/></g>
+                </g>
+                <g>
+                    <rect x="450" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
+                    <text x="460" y="158" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR VII</text>
+                    <g fill="#9a9a9a"><circle cx="475" cy="188" r="6"/><circle cx="510" cy="188" r="6"/><circle cx="545" cy="188" r="6"/><circle cx="580" cy="188" r="6"/><circle cx="615" cy="188" r="6"/></g>
+                </g>
+                <g>
+                    <rect x="660" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+                    <text x="670" y="158" fill="#d4a053" font-size="12" font-weight="700">CHOIR VIII</text>
+                    <g fill="#e8e6e3"><circle cx="685" cy="188" r="6"/><circle cx="720" cy="188" r="6"/><circle cx="755" cy="188" r="6"/><circle cx="790" cy="188" r="6"/><circle cx="825" cy="188" r="6"/></g>
+                </g>
+                <!-- flow arrows around the arc -->
+                <path d="M225 75 h10" stroke="#4ecca3" stroke-width="2" marker-end="url(#ar)"/>
+                <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#4ecca3"/></marker></defs>
+                <text x="35" y="235" fill="#4ecca3" font-size="11">&#8594; sound enters at Choir I and rolls choir-by-choir to Choir VIII, then all forty sing together</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> each box is one five-voice choir; each dot is a real, separate singer's line. Follow the highlighted choirs across the arc — the ear hears the sound <em>travel</em> through space, then collapse into the great forty-part tutti. It is architecture you can hear.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: WHAT IS A CANON (NOTATION SVG) ═══════════════════ -->
+<section>
+    <span class="section-number">10 — READING THE PAGE · II</span>
+    <h2>What Is a Canon?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.44em !important;">
+        A <span class="accent-blue">canon</span> (or round) is the strictest kind of imitation: <strong>one</strong> melody,
+        sung by two or more voices, each starting at a different time. The second voice sings <em>exactly</em> the same
+        notes as the first, just entering later — so the tune harmonises with itself.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1.2">
+                <line x1="60" y1="50" x2="860" y2="50"/>
+                <line x1="60" y1="66" x2="860" y2="66"/>
+                <line x1="60" y1="82" x2="860" y2="82"/>
+                <line x1="60" y1="98" x2="860" y2="98"/>
+                <line x1="60" y1="114" x2="860" y2="114"/>
+            </g>
+            <!-- LEADER (blue) — a short tune -->
+            <g fill="#5b8cd4">
+                <ellipse cx="110" cy="98" rx="8" ry="6"/><ellipse cx="170" cy="98" rx="8" ry="6"/><ellipse cx="230" cy="106" rx="8" ry="6"/><ellipse cx="290" cy="98" rx="8" ry="6"/><ellipse cx="350" cy="90" rx="8" ry="6"/><ellipse cx="410" cy="82" rx="8" ry="6"/>
+            </g>
+            <text x="95" y="150" fill="#5b8cd4" font-size="12" font-family="DM Sans" font-weight="700">VOICE 1 (leader) &#8212; starts here</text>
+            <!-- FOLLOWER (purple) — same shape, shifted right, later -->
+            <g fill="#9b72cf" opacity="0.9">
+                <ellipse cx="350" cy="98" rx="8" ry="6"/><ellipse cx="410" cy="98" rx="8" ry="6"/><ellipse cx="470" cy="106" rx="8" ry="6"/><ellipse cx="530" cy="98" rx="8" ry="6"/><ellipse cx="590" cy="90" rx="8" ry="6"/><ellipse cx="650" cy="82" rx="8" ry="6"/>
+            </g>
+            <text x="345" y="180" fill="#9b72cf" font-size="12" font-family="DM Sans" font-weight="700">VOICE 2 (follower) &#8212; same notes, enters later</text>
+            <!-- entry marker -->
+            <line x1="350" y1="40" x2="350" y2="124" stroke="#4ecca3" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="356" y="46" fill="#4ecca3" font-size="11" font-family="DM Sans">follower's entry</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> the blue and purple noteheads trace the <em>identical</em> up-and-down shape — the purple line is simply the blue one copied and slid to the right. Where they overlap (after the green dashed line), the single tune is sounding against itself in harmony. That overlap is the whole magic of a canon.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: TALLIS'S CANON (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">11 — SING IT YOURSELF</span>
+    <h2>Tallis's Canon</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Tallis wrote one of the best-loved tunes in the English-speaking world: the hymn melody known as
+        <span class="accent-blue">Tallis's Canon</span>, sung to the evening words <em>"Glory to thee, my God, this night."</em>
+        It is a genuine strict round — a second voice can enter partway through and sing the very same tune,
+        and the two lock together in harmony. It is still sung today, four and a half centuries on.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, TAL_CANON_LEAD, {timbre:'voice', bpm:90, temperament:'equal', reverb:0.5, legato:0.9})">&#9654; Hear the tune alone</button>
+        <button class="audio-btn purple" onclick="EM.toggle(this, [TAL_CANON_LEAD, TAL_CANON_FOLLOW], {timbre:'organ', bpm:90, temperament:'equal', reverb:0.5, legato:0.9})">&#9654; Hear it as a two-voice canon</button>
+    </div>
+    <p class="audio-caption">First the melody by itself; then a second voice enters two bars later singing the same notes — the tune harmonising with itself</p>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+Canon+Glory+to+thee+my+God+this+night">&#9834; Listen: Tallis's Canon (hymn)</a>
+    </div>
+    <p class="note-text">A canon is the same principle Tallis scaled up massively in <em>Spem in alium</em> — imitation as the engine of the whole texture.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: LAMENTATIONS ═══════════════════ -->
+<section>
+    <span class="section-number">12 — LATIN SPLENDOUR</span>
+    <h2>The Lamentations of Jeremiah</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Alongside his plain English anthems, Tallis never abandoned the grave beauty of Latin polyphony.
+        His two sets of <span class="accent-blue">Lamentations of Jeremiah</span> are among the supreme achievements
+        of Tudor sacred music — dark, richly interwoven settings of the prophet's grief over fallen Jerusalem,
+        each verse marked by the Hebrew letters (Aleph, Beth…) set as their own melismatic flourishes.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-blue">Restrained grief</h4><p>Slow-moving, close-woven counterpoint that broods rather than blazes — sorrow made sound.</p></div>
+        <div class="card"><h4 class="accent-green">The Hebrew letters</h4><p>Each section of text opens with a Hebrew alphabet letter, given its own expressive melismatic setting.</p></div>
+        <div class="card"><h4 class="accent-amber">For private devotion</h4><p>Likely intended for domestic or contemplative use under Elizabeth, not the public liturgy.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+Lamentations+of+Jeremiah">&#9834; Listen: Tallis — Lamentations of Jeremiah</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: THIRD MODE MELODY / VAUGHAN WILLIAMS ═══════════════════ -->
+<section>
+    <span class="section-number">13 — A LONG ECHO</span>
+    <h2>The Third Mode Melody</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        In 1567 Tallis contributed nine psalm tunes to Archbishop Parker's English psalter. The third of them,
+        in the <span class="accent-blue">Phrygian mode</span> (Mode III), is a haunting melody that would echo down the centuries:
+        in 1910 <span class="accent-blue">Ralph Vaughan Williams</span> built his <em>Fantasia on a Theme by Thomas Tallis</em>
+        upon it — a work that carried Tallis's name to concert halls worldwide.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, TAL_PHRYGIAN, {timbre:'voice', bpm:76, temperament:'equal', reverb:0.6, legato:0.95})">&#9654; Hear a Phrygian-mode phrase</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Vaughan+Williams+Fantasia+on+a+Theme+by+Thomas+Tallis">&#9834; Listen: Vaughan Williams — <em>Tallis Fantasia</em></a>
+    </div>
+    <p class="audio-caption">A short melody in the Phrygian mode — the archaic, semitone-from-the-final colour of Tallis's psalm tune (illustrative phrase, not the exact tune)</p>
+    <p class="note-text">The Phrygian mode's falling half-step to its final gives it that grave, "old" quality Vaughan Williams heard as unmistakably English and ancient.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: HOW TO LISTEN ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LISTENING GUIDE</span>
+    <h2>How to Listen to Tallis</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>In the English anthems, listen for the <span class="accent-green">clarity of the words</span> — homophony first, then a little imitation blossoming at the cadence.</li>
+        <li>In <em>Spem in alium</em>, follow the sound <span class="accent-blue">travelling around the choirs</span>, then brace for the full forty-voice tutti.</li>
+        <li>In the Latin works, savour the <span class="accent-purple">unhurried counterpoint</span> — nothing is rushed; every suspension is allowed to ache and resolve.</li>
+        <li>Hear the <span class="accent-amber">canon</span> in the hymn tune: once you notice the follower, you cannot un-hear it.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+Spem+in+alium+40+voices+Tallis+Scholars">&#9834; Spem in alium (40 voices)</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+If+ye+love+me">&#9834; If ye love me</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Tallis+Lamentations+of+Jeremiah">&#9834; Lamentations</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/Thomas_Tallis">&#9834; CPDL — free Tallis scores</a>
+    </div>
+    <p class="note-text">The Tallis Scholars, founded in his name, are among the finest interpreters of this repertory — a good place to begin.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>The One Who Endured</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Tallis is the living thread that runs unbroken through the whole English Reformation — proof that an artist
+        could survive upheaval without hollowing out. He handed his craft to <span class="accent-amber">William Byrd</span>,
+        and through Byrd to the whole golden age of English music. His anthems still open cathedral services;
+        his canon is still sung at bedtime; and <em>Spem in alium</em> still stops audiences' breath.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">The English anthem</h4><p>His reformed, word-clear style founded a tradition of Anglican church music that continues unbroken today.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">A pupil's legacy</h4><p>Through William Byrd, Tallis's art shaped the entire Elizabethan and Jacobean flowering of English music.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">A monument in sound</h4><p><em>Spem in alium</em> remains the towering feat of Renaissance polyphony — forty voices, one vision.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"As he did live, so also did he die, in mild and quiet sort — O happy man!"</p>
+        <span class="attribution">— from the epitaph on Tallis's memorial brass, formerly in St Alfege, Greenwich</span>
+    </div>
+    <p class="note-text">c. 1505 – 1585 · Servant of four monarchs; father of English church music.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — unique vars ── */
+/* Tallis's Canon — the actual common-metre hymn tune, in D */
+var TAL_CANON_LEAD = [
+  {n:'D4',d:2},{n:'D4',d:2},{n:'C4',d:2},{n:'D4',d:2},{n:'E4',d:2},{n:'E4',d:2},{n:'F#4',d:4},
+  {n:'F#4',d:2},{n:'E4',d:2},{n:'D4',d:2},{n:'A4',d:2},{n:'F#4',d:2},{n:'E4',d:2},{n:'D4',d:4}
+];
+/* The follower: identical tune, entering two bars (8 beats) later */
+var TAL_CANON_FOLLOW = [{n:'rest',d:8}].concat(TAL_CANON_LEAD);
+/* A homophonic English-anthem phrase (block chords) in the manner of "If ye love me" */
+var TAL_ANTHEM = [
+  {n:['C4','F4','A4'],d:2},{n:['C4','E4','G4'],d:2},{n:['D4','F4','A4'],d:2},{n:['C4','F4','A4'],d:2},
+  {n:['Bb3','D4','G4'],d:2},{n:['A3','C4','F4'],d:2},{n:['C4','E4','G4'],d:3},{n:['C4','F4','A4'],d:3}
+];
+/* An illustrative Phrygian-mode (Mode III) phrase — grave, semitone-to-the-final colour */
+var TAL_PHRYGIAN = [
+  {n:'E4',d:2},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:2},{n:'C4',d:2},{n:'D4',d:1},{n:'E4',d:1},
+  {n:'F4',d:2},{n:'E4',d:2},{n:'D4',d:1},{n:'C4',d:1},{n:'B3',d:1},{n:'C4',d:1},{n:'E4',d:2},{n:'E4',d:2}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

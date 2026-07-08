@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlo Gesualdo — The Prince of Chromatic Anguish</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- A princely coronet over a chromatic staff -->
+            <g stroke="#cf7272" stroke-width="2" fill="none">
+                <path d="M 120 44 L 130 22 L 150 40 L 180 18 L 210 40 L 230 22 L 240 44 Z"/>
+                <line x1="120" y1="52" x2="240" y2="52"/>
+            </g>
+            <circle cx="130" cy="22" r="4" fill="#d4a053"/>
+            <circle cx="180" cy="18" r="4" fill="#d4a053"/>
+            <circle cx="230" cy="22" r="4" fill="#d4a053"/>
+            <!-- a 5-line staff with a descending chromatic sigh -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="40" y1="78" x2="320" y2="78"/>
+                <line x1="40" y1="90" x2="320" y2="90"/>
+                <line x1="40" y1="102" x2="320" y2="102"/>
+                <line x1="40" y1="114" x2="320" y2="114"/>
+                <line x1="40" y1="126" x2="320" y2="126"/>
+            </g>
+            <!-- chromatic descending noteheads, accidentals piling up -->
+            <text x="70" y="88" fill="#cf7272" font-family="Playfair Display" font-size="14">&#9839;</text>
+            <ellipse cx="86" cy="90" rx="7" ry="5" fill="#e8e6e3"/>
+            <ellipse cx="132" cy="96" rx="7" ry="5" fill="#cf7272"/>
+            <text x="146" y="100" fill="#9b72cf" font-family="Playfair Display" font-size="14">&#9839;</text>
+            <ellipse cx="180" cy="102" rx="7" ry="5" fill="#e8e6e3"/>
+            <text x="196" y="112" fill="#cf7272" font-family="Playfair Display" font-size="14">&#9837;</text>
+            <ellipse cx="228" cy="108" rx="7" ry="5" fill="#9b72cf"/>
+            <ellipse cx="276" cy="114" rx="7" ry="5" fill="#e8e6e3"/>
+        </svg>
+    </div>
+    <h1>Carlo Gesualdo</h1>
+    <div class="subtitle">c. 1566–1613 · Prince of Venosa · The Late Italian Madrigal</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        A nobleman who wrote music of such anguished, sliding chromaticism that its harmonic world
+        would not be heard again for three hundred years — and whose life carried a shadow as dark as his art.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · The Late Renaissance</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: THE PRINCE ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>A Prince Who Chose to Compose</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-rose">Carlo Gesualdo</span> (c. 1566–1613) was born into the highest Neapolitan nobility and became
+        <span class="accent-rose">Prince of Venosa</span> and Count of Conza. Unusually for a great lord, he was not a patron of
+        musicians but a working composer himself — a skilled lutenist who poured his whole inner life into song.
+        His rank gave him freedom no professional could dream of: he answered to no chapel-master and no fashion.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><span class="icon accent-rose">&#9819;</span><h4 class="accent-rose">Nobleman</h4><p>Heir to a princely house; his status shielded him and let him write purely for himself, not for employment.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9834;</span><h4 class="accent-amber">Composer &amp; lutenist</h4><p>A serious amateur in the old sense — expert, obsessive — who set his own suffering to music.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9737;</span><h4 class="accent-purple">Outsider</h4><p>Free of the market, he pushed harmony to extremes no working musician would have risked.</p></div>
+    </div>
+    <p class="note-text">"Venosa" is a town in Basilicata, southern Italy; Gesualdo also gave his name to the castle-town where he spent his last years.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: 1590 ═══════════════════ -->
+<section>
+    <span class="section-number">02 — 1590</span>
+    <h2>The Crime That Shadows His Name</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        In <span class="accent-rose">1590</span> Gesualdo discovered his first wife and her lover together and had them killed.
+        Because he was a prince, the law of the time did not touch him: as a nobleman avenging his honour, he escaped
+        prosecution entirely. The killing was a public sensation in its day and has clung to his reputation ever since.
+    </p>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        It is a genuine and terrible event, not a legend, and it deserves to be stated plainly rather than
+        sensationalised. What matters for music history is the aftermath: a man who withdrew from the world and
+        turned inward, toward an art of grief, guilt and unrelieved longing.
+    </p>
+    <div class="quote-box" style="border-left-color: var(--accent-rose); background: rgba(207,114,114,0.05);">
+        <p>The murder is a matter of historical record; the music it stands beside asks not for our verdict but for our attention.</p>
+        <span class="attribution">— an editorial note, offered soberly</span>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: AFTER ═══════════════════ -->
+<section>
+    <span class="section-number">03 — WITHDRAWAL</span>
+    <h2>Retreat into Sound</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        In <span class="accent-amber">1594</span> Gesualdo married again — to Leonora d'Este, of the ducal house of Ferrara — and lived for a
+        time at that brilliant court, then the most musically adventurous in Italy. There he encountered its resident
+        master <span class="accent-amber">Luzzasco Luzzaschi</span> and its famous virtuoso singers, whose experiments confirmed his own bent
+        toward daring harmony. In later years he withdrew to his castle at Gesualdo, where his most extreme music took shape.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1566</span><span class="event"><strong>Born into the Neapolitan nobility</strong>Heir to the principality of Venosa.</span></div>
+        <div class="timeline-item"><span class="year">1590</span><span class="event"><strong>The killings at Naples</strong>The event that would define his public image.</span></div>
+        <div class="timeline-item"><span class="year">1594</span><span class="event"><strong>Marriage to Leonora d'Este; years at Ferrara</strong>Contact with the avant-garde of the Italian madrigal.</span></div>
+        <div class="timeline-item"><span class="year">1611</span><span class="event"><strong>Books V &amp; VI of madrigals; the Tenebrae Responsories</strong>His boldest works appear in print together.</span></div>
+        <div class="timeline-item"><span class="year">1613</span><span class="event"><strong>Death at the castle of Gesualdo</strong>Isolated, in ill health and torment, at the end.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE MADRIGAL ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE GENRE</span>
+    <h2>The Italian Madrigal</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The <span class="accent-rose">madrigal</span> was the great secular vocal form of the Italian Renaissance: a through-composed
+        setting of a short, intense poem for a handful of unaccompanied voices, usually five. Each line of verse gets
+        its own musical idea, and the composer's whole ambition is to make the music <em>enact</em> the words.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">A cappella</h4><p>Typically five interweaving voices, no instruments required — though a lute or harpsichord might double the parts.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Word-painting</h4><p>Music mirrors the text: rising lines for "heaven", clashing dissonance for "pain", stillness for "death".</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Poems of love &amp; death</h4><p>The verse fixates on desire, weeping, dying — perfect fuel for Gesualdo's extremes of feeling.</p></div>
+    </div>
+    <p class="note-text">Gesualdo published six books of five-voice madrigals; the last two (1611) are where his language becomes truly unprecedented.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: CHROMATICISM ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE LANGUAGE</span>
+    <h2>What Is Chromaticism?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Most Renaissance music moves within a <span class="accent-green">diatonic</span> scale — the seven "white-note" steps of a mode.
+        <span class="accent-rose">Chromaticism</span> fills in the gaps, moving by <em>semitones</em> and borrowing notes from outside the mode.
+        A little of it colours a phrase; Gesualdo used so much that the ground seems to shift beneath the ear.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, GES_DIA, {timbre:'voice', bpm:120, temperament:'equal', reverb:0.5})">&#9654; Hear a diatonic line</button>
+        <button class="audio-btn purple" onclick="EM.toggle(this, GES_CHROM, {timbre:'voice', bpm:120, temperament:'equal', reverb:0.5})">&#9654; Hear a chromatic line</button>
+    </div>
+    <p class="audio-caption">The same rise, first by whole steps of the mode, then by every semitone — the second slides and unsettles</p>
+    <p class="note-text">Chromatic music needs equal temperament to sound in tune, which is why these examples abandon the pure medieval fifths.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: READING THE NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">06 — READING THE PAGE</span>
+    <h2>Reading Gesualdo's Harmony</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Gesualdo's signature is a chain of bright, self-contained <span class="accent-rose">triads whose roots leap by a third</span>,
+        joined by chromatic voice-leading. Because each triad wants its own sharps or flats, the <em>accidentals pile up</em> on the page.
+        Here four major triads descend by thirds — the kind of progression that opens <em>Moro, lasso</em>.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1.2">
+                <line x1="40" y1="40" x2="760" y2="40"/>
+                <line x1="40" y1="55" x2="760" y2="55"/>
+                <line x1="40" y1="70" x2="760" y2="70"/>
+                <line x1="40" y1="85" x2="760" y2="85"/>
+                <line x1="40" y1="100" x2="760" y2="100"/>
+            </g>
+            <!-- Chord A (high) roots at 70,55,40 -->
+            <text x="120" y="60" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="120" y="45" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="150" cy="70" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="150" cy="55" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="150" cy="40" rx="9" ry="6" fill="#e8e6e3"/>
+            <!-- Chord B roots at 85,70,55 -->
+            <text x="290" y="75" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="320" cy="85" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="320" cy="70" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="320" cy="55" rx="9" ry="6" fill="#e8e6e3"/>
+            <!-- Chord C roots at 100,85,70 -->
+            <text x="460" y="90" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="460" y="75" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="490" cy="100" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="490" cy="85" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="490" cy="70" rx="9" ry="6" fill="#e8e6e3"/>
+            <!-- Chord D roots at 115(ledger),100,85 -->
+            <line x1="644" y1="115" x2="676" y2="115" stroke="#6a6a7a" stroke-width="1.2"/>
+            <text x="630" y="105" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="660" cy="115" rx="9" ry="6" fill="#cf7272"/>
+            <ellipse cx="660" cy="100" rx="9" ry="6" fill="#e8e6e3"/>
+            <ellipse cx="660" cy="85" rx="9" ry="6" fill="#e8e6e3"/>
+            <!-- descending-third arrows between roots -->
+            <g stroke="#d4a053" stroke-width="1.2" fill="none">
+                <path d="M 168 72 q 40 24 132 12" marker-end="url(#ah)"/>
+                <path d="M 338 87 q 40 24 132 12" marker-end="url(#ah)"/>
+                <path d="M 508 102 q 40 24 132 12" marker-end="url(#ah)"/>
+            </g>
+            <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d4a053"/></marker></defs>
+            <text x="200" y="150" fill="#d4a053" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <text x="370" y="150" fill="#d4a053" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <text x="540" y="150" fill="#d4a053" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <!-- labels -->
+            <text x="128" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">C&#9839; major</text>
+            <text x="300" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">A major</text>
+            <text x="468" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">F&#9839; major</text>
+            <text x="636" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">D major</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="max-width:96%;">
+        <div class="card"><h4 class="accent-rose">1 · Stacked = a chord</h4><p>Three noteheads stacked in a snowman are a triad — root, third, fifth sounding together in different voices.</p></div>
+        <div class="card"><h4 class="accent-amber">2 · Roots by thirds</h4><p>Each new chord's root sits a third below the last, so the harmony lurches to a distant, unexpected key-colour.</p></div>
+        <div class="card"><h4 class="accent-purple">3 · Accidentals pile up</h4><p>Each triad demands its own sharps/flats; the crowd of accidentals is the visible sign of the chromatic slide.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: MORO LASSO AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE SIGNATURE SOUND</span>
+    <h2>&ldquo;Moro, lasso&rdquo; — the Anguished Progression</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        The opening of <span class="accent-rose"><em>Moro, lasso, al mio duolo</em></span> ("I die, alas, in my suffering") is the most famous gesture
+        in all his music: bold major triads a third apart, connected by chromatic voice-leading that seems to melt from
+        one to the next. To ears trained on smooth Renaissance counterpoint the "wrong" slides are precisely the point —
+        they <em>are</em> the suffering the words describe.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, GES_MORO, {timbre:'voice', bpm:50, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear the <em>Moro lasso</em> progression</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Gesualdo+Moro+lasso+al+mio+duolo">&#9834; Listen: sung recording</a>
+    </div>
+    <p class="audio-caption">Synthesised voices, very slow · six triads sliding chromatically — listen for how the floor drops between chords</p>
+    <p class="note-text">From the Sixth Book of Madrigals (1611). The chords deliberately do not "belong" to a single key; that estrangement is the expressive idea.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: MOOD SHIFTS AUDIO ═══════════════════ -->
+<section>
+    <span class="section-number">08 — MOOD-SHIFTS</span>
+    <h2>Sudden Turns: Burst &amp; Sigh</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Gesualdo's madrigals lurch without warning between opposite worlds. Words of life, hope or joy erupt in
+        <span class="accent-green">fast, bright, diatonic</span> flurries; then, at a word like <em>morte</em> ("death") or <em>duolo</em> ("grief"),
+        the music collapses into a <span class="accent-rose">slow chromatic sigh</span>. This restless whiplash of tempo and colour is his
+        dramatic fingerprint.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, GES_BURST, {timbre:'reed', bpm:132, temperament:'equal', reverb:0.4})">&#9654; A fast diatonic burst</button>
+        <button class="audio-btn purple" onclick="EM.toggle(this, GES_SIGH, {timbre:'voice', bpm:52, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; A slow chromatic sigh</button>
+        <button class="audio-btn" onclick="EM.toggle(this, GES_SHIFT, {timbre:'voice', bpm:96, temperament:'equal', reverb:0.55, legato:0.95})">&#9654; The two, side by side</button>
+    </div>
+    <p class="audio-caption">First the quick, joyful run; then the semitone-by-semitone descent; then both in a single breath, as he juxtaposes them</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE MADRIGALS ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE MADRIGALS</span>
+    <h2>Books V &amp; VI (1611)</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Gesualdo's harmonic daring reaches its height in his last two books of five-voice madrigals, both printed in 1611.
+        The texts are steeped in the paradoxes of love and death — living by dying, dying to live — and the music answers
+        each turn of the verse with a corresponding turn of harmony.
+    </p>
+    <div class="card-grid cols-2" style="max-width:88%;">
+        <div class="card"><h4 class="accent-rose">Moro, lasso, al mio duolo</h4><p>"I die, alas, in my suffering" — the touchstone of his style, its chromatic opening quoted in every history of harmony.</p></div>
+        <div class="card"><h4 class="accent-amber">Beltà, poi che t'assenti</h4><p>"Beauty, since you depart" — aching suspensions and sudden harmonic side-steps set a lover's farewell.</p></div>
+        <div class="card"><h4 class="accent-purple">Text-driven form</h4><p>Every phrase of poetry receives its own tempo, texture and harmonic colour; there is no abstract musical scheme, only the words.</p></div>
+        <div class="card"><h4 class="accent-green">Extremes of contrast</h4><p>Serene consonance and searing dissonance sit inches apart, mirroring the verse's swings between rapture and despair.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Gesualdo+madrigals+Book+6+La+Venexiana">&#9834; Book VI — recording</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: SACRED MUSIC ═══════════════════ -->
+<section>
+    <span class="section-number">10 — THE SACRED WORKS</span>
+    <h2>Anguish Turned to Prayer</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Gesualdo brought the same tormented language into the church. His <span class="accent-rose">Tenebrae Responsories</span> (1611), for the
+        darkened services of Holy Week, and his two books of <span class="accent-rose">Sacrae Cantiones</span> (1603) set texts of betrayal,
+        grief and death — subjects that let his chromatic despair speak as devotion rather than confession.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Tenebrae Responsories (1611)</h4>
+            <p>Music for the Matins of Maundy Thursday, Good Friday and Holy Saturday — the Passion narrative dissolving into shadow, candle by candle.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">Sacrae Cantiones (1603)</h4>
+            <p>Two books of Latin motets; some survive incomplete, their lost inner parts a small tragedy for so bold a harmonist.</p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Gesualdo+Tenebrae+Responsories">&#9834; Tenebrae Responsories — recording</a>
+    </div>
+    <p class="note-text">The sacred works are less notorious than the madrigals but share their harmonic audacity, wedded here to penitence.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: DISTANT TRIADS MAP ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE HARMONIC MAP</span>
+    <h2>Why It Sounds "Out of Time"</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.44em !important;">
+        Renaissance harmony normally moves between closely related chords. Gesualdo instead jumps to <span class="accent-rose">distant</span>
+        triads a third away, whose notes barely overlap — so the ear cannot predict where it is going. This is why later
+        listeners heard in him a premonition of Wagner and the twentieth century.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 820 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="13">
+                <!-- close motion (left) -->
+                <text x="30" y="30" fill="#4ecca3" font-size="12">USUAL: neighbouring chords, notes shared</text>
+                <circle cx="90" cy="90" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/><text x="90" y="95" fill="#e8e6e3" text-anchor="middle">C</text>
+                <circle cx="180" cy="90" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/><text x="180" y="95" fill="#e8e6e3" text-anchor="middle">G</text>
+                <circle cx="270" cy="90" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/><text x="270" y="95" fill="#e8e6e3" text-anchor="middle">a</text>
+                <path d="M 120 90 L 150 90" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#ag)"/>
+                <path d="M 210 90 L 240 90" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#ag)"/>
+                <text x="180" y="150" fill="#6a6a7a" text-anchor="middle" font-size="11">smooth, expected</text>
+                <!-- distant motion (right) -->
+                <text x="430" y="30" fill="#cf7272" font-size="12">GESUALDO: distant chords, roots a 3rd apart</text>
+                <circle cx="490" cy="90" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/><text x="490" y="95" fill="#e8e6e3" text-anchor="middle">C&#9839;</text>
+                <circle cx="600" cy="60" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/><text x="600" y="65" fill="#e8e6e3" text-anchor="middle">A</text>
+                <circle cx="710" cy="120" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/><text x="710" y="125" fill="#e8e6e3" text-anchor="middle">F&#9839;</text>
+                <path d="M 518 78 L 574 66" stroke="#cf7272" stroke-width="1.5" marker-end="url(#ar)"/>
+                <path d="M 626 76 L 686 108" stroke="#cf7272" stroke-width="1.5" marker-end="url(#ar)"/>
+                <text x="600" y="175" fill="#6a6a7a" text-anchor="middle" font-size="11">lurching, unpredictable</text>
+            </g>
+            <defs>
+                <marker id="ag" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#4ecca3"/></marker>
+                <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#cf7272"/></marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="note-text">Uppercase = major, lowercase = minor. The right-hand chain shares almost no common tones — hence the vertiginous sense of harmonic free-fall.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">12 — LISTENING GUIDE</span>
+    <h2>How to Listen to Gesualdo</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Follow the <span class="accent-rose">words</span>: every harmonic surprise is triggered by a word of love, death or pain — read a translation alongside.</li>
+        <li>Feel the <span class="accent-green">tempo swings</span>: fast, bright passages collapsing into slow, dark ones, sometimes within a single line.</li>
+        <li>Savour the <span class="accent-purple">slides</span>: the chromatic voice-leading between distant chords is the sound he is famous for — let it disorient you.</li>
+        <li>Notice the <span class="accent-blue">silences</span> and sudden consonances: after such dissonance, a plain major chord can feel like a shaft of light.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Gesualdo+madrigals+La+Venexiana">&#9834; La Venexiana</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Gesualdo+Tenebrae+Responsories+ensemble">&#9834; Tenebrae ensembles</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/Carlo_Gesualdo">&#9834; CPDL — free scores</a>
+    </div>
+    <p class="note-text">Because the parts weave so intricately, small vocal ensembles with one singer per part reveal his harmony most clearly.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: REDISCOVERY ═══════════════════ -->
+<section>
+    <span class="section-number">13 — REDISCOVERY</span>
+    <h2>Silence, Then a Sudden Fame</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        For three centuries Gesualdo was a footnote — his harmony too strange for the tonal age between. Only in the
+        twentieth century, when composers had themselves broken with traditional harmony, did his music sound
+        prophetic rather than merely eccentric. <span class="accent-rose">Igor Stravinsky</span> championed him, studying the madrigals closely
+        and, for the 400th anniversary of the composer's birth, writing his own tribute drawn from Gesualdo's own pieces.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Stravinsky</h4><p>Recomposed and completed several Gesualdo works, and honoured him with the orchestral <em>Monumentum pro Gesualdo di Venosa</em> (1960).</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Modern ensembles</h4><p>Specialist vocal groups made the madrigals repertory staples from the later 20th century onward.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Stage &amp; screen</h4><p>His life and music have inspired operas, films and novels — the artist and the crime endlessly retold.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Stravinsky+Monumentum+pro+Gesualdo+di+Venosa">&#9834; Stravinsky — Monumentum pro Gesualdo</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>The Prince of Chromatic Anguish</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Gesualdo stands apart from every neighbour in music history: a self-taught prince who used his freedom to write
+        harmony no one asked for and few could follow, fusing a private torment with an unrepeatable art. His madrigals
+        remain the most extreme utterance of the Renaissance — and one of its most modern-sounding. To hear them is to
+        meet a mind reaching, four centuries early, for a language of pure feeling.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Harmonic frontier</h4><p>He pushed triadic chromaticism to a limit not reached again until the late Romantics and beyond.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Word as master</h4><p>His absolute subjection of music to text is a landmark on the road to opera and the expressive Baroque.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">A singular figure</h4><p>No school, no imitators of note — an isolated genius whose fame revived only when the world caught up.</p></div>
+    </div>
+    <div class="quote-box" style="border-left-color: var(--accent-rose);">
+        <p>Moro, lasso, al mio duolo, / e chi mi può dar vita, / ahi, che m'ancide e non vuol darmi aita!<br><span style="color:var(--text-secondary);">("I die, alas, in my suffering, and she who could give me life, alas, kills me and will not help me.")</span></p>
+        <span class="attribution">— text of the madrigal <em>Moro, lasso, al mio duolo</em>, Sixth Book of Madrigals (1611)</span>
+    </div>
+    <p class="note-text">c. 1566 – 1613 · Prince of Venosa · music that waited three hundred years for its listeners.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) ── */
+/* Diatonic vs chromatic rise (Slide 06) */
+var GES_DIA   = [{n:'C4',d:0.5},{n:'D4',d:0.5},{n:'E4',d:0.5},{n:'F4',d:0.5},{n:'G4',d:1.5}];
+var GES_CHROM = [{n:'C4',d:0.5},{n:'C#4',d:0.5},{n:'D4',d:0.5},{n:'D#4',d:0.5},{n:'E4',d:0.5},{n:'F4',d:0.5},{n:'F#4',d:0.5},{n:'G4',d:1.5}];
+/* The "Moro, lasso" opening progression — major triads a third apart, chromatic voice-leading (Slide 08) */
+var GES_MORO = [
+  {n:['C#4','F4','A4'],d:3},{n:['A3','C#4','E4'],d:3},{n:['B3','D#4','F#4'],d:3},
+  {n:['G3','B3','D4'],d:3},{n:['A3','C#4','E4'],d:2},{n:['D4','F4','A4'],d:4}
+];
+/* Mood-shifts (Slide 09): a fast diatonic burst, a slow chromatic sigh, and the two juxtaposed */
+var GES_BURST = [
+  {n:'A4',d:0.25},{n:'B4',d:0.25},{n:'C5',d:0.25},{n:'D5',d:0.25},{n:'E5',d:0.5},
+  {n:'D5',d:0.25},{n:'C5',d:0.25},{n:'B4',d:0.25},{n:'C5',d:0.25},{n:'A4',d:0.75}
+];
+var GES_SIGH = [{n:'A4',d:3},{n:'G#4',d:3},{n:'G4',d:3},{n:'F#4',d:3},{n:'F4',d:4}];
+var GES_SHIFT = [
+  {n:'A4',d:0.25},{n:'B4',d:0.25},{n:'C5',d:0.25},{n:'D5',d:0.25},{n:'E5',d:0.5},
+  {n:'D5',d:0.25},{n:'C5',d:0.25},{n:'B4',d:0.5},
+  {n:'A4',d:2},{n:'G#4',d:2},{n:'G4',d:2},{n:'F#4',d:3}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

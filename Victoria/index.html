@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomás Luis de Victoria — The Spanish Mystic</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 300px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- A rose-window emblem over a rising fourth "of longing" -->
+            <g stroke="#cf7272" stroke-width="1.4" fill="none">
+                <circle cx="150" cy="62" r="46"/>
+                <circle cx="150" cy="62" r="30"/>
+            </g>
+            <g stroke="#cf7272" stroke-width="1" opacity="0.85">
+                <line x1="150" y1="16" x2="150" y2="108"/>
+                <line x1="104" y1="62" x2="196" y2="62"/>
+                <line x1="117" y1="29" x2="183" y2="95"/>
+                <line x1="183" y1="29" x2="117" y2="95"/>
+            </g>
+            <circle cx="150" cy="62" r="7" fill="#cf7272"/>
+            <!-- a small candle-flame, for the mystic -->
+            <path d="M150 40 q7 -12 0 -22 q-7 10 0 22 Z" fill="#d4a053" opacity="0.9"/>
+            <!-- rising-fourth notes beneath: D up to G, the leap of longing -->
+            <g stroke="#6a6a7a" stroke-width="0.8">
+                <line x1="40" y1="132" x2="260" y2="132"/>
+                <line x1="40" y1="140" x2="260" y2="140"/>
+            </g>
+            <ellipse cx="90" cy="140" rx="6" ry="4.4" fill="#e8e6e3"/>
+            <ellipse cx="170" cy="126" rx="6" ry="4.4" fill="#cf7272"/>
+            <path d="M96 140 Q130 116 164 126" stroke="#cf7272" stroke-width="1" fill="none"/>
+            <text x="126" y="120" fill="#6a6a7a" font-family="DM Sans" font-size="9" text-anchor="middle">a rising fourth</text>
+        </svg>
+    </div>
+    <h1>Tomás Luis de Victoria</h1>
+    <div class="subtitle">c. 1548–1611 · Spanish Renaissance · The Sacred Alone</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The greatest composer of the Spanish Golden Age — a priest who wrote
+        <span class="accent-rose">only sacred music</span>, and made of it a fire of mystical devotion
+        to rival the visions of St Teresa and St John of the Cross.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · The Renaissance Masters</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS HE ═══════════════════ -->
+<section>
+    <span class="section-number">01 — INTRODUCTION</span>
+    <h2>The Priest Who Composed</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-rose">Tomás Luis de Victoria</span> stands alone among the great Renaissance masters:
+        where Lassus and Palestrina wrote in every genre, Victoria set <em>nothing</em> but the sacred word.
+        No madrigals, no chansons, no dances — only Masses, motets, hymns and the music of the Office,
+        composed by a man who was first and last a Catholic priest.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-rose">&#10013;</span><h4 class="accent-rose">A priest</h4><p>Ordained in Rome; he saw composition as an act of worship, not a career in music.</p></div>
+        <div class="card"><span class="icon accent-amber">&#9834;</span><h4 class="accent-amber">Sacred only</h4><p>Every surviving note sets a liturgical or devotional Latin text — a unique purity of purpose.</p></div>
+        <div class="card"><span class="icon accent-purple">&#128293;</span><h4 class="accent-purple">Mystical fire</h4><p>An intense, ardent expressivity, kin to the mystic writers of Golden-Age Spain.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9788;</span><h4 class="accent-blue">Spanish sun</h4><p>Trained in Rome, but his voice is unmistakably Spanish — vivid, dark, direct.</p></div>
+    </div>
+    <p class="note-text">Often called "the Spanish Palestrina" — but the label undersells a far more personal, dramatic imagination.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: LIFE / TIMELINE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE</span>
+    <h2>From Ávila to Rome to Madrid</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Victoria's path traces the two capitals of the Catholic world — the Rome of the Counter-Reformation,
+        and the devout Spain of Philip II — before ending in quiet service to an empress in a Madrid convent.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c.1548</span><span class="event"><strong>Born in Ávila</strong>The Castilian city of the mystic St Teresa; a chorister at the cathedral as a boy.</span></div>
+        <div class="timeline-item"><span class="year">c.1565</span><span class="event"><strong>To Rome</strong>Sent to study at the Jesuit Collegio Germanico; immersed in the city's rich sacred polyphony, possibly taught by Palestrina.</span></div>
+        <div class="timeline-item"><span class="year">c.1575</span><span class="event"><strong>Ordained priest</strong>He takes holy orders in Rome; music and priesthood become one vocation.</span></div>
+        <div class="timeline-item"><span class="year">c.1587</span><span class="event"><strong>Return to Spain</strong>Chaplain to the Dowager Empress Mar&iacute;a at the Descalzas Reales, a royal convent in Madrid.</span></div>
+        <div class="timeline-item"><span class="year">1611</span><span class="event"><strong>Death in Madrid</strong>He dies still in the convent's service, six years after crowning his life's work with a Requiem.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: ROME ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE ROMAN YEARS</span>
+    <h2>A Spaniard in Counter-Reformation Rome</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Victoria arrived in Rome around <span class="accent-rose">1565</span>, in the very years the
+                <span class="accent-amber">Council of Trent</span> was reshaping Catholic worship. The city was the crucible
+                of a new, clarified sacred style: reverent, textually clear, purged of worldly excess.
+            </p>
+            <p style="font-size:0.44em !important;">
+                He absorbed the polished counterpoint of the Roman school — and may well have studied with
+                <span class="accent-amber">Palestrina</span> himself, whose serene style he transformed into something
+                hotter and more personal. In 1575 he was ordained; thereafter he held posts at Roman churches and
+                the Collegio Germanico before feeling the pull of home.
+            </p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Rome vs. Victoria</h4>
+            <p><strong>Palestrina:</strong> serene, abstract, perfectly balanced — counterpoint as pure architecture.</p>
+            <p style="margin-top:0.5em;"><strong>Victoria:</strong> the same craft, but bent toward drama — sharp dissonance, vivid word-painting, an urgent devotional heat.</p>
+        </div>
+    </div>
+    <p class="note-text">Whether or not Palestrina was formally his teacher, the two knew the same Roman musical world; Victoria's mastery of its idiom is beyond doubt.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: ONLY SACRED ═══════════════════ -->
+<section>
+    <span class="section-number">04 — A SINGULAR CHOICE</span>
+    <h2>Nothing but the Sacred</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        It is worth pausing on how rare this is. His contemporaries poured out madrigals and chansons for the
+        courts and salons of Europe. Victoria wrote <span class="accent-rose">not one secular work</span>.
+        His entire output — Masses, motets, Magnificats, hymns, the music of Holy Week — was made to be sung
+        in worship, by a composer for whom that was the only music worth making.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Masses</h4><p>Around twenty, many built by re-working his own motets — the technique later called "parody" or imitation Mass.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Motets</h4><p>Concentrated jewels — <em>O magnum mysterium</em>, <em>O vos omnes</em>, <em>Ave Maria</em> — setting the year's feasts.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Office music</h4><p>Hymns, Magnificats, and the great Holy-Week cycle of Tenebrae Responsories.</p></div>
+    </div>
+    <p class="note-text">The purity was deliberate: Victoria wanted his art to serve prayer and nothing else.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE MYSTIC AGE ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE MYSTIC AGE</span>
+    <h2>The Spain of the Mystics</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Victoria's music cannot be separated from the spiritual fever of Golden-Age Spain. He was born in Ávila,
+        the home town of <span class="accent-rose">St Teresa of Ávila</span> (1515–1582); his lifetime overlapped with
+        <span class="accent-rose">St John of the Cross</span> (1542–1591). Their writings sought union with God through
+        an intense, almost painful love — and the same ardour burns in Victoria's harmonies.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-purple);">
+            <h4 class="accent-purple">The mystics' language</h4>
+            <p>Teresa and John write of the soul's dark night, its wounds of love, its longing to be consumed by the divine — devotion as fierce personal experience, not cool doctrine.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">Victoria's answer in sound</h4>
+            <p>Aching suspensions, sudden dark chords, expressive leaps that "reach" upward — music that feels the text rather than merely decorating it.</p>
+        </div>
+    </div>
+    <p class="note-text">Where Palestrina calms, Victoria yearns — the sonic counterpart of Spanish mystical devotion.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: O MAGNUM MYSTERIUM (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">06 — O MAGNUM MYSTERIUM</span>
+    <h2>The Great Mystery</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        His most beloved motet, for Christmas Matins, contemplates the wonder that beasts should see the newborn
+        Lord in a manger. It opens with a hushed, rising gesture — a gentle line that lifts through an
+        <span class="accent-rose">expressive leap</span> and settles over sustained harmony, radiant and still.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, [VIC_OMM_UPPER, VIC_OMM_LOWER], {timbre:'voice', bpm:64, temperament:'equal', reverb:0.65, legato:0.98})">&#9654; Hear the opening gesture</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Victoria+O+magnum+mysterium">&#9834; Listen: full motet (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised voices &middot; a gently rising line with an expressive leap over sustained harmony &middot; in the spirit of the motet's opening</p>
+    <p style="max-width: 84%; margin: 0.5em auto 0; font-size: 0.44em !important;">
+        Victoria later re-used this very music as the basis of a whole <span class="accent-amber">parody Mass</span>
+        (<em>Missa O magnum mysterium</em>), weaving the motet's motifs through every movement — a favourite
+        Renaissance way of unifying a Mass from a pre-existing piece.
+    </p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: NOTATION SVG ═══════════════════ -->
+<section>
+    <span class="section-number">07 — READING THE MUSIC</span>
+    <h2>The Leap of Longing &amp; the Sigh</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Two small gestures carry Victoria's expressive world. Here they are on a modern five-line staff —
+        an <span class="accent-rose">upward leap of a fourth</span> that "reaches" toward the divine, and a
+        <span class="accent-blue">suspension</span> that leans as a dissonance before resolving down by step, like a sigh.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#9a9a9a" stroke-width="1.1">
+                <line x1="60" y1="60" x2="860" y2="60"/>
+                <line x1="60" y1="80" x2="860" y2="80"/>
+                <line x1="60" y1="100" x2="860" y2="100"/>
+                <line x1="60" y1="120" x2="860" y2="120"/>
+                <line x1="60" y1="140" x2="860" y2="140"/>
+            </g>
+            <!-- clef marker -->
+            <text x="66" y="128" fill="#cf7272" font-family="Playfair Display" font-size="46" font-weight="700">&#119070;</text>
+            <!-- THE LEAP: low note D up to G (a fourth) -->
+            <ellipse cx="200" cy="130" rx="9" ry="6.5" fill="#e8e6e3"/>
+            <ellipse cx="300" cy="100" rx="9" ry="6.5" fill="#cf7272"/>
+            <path d="M209 128 Q250 96 291 102" stroke="#cf7272" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+            <text x="250" y="176" fill="#cf7272" font-family="DM Sans" font-size="13" text-anchor="middle" font-weight="700">rising 4th &mdash; the "reach"</text>
+            <!-- THE SUSPENSION: upper voice held, becomes dissonant, resolves down -->
+            <!-- preparation -->
+            <ellipse cx="520" cy="80" rx="9" ry="6.5" fill="#5b8cd4"/>
+            <!-- suspended (tie) -->
+            <ellipse cx="620" cy="80" rx="9" ry="6.5" fill="#5b8cd4"/>
+            <path d="M529 86 Q570 100 611 86" stroke="#5b8cd4" stroke-width="1.4" fill="none"/>
+            <!-- resolution down a step -->
+            <ellipse cx="700" cy="90" rx="9" ry="6.5" fill="#e8e6e3"/>
+            <!-- lower voice that moves under the held note to create the clash -->
+            <ellipse cx="520" cy="130" rx="8" ry="6" fill="#6a6a7a"/>
+            <ellipse cx="620" cy="120" rx="8" ry="6" fill="#d4a053"/>
+            <ellipse cx="700" cy="120" rx="8" ry="6" fill="#6a6a7a"/>
+            <text x="520" y="200" fill="#5b8cd4" font-family="DM Sans" font-size="11" text-anchor="middle">1 · prepare</text>
+            <text x="620" y="200" fill="#d4a053" font-family="DM Sans" font-size="11" text-anchor="middle">2 · suspend (clash)</text>
+            <text x="700" y="200" fill="#e8e6e3" font-family="DM Sans" font-size="11" text-anchor="middle">3 · resolve down</text>
+            <defs>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                    <path d="M0 0 L8 4 L0 8 Z" fill="#cf7272"/>
+                </marker>
+            </defs>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> higher on the staff = higher in pitch; read left to right. A <em>curved tie</em> means one note is <em>held</em> across a chord-change — for a beat it grates against the moving voice below (the dissonance), then it slips down one step to consonance. That gentle lean-and-fall is the suspension, the emotional heartbeat of Victoria's style.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: TENEBRAE / O VOS OMNES (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">08 — HOLY WEEK</span>
+    <h2>The Tenebrae &amp; the Grief of O vos omnes</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        For the darkness of Holy Week, Victoria published his <span class="accent-rose">Tenebrae Responsories</span> (1585) —
+        settings sung by candlelight as the candles are extinguished one by one. Among them, and as a separate motet,
+        stands <em>O vos omnes</em>: "O all you who pass by, behold and see if there be any sorrow like unto my sorrow."
+        Here the music turns dark and homophonic — the voices move as one grieving block of sound.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, VIC_VOS_GRIEF, {timbre:'voice', bpm:54, temperament:'equal', reverb:0.65, legato:0.98})">&#9654; Hear a grief phrase (O vos omnes style)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Victoria+Tenebrae+Responsories+O+vos+omnes">&#9834; Listen: Tenebrae &mdash; O vos omnes (recording)</a>
+    </div>
+    <p class="audio-caption">Synthesised voices &middot; slow, dark block-chords with an aching suspension &middot; in the mood of the Holy-Week motet</p>
+    <p class="note-text">Homophony (all voices together) lets every syllable of the lament be heard — clarity in the service of sorrow.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: OFFICIUM DEFUNCTORUM ═══════════════════ -->
+<section>
+    <span class="section-number">09 — THE MASTERPIECE</span>
+    <h2>Officium Defunctorum (1605)</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <!-- a candle / requiem emblem -->
+                <rect x="98" y="90" width="24" height="86" rx="3" fill="#161622" stroke="#cf7272" stroke-width="1.4"/>
+                <path d="M110 90 q14 -22 0 -44 q-14 22 0 44 Z" fill="#d4a053"/>
+                <path d="M110 66 q6 -10 0 -20 q-6 10 0 20 Z" fill="#e8e6e3"/>
+                <line x1="70" y1="176" x2="150" y2="176" stroke="#6a6a7a" stroke-width="1.4"/>
+                <text x="110" y="196" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13" text-anchor="middle">Requiem aeternam</text>
+            </svg>
+        </div>
+        <div>
+            <p style="font-size:0.44em !important;">
+                In 1603 the Dowager Empress <span class="accent-rose">Mar&iacute;a</span> — whom Victoria had served for years —
+                died at the Descalzas Reales. For her funeral rites he composed the
+                <span class="accent-rose">Officium Defunctorum</span>, a Requiem Mass and Office for the Dead, published in 1605.
+            </p>
+            <p style="font-size:0.44em !important;">
+                It is widely regarded as his <span class="accent-amber">supreme masterpiece</span> and one of the great works
+                of the entire Renaissance: grave, luminous, consoling. Around a chant melody sung high in the texture,
+                the voices unfold with a serene, otherworldly calm — the composer's own farewell.
+            </p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Victoria+Officium+Defunctorum+Requiem+1605">&#9834; Listen: Officium Defunctorum (recording)</a>
+    </div>
+    <p class="note-text">It was among the last music he published; some hear in it the settling of his own life toward its close.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: STYLE ═══════════════════ -->
+<section>
+    <span class="section-number">10 — HIS STYLE</span>
+    <h2>How Victoria Speaks</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Victoria commands the full polished counterpoint of the Roman school, but he bends every device toward
+        <em>feeling</em>. A handful of fingerprints recur across his music.
+    </p>
+    <div class="card-grid cols-2" style="max-width:88%;">
+        <div class="card"><h4 class="accent-rose">Expressive dissonance</h4><p>Prepared suspensions that lean and ache before resolving — the "sigh" that colours his cadences.</p></div>
+        <div class="card"><h4 class="accent-amber">Word-painting</h4><p>Music that mirrors the text: rising lines for heaven, dark chords for grief, sudden stillness at holy words.</p></div>
+        <div class="card"><h4 class="accent-green">Homophonic weight</h4><p>Block-chord passages where all voices move together, making the sacred words ring out with clarity.</p></div>
+        <div class="card"><h4 class="accent-blue">Vivid contrast</h4><p>Sudden shifts of texture, register and pace — an almost dramatic sense of light and shade.</p></div>
+    </div>
+    <p class="note-text">The result is warmer and more urgent than the smooth serenity of Palestrina — recognisably Spanish in its intensity.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: DESCALZAS REALES ═══════════════════ -->
+<section>
+    <span class="section-number">11 — MADRID</span>
+    <h2>The Convent Years</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        From about <span class="accent-rose">1587</span> Victoria lived and worked at the
+        <span class="accent-rose">Monasterio de las Descalzas Reales</span>, a royal convent of Poor Clares in Madrid,
+        as chaplain and organist to the Dowager Empress Mar&iacute;a, sister of Philip II. He had turned down more
+        prestigious posts abroad; he wished, above all, to serve quietly in Spain.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-rose">A royal retreat</h4><p>The Descalzas Reales sheltered widowed and unmarried noblewomen of the Habsburg house in devotion.</p></div>
+        <div class="card"><h4 class="accent-amber">Priest first</h4><p>Victoria fulfilled his duties as chaplain; music was woven into a life of prayer and service.</p></div>
+        <div class="card"><h4 class="accent-blue">A settled voice</h4><p>Freed from ambition, his late music grows ever more concentrated, serene and inward.</p></div>
+    </div>
+    <p class="note-text">He remained there, in the empress's service and then the convent's, until his death in 1611.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">12 — LISTENING GUIDE</span>
+    <h2>How to Listen to Victoria</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Feel the <span class="accent-rose">suspensions</span> — catch the moment a held note grates, then falls; that lean is the emotion.</li>
+        <li>Watch the <span class="accent-amber">text</span> — notice how the music darkens, rises or freezes exactly where the words do.</li>
+        <li>Hear the shift between flowing <span class="accent-green">counterpoint</span> and solemn <span class="accent-blue">block chords</span>.</li>
+        <li>Let the acoustic breathe — this music was made for stone chapels, where each chord blooms and lingers.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Victoria+O+magnum+mysterium+Tallis+Scholars">&#9834; O magnum mysterium</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Victoria+Officium+Defunctorum+Requiem">&#9834; Officium Defunctorum</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Victoria+Tenebrae+Responsories+O+vos+omnes">&#9834; O vos omnes</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.cpdl.org/wiki/index.php/Tom%C3%A1s_Luis_de_Victoria">&#9834; CPDL &mdash; free scores</a>
+    </div>
+    <p class="note-text">Ensembles such as the Tallis Scholars, La Colombina and Ensemble Plus Ultra have made celebrated Victoria recordings.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: PLACE IN HISTORY ═══════════════════ -->
+<section>
+    <span class="section-number">13 — HIS PLACE</span>
+    <h2>The Summit of Spanish Polyphony</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Victoria arrives near the <span class="accent-rose">end</span> of the great age of Renaissance vocal polyphony,
+        alongside Palestrina, Lassus and Byrd. He gathers its craft to a point of white heat and turns it wholly to
+        prayer. After him, the new <span class="accent-amber">Baroque</span> — with basso continuo, opera and instruments —
+        would carry music in another direction; Victoria is a last, perfect flowering of the older sacred art.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Palestrina · Rome</h4><p>Serene, balanced counterpoint — the model Victoria learned and then made his own.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Lassus · Munich</h4><p>Cosmopolitan and pictorial; the same generation, a very different temperament.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Victoria · Spain</h4><p>Sacred alone, mystical, intense — the voice of Golden-Age Catholic devotion.</p></div>
+    </div>
+    <p class="note-text">No later Spanish composer would equal his renown until well into the modern age.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>A Feather of Devotion</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Victoria left the world only sacred music, but of a purity and passion unmatched in his age.
+        His <em>O magnum mysterium</em>, his <em>O vos omnes</em> and above all his 1605 Requiem are sung wherever
+        Renaissance polyphony lives. He proved that the most disciplined counterpoint could also burn with a
+        <span class="accent-rose">personal, mystical fire</span> — that craft and devotion need not be opposites.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Devotion</h4><p>A life proving that composition itself could be an act of prayer and priesthood.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Expression</h4><p>Suspensions, word-painting and dark harmony that made Renaissance polyphony <em>feel</em>.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Endurance</h4><p>Four centuries on, his Requiem and motets remain cornerstones of the choral repertoire.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>Longing to lay down composition and give his mind rest at last in divine contemplation, as befitted his calling as a priest.</p>
+        <span class="attribution">&mdash; paraphrased from Victoria's dedication of his 1583 book of Masses to Philip II (not a verbatim quotation)</span>
+    </div>
+    <p class="note-text">c. 1548 – 1611 · The Spanish mystic whose only subject was the sacred.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — Victoria ── */
+/* O magnum mysterium-style opening: a gently rising line with an expressive leap
+   (the rising fourth D->A region) over a sustained lower voice. */
+var VIC_OMM_UPPER = [{n:'D4',d:2},{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:2},{n:'A4',d:2},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:2},{n:'D4',d:2}];
+var VIC_OMM_LOWER = [{n:'D3',d:4},{n:'F3',d:2},{n:'C4',d:2},{n:'A3',d:2},{n:'D3',d:2}];
+/* O vos omnes-style grief: slow, dark homophonic block chords with a leaning
+   suspension and a raised leading-tone sigh resolving to the final. */
+var VIC_VOS_GRIEF = [
+  {n:['A3','E4','C5'],d:3},
+  {n:['A3','F4','C5'],d:2},
+  {n:['G3','E4','B4'],d:3},
+  {n:['E3','E4','A4'],d:2},
+  {n:['F3','F4','A4'],d:3},
+  {n:['E3','E4','G#4'],d:2},
+  {n:['A3','E4','A4'],d:4}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

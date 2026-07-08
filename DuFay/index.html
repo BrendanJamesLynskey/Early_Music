@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guillaume Du Fay — The Burgundian Sun &amp; the Cyclic Mass</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+/* ── Audio & listening (Early Music additions) ── */
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 300px; height: 150px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
+            <!-- The Burgundian sun: a radiant sun over a cathedral dome (Florence) -->
+            <g stroke="#d4a053" stroke-width="2" stroke-linecap="round">
+                <line x1="160" y1="18" x2="160" y2="6"/>
+                <line x1="196" y1="26" x2="204" y2="14"/>
+                <line x1="124" y1="26" x2="116" y2="14"/>
+                <line x1="216" y1="52" x2="230" y2="46"/>
+                <line x1="104" y1="52" x2="90" y2="46"/>
+            </g>
+            <circle cx="160" cy="52" r="24" fill="none" stroke="#d4a053" stroke-width="2.5"/>
+            <circle cx="160" cy="52" r="11" fill="#d4a053"/>
+            <!-- cathedral dome silhouette -->
+            <path d="M 108 150 L 108 118 Q 160 74 212 118 L 212 150 Z" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+            <path d="M 108 118 Q 160 74 212 118" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
+            <line x1="160" y1="82" x2="160" y2="70" stroke="#d4a053" stroke-width="1.5"/>
+            <circle cx="160" cy="68" r="2.5" fill="#d4a053"/>
+            <!-- a scrap of staff at the base -->
+            <g stroke="#6a6a7a" stroke-width="0.8">
+                <line x1="120" y1="132" x2="200" y2="132"/>
+                <line x1="120" y1="139" x2="200" y2="139"/>
+                <line x1="120" y1="146" x2="200" y2="146"/>
+            </g>
+            <ellipse cx="138" cy="139" rx="4" ry="3" fill="#e8e6e3"/>
+            <ellipse cx="160" cy="132" rx="4" ry="3" fill="#e8e6e3"/>
+            <ellipse cx="182" cy="139" rx="4" ry="3" fill="#e8e6e3"/>
+        </svg>
+    </div>
+    <h1>Guillaume Du Fay</h1>
+    <div class="subtitle">c. 1397–1474 · The Burgundian Age · Late Mediaeval into Renaissance</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The most celebrated musician of the fifteenth century — the Franco-Flemish master who fused
+        the sweet new harmony of thirds and sixths with a grand architectural mind, and helped forge
+        the <span class="accent-amber">cyclic cantus-firmus Mass</span> that would shape a century of composition.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 07 — The Burgundian Sun</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS DU FAY ═══════════════════ -->
+<section>
+    <span class="section-number">01 — INTRODUCTION</span>
+    <h2>Who Was Guillaume Du Fay?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-amber">Guillaume Du Fay</span> (also spelt Dufay, c. 1397–1474) was the leading composer of the mid
+        fifteenth century — a Franco-Flemish singer, priest and diplomat whose reputation stretched from
+        the papal chapel in Rome to the courts of Italy and Savoy and home to the great cathedral of Cambrai.
+        He stands on the hinge between the <em>mediaeval</em> and the <em>Renaissance</em> worlds.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#9788;</span><h4 class="accent-amber">Cosmopolitan</h4><p>At home across Europe — Cambrai, the papal chapel, Italy and the House of Savoy — carrying styles between them.</p></div>
+        <div class="card"><span class="icon accent-green">&#9834;</span><h4 class="accent-green">Sweet harmony</h4><p>Full triadic sonority — pervasive thirds and sixths — the "sweetness" that defines the age.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9962;</span><h4 class="accent-purple">Architect</h4><p>A structural mind: the unified cyclic Mass and the proportioned ceremonial motet.</p></div>
+        <div class="card"><span class="icon accent-blue">&#10022;</span><h4 class="accent-blue">Bridge</h4><p>Rooted in Ars Nova technique, yet reaching toward the smooth, consonant Renaissance idiom.</p></div>
+    </div>
+    <p class="note-text">His name is spelt "Du Fay" or "Dufay" in the sources; scholars today favour the two-word form the composer himself used.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: A LIFE ACROSS EUROPE ═══════════════════ -->
+<section>
+    <span class="section-number">02 — A LIFE</span>
+    <h2>A Life Across Europe</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Trained as a choirboy at Cambrai Cathedral, Du Fay spent his prime years in Italy and Savoy before
+        returning to Cambrai in authority. Everywhere he went, his music travelled with him and was copied.
+    </p>
+    <div style="max-width: 84%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1397</span><span class="event"><strong>Born near Cambrai</strong>Into the Franco-Flemish heartland that would supply Europe with its finest singers for generations.</span></div>
+        <div class="timeline-item"><span class="year">1420s</span><span class="event"><strong>Italy</strong>Service to Italian patrons; absorbs the smooth Italian love of consonant thirds and sixths.</span></div>
+        <div class="timeline-item"><span class="year">1428–37</span><span class="event"><strong>The papal chapel</strong>A singer in the pope's own choir in Rome and Florence — the most prestigious musical post in Christendom.</span></div>
+        <div class="timeline-item"><span class="year">1430s–40s</span><span class="event"><strong>The House of Savoy</strong>Composing for the ducal court, moving between Italy, Savoy and the north.</span></div>
+        <div class="timeline-item"><span class="year">c. 1440–74</span><span class="event"><strong>Cambrai</strong>Canon of the cathedral; revered elder statesman of European music until his death in 1474.</span></div>
+    </div>
+    <p class="note-text">Dates are approximate where the archival record is thin; "c." marks the uncertainty.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: BRIDGING TWO AGES ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE HINGE OF AN AGE</span>
+    <h2>Bridging Mediaeval &amp; Renaissance</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Du Fay inherited the intricate rhythmic machinery of the fourteenth-century <em>Ars Nova</em> — and
+        smoothed it. He kept its architecture but let the surface breathe with graceful melody and warm,
+        full-sounding chords. The result feels recognisably like the dawn of the Renaissance.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-purple);">
+            <h4 class="accent-purple">What he inherited</h4>
+            <p>The isorhythmic motet, complex mensural rhythm, the open fourths and fifths of mediaeval sonority, and the cantus-firmus idea of borrowing a pre-existing melody.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">What he made new</h4>
+            <p>Sweet, consonant harmony built on thirds and sixths; graceful, singable top lines; and unity — binding the whole Mass into a single cyclic design.</p>
+        </div>
+    </div>
+    <p class="note-text">Historians place the boundary between mediaeval and Renaissance music somewhere in Du Fay's lifetime — which is another way of saying he helped move it.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE ENGLISH SWEETNESS ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE NEW SOUND</span>
+    <h2>The Sweetness of Thirds &amp; Sixths</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        For centuries, theory had prized the open <span class="accent-blue">fourth and fifth</span> as the "perfect" consonances,
+        treating <span class="accent-green">thirds and sixths</span> as imperfect. In the early fifteenth century that reversed. The rich,
+        sweet triadic sound — associated with the English <em>contenance angloise</em> — became the new ideal, and Du Fay was its
+        great continental champion.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, OLD_FIFTHS, {timbre:'organ', bpm:60, temperament:'pythagorean', tonic:'D3', reverb:0.55})">&#9654; The old sound: open fifths</button>
+        <button class="audio-btn green" onclick="EM.toggle(this, NEW_THIRDS, {timbre:'voice', bpm:60, temperament:'equal', reverb:0.55, legato:0.95})">&#9654; The new sound: full triads</button>
+    </div>
+    <p class="audio-caption">First the hollow parallel fifths of mediaeval sonority (pure Pythagorean tuning); then the mellow, filled-in triads that made the new style famous</p>
+    <p class="note-text">The poet Martin le Franc (c. 1440) wrote that Du Fay and Binchois had taken up the "English manner" (<em>contenance angloise</em>) and followed the English master John Dunstaple.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: FAUXBOURDON — THE TECHNIQUE ═══════════════════ -->
+<section>
+    <span class="section-number">05 — TECHNIQUE · I</span>
+    <h2>Fauxbourdon — Sweetness Made Simple</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        <span class="accent-amber">Fauxbourdon</span> ("false bass") is the technique Du Fay used to spin this sweetness effortlessly.
+        Two voices are written down a <strong>sixth</strong> apart; a third singer improvises a middle line a <strong>perfect fourth
+        below the top</strong>. The three voices glide downward together in a chain of <span class="accent-green">6–3 chords</span> — the continental
+        cousin of English <em>faburden</em>.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, FB_CHAIN, {timbre:'voice', bpm:76, temperament:'equal', reverb:0.55, legato:0.95})">&#9654; Hear fauxbourdon (parallel 6–3)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+fauxbourdon+hymn">&#9834; Listen: Du Fay fauxbourdon (recording)</a>
+    </div>
+    <p class="audio-caption">Three voices moving in parallel — the top line, a fourth below it, and a sixth below it — descending together in sweet, gliding chords</p>
+    <p class="note-text">Because the middle voice simply shadows the top a fourth below, only two lines needed to be written — the third was sung by rule.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: READING FAUXBOURDON — NOTATION ═══════════════════ -->
+<section>
+    <span class="section-number">06 — READING THE PAGE</span>
+    <h2>How to Read Fauxbourdon</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Only the <span class="accent-amber">top</span> and <span class="accent-blue">bottom</span> voices are notated. The
+        <span class="accent-green">middle</span> voice is <em>not written</em> — the singer runs it a perfect fourth below the top line.
+        Read the chords left to right; each is a 6–3 sonority, and they all step downward in parallel.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- 5-line staff -->
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="60" y1="60" x2="860" y2="60"/>
+                <line x1="60" y1="82" x2="860" y2="82"/>
+                <line x1="60" y1="104" x2="860" y2="104"/>
+                <line x1="60" y1="126" x2="860" y2="126"/>
+                <line x1="60" y1="148" x2="860" y2="148"/>
+            </g>
+            <!-- chord columns, all descending stepwise in parallel -->
+            <!-- x positions 180,320,460,600,740 ; each column top/mid/bottom noteheads -->
+            <!-- Chord 1 -->
+            <ellipse cx="180" cy="60"  rx="10" ry="7" fill="#d4a053"/>
+            <ellipse cx="180" cy="93"  rx="10" ry="7" fill="#4ecca3" stroke="#4ecca3"/>
+            <ellipse cx="180" cy="115" rx="10" ry="7" fill="#5b8cd4"/>
+            <!-- Chord 2 -->
+            <ellipse cx="320" cy="71"  rx="10" ry="7" fill="#d4a053"/>
+            <ellipse cx="320" cy="104" rx="10" ry="7" fill="#4ecca3"/>
+            <ellipse cx="320" cy="126" rx="10" ry="7" fill="#5b8cd4"/>
+            <!-- Chord 3 -->
+            <ellipse cx="460" cy="82"  rx="10" ry="7" fill="#d4a053"/>
+            <ellipse cx="460" cy="115" rx="10" ry="7" fill="#4ecca3"/>
+            <ellipse cx="460" cy="137" rx="10" ry="7" fill="#5b8cd4"/>
+            <!-- Chord 4 -->
+            <ellipse cx="600" cy="93"  rx="10" ry="7" fill="#d4a053"/>
+            <ellipse cx="600" cy="126" rx="10" ry="7" fill="#4ecca3"/>
+            <ellipse cx="600" cy="148" rx="10" ry="7" fill="#5b8cd4"/>
+            <!-- Chord 5 -->
+            <ellipse cx="740" cy="104" rx="10" ry="7" fill="#d4a053"/>
+            <ellipse cx="740" cy="137" rx="10" ry="7" fill="#4ecca3"/>
+            <ellipse cx="740" cy="159" rx="10" ry="7" fill="#5b8cd4"/>
+            <!-- voice-labels / lines connecting parallel motion -->
+            <path d="M 180 60 L 740 104" stroke="#d4a053" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
+            <path d="M 180 93 L 740 137" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
+            <path d="M 180 115 L 740 159" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
+            <!-- interval brackets on the last chord -->
+            <text x="770" y="108" fill="#d4a053" font-family="DM Sans" font-size="13">top (written)</text>
+            <text x="770" y="141" fill="#4ecca3" font-family="DM Sans" font-size="13">a 4th below (sung)</text>
+            <text x="770" y="163" fill="#5b8cd4" font-family="DM Sans" font-size="13">bottom (written)</text>
+            <!-- 6th and 3rd labels between chords 1 -->
+            <line x1="140" y1="60" x2="140" y2="115" stroke="#9a9a9a" stroke-width="1"/>
+            <text x="96" y="90" fill="#9a9a9a" font-family="DM Sans" font-size="12">6th</text>
+            <line x1="152" y1="93" x2="152" y2="115" stroke="#9a9a9a" stroke-width="1"/>
+            <text x="120" y="112" fill="#9a9a9a" font-family="DM Sans" font-size="12">3rd</text>
+        </svg>
+    </div>
+    <div class="card-grid cols-3" style="max-width:96%;">
+        <div class="card"><h4 class="accent-amber">1 · Two lines on the page</h4><p>Only the top and bottom voices are written. Their outer interval is a sixth.</p></div>
+        <div class="card"><h4 class="accent-green">2 · Fill the middle</h4><p>The middle singer shadows the top a perfect fourth below — never written, always understood.</p></div>
+        <div class="card"><h4 class="accent-blue">3 · Parallel 6–3 chords</h4><p>Every column is the same shape (a sixth outside, a third inside), gliding downward in parallel.</p></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: NUPER ROSARUM FLORES ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE CEREMONIAL MOTET</span>
+    <h2><em>Nuper rosarum flores</em> — Music for a Dome</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                In <span class="accent-amber">1436</span> Du Fay composed the motet <em>Nuper rosarum flores</em> for the consecration of
+                <span class="accent-amber">Florence Cathedral</span> — the ceremony crowning Filippo Brunelleschi's stupendous dome, the
+                largest raised since antiquity. It is a grand isorhythmic motet, ceremonial and architectural in spirit.
+            </p>
+            <p style="font-size:0.44em !important;">
+                Scholars have long debated its <em>proportions</em>: an older theory tied its structural ratios to the dimensions of the
+                dome itself; a more recent reading links them instead to the biblical <span class="accent-green">Temple of Solomon</span>. Either way, it is
+                music conceived as built structure.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 220 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <!-- Brunelleschi dome, ribbed -->
+                <path d="M 40 200 L 40 150 Q 110 40 180 150 L 180 200 Z" fill="none" stroke="#9a9a9a" stroke-width="2"/>
+                <path d="M 40 150 Q 110 40 180 150" fill="none" stroke="#d4a053" stroke-width="2.5"/>
+                <!-- ribs -->
+                <path d="M 110 46 Q 70 100 62 150" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+                <path d="M 110 46 Q 150 100 158 150" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+                <path d="M 110 46 L 110 150" stroke="#6a6a7a" stroke-width="1"/>
+                <!-- lantern -->
+                <rect x="102" y="30" width="16" height="18" fill="none" stroke="#d4a053" stroke-width="1.5"/>
+                <path d="M 100 30 L 110 18 L 120 30 Z" fill="#d4a053"/>
+                <!-- proportion marks -->
+                <line x1="40" y1="215" x2="180" y2="215" stroke="#4ecca3" stroke-width="1"/>
+                <text x="70" y="228" fill="#4ecca3" font-family="JetBrains Mono" font-size="11">proportions?</text>
+            </svg>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+Nuper+rosarum+flores">&#9834; Listen: Du Fay — Nuper rosarum flores (recording)</a>
+    </div>
+    <p class="note-text">Composed for 25 March 1436, the dedication of Santa Maria del Fiore. The exact meaning of its numerical proportions remains scholarly debate, not settled fact.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: THE CYCLIC CANTUS-FIRMUS MASS ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE GREAT INNOVATION</span>
+    <h2>The Cyclic Cantus-Firmus Mass</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Du Fay helped establish the era's central large form: the <span class="accent-amber">cyclic Mass</span>. All five movements of the
+        Ordinary are unified by threading the <em>same borrowed melody</em> — a <span class="accent-green">cantus firmus</span>, usually held in long notes
+        in the tenor — through every movement. One tune becomes the backbone of the whole work.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- five movement boxes -->
+            <g font-family="DM Sans" font-size="13" text-anchor="middle">
+                <rect x="30"  y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="105" y="82" fill="#e8e6e3">Kyrie</text>
+                <rect x="205" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="280" y="82" fill="#e8e6e3">Gloria</text>
+                <rect x="380" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="455" y="82" fill="#e8e6e3">Credo</text>
+                <rect x="555" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="630" y="82" fill="#e8e6e3">Sanctus</text>
+                <rect x="730" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="805" y="82" fill="#e8e6e3">Agnus Dei</text>
+            </g>
+            <!-- the shared cantus firmus threading through -->
+            <g>
+                <text x="30" y="150" fill="#4ecca3" font-family="DM Sans" font-size="13">shared tenor (cantus firmus):</text>
+                <line x1="30" y1="170" x2="880" y2="170" stroke="#4ecca3" stroke-width="1" stroke-dasharray="2 3"/>
+                <!-- long tenor notes, one under each movement -->
+                <rect x="90"  y="163" width="26" height="14" fill="#4ecca3"/>
+                <rect x="265" y="163" width="26" height="14" fill="#4ecca3"/>
+                <rect x="440" y="163" width="26" height="14" fill="#4ecca3"/>
+                <rect x="615" y="163" width="26" height="14" fill="#4ecca3"/>
+                <rect x="790" y="163" width="26" height="14" fill="#4ecca3"/>
+                <!-- arrows from boxes down to the thread -->
+                <g stroke="#6a6a7a" stroke-width="1">
+                    <line x1="105" y1="110" x2="103" y2="161"/>
+                    <line x1="280" y1="110" x2="278" y2="161"/>
+                    <line x1="455" y1="110" x2="453" y2="161"/>
+                    <line x1="630" y1="110" x2="628" y2="161"/>
+                    <line x1="805" y1="110" x2="803" y2="161"/>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text">The borrowed tune could be sacred (a chant) or secular (a popular song) — a striking idea: worldly melody sanctified as the skeleton of the Mass.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: SE LA FACE AY PALE ═══════════════════ -->
+<section>
+    <span class="section-number">09 — A MASS ON A SONG</span>
+    <h2><em>Missa Se la face ay pale</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        One of Du Fay's landmark cyclic Masses takes its cantus firmus from <em>his own love-song</em>,
+        the chanson <span class="accent-amber">Se la face ay pale</span> ("If my face is pale"). The tenor of the courtly song becomes the unifying
+        thread of the sacred Mass — the same graceful melody you can hear standing alone below.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, CHANSON_TOP, {timbre:'reed', bpm:90, temperament:'equal', reverb:0.5, legato:0.9})">&#9654; Hear a chanson top line (triple time)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+Se+la+face+ay+pale">&#9834; Listen: Du Fay — Se la face ay pale (recording)</a>
+    </div>
+    <p class="audio-caption">A graceful, lilting top line in gentle triple metre, in the spirit of Du Fay's courtly chanson — synthesised reed</p>
+    <p class="note-text">Setting a Mass on a secular love-tune was no scandal but a mark of art: the melody is hidden, stretched into long tenor notes, beneath the sacred text.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: THE L'HOMME ARME TRADITION ═══════════════════ -->
+<section>
+    <span class="section-number">10 — A TUNE FOR AN AGE</span>
+    <h2>The <em>L'homme armé</em> Tradition</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        The most famous cantus firmus of all was a swaggering secular tune, <span class="accent-amber">L'homme armé</span> ("The armed man").
+        Du Fay's <em>Missa L'homme armé</em> is among the earliest of what became an extraordinary tradition: over the following
+        century, composer after composer built a Mass on this same melody — dozens of settings in all.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">A secular seed</h4><p>A popular, martial song — not a chant — chosen as the sacred backbone of the Mass.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">A shared challenge</h4><p>Using the same tune let composers measure themselves against one another across generations.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">A living lineage</h4><p>From Du Fay onward the tune passed through Ockeghem, Josquin and far beyond.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+Missa+L%27homme+arme">&#9834; Listen: Du Fay — Missa L'homme armé (recording)</a>
+    </div>
+    <p class="note-text">The "armed man" tune became a kind of shared laboratory for the cyclic Mass — Du Fay's setting stands near its beginning.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: THE CHANSONS ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE COURTLY SONG</span>
+    <h2>The Chansons</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        Beyond the great sacred works, Du Fay wrote a wealth of secular <span class="accent-amber">chansons</span> — polished courtly songs in
+        French, chiefly <em>rondeaux</em> and <em>ballades</em>. Typically a shapely top line (the cantus) is supported by a
+        tenor and contratenor: tender, elegant, and built on the same sweet harmony as his church music.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-rose);">
+            <h4 class="accent-rose">The forms</h4>
+            <p>The fixed courtly forms — above all the <em>rondeau</em> and the <em>ballade</em> — set poems of love and refinement.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The texture</h4>
+            <p>A singing cantus over supporting lower voices; the same triadic sweetness that fills his motets and Masses.</p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, CHANSON_TOP, {timbre:'voice', bpm:96, temperament:'equal', reverb:0.5, legato:0.92})">&#9654; Hear the chanson line again (voice)</button>
+    </div>
+    <p class="note-text">The same tune shown as a chanson top line can equally live, stretched out, as the cantus firmus of a Mass — song and liturgy sharing one melody.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: HOW TO LISTEN ═══════════════════ -->
+<section>
+    <span class="section-number">12 — LISTENING GUIDE</span>
+    <h2>How to Listen to Du Fay</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Savour the <span class="accent-amber">sweetness</span> — listen for full, warm chords of thirds and sixths, so different from the hollow fifths of earlier music.</li>
+        <li>Follow the <span class="accent-green">top line</span> — Du Fay's melodies are graceful and singable; let your ear ride the highest voice.</li>
+        <li>In fauxbourdon, hear the three voices <span class="accent-purple">glide in parallel</span>, moving as one shining block of sound.</li>
+        <li>In the Masses, listen for the slow-moving <span class="accent-blue">tenor</span> beneath — the borrowed tune, stretched long, binding the movements together.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+Binchois+Consort">&#9834; The Binchois Consort</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+Cantica+Symphonia">&#9834; Cantica Symphonia</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Dufay+Diabolus+in+Musica+chansons">&#9834; Diabolus in Musica</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Dufay,_Guillaume">&#9834; IMSLP — Du Fay scores</a>
+    </div>
+    <p class="note-text">Recordings vary widely in pitch, tempo and the use of instruments, since fifteenth-century sources leave much to the performer.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: WORKS AT A GLANCE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — AT A GLANCE</span>
+    <h2>Du Fay's Legacy in Four Works</h2>
+    <div class="separator"></div>
+    <div class="card-grid cols-2" style="max-width:90%;">
+        <div class="card"><h4 class="accent-amber">Nuper rosarum flores (1436)</h4><p>The ceremonial isorhythmic motet for the consecration of Florence Cathedral and its great dome — music as architecture.</p></div>
+        <div class="card"><h4 class="accent-green">Missa Se la face ay pale</h4><p>A landmark cyclic Mass built on the tenor of his own chanson — worldly song made the frame of sacred music.</p></div>
+        <div class="card"><h4 class="accent-blue">Missa L'homme armé</h4><p>An early Mass on the famous "armed man" tune, launching a tradition that ran for a century and more.</p></div>
+        <div class="card"><h4 class="accent-rose">The chansons &amp; fauxbourdon</h4><p>Courtly rondeaux and ballades, and the fauxbourdon technique that made the new triadic sweetness effortless.</p></div>
+    </div>
+    <p class="note-text">A representative handful, not a complete list — the surviving output of Masses, motets, hymns and chansons is far larger.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>The Sun of His Century</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Du Fay gathered the threads of the mediaeval past — isorhythm, the cantus firmus, mensural rhythm — and wove them into a
+        new fabric of <span class="accent-amber">sweetness and unity</span>. The cyclic Mass he helped forge became the great form of the Renaissance;
+        the sonorous harmony he championed became its native language. Later masters — Ockeghem, Josquin — built on ground he cleared.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">The cyclic Mass</h4><p>Unifying the Ordinary on one borrowed tenor became the central large form for generations of composers.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Sweet harmony</h4><p>Thirds and sixths, and the fauxbourdon that spread them, set the sound of Renaissance polyphony.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">The composer's stature</h4><p>Du Fay's fame across Europe made the Franco-Flemish master the model of the celebrated composer.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"They have taken on the English manner and followed Dunstaple, and thereby a wonderful pleasingness makes their music joyous and remarkable."</p>
+        <span class="attribution">— Martin le Franc, <em>Le Champion des Dames</em> (c. 1440), on Du Fay and Binchois (paraphrase of the famous <em>contenance angloise</em> passage)</span>
+    </div>
+    <p class="note-text">c. 1397 – 1474 · The Burgundian sun of the fifteenth century.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (Du Fay) — note names, beats ── */
+/* Old vs new sound: hollow parallel fifths, then filled-in sweet triads */
+var OLD_FIFTHS = [
+  {n:['D4','A4'],d:2},{n:['C4','G4'],d:2},{n:['D4','A4'],d:2},{n:['F4','C5'],d:2},{n:['D4','A4'],d:3}
+];
+var NEW_THIRDS = [
+  {n:['D4','F#4','A4'],d:2},{n:['C4','E4','G4'],d:2},{n:['D4','F#4','A4'],d:2},{n:['G3','B3','D4'],d:2},{n:['D4','F#4','A4'],d:3}
+];
+/* SIGNATURE AUDIO — fauxbourdon: three voices in parallel 6-3 motion, descending
+   (top / middle a 4th below top / bottom a 6th below top) */
+var FB_CHAIN = [
+  {n:['C5','G4','E4'],d:2},{n:['B4','F#4','D4'],d:2},{n:['A4','E4','C4'],d:2},{n:['G4','D4','B3'],d:2},
+  {n:['A4','E4','C4'],d:1},{n:['G4','D4','C4'],d:1},{n:['F4','C4','A3'],d:1},{n:['G4','D4','G3'],d:3}
+];
+/* A graceful triple-time chanson top line, in the spirit of Se la face ay pale */
+var CHANSON_TOP = [
+  {n:'F4',d:2},{n:'G4',d:1},{n:'A4',d:2},{n:'G4',d:1},
+  {n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'F4',d:2},{n:'A4',d:1},
+  {n:'C5',d:2},{n:'Bb4',d:1},{n:'A4',d:2},{n:'G4',d:1},{n:'F4',d:3}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

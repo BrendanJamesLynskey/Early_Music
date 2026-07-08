@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A History of Early Music — Interactive Presentations</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+body { background: var(--bg-primary); color: var(--text-primary); font-family: 'DM Sans', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+
+/* Header */
+header { text-align: center; padding: 4rem 2rem 2.5rem 2rem; max-width: 760px; }
+header .emblem { width: 84px; height: 84px; margin: 0 auto 1.6rem auto; animation: spin 120s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+header h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.8rem; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.6rem; }
+header .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.2rem; }
+header .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0 auto 1.4rem auto; }
+header p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+/* Grid */
+.grid-section { width: 100%; max-width: 900px; padding: 0 2rem 3rem 2rem; }
+.grid-section h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; }
+.presentations { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.section-divider { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin: 1.6rem 0 0.5rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-subtle); }
+
+/* Card */
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 1.5rem 1.4rem; transition: border-color 0.3s, transform 0.2s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.card:hover { border-color: var(--accent-amber); transform: translateY(-2px); }
+.card .accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 10px 10px 0 0; }
+.card .number { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.15rem; line-height: 1.25; }
+.card .dates { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+.card .description { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+.card .meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+.tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; padding: 0.2em 0.55em; border-radius: 4px; background: rgba(155, 114, 207, 0.1); color: var(--accent-purple); }
+.tag.amber { background: rgba(212, 160, 83, 0.1); color: var(--accent-amber); }
+.tag.green { background: rgba(78, 204, 163, 0.1); color: var(--accent-green); }
+.tag.rose  { background: rgba(207, 114, 114, 0.1); color: var(--accent-rose); }
+.tag.blue  { background: rgba(91, 140, 212, 0.1); color: var(--accent-blue); }
+.launch-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-top: auto; width: fit-content; }
+.launch-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.launch-btn svg { width: 14px; height: 14px; fill: var(--bg-primary); }
+
+/* Influence map */
+.influence-section { width: 100%; max-width: 980px; padding: 0 2rem 3rem 2rem; }
+.influence-section h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+.influence-section .section-intro { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; max-width: 720px; }
+.influence-map { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; overflow-x: auto; }
+.influence-map svg text { font-family: 'DM Sans', sans-serif; }
+.influence-legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-subtle); }
+.influence-legend .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: var(--text-muted); }
+.influence-legend .legend-line { width: 24px; height: 2px; border-radius: 1px; }
+
+/* Feature row (how to navigate / audio note) */
+.notebox { width: 100%; max-width: 900px; padding: 0 2rem 1rem 2rem; }
+.notebox .inner { background: var(--bg-card); border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-green); border-radius: 10px; padding: 1.1rem 1.3rem; }
+.notebox h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem; }
+.notebox p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* Footer */
+footer { text-align: center; padding: 2rem; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); width: 100%; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+footer a { color: var(--accent-amber); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    header { padding: 3rem 1.2rem 2rem 1.2rem; } header h1 { font-size: 2rem; }
+    .grid-section, .influence-section, .notebox { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .presentations { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <svg class="emblem" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Rose window / staff emblem -->
+        <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a3a" stroke-width="0.6"/>
+        <circle cx="100" cy="100" r="66" fill="none" stroke="#d4a053" stroke-width="0.8" opacity="0.5"/>
+        <circle cx="100" cy="100" r="42" fill="none" stroke="#9b72cf" stroke-width="0.8" opacity="0.4"/>
+        <!-- staff lines across -->
+        <g stroke="#2a2a3a" stroke-width="0.6">
+            <line x1="20" y1="86" x2="180" y2="86"/>
+            <line x1="20" y1="94" x2="180" y2="94"/>
+            <line x1="20" y1="102" x2="180" y2="102"/>
+            <line x1="20" y1="110" x2="180" y2="110"/>
+        </g>
+        <!-- neume squares -->
+        <rect x="60" y="90" width="6" height="6" fill="#d4a053"/>
+        <rect x="82" y="82" width="6" height="6" fill="#4ecca3"/>
+        <rect x="104" y="98" width="6" height="6" fill="#9b72cf"/>
+        <rect x="126" y="86" width="6" height="6" fill="#cf7272"/>
+        <!-- radial petals -->
+        <g stroke="#9b72cf" stroke-width="0.6" opacity="0.35" fill="none">
+            <ellipse cx="100" cy="58" rx="7" ry="18"/>
+            <ellipse cx="100" cy="142" rx="7" ry="18"/>
+            <ellipse cx="58" cy="100" rx="18" ry="7"/>
+            <ellipse cx="142" cy="100" rx="18" ry="7"/>
+        </g>
+        <circle cx="100" cy="100" r="5" fill="#d4a053" opacity="0.6"/>
+    </svg>
+    <h1>A History of Early Music</h1>
+    <div class="subtitle">Interactive Presentations · Medieval · Renaissance · Early Baroque</div>
+    <div class="separator"></div>
+    <p>
+        A graphical, interactive journey through a thousand years of Western music — from the
+        unaccompanied plainchant of the early Church, through the birth of polyphony, the Ars Nova,
+        the Franco-Flemish masters and the golden age of the Renaissance, to the threshold of the
+        Baroque. Every presentation includes <strong>synthesised audio examples you can play in the
+        browser</strong>, links to real recordings, and hand-drawn diagrams explaining
+        <strong>how to read the notation of the age</strong>.
+    </p>
+</header>
+
+<div class="notebox">
+    <div class="inner">
+        <h4>How to use this collection</h4>
+        <p>
+            Each presentation is a single-file <a href="https://revealjs.com/" style="color:var(--accent-amber);text-decoration:none;">Reveal.js</a>
+            deck — no build step, no dependencies beyond a CDN. Use <strong>arrow keys</strong> or click to advance,
+            <strong>Esc</strong> for the slide overview, <strong>F</strong> for fullscreen. Look for the amber
+            <strong>&#9654; Listen</strong> buttons: they synthesise chant, organum, cadences and more live in your
+            browser using the Web Audio API — including authentic <em>Pythagorean tuning</em> for the medieval examples,
+            so the pure fifths really ring. Start with <strong>Plainchant</strong>, or jump to
+            <strong>Reading Early Music Notation</strong> for the full notation guide.
+        </p>
+    </div>
+</div>
+
+<main class="grid-section">
+    <h2>Presentations</h2>
+    <div class="presentations">
+
+        <div class="section-divider" style="grid-column: 1 / -1;">Medieval · c. 500–1400</div>
+
+        <!-- 01 Chant -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">01</span>
+            <h3>Plainchant</h3>
+            <div class="dates">c. 6th–10th c.</div>
+            <p class="description">The monophonic sung prayer of the Latin Church — the modes, the neume, and the birth of notation from which all Western music grows. With synthesised chant, drone and organum.</p>
+            <div class="meta"><span class="tag amber">Gregorian</span><span class="tag">Modes</span><span class="tag green">Neumes</span></div>
+            <a href="Chant/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 02 Hildegard -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-purple);"></div>
+            <span class="number">02</span>
+            <h3>Hildegard von Bingen</h3>
+            <div class="dates">1098–1179</div>
+            <p class="description">Abbess, visionary and one of the first named composers — ecstatic, soaring chant of enormous range, and the sung morality play <em>Ordo Virtutum</em>.</p>
+            <div class="meta"><span class="tag">Visionary</span><span class="tag amber">Symphonia</span><span class="tag green">Monophony</span></div>
+            <a href="Hildegard/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 03 Notre-Dame -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-green);"></div>
+            <span class="number">03</span>
+            <h3>The Notre-Dame School</h3>
+            <div class="dates">Léonin &amp; Pérotin · c. 1160–1250</div>
+            <p class="description">The birth of measured polyphony in Paris — organum over sustained tenors, the four-voice grandeur of Pérotin, and the first notation of rhythm.</p>
+            <div class="meta"><span class="tag green">Organum</span><span class="tag">Rhythmic Modes</span><span class="tag amber">Magnus liber</span></div>
+            <a href="NotreDame/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 04 Troubadours -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-rose);"></div>
+            <span class="number">04</span>
+            <h3>Troubadours &amp; Trouvères</h3>
+            <div class="dates">c. 1100–1300</div>
+            <p class="description">The first great flowering of named secular song — courtly love in Occitan and French, from Bernart de Ventadorn to Adam de la Halle, and the dancing estampie.</p>
+            <div class="meta"><span class="tag rose">Fin'amor</span><span class="tag">Canso</span><span class="tag blue">Estampie</span></div>
+            <a href="Troubadours/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 05 Machaut -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">05</span>
+            <h3>Guillaume de Machaut</h3>
+            <div class="dates">c. 1300–1377</div>
+            <p class="description">The towering figure of the Ars Nova — the first complete polyphonic Mass by one composer, dazzling isorhythmic motets, and the perfected <em>formes fixes</em>.</p>
+            <div class="meta"><span class="tag amber">Ars Nova</span><span class="tag purple">Isorhythm</span><span class="tag">Formes fixes</span></div>
+            <a href="Machaut/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 06 Landini -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-green);"></div>
+            <span class="number">06</span>
+            <h3>Francesco Landini</h3>
+            <div class="dates">c. 1325–1397</div>
+            <p class="description">The blind organist who crowned the Italian Trecento — graceful ballate, the Squarcialupi Codex, and the sweet under-third "Landini cadence".</p>
+            <div class="meta"><span class="tag green">Trecento</span><span class="tag">Ballata</span><span class="tag amber">Landini cadence</span></div>
+            <a href="Landini/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 07 Dunstaple -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-blue);"></div>
+            <span class="number">07</span>
+            <h3>John Dunstaple</h3>
+            <div class="dates">c. 1390–1453</div>
+            <p class="description">The English master whose sweet, full triadic harmony — the <em>contenance angloise</em> — gave the Continent its new sound of thirds and sixths.</p>
+            <div class="meta"><span class="tag blue">Contenance angloise</span><span class="tag green">Thirds &amp; sixths</span></div>
+            <a href="Dunstaple/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <div class="section-divider" style="grid-column: 1 / -1;">Renaissance · c. 1400–1600</div>
+
+        <!-- 08 Du Fay -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">08</span>
+            <h3>Guillaume Du Fay</h3>
+            <div class="dates">c. 1397–1474</div>
+            <p class="description">The Burgundian sun of the early Renaissance — the motet for Florence's dome, the cyclic cantus-firmus Mass, fauxbourdon and radiant chansons.</p>
+            <div class="meta"><span class="tag amber">Burgundian</span><span class="tag green">Fauxbourdon</span><span class="tag">Cyclic Mass</span></div>
+            <a href="DuFay/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 09 Binchois -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-rose);"></div>
+            <span class="number">09</span>
+            <h3>Gilles Binchois</h3>
+            <div class="dates">c. 1400–1460</div>
+            <p class="description">The supreme miniaturist of the Burgundian court — tender, perfectly shaped chansons and rondeaux for the age of courtly love.</p>
+            <div class="meta"><span class="tag rose">Chanson</span><span class="tag">Rondeau</span><span class="tag amber">Burgundian court</span></div>
+            <a href="Binchois/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 10 Ockeghem -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-purple);"></div>
+            <span class="number">10</span>
+            <h3>Johannes Ockeghem</h3>
+            <div class="dates">c. 1410–1497</div>
+            <p class="description">The master of seamless, flowing polyphony and canonic mystery — the <em>Missa prolationum</em>, the earliest polyphonic Requiem, and canons of astonishing ingenuity.</p>
+            <div class="meta"><span class="tag purple">Canon</span><span class="tag">Franco-Flemish</span><span class="tag blue">Requiem</span></div>
+            <a href="Ockeghem/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 11 Josquin -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">11</span>
+            <h3>Josquin des Prez</h3>
+            <div class="dates">c. 1450–1521</div>
+            <p class="description">The Michelangelo of music — pervasive imitation, expressive word-painting, and a mastery so complete that Luther called him "master of the notes".</p>
+            <div class="meta"><span class="tag amber">Imitation</span><span class="tag green">High Renaissance</span><span class="tag">Word-painting</span></div>
+            <a href="Josquin/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 12 Tallis -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-blue);"></div>
+            <span class="number">12</span>
+            <h3>Thomas Tallis</h3>
+            <div class="dates">c. 1505–1585</div>
+            <p class="description">The English composer who survived four monarchs and the Reformation — from the 40-voice <em>Spem in alium</em> to the plain beauty of the English anthem.</p>
+            <div class="meta"><span class="tag blue">English</span><span class="tag amber">Spem in alium</span><span class="tag">Canon</span></div>
+            <a href="Tallis/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 13 Palestrina -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-green);"></div>
+            <span class="number">13</span>
+            <h3>Palestrina</h3>
+            <div class="dates">c. 1525–1594</div>
+            <p class="description">The serene voice of the Counter-Reformation — flawless, balanced counterpoint whose controlled dissonance became the very textbook of the art.</p>
+            <div class="meta"><span class="tag green">Roman School</span><span class="tag">Counterpoint</span><span class="tag amber">Missa Papae Marcelli</span></div>
+            <a href="Palestrina/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 14 Lassus -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-purple);"></div>
+            <span class="number">14</span>
+            <h3>Orlando di Lasso</h3>
+            <div class="dates">1532–1594</div>
+            <p class="description">The cosmopolitan genius of the late Renaissance — over two thousand works in every language and genre, vivid, pictorial and daringly chromatic.</p>
+            <div class="meta"><span class="tag purple">Chromaticism</span><span class="tag">Motet</span><span class="tag rose">Madrigal</span></div>
+            <a href="Lassus/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 15 Victoria -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-rose);"></div>
+            <span class="number">15</span>
+            <h3>Tomás Luis de Victoria</h3>
+            <div class="dates">c. 1548–1611</div>
+            <p class="description">The Spanish mystic — sacred music only, burning with the ardour of the age of St Teresa: the great Requiem, <em>O magnum mysterium</em>, the Tenebrae Responsories.</p>
+            <div class="meta"><span class="tag rose">Spanish</span><span class="tag">Mystical</span><span class="tag blue">Requiem</span></div>
+            <a href="Victoria/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 16 Byrd -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">16</span>
+            <h3>William Byrd</h3>
+            <div class="dates">c. 1540–1623</div>
+            <p class="description">Master of two worlds — glorious Latin Masses for the secret Catholic rite and English anthems for the Chapel Royal, and a founder of the keyboard virginalist school.</p>
+            <div class="meta"><span class="tag amber">Recusant</span><span class="tag">Latin Masses</span><span class="tag blue">Virginals</span></div>
+            <a href="Byrd/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 17 Gesualdo -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-rose);"></div>
+            <span class="number">17</span>
+            <h3>Carlo Gesualdo</h3>
+            <div class="dates">c. 1566–1613</div>
+            <p class="description">The prince who murdered and then poured his anguish into music of chromaticism so extreme it would not be heard again for three hundred years.</p>
+            <div class="meta"><span class="tag rose">Chromaticism</span><span class="tag purple">Madrigal</span><span class="tag">Tenebrae</span></div>
+            <a href="Gesualdo/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <!-- 18 Dowland -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-blue);"></div>
+            <span class="number">18</span>
+            <h3>John Dowland</h3>
+            <div class="dates">1563–1626</div>
+            <p class="description">The melancholy lutenist — <em>Flow, my tears</em>, the falling "tear" motif, and the English ayre. "Semper Dowland, semper dolens." With a guide to lute tablature.</p>
+            <div class="meta"><span class="tag blue">Lute</span><span class="tag rose">Ayre</span><span class="tag">Tablature</span></div>
+            <a href="Dowland/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <div class="section-divider" style="grid-column: 1 / -1;">Into the Baroque · c. 1600</div>
+
+        <!-- 19 Monteverdi -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-amber);"></div>
+            <span class="number">19</span>
+            <h3>Claudio Monteverdi</h3>
+            <div class="dates">1567–1643</div>
+            <p class="description">The doorway to the Baroque — the <em>seconda pratica</em>, the last great madrigals, the first great opera (<em>L'Orfeo</em>), and the birth of the basso continuo.</p>
+            <div class="meta"><span class="tag amber">Seconda pratica</span><span class="tag green">Opera</span><span class="tag">Continuo</span></div>
+            <a href="Monteverdi/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+        <div class="section-divider" style="grid-column: 1 / -1;">Reading the Notation</div>
+
+        <!-- 20 Notation -->
+        <div class="card">
+            <div class="accent-bar" style="background: var(--accent-blue);"></div>
+            <span class="number">20</span>
+            <h3>Reading Early Music Notation</h3>
+            <div class="dates">From Gesture to Grid</div>
+            <p class="description">The full guide to how Western notation was invented and how to read every stage of it — neumes, the Guidonian staff, square notation, mensural notation, and tablature — with playable examples.</p>
+            <div class="meta"><span class="tag blue">Neumes</span><span class="tag amber">Mensural</span><span class="tag">Tablature</span></div>
+            <a href="Notation/" class="launch-btn"><svg viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z"/></svg>Launch</a>
+        </div>
+
+    </div>
+</main>
+
+<!-- Lineage map -->
+<section class="influence-section">
+    <h2>A Thousand Years of Lineage</h2>
+    <p class="section-intro">
+        Early music is a single, unbroken conversation. Chant becomes polyphony at Notre-Dame; the Ars Nova
+        systematises rhythm; the English "sweetness" crosses to Burgundy; the Franco-Flemish masters carry
+        imitation to its summit in Josquin; and the golden age fans out across Rome, Munich, Spain and England
+        before Monteverdi opens the door to the Baroque. The map traces the main lines of influence.
+    </p>
+    <div class="influence-map">
+        <svg viewBox="0 0 1180 560" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+            <!-- era dividers -->
+            <g stroke="#2a2a3a" stroke-width="0.5" stroke-dasharray="4,4">
+                <line x1="150" y1="20" x2="150" y2="520"/>
+                <line x1="340" y1="20" x2="340" y2="520"/>
+                <line x1="520" y1="20" x2="520" y2="520"/>
+                <line x1="710" y1="20" x2="710" y2="520"/>
+                <line x1="960" y1="20" x2="960" y2="520"/>
+            </g>
+
+            <!-- ══ CONNECTION LINES ══ -->
+            <!-- Chant -> Notre-Dame (organum on chant) -->
+            <line x1="70" y1="60" x2="70" y2="220" stroke="#d4a053" stroke-width="1.6" opacity="0.55"/>
+            <!-- Chant -> Machaut (chant basis of polyphony) -->
+            <line x1="70" y1="60" x2="250" y2="110" stroke="#d4a053" stroke-width="0.6" opacity="0.15" stroke-dasharray="4,3"/>
+            <!-- Notre-Dame -> Machaut -->
+            <line x1="70" y1="220" x2="250" y2="110" stroke="#4ecca3" stroke-width="1.4" opacity="0.5"/>
+            <!-- Troubadours -> Machaut (secular song / formes fixes) -->
+            <line x1="70" y1="300" x2="250" y2="110" stroke="#cf7272" stroke-width="1.2" opacity="0.4"/>
+            <!-- Machaut -> Du Fay -->
+            <line x1="250" y1="110" x2="430" y2="180" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <!-- Landini -> Du Fay (Italian influence) -->
+            <line x1="250" y1="210" x2="430" y2="180" stroke="#4ecca3" stroke-width="0.6" opacity="0.2" stroke-dasharray="4,3"/>
+            <!-- Dunstaple -> Du Fay (contenance angloise) -->
+            <line x1="430" y1="90" x2="430" y2="180" stroke="#5b8cd4" stroke-width="1.6" opacity="0.55"/>
+            <!-- Dunstaple -> Binchois -->
+            <line x1="430" y1="90" x2="430" y2="270" stroke="#5b8cd4" stroke-width="1.0" opacity="0.35"/>
+            <!-- Du Fay -> Ockeghem -->
+            <line x1="430" y1="180" x2="610" y2="140" stroke="#d4a053" stroke-width="1.4" opacity="0.5"/>
+            <!-- Binchois -> Ockeghem (deploration) -->
+            <line x1="430" y1="270" x2="610" y2="140" stroke="#cf7272" stroke-width="1.0" opacity="0.35"/>
+            <!-- Ockeghem -> Josquin -->
+            <line x1="610" y1="140" x2="610" y2="240" stroke="#9b72cf" stroke-width="1.6" opacity="0.55"/>
+            <!-- Josquin -> High/Late Renaissance masters -->
+            <line x1="610" y1="240" x2="820" y2="130" stroke="#d4a053" stroke-width="1.2" opacity="0.4"/>
+            <line x1="610" y1="240" x2="820" y2="200" stroke="#d4a053" stroke-width="1.0" opacity="0.32"/>
+            <line x1="610" y1="240" x2="820" y2="270" stroke="#d4a053" stroke-width="1.0" opacity="0.32"/>
+            <line x1="610" y1="240" x2="820" y2="340" stroke="#d4a053" stroke-width="0.9" opacity="0.28"/>
+            <line x1="610" y1="240" x2="820" y2="410" stroke="#d4a053" stroke-width="0.8" opacity="0.25"/>
+            <line x1="610" y1="240" x2="820" y2="60"  stroke="#d4a053" stroke-width="0.8" opacity="0.22"/>
+            <!-- Tallis -> Byrd (teacher) -->
+            <line x1="820" y1="60" x2="820" y2="340" stroke="#5b8cd4" stroke-width="1.2" opacity="0.4"/>
+            <!-- Renaissance -> Monteverdi (prima pratica) -->
+            <line x1="820" y1="200" x2="1080" y2="300" stroke="#4ecca3" stroke-width="0.9" opacity="0.3"/>
+            <line x1="820" y1="410" x2="1080" y2="300" stroke="#cf7272" stroke-width="0.8" opacity="0.28"/>
+            <line x1="610" y1="240" x2="1080" y2="300" stroke="#9b72cf" stroke-width="0.6" opacity="0.18" stroke-dasharray="4,3"/>
+
+            <!-- ══ ERA LABELS ══ -->
+            <text x="70"  y="548" fill="#6a6a7a" font-size="9" text-anchor="middle" letter-spacing="0.08em">EARLY MEDIEVAL</text>
+            <text x="250" y="548" fill="#6a6a7a" font-size="9" text-anchor="middle" letter-spacing="0.08em">ARS NOVA · TRECENTO</text>
+            <text x="440" y="548" fill="#6a6a7a" font-size="9" text-anchor="middle" letter-spacing="0.08em">ENGLISH · BURGUNDIAN</text>
+            <text x="615" y="548" fill="#6a6a7a" font-size="9" text-anchor="middle" letter-spacing="0.08em">FRANCO-FLEMISH</text>
+            <text x="835" y="548" fill="#6a6a7a" font-size="9" text-anchor="middle" letter-spacing="0.08em">HIGH · LATE RENAISSANCE</text>
+            <text x="1070" y="548" fill="#6a6a7a" font-size="9" text-anchor="middle" letter-spacing="0.08em">BAROQUE</text>
+
+            <!-- ══ NODES ══ -->
+            <!-- Early Medieval -->
+            <circle cx="70" cy="60" r="19" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="70" y="58" fill="#e8e6e3" font-size="7.5" font-weight="700" text-anchor="middle">Chant</text>
+            <text x="70" y="68" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 900</text>
+            <circle cx="70" cy="140" r="19" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="70" y="138" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Hildegard</text>
+            <text x="70" y="148" fill="#6a6a7a" font-size="6" text-anchor="middle">1098–1179</text>
+            <circle cx="70" cy="220" r="19" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="70" y="215" fill="#e8e6e3" font-size="6.5" font-weight="700" text-anchor="middle">Notre-</text>
+            <text x="70" y="224" fill="#e8e6e3" font-size="6.5" font-weight="700" text-anchor="middle">Dame</text>
+            <text x="70" y="233" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1200</text>
+            <circle cx="70" cy="300" r="19" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="70" y="295" fill="#e8e6e3" font-size="6.5" font-weight="700" text-anchor="middle">Trouba-</text>
+            <text x="70" y="304" fill="#e8e6e3" font-size="6.5" font-weight="700" text-anchor="middle">dours</text>
+            <text x="70" y="313" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1100–1300</text>
+
+            <!-- Ars Nova / Trecento -->
+            <circle cx="250" cy="110" r="20" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="250" y="108" fill="#e8e6e3" font-size="7.5" font-weight="700" text-anchor="middle">Machaut</text>
+            <text x="250" y="118" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1300–77</text>
+            <circle cx="250" cy="210" r="19" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="250" y="208" fill="#e8e6e3" font-size="7.5" font-weight="700" text-anchor="middle">Landini</text>
+            <text x="250" y="218" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1325–97</text>
+
+            <!-- English / Burgundian -->
+            <circle cx="430" cy="90" r="19" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="430" y="88" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Dunstaple</text>
+            <text x="430" y="98" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1390–1453</text>
+            <circle cx="430" cy="180" r="20" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="430" y="178" fill="#e8e6e3" font-size="7.5" font-weight="700" text-anchor="middle">Du Fay</text>
+            <text x="430" y="188" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1397–1474</text>
+            <circle cx="430" cy="270" r="19" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="430" y="268" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Binchois</text>
+            <text x="430" y="278" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1400–60</text>
+
+            <!-- Franco-Flemish -->
+            <circle cx="610" cy="140" r="20" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="610" y="138" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Ockeghem</text>
+            <text x="610" y="148" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1410–97</text>
+            <circle cx="610" cy="240" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="610" y="238" fill="#e8e6e3" font-size="8" font-weight="700" text-anchor="middle">Josquin</text>
+            <text x="610" y="248" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1450–1521</text>
+
+            <!-- High / Late Renaissance -->
+            <circle cx="820" cy="60" r="18" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="820" y="58" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Tallis</text>
+            <text x="820" y="68" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1505–85</text>
+            <circle cx="820" cy="130" r="18" fill="#161622" stroke="#4ecca3" stroke-width="1.2"/>
+            <text x="820" y="128" fill="#e8e6e3" font-size="6.5" font-weight="700" text-anchor="middle">Palestrina</text>
+            <text x="820" y="138" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1525–94</text>
+            <circle cx="820" cy="200" r="18" fill="#161622" stroke="#9b72cf" stroke-width="1.2"/>
+            <text x="820" y="198" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Lassus</text>
+            <text x="820" y="208" fill="#6a6a7a" font-size="6" text-anchor="middle">1532–94</text>
+            <circle cx="820" cy="270" r="18" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="820" y="268" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Victoria</text>
+            <text x="820" y="278" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1548–1611</text>
+            <circle cx="820" cy="340" r="18" fill="#161622" stroke="#d4a053" stroke-width="1.2"/>
+            <text x="820" y="338" fill="#e8e6e3" font-size="7.5" font-weight="700" text-anchor="middle">Byrd</text>
+            <text x="820" y="348" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1540–1623</text>
+            <circle cx="820" cy="410" r="18" fill="#161622" stroke="#cf7272" stroke-width="1.2"/>
+            <text x="820" y="408" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Gesualdo</text>
+            <text x="820" y="418" fill="#6a6a7a" font-size="6" text-anchor="middle">c. 1566–1613</text>
+            <circle cx="820" cy="480" r="18" fill="#161622" stroke="#5b8cd4" stroke-width="1.2"/>
+            <text x="820" y="478" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Dowland</text>
+            <text x="820" y="488" fill="#6a6a7a" font-size="6" text-anchor="middle">1563–1626</text>
+
+            <!-- Baroque -->
+            <circle cx="1080" cy="300" r="22" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
+            <text x="1080" y="296" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">Monte-</text>
+            <text x="1080" y="305" fill="#e8e6e3" font-size="7" font-weight="700" text-anchor="middle">verdi</text>
+            <text x="1080" y="316" fill="#6a6a7a" font-size="6" text-anchor="middle">1567–1643</text>
+        </svg>
+    </div>
+    <div class="influence-legend">
+        <div class="legend-item"><span class="legend-line" style="background:#d4a053;"></span>Direct lineage / cantus-firmus tradition</div>
+        <div class="legend-item"><span class="legend-line" style="background:#4ecca3;"></span>Polyphonic technique</div>
+        <div class="legend-item"><span class="legend-line" style="background:#5b8cd4;"></span>English influence / teacher–pupil</div>
+        <div class="legend-item"><span class="legend-line" style="background:#cf7272;"></span>Secular song / homage</div>
+        <div class="legend-item"><span class="legend-line" style="background:#9b72cf; opacity:0.6;"></span>Looser influence</div>
+    </div>
+</section>
+
+<footer>
+    Single-file HTML · Reveal.js · Web Audio synthesis · Zero build step · GitHub Pages<br>
+    Part of <a href="https://github.com/BrendanJamesLynskey/Miscellaneous">Miscellaneous</a> ·
+    A companion to <a href="https://brendanjameslynskey.github.io/Psychology_Philosophy/">Psychology &amp; Philosophy</a>
+</footer>
+
+</body>
+</html>

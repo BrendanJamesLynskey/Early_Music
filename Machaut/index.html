@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guillaume de Machaut — The Ars Nova &amp; the First Composed Mass</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
+        <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
+            <!-- A five-line staff with mensural note shapes and an isorhythmic talea bracket -->
+            <g stroke="#6a6a7a" stroke-width="1">
+                <line x1="20" y1="36" x2="340" y2="36"/>
+                <line x1="20" y1="52" x2="340" y2="52"/>
+                <line x1="20" y1="68" x2="340" y2="68"/>
+                <line x1="20" y1="84" x2="340" y2="84"/>
+                <line x1="20" y1="100" x2="340" y2="100"/>
+            </g>
+            <!-- mensural notes: longa, breve, semibreve, minima -->
+            <!-- longa (tall body + stem) -->
+            <rect x="52" y="60" width="12" height="12" fill="#d4a053"/><line x1="64" y1="72" x2="64" y2="98" stroke="#d4a053" stroke-width="2"/>
+            <!-- breve (square) -->
+            <rect x="102" y="52" width="12" height="12" fill="#e8e6e3"/>
+            <!-- semibreve (lozenge) -->
+            <path d="M 150 66 l 8 -8 l 8 8 l -8 8 z" fill="#4ecca3"/>
+            <!-- minima (lozenge + upward stem) -->
+            <path d="M 196 74 l 7 -7 l 7 7 l -7 7 z" fill="#9b72cf"/><line x1="210" y1="67" x2="210" y2="44" stroke="#9b72cf" stroke-width="2"/>
+            <!-- breve + longa closing -->
+            <rect x="250" y="60" width="12" height="12" fill="#e8e6e3"/>
+            <rect x="292" y="52" width="12" height="12" fill="#d4a053"/><line x1="304" y1="64" x2="304" y2="90" stroke="#d4a053" stroke-width="2"/>
+            <!-- talea bracket beneath -->
+            <path d="M 40 120 L 40 126 L 320 126 L 320 120" fill="none" stroke="#cf7272" stroke-width="1.5"/>
+            <text x="180" y="138" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10">one talea &#183; repeated</text>
+        </svg>
+    </div>
+    <h1>Guillaume de Machaut</h1>
+    <div class="subtitle">c. 1300–1377 · The French Ars Nova</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The greatest composer — and one of the greatest poets — of the fourteenth century:
+        architect of measured rhythm, of the first Mass composed by one hand, and of the
+        courtly songs that would rule European music for a hundred years.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · No. 05 — The Ars Nova</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHO WAS MACHAUT ═══════════════════ -->
+<section>
+    <span class="section-number">01 — THE MAN</span>
+    <h2>Poet, Priest &amp; Composer</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-amber">Guillaume de Machaut</span> was a cleric who spent his early career as secretary to
+        <span class="accent-amber">John of Luxembourg</span>, the blind warrior-king of Bohemia, travelling across Europe in his service.
+        He was later made a <span class="accent-amber">canon of Reims</span>, where he lived out his long life. He was famous in his own
+        time as much for his verse as for his music — and no medieval composer is so completely preserved.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#9998;</span><h4 class="accent-amber">Poet</h4><p>A master of French narrative and lyric verse whose poems Chaucer read and imitated.</p></div>
+        <div class="card"><span class="icon accent-green">&#9834;</span><h4 class="accent-green">Composer</h4><p>The central musical figure of the Ars Nova — songs, motets and the famous Mass.</p></div>
+        <div class="card"><span class="icon accent-purple">&#10013;</span><h4 class="accent-purple">Canon of Reims</h4><p>A churchman of the great cathedral city, secure enough to compose freely for decades.</p></div>
+        <div class="card"><span class="icon accent-blue">&#128220;</span><h4 class="accent-blue">His own editor</h4><p>He personally supervised lavish manuscripts gathering his complete works — a rarity for the age.</p></div>
+    </div>
+    <p class="note-text">Because he curated his own collected works, we can read Machaut's music and poetry from sources close to the composer himself.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: THE ARS NOVA ═══════════════════ -->
+<section>
+    <span class="section-number">02 — THE NEW ART</span>
+    <h2>Ars Nova — "The New Art"</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.46em !important;">
+                Around <span class="accent-amber">1322</span> a treatise associated with <span class="accent-amber">Philippe de Vitry</span> — poet, bishop and
+                composer — gave a name to a musical revolution: <em>Ars Nova</em>, the "new art", set against the older
+                <span class="accent-purple">Ars Antiqua</span> of the thirteenth century.
+            </p>
+            <p style="font-size:0.46em !important;">
+                Its heart was <span class="accent-green">rhythm</span>. Where the old notation could only really measure music in threes
+                (thought "perfect", after the Trinity), the new art admitted <strong>duple</strong> as well as triple division at
+                every level, and introduced <strong>smaller, faster note values</strong>. For the first time, rhythm could be written
+                — and thought — with real precision.
+            </p>
+        </div>
+        <div>
+            <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Ars Antiqua</h4><p>13th c. · Notre-Dame &amp; the early motet. Rhythm mostly in triple "perfect" groupings; larger note values.</p></div>
+            <div class="card" style="margin-top:0.45em; border-top:2px solid var(--accent-green);"><h4 class="accent-green">Ars Nova</h4><p>14th c. · Duple <em>and</em> triple division at each level; new short values; intricate syncopation and isorhythm.</p></div>
+        </div>
+    </div>
+    <p class="note-text">Machaut did not invent the Ars Nova, but he became its supreme practitioner — the composer in whom its ideas found their fullest voice.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: LIFE & CAREER ═══════════════════ -->
+<section>
+    <span class="section-number">03 — A LONG LIFE</span>
+    <h2>Life &amp; Career</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Machaut's life spans the flowering of the Ars Nova and the calamities of the fourteenth century —
+        the Hundred Years' War and the Black Death — through all of which he kept composing at Reims.
+    </p>
+    <div style="max-width: 82%; margin: 0.3em auto;">
+        <div class="timeline-item"><span class="year">c. 1300</span><span class="event"><strong>Born in the Champagne region</strong>Into modest circumstances; educated for the Church, taking minor orders.</span></div>
+        <div class="timeline-item"><span class="year">c. 1323</span><span class="event"><strong>Secretary to John of Luxembourg</strong>Enters the service of the King of Bohemia, travelling widely across Europe in his retinue.</span></div>
+        <div class="timeline-item"><span class="year">c. 1340</span><span class="event"><strong>Canon of Reims</strong>Settles into a cathedral benefice that supports the rest of his creative life.</span></div>
+        <div class="timeline-item"><span class="year">c. 1360s</span><span class="event"><strong>The collected manuscripts</strong>Oversees deluxe volumes gathering his complete poetry and music in a chosen order.</span></div>
+        <div class="timeline-item"><span class="year">1377</span><span class="event"><strong>Dies at Reims</strong>Mourned as the age's supreme poet-musician; his songs circulate across Europe for generations.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: MENSURAL NOTATION (note values) ═══════════════════ -->
+<section>
+    <span class="section-number">04 — NOTATION · I</span>
+    <h2>Reading Ars Nova Notation: The Note Values</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        In <span class="accent-amber">mensural notation</span> the <em>shape</em> of a note fixes its <em>duration</em>. The Ars Nova extended the
+        older scale of durations downward, adding the fast <span class="accent-purple">minim</span> — the smallest value of the age.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1.2">
+                <line x1="40" y1="70" x2="860" y2="70"/>
+                <line x1="40" y1="88" x2="860" y2="88"/>
+                <line x1="40" y1="106" x2="860" y2="106"/>
+                <line x1="40" y1="124" x2="860" y2="124"/>
+                <line x1="40" y1="142" x2="860" y2="142"/>
+            </g>
+            <g font-family="DM Sans">
+                <!-- Longa -->
+                <rect x="110" y="97" width="16" height="16" fill="#d4a053"/><line x1="126" y1="113" x2="126" y2="150" stroke="#d4a053" stroke-width="2"/>
+                <text x="118" y="42" text-anchor="middle" fill="#d4a053" font-size="14" font-weight="700">Longa</text>
+                <text x="118" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">longest · = 2 or 3 breves</text>
+                <!-- Breve -->
+                <rect x="300" y="97" width="16" height="16" fill="#e8e6e3"/>
+                <text x="308" y="42" text-anchor="middle" fill="#e8e6e3" font-size="14" font-weight="700">Breve</text>
+                <text x="308" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">= 2 or 3 semibreves</text>
+                <!-- Semibreve -->
+                <path d="M 480 105 l 10 -10 l 10 10 l -10 10 z" fill="#4ecca3"/>
+                <text x="490" y="42" text-anchor="middle" fill="#4ecca3" font-size="14" font-weight="700">Semibreve</text>
+                <text x="490" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">= 2 or 3 minims</text>
+                <!-- Minim -->
+                <path d="M 660 113 l 9 -9 l 9 9 l -9 9 z" fill="#9b72cf"/><line x1="678" y1="104" x2="678" y2="66" stroke="#9b72cf" stroke-width="2"/>
+                <text x="672" y="42" text-anchor="middle" fill="#9b72cf" font-size="14" font-weight="700">Minim</text>
+                <text x="672" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">the new, fast value</text>
+                <!-- arrows of subdivision -->
+                <text x="800" y="110" fill="#6a6a7a" font-size="26">&#8600;</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> read left to right on the staff; a note's shape tells you how long to hold it. A longa contains breves, a breve semibreves, a semibreve minims — but whether each contains <em>two</em> or <em>three</em> of the next is decided by the mensuration sign (next slide). There are still <em>no bar-lines</em>.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: MENSURATION & PROLATION ═══════════════════ -->
+<section>
+    <span class="section-number">05 — NOTATION · II</span>
+    <h2>Perfect &amp; Imperfect: Mensuration</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The great Ars Nova question at every level was simple: does this note divide into <span class="accent-green">three</span> or into
+        <span class="accent-blue">two</span>? A <em>mensuration sign</em> at the start of the piece answered it.
+    </p>
+    <div class="two-col">
+        <div>
+            <div class="diagram-container" style="max-width:100%;">
+                <svg viewBox="0 0 360 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                    <g font-family="DM Sans">
+                        <!-- perfect: full circle -->
+                        <circle cx="90" cy="60" r="30" fill="none" stroke="#4ecca3" stroke-width="4"/>
+                        <text x="90" y="118" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="700">&#9679; Perfect</text>
+                        <text x="90" y="138" text-anchor="middle" fill="#9a9a9a" font-size="11">divides into 3</text>
+                        <!-- imperfect: semicircle (C) -->
+                        <path d="M 290 34 a 30 30 0 1 0 0 52" fill="none" stroke="#5b8cd4" stroke-width="4"/>
+                        <text x="272" y="118" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="700">&#9686; Imperfect</text>
+                        <text x="272" y="138" text-anchor="middle" fill="#9a9a9a" font-size="11">divides into 2</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div>
+            <p style="font-size:0.44em !important; text-align:left;">
+                A <strong>full circle</strong> meant <span class="accent-green">perfect</span> time — the breve worth three semibreves. A
+                <strong>broken circle</strong> (a semicircle) meant <span class="accent-blue">imperfect</span> time — the breve worth two.
+                The division of the semibreve into minims was called <em>prolation</em> (major = 3, minor = 2), sometimes marked by a dot inside the sign.
+            </p>
+            <p style="font-size:0.44em !important; text-align:left;">
+                That broken circle is the direct ancestor of our modern <strong>"C" time signature</strong>.
+            </p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, MACH_TRIPLE, {timbre:'reed', bpm:150, temperament:'pythagorean', tonic:'D3', reverb:0.45})">&#9654; Same notes in triple (perfect)</button>
+        <button class="audio-btn blue" onclick="EM.toggle(this, MACH_DUPLE, {timbre:'reed', bpm:150, temperament:'pythagorean', tonic:'D3', reverb:0.45})">&#9654; ...and in duple (imperfect)</button>
+    </div>
+    <p class="audio-caption">The same pitches grouped by threes, then by twos — hear how the mensuration changes the lilt</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: ISORHYTHM ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE GREAT DEVICE</span>
+    <h2>Isorhythm: Talea &amp; Color</h2>
+    <div class="separator"></div>
+    <p style="max-width: 88%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        The signature intellectual device of the Ars Nova motet. In the slow tenor voice, a repeating <span class="accent-rose">rhythmic
+        pattern</span> — the <em>talea</em> — is laid over a repeating <span class="accent-amber">melodic pattern</span> — the <em>color</em>.
+        When the two are different lengths, they slip out of phase and realign only after several statements, giving the music a vast hidden architecture.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="JetBrains Mono" font-size="12">
+                <!-- COLOR row: 6 pitches -->
+                <text x="20" y="46" fill="#d4a053" font-size="12" font-weight="700">color</text>
+                <g fill="#d4a053">
+                    <circle cx="120" cy="42" r="9"/><circle cx="220" cy="42" r="9"/><circle cx="320" cy="42" r="9"/>
+                    <circle cx="420" cy="42" r="9"/><circle cx="520" cy="42" r="9"/><circle cx="620" cy="42" r="9"/>
+                    <circle cx="720" cy="42" r="9" opacity="0.45"/><circle cx="820" cy="42" r="9" opacity="0.45"/>
+                </g>
+                <!-- TALEA row: 4 rhythm slots, repeated -->
+                <text x="20" y="100" fill="#cf7272" font-size="12" font-weight="700">talea</text>
+                <g fill="none" stroke="#cf7272" stroke-width="2">
+                    <rect x="100" y="86" width="130" height="20" rx="3"/><rect x="240" y="86" width="130" height="20" rx="3"/>
+                    <rect x="380" y="86" width="130" height="20" rx="3"/><rect x="520" y="86" width="130" height="20" rx="3"/>
+                    <rect x="660" y="86" width="130" height="20" rx="3"/>
+                </g>
+                <text x="165" y="100" fill="#cf7272" text-anchor="middle">T1</text><text x="305" y="100" fill="#cf7272" text-anchor="middle">T2</text>
+                <text x="445" y="100" fill="#cf7272" text-anchor="middle">T3</text><text x="585" y="100" fill="#cf7272" text-anchor="middle">T4</text>
+                <text x="725" y="100" fill="#cf7272" text-anchor="middle">T5</text>
+                <!-- alignment note -->
+                <text x="20" y="138" fill="#9a9a9a" font-size="11">6-note color &#215; 4-slot talea &#8594; patterns realign only after their least common multiple</text>
+            </g>
+        </svg>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [MACH_TENOR, MACH_UPPER], {timbre:'organ', bpm:104, temperament:'pythagorean', tonic:'D3', reverb:0.5})">&#9654; Hear an isorhythmic tenor (color stated twice)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+isorhythmic+motet">&#9834; Listen: a Machaut motet (recording)</a>
+    </div>
+    <p class="audio-caption">A repeating tenor pattern under a moving upper voice — the tenor's rhythm returns identically the second time round</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: THE ISORHYTHMIC MOTET ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE MOTET</span>
+    <h2>The Isorhythmic Motet</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Machaut left <span class="accent-amber">23 motets</span> — dense, learned works in which two upper voices sing different texts (often
+        one French, one Latin) at once, over an isorhythmic tenor drawn from chant. The motet was the century's most cerebral
+        genre: sacred and secular, sound and number, woven into a single structure.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Polytextual</h4><p>Two upper voices carry independent poems simultaneously — layered meanings for a listener who knew both.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-rose);"><h4 class="accent-rose">Isorhythmic tenor</h4><p>The foundation is a chant fragment shaped by talea and color — audible order beneath the words.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Number as beauty</h4><p>Proportion and repetition are the point: architecture you perceive over time rather than a tune you hum.</p></div>
+    </div>
+    <p class="note-text">To medieval ears this structural rigour was not dry but sublime — an image of the ordered cosmos rendered in sound.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: MESSE DE NOSTRE DAME ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE MASS</span>
+    <h2>La Messe de Nostre Dame</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Machaut's most celebrated achievement: the first <span class="accent-amber">complete setting of the Mass Ordinary</span> by a single
+        named composer, conceived as one <span class="accent-green">unified</span> four-voice work. Earlier composers had set the Ordinary
+        movements piecemeal; Machaut bound them into a coherent whole — a landmark that points straight toward the cyclic Masses of
+        the Renaissance.
+    </p>
+    <div class="card-grid cols-3" style="max-width:92%;">
+        <div class="card"><h4 class="accent-amber">Kyrie</h4><p>Built over a chant tenor in Machaut's grave isorhythmic manner.</p></div>
+        <div class="card"><h4 class="accent-amber">Gloria</h4><p>Largely syllabic and chordal, so the long text stays intelligible.</p></div>
+        <div class="card"><h4 class="accent-amber">Credo</h4><p>The longest text, set with the same clear, declamatory approach.</p></div>
+        <div class="card"><h4 class="accent-amber">Sanctus</h4><p>Returns to florid, isorhythmic writing for the acclamation.</p></div>
+        <div class="card"><h4 class="accent-amber">Agnus Dei</h4><p>Threefold plea for mercy, richly worked in four voices.</p></div>
+        <div class="card"><h4 class="accent-amber">Ite, missa est</h4><p>The dismissal — Machaut sets even the closing formula.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+Messe+de+Nostre+Dame">&#9834; Listen: Messe de Nostre Dame (recording)</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: THE FORMES FIXES ═══════════════════ -->
+<section>
+    <span class="section-number">09 — SECULAR SONG</span>
+    <h2>The <em>Formes Fixes</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Away from the church, Machaut perfected the <span class="accent-amber">fixed forms</span> of French courtly song — patterns of
+        refrain and verse that fused poem and music and would govern secular composition for the next century.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Ballade</h4><p>Grand and aristocratic: several stanzas, each ending in the same refrain line.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Rondeau</h4><p>A single refrain that circles back, interleaved with new lines — compact and elegant.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Virelai</h4><p>Refrain–verse–refrain, dance-like and often sung to a single lilting line.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">Lai</h4><p>The longest and most elaborate: many contrasting stanzas, a virtuoso's form.</p></div>
+    </div>
+    <p class="note-text">Most are for one to three voices; many survive both as monophonic melodies and in polyphonic settings by Machaut himself.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: DOUCE DAME JOLIE ═══════════════════ -->
+<section>
+    <span class="section-number">10 — A FAMOUS SONG</span>
+    <h2><em>Douce dame jolie</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.46em !important;">
+        Machaut's best-loved <span class="accent-purple">virelai</span> — "Sweet, pretty lady" — is a monophonic song of courtly love, its
+        catchy refrain lilting in a clear triple rhythm. It shows the other face of the great architect of motets: a melodist of
+        immediate, dancing charm.
+    </p>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, MACH_VIRELAI, {timbre:'voice', bpm:132, temperament:'pythagorean', tonic:'D3', reverb:0.45, legato:0.92})">&#9654; Hear a virelai lilt (in the style of <em>Douce dame</em>)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+Douce+dame+jolie">&#9834; Listen: Douce dame jolie (recording)</a>
+    </div>
+    <p class="audio-caption">A synthesised single voice · a lilting triple-time refrain in the first mode, in the manner of Machaut's virelai</p>
+    <p class="note-text">The tune here is an idiomatic reconstruction of the virelai's spirit, not a transcription — listen for the dance-like swing of threes and the tender fall to the final.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: MA FIN EST MON COMMENCEMENT ═══════════════════ -->
+<section>
+    <span class="section-number">11 — THE PUZZLE SONG</span>
+    <h2><em>Ma fin est mon commencement</em></h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Machaut's most ingenious <span class="accent-green">rondeau</span> — "My end is my beginning" — is a musical palindrome. The text
+        describes exactly what the music does: one voice sings a melody that is then sung <em>backwards</em>, and the tenor is its own retrograde.
+        Structure and meaning become one.
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g stroke="#6a6a7a" stroke-width="1.1">
+                <line x1="60" y1="50" x2="840" y2="50"/>
+                <line x1="60" y1="68" x2="840" y2="68"/>
+                <line x1="60" y1="86" x2="840" y2="86"/>
+                <line x1="60" y1="104" x2="840" y2="104"/>
+                <line x1="60" y1="122" x2="840" y2="122"/>
+            </g>
+            <!-- forward half (left, amber) -->
+            <g fill="#d4a053">
+                <circle cx="110" cy="104" r="7"/><circle cx="170" cy="86" r="7"/><circle cx="230" cy="68" r="7"/>
+                <circle cx="290" cy="50" r="7"/><circle cx="350" cy="68" r="7"/><circle cx="410" cy="86" r="7"/>
+            </g>
+            <!-- mirror axis -->
+            <line x1="450" y1="34" x2="450" y2="134" stroke="#4ecca3" stroke-width="2" stroke-dasharray="4 4"/>
+            <text x="450" y="28" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="11">mirror</text>
+            <!-- backward half (right, green — retrograde) -->
+            <g fill="#4ecca3">
+                <circle cx="490" cy="86" r="7"/><circle cx="550" cy="68" r="7"/><circle cx="610" cy="50" r="7"/>
+                <circle cx="670" cy="68" r="7"/><circle cx="730" cy="86" r="7"/><circle cx="790" cy="104" r="7"/>
+            </g>
+            <text x="235" y="146" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="11">melody forwards &#8594;</text>
+            <text x="640" y="146" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="11">&#8592; the same melody in reverse</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> the notes to the left of the green axis, read forwards, are mirrored by the notes to its right, read backwards — a retrograde. The song literally performs its own title.</p>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+Ma+fin+est+mon+commencement">&#9834; Listen: Ma fin est mon commencement</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: POET & MANUSCRIPTS ═══════════════════ -->
+<section>
+    <span class="section-number">12 — WORD &amp; BOOK</span>
+    <h2>The Poet &amp; the Curated Book</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        To his contemporaries Machaut was, first, a <span class="accent-amber">poet</span> — author of long narrative <em>dits</em> and of the lyric
+        verse that fed his songs. His conviction that true art must spring from genuine <em>feeling</em> shaped a new, personal voice
+        in French poetry, admired and imitated by Chaucer and Deschamps.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The poet-composer</h4>
+            <p>Machaut usually wrote both the words and the music of his songs — poem and melody conceived together, not one fitted to the other.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">His own anthologist</h4>
+            <p>He supervised richly illuminated manuscripts of his complete works, arranged by genre in an order he chose — an author shaping his own legacy centuries before it was common.</p>
+        </div>
+    </div>
+    <p class="note-text">This self-curation is why Machaut's output survives so fully and reliably — a gift to every later reader and performer.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — LISTENING GUIDE</span>
+    <h2>How to Listen to Machaut</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Feel the <span class="accent-amber">rhythm as the drama</span> — syncopations and cross-accents are the point of the new art, not decoration.</li>
+        <li>In the motets, don't chase a single tune: let the <span class="accent-rose">slow tenor</span> anchor you and hear the upper voices circle above it.</li>
+        <li>Listen for the <span class="accent-green">open, ringing sonorities</span> — fifths and octaves at the cadences, tuned pure (Pythagorean), sounding hollow and bright to modern ears.</li>
+        <li>In the songs, follow the <span class="accent-purple">refrain</span>: hearing it return is how the <em>formes fixes</em> shape the music.</li>
+    </ul>
+    <p class="note-text">Machaut's harmony is not our harmony: thirds are restless, not sweet, and the goal of every phrase is the pure fifth or octave.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: RECORDINGS & PERFORMERS ═══════════════════ -->
+<section>
+    <span class="section-number">14 — WHERE TO HEAR IT</span>
+    <h2>Recordings &amp; Performers</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        A handful of search links to start exploring — from the monumental Mass to the intimate songs. Ensembles specialising in
+        this repertory bring very different voices and instruments to Machaut's lines.
+    </p>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+Messe+de+Nostre+Dame+Ensemble">&#9834; Messe de Nostre Dame</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+Douce+dame+jolie">&#9834; Douce dame jolie</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+Ma+fin+est+mon+commencement">&#9834; Ma fin est mon commencement</a>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Machaut+isorhythmic+motets+Orlando+Consort">&#9834; The motets</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Guillaume+de+Machaut+complete+songs">&#9834; The secular songs</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://imslp.org/wiki/Category:Machaut,_Guillaume_de">&#9834; IMSLP — scores &amp; editions</a>
+    </div>
+    <p class="note-text">Search links are used so they never fall out of date; pick a recording and compare how ensembles voice the same music.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 16: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">15 — LEGACY</span>
+    <h2>Where His End Begins</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Machaut gathered the threads of the fourteenth century and handed them forward. His <span class="accent-amber">measured rhythm</span>
+        made complex polyphony writable; his <span class="accent-green">Mass</span> showed a composer could conceive the Ordinary as one work;
+        his <span class="accent-purple">formes fixes</span> ruled European song for a hundred years. Du Fay and Binchois are unthinkable without him.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Rhythm</h4><p>Ars Nova notation, refined by Machaut, is the foundation of every later system of measured rhythm.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">The composed Mass</h4><p>The first unified Ordinary by one hand — the ancestor of the cyclic Masses of Du Fay, Josquin and beyond.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">The song</h4><p>The <em>formes fixes</em> he perfected shaped courtly music until the late fifteenth century.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>"Ma fin est mon commencement et mon commencement ma fin" — My end is my beginning, and my beginning my end.</p>
+        <span class="attribution">— Guillaume de Machaut, opening of the rondeau <em>Ma fin est mon commencement</em></span>
+    </div>
+    <p class="note-text">c. 1300 – 1377 · The music that taught Europe to write rhythm.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (note names, beats) — Machaut ── */
+/* Mensuration demo: the SAME pitches grouped by threes (perfect) then by twos (imperfect) */
+var MACH_TRIPLE = [{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1}];
+var MACH_DUPLE  = [{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1}];
+/* SIGNATURE AUDIO — isorhythm: a repeating tenor talea/color (stated twice) under a moving upper voice */
+var MACH_TENOR = [{n:'D3',d:2},{n:'F3',d:1},{n:'E3',d:1},{n:'A3',d:2},{n:'G3',d:2},  {n:'D3',d:2},{n:'F3',d:1},{n:'E3',d:1},{n:'A3',d:2},{n:'G3',d:2}];
+var MACH_UPPER = [{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},{n:'A4',d:1},{n:'C5',d:1},{n:'D5',d:1},{n:'C5',d:1},{n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1}];
+/* Second audio — a Douce-dame-jolie-style virelai lilt: monophonic, catchy triple rhythm in the first mode */
+var MACH_VIRELAI = [
+  {n:'A4',d:1},{n:'A4',d:1},{n:'G4',d:1},  {n:'A4',d:1},{n:'F4',d:1},{n:'D4',d:1},  {n:'E4',d:2},{n:'D4',d:1},
+  {n:'F4',d:1},{n:'G4',d:1},{n:'A4',d:1},  {n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},  {n:'D4',d:2},{n:'A4',d:1},
+  {n:'A4',d:1},{n:'G4',d:1},{n:'F4',d:1},  {n:'E4',d:1},{n:'F4',d:1},{n:'E4',d:1},  {n:'D4',d:3}
+];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>
