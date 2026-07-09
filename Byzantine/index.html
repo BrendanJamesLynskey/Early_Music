@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Byzantine Chant — The Sung Theology of the Christian East</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
+    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
+    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
+    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
+    --border-subtle: #2a2a3a;
+}
+.reveal-viewport { background: var(--bg-primary); }
+.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal h1 { font-size: 2.2em; font-weight: 900; }
+.reveal h2 { font-size: 1.6em; font-weight: 700; }
+.reveal h3 { font-size: 1.15em; font-weight: 700; }
+.reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
+.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .controls { color: var(--accent-amber); }
+.reveal .progress span { background: var(--accent-amber); }
+.accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
+.accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
+.accent-blue { color: var(--accent-blue); }
+.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
+.card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
+.card:hover { border-color: var(--accent-amber); }
+.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+.card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
+.timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
+.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
+.timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
+.diagram-container { margin: 0.6em auto; max-width: 85%; }
+.separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
+.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
+.reveal ul li::before { content: '\203A'; color: var(--accent-amber); font-weight: bold; position: absolute; left: -0.3em; }
+.reveal .slides > section { overflow-y: auto !important; align-items: flex-start !important; justify-content: flex-start !important; }
+.fullscreen-btn { position: fixed; top: 14px; right: 14px; z-index: 100; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 6px 8px; cursor: pointer; color: var(--text-muted); transition: border-color 0.3s, color 0.3s; display: flex; align-items: center; justify-content: center; }
+.fullscreen-btn:hover { border-color: var(--accent-amber); color: var(--text-primary); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
+.two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
+.audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
+.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
+.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
+.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
+.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
+.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════ SLIDE 01: TITLE ═══════════════════ -->
+<section>
+    <div style="width: 320px; height: 140px; margin: 0 auto 0.3em auto;">
+        <svg viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- A small cross crowning the emblem -->
+            <g stroke="#d4a053" stroke-width="2.4" stroke-linecap="round">
+                <line x1="180" y1="10" x2="180" y2="34"/>
+                <line x1="169" y1="19" x2="191" y2="19"/>
+            </g>
+            <!-- A single melodic line (the chant) traced as a neume contour -->
+            <polyline points="40,66 78,54 116,54 154,72 192,54 230,72 268,60 306,72"
+                      fill="none" stroke="#e8e6e3" stroke-width="1.4" stroke-dasharray="2 4"/>
+            <!-- neume-gesture glyphs sitting on the contour -->
+            <path d="M 36 66 h 12" stroke="#e8e6e3" stroke-width="2.6" fill="none"/>
+            <path d="M 72 60 q 6 -10 12 -6" stroke="#4ecca3" stroke-width="2.4" fill="none"/>
+            <path d="M 110 60 q 6 -10 12 -6" stroke="#4ecca3" stroke-width="2.4" fill="none"/>
+            <path d="M 150 66 q 6 10 12 6" stroke="#cf7272" stroke-width="2.4" fill="none"/>
+            <path d="M 186 60 q 5 -12 12 -6 q -5 4 0 8" stroke="#9b72cf" stroke-width="2.4" fill="none"/>
+            <path d="M 226 66 q 6 10 12 6" stroke="#cf7272" stroke-width="2.4" fill="none"/>
+            <path d="M 264 62 h 12" stroke="#e8e6e3" stroke-width="2.6" fill="none"/>
+            <!-- the ison: a single sustained drone line beneath -->
+            <line x1="36" y1="104" x2="312" y2="104" stroke="#d4a053" stroke-width="2.4"/>
+            <text x="316" y="108" fill="#d4a053" font-family="JetBrains Mono" font-size="12">ison</text>
+            <text x="36" y="132" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12.5">a single voice above a sustained drone</text>
+        </svg>
+    </div>
+    <h1>Byzantine Chant</h1>
+    <div class="subtitle">c. 6th century – present · The Sacred Song of the Christian East</div>
+    <div class="separator"></div>
+    <p style="max-width: 76%; margin: 0.4em auto 0; font-size: 0.5em !important;">
+        The sung theology of the Greek-speaking Eastern Roman Empire — and, to this day, of the
+        Greek Orthodox Church and Mount Athos. A single unaccompanied voice, floating over a drone,
+        colouring the octave with intervals no piano can play.
+    </p>
+    <p class="note-text" style="text-align:center;">History of Early Music · The Christian East — No. 01</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 02: WHAT IS BYZANTINE CHANT ═══════════════════ -->
+<section>
+    <span class="section-number">01 — DEFINITION</span>
+    <h2>What Is Byzantine Chant?</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.46em !important;">
+        <span class="accent-amber">Byzantine chant</span> is the sacred music of the Greek-speaking Eastern Roman
+        (&ldquo;Byzantine&rdquo;) Empire, and the living chant of the Orthodox Church of the East. It grew up
+        <em>parallel</em> to — and largely independent of — the Latin plainchant of the West, sharing scriptural roots
+        but developing its own sound-world: purely vocal, modal, and above all <span class="accent-amber">microtonal</span>.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><span class="icon accent-amber">&#9834;</span><h4 class="accent-amber">Purely vocal</h4><p>The Orthodox Church admits <em>no instruments</em> in worship. The human voice alone carries the whole liturgy.</p></div>
+        <div class="card"><span class="icon accent-green">&#8212;</span><h4 class="accent-green">Over an ison</h4><p>One melodic line is sung above a sustained drone — the <em>ison</em> — held by the <em>isokrátes</em>. Not Western harmony.</p></div>
+        <div class="card"><span class="icon accent-purple">&#9737;</span><h4 class="accent-purple">Eight modes</h4><p>Organised by the <em>Oktōēchos</em> — a system of eight <em>ēchoi</em> on an eight-week rotating cycle.</p></div>
+        <div class="card"><span class="icon accent-blue">&#9839;</span><h4 class="accent-blue">Microtonal</h4><p>Intervals fall outside the Western twelve notes — the modern theory splits the octave into 72 commas.</p></div>
+    </div>
+    <p class="note-text">&ldquo;Byzantine&rdquo; names the eastern half of the Roman Empire, ruled from Constantinople until 1453 — its chant outlived the empire and is sung unbroken to this day.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 03: THE OKTOECHOS ═══════════════════ -->
+<section>
+    <span class="section-number">02 — THE MODES</span>
+    <h2>The Oktōēchos — Eight Modes, Eight Weeks</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Every chant belongs to one of eight <span class="accent-amber">ēchoi</span> (modes). Four are <span class="accent-green">authentic</span>
+        (<em>kýrioi</em>) and four are their <span class="accent-blue">plagal</span> partners (<em>plágioi</em>) — a lower-lying reflection of each.
+        The eight rotate week by week through the church year in a cycle whose organisation is traditionally credited to
+        <span class="accent-amber">St John of Damascus</span> (c. 675&ndash;749).
+    </p>
+    <div class="diagram-container">
+        <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <g font-family="DM Sans" font-size="13">
+                <text x="30" y="24" fill="#4ecca3" font-size="11">AUTHENTIC · kýrioi</text>
+                <text x="470" y="24" fill="#5b8cd4" font-size="11">PLAGAL · plágioi</text>
+                <g>
+                  <rect x="30" y="38" width="380" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="42" y="55" fill="#e8e6e3">&#7868;chos I (&#945;&#697;) &#183; on Pa &#8212; grave, foundational</text>
+                  <rect x="470" y="38" width="400" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="482" y="55" fill="#e8e6e3">Plagal I &#183; the low reflection of &#7868;chos I</text>
+                </g>
+                <g>
+                  <rect x="30" y="70" width="380" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="42" y="87" fill="#e8e6e3">&#7868;chos II (&#946;&#697;) &#183; on Vou &#8212; soft chromatic colour</text>
+                  <rect x="470" y="70" width="400" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="482" y="87" fill="#e8e6e3">Plagal II &#183; the &ldquo;hard chromatic&rdquo; lament</text>
+                </g>
+                <g>
+                  <rect x="30" y="102" width="380" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="42" y="119" fill="#e8e6e3">&#7868;chos III (&#947;&#697;) &#183; on Ga &#8212; enharmonic, bright</text>
+                  <rect x="470" y="102" width="400" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="482" y="119" fill="#e8e6e3">Grave mode (Varys) &#183; solemn, deep-set</text>
+                </g>
+                <g>
+                  <rect x="30" y="134" width="380" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="42" y="151" fill="#e8e6e3">&#7868;chos IV (&#948;&#697;) &#183; on Di &#8212; festal, diatonic</text>
+                  <rect x="470" y="134" width="400" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="482" y="151" fill="#e8e6e3">Plagal IV &#183; radiant, the mode of great feasts</text>
+                </g>
+                <text x="30" y="182" fill="#6a6a7a" font-size="11" font-style="italic">Each ēchos is not just a scale but a family of melodic formulae, a mood, and a characteristic cadence.</text>
+            </g>
+        </svg>
+    </div>
+    <p class="note-text">The Western eight modes and the Byzantine Oktōēchos are cousins — both eight, both authentic-and-plagal — but the eastern <em>ēchoi</em> carry stock melodies and microtonal genera the Latin modes never had.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 04: MICROTONALITY & THE GENERA (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">03 — THE SOUND ITSELF</span>
+    <h2>Microtonality &amp; the Genera</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        This is the single most important thing to hear. Byzantine modes divide the octave far more finely than the West —
+        modern theory counts <span class="accent-amber">72 <em>moria</em></span> (commas) to the octave. Melodies move through four
+        <span class="accent-amber">genera</span>, each cutting the tetrachord differently.
+    </p>
+    <div class="card-grid cols-4">
+        <div class="card"><h4 class="accent-green">Diatonic</h4><p>The most familiar — near the Western whole-and-half-tone steps, the backbone of the festal modes.</p></div>
+        <div class="card"><h4 class="accent-amber">Soft chromatic</h4><p>The exotic colour: a narrow step, then a very <em>wide</em> middle step, then narrow again. Ēchos II.</p></div>
+        <div class="card"><h4 class="accent-purple">Hard chromatic</h4><p>An even more pungent augmented-second leap — the sound of lament and the Passion.</p></div>
+        <div class="card"><h4 class="accent-blue">Enharmonic</h4><p>Uses the finest divisions of all, quarter-tone-scale shadings around the diatonic degrees.</p></div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn" onclick="EM.toggle(this, [BYZ_SOFTCHROM_MEL, BYZ_SOFTCHROM_ISON], {timbre:'reed', bpm:60, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear the soft-chromatic genus (over the ison)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Cappella+Romana+Byzantine+chant">&#9834; Listen: Cappella Romana</a>
+    </div>
+    <p class="audio-caption">Synthesised on D &#183; that wide middle step is a <strong>&frac34;-tone-ish interval you will not find on any piano</strong> — an &ldquo;augmented second&rdquo; colour that <em>is</em> the sound of the Christian East. The numbers are exact frequencies in Hz, not tempered notes.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 05: THE ISON (AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">04 — THE DRONE</span>
+    <h2>The Ison — Singing Over a Held Breath</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-left">
+        <div>
+            <p style="font-size:0.44em !important;">
+                Beneath the melody, a second group — the <span class="accent-amber">isokrátes</span> — holds a single
+                unchanging note: the <span class="accent-amber">ison</span>. It is not harmony and not a chord; it is a
+                sustained ground that anchors the ear to the mode&rsquo;s foundation while the chanter&rsquo;s line rises and
+                falls above it.
+            </p>
+            <p style="font-size:0.44em !important;">
+                The effect is of a voice suspended in a vast, resonant space — the melody made luminous by the drone it never
+                leaves. The ison shifts only when the mode&rsquo;s centre of gravity shifts, marking the great structural
+                pillars of a chant.
+            </p>
+        </div>
+        <div>
+            <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <polyline points="20,60 55,45 90,45 125,70 160,50 195,70 230,58"
+                          fill="none" stroke="#e8e6e3" stroke-width="2"/>
+                <text x="18" y="34" fill="#e8e6e3" font-family="DM Sans" font-size="12">melody (moves)</text>
+                <line x1="20" y1="130" x2="230" y2="130" stroke="#d4a053" stroke-width="3"/>
+                <text x="18" y="152" fill="#d4a053" font-family="DM Sans" font-size="12">ison (held)</text>
+                <g stroke="#6a6a7a" stroke-width="0.8" stroke-dasharray="2 3">
+                    <line x1="20" y1="60" x2="20" y2="130"/>
+                    <line x1="125" y1="70" x2="125" y2="130"/>
+                    <line x1="230" y1="58" x2="230" y2="130"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn purple" onclick="EM.toggle(this, [BYZ_MODE1_MEL, BYZ_ISON_D], {timbre:'voice', bpm:66, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; Hear a Mode-I chant over the ison</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byzantine+chant+Cherubic+Hymn">&#9834; Listen: the Cherubic Hymn</a>
+    </div>
+    <p class="audio-caption">Synthesised two voices &#183; a stepwise Ēchos-I melody floating above a single sustained D drone</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 06: THE FORMS (AUDIO teretismata) ═══════════════════ -->
+<section>
+    <span class="section-number">05 — THE FORMS</span>
+    <h2>The Great Hymn-Forms</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Byzantine hymnography built a vast library of poetic-musical forms, each with its place in the liturgy — from
+        terse refrains to enormous sung sermons, and finally to wordless ecstasy.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">Troparion &amp; Sticheron</h4><p>Short stanzas inserted among psalm verses — the everyday building-blocks of the daily office.</p></div>
+        <div class="card"><h4 class="accent-green">Kontákion</h4><p>The great early form: a sung metrical sermon of many stanzas, perfected by St Romanos the Melodist.</p></div>
+        <div class="card"><h4 class="accent-purple">Kanon</h4><p>Nine linked odes modelled on the biblical canticles; each ode opens with a model stanza, the <em>heirmos</em>.</p></div>
+        <div class="card"><h4 class="accent-blue">Cherubikon</h4><p>The Cherubic Hymn of the Divine Liturgy — slow, exalted, sung as the gifts are carried in procession.</p></div>
+        <div class="card"><h4 class="accent-rose">Akathist</h4><p>A celebrated hymn to the Mother of God, sung standing — twenty-four stanzas, each on a letter of the alphabet.</p></div>
+        <div class="card"><h4 class="accent-amber">Teretismata</h4><p>Wordless jubilant melismas sung to syllables like <em>te-ri-rem</em> — an ecstatic, textless praise beyond words.</p></div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn green" onclick="EM.toggle(this, [BYZ_TERETISMATA_MEL, BYZ_TERETISMATA_ISON], {timbre:'voice', bpm:78, temperament:'equal', reverb:0.6, legato:0.97})">&#9654; Hear a teretismata melisma (te-ri-rem)</button>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=John+Koukouzelis+kalophonic+chant+teretismata">&#9834; Listen: kalophonic teretismata</a>
+    </div>
+    <p class="audio-caption">Synthesised &#183; a florid, wordless melisma over the ison — the voice praising God with no text at all</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 07: ST ROMANOS ═══════════════════ -->
+<section>
+    <span class="section-number">06 — THE HYMNOGRAPHERS · I</span>
+    <h2>St Romanos the Melodist</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <svg viewBox="0 0 220 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <g stroke="#d4a053" stroke-width="2" stroke-linecap="round">
+                    <line x1="110" y1="24" x2="110" y2="60"/>
+                    <line x1="92" y1="40" x2="128" y2="40"/>
+                </g>
+                <ellipse cx="110" cy="110" rx="52" ry="60" fill="none" stroke="#9a9a9a" stroke-width="1.4"/>
+                <circle cx="110" cy="96" r="20" fill="none" stroke="#e8e6e3" stroke-width="1.4"/>
+                <circle cx="110" cy="96" r="30" fill="none" stroke="#d4a053" stroke-width="1" stroke-dasharray="2 3"/>
+                <path d="M 78 128 q 32 26 64 0" fill="none" stroke="#e8e6e3" stroke-width="1.4"/>
+                <text x="110" y="196" text-anchor="middle" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">the &ldquo;Melōdós&rdquo;</text>
+            </svg>
+        </div>
+        <div>
+            <p style="font-size:0.44em !important;">
+                <span class="accent-amber">St Romanos the Melodist</span> (c. 490&ndash;556), a deacon of Syrian origin who
+                served in Constantinople under the Emperor Justinian, is the greatest of all Byzantine hymnographers and the
+                supreme master of the <span class="accent-amber">kontákion</span>.
+            </p>
+            <p style="font-size:0.44em !important;">
+                His kontakia are sung metrical sermons — dramatic, tender, theologically dense. Best known is his Nativity
+                kontakion, <em>&#7969; &#928;&#945;&#961;&#952;&#941;&#957;&#959;&#962; &#963;&#942;&#956;&#949;&#961;&#959;&#957;</em>
+                (&ldquo;Today the Virgin&hellip;&rdquo;). Tradition says the gift of song came to him in a vision on the feast of the Nativity.
+            </p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Romanos+the+Melodist+kontakion">&#9834; Listen: a Romanos kontakion (recording)</a>
+    </div>
+    <p class="note-text">The kontakion&rsquo;s scale later shrank in the liturgy to a single surviving stanza and refrain — but in Romanos&rsquo;s age it was the towering poetic form of the Christian East.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 08: ST KASSIA ═══════════════════ -->
+<section>
+    <span class="section-number">07 — THE HYMNOGRAPHERS · II</span>
+    <h2>St Kassia — The Earliest Woman Composer</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        <span class="accent-amber">St Kassia</span> (Kassiani, c. 810 &ndash; before 865) was a Constantinopolitan noblewoman
+        who became a nun, abbess, poet and composer. She is <span class="accent-amber">one of the earliest known composers whose
+        music survives under their own name — and the earliest known woman composer</span> in the Western manuscript tradition.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The Hymn of Kassiani</h4>
+            <p>Her most famous work, sung at Matins of Holy Wednesday, gives voice to the sinful woman who anointed Christ&rsquo;s
+            feet — a masterpiece of penitential feeling still central to Holy Week across the Orthodox world.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-green);">
+            <h4 class="accent-green">Poet as well as composer</h4>
+            <p>Roughly fifty hymns and a body of epigrams are attributed to her — words <em>and</em> music by the same hand, at a
+            time when named authorship of either was rare.</p>
+        </div>
+    </div>
+    <div class="quote-box">
+        <p>&ldquo;Lord, the woman who had fallen into many sins, perceiving Thy divinity&hellip; taketh upon herself the myrrh in lamentation.&rdquo;</p>
+        <span class="attribution">&mdash; from the Hymn of Kassiani, sung at Matins of Holy Wednesday (English translation)</span>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Kassiani+hymn+Holy+Wednesday+Byzantine">&#9834; Listen: the Hymn of Kassiani</a>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 09: KOUKOUZELIS & KALOPHONIC ═══════════════════ -->
+<section>
+    <span class="section-number">08 — THE FLOWERING</span>
+    <h2>Koukouzelis &amp; the Kalophonic Style</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        <span class="accent-amber">St John Koukouzelis</span> (c. 1280 &ndash; 1360s), &ldquo;the Master&rdquo; (<em>maistor</em>),
+        was a monk of <span class="accent-amber">Mount Athos</span> and the central figure of the florid
+        <span class="accent-amber">kalophonic</span> (&ldquo;beautiful-sounding&rdquo;) style — chant elaborated into long,
+        virtuosic melismas, including whole passages of wordless <em>teretismata</em>.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">The maïstor</h4><p>A singer of legendary skill whose name became a byword for the art of the psáltis (cantor) itself.</p></div>
+        <div class="card"><h4 class="accent-green">Kalophonic chant</h4><p>The plain liturgical melodies expanded into ecstatic, ornate settings — art-music for the greatest feasts.</p></div>
+        <div class="card"><h4 class="accent-purple">Notational reform</h4><p>Central to refining the middle-Byzantine neumes and to the &ldquo;wheel&rdquo; diagram of the modes that bears his name.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=John+Koukouzelis+kalophonic+chant">&#9834; Listen: Koukouzelis kalophonic chant</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Greek+Orthodox+chant+Mount+Athos">&#9834; Listen: chant of Mount Athos</a>
+    </div>
+    <p class="note-text">Later masters continued the line — among them <span class="accent-amber">Petros Peloponnesios</span> (c. 1730&ndash;1778), a towering psáltis whose settings still shape the repertory sung today.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 10: NOTATION I — INTERVALLIC NEUMES ═══════════════════ -->
+<section>
+    <span class="section-number">09 — NOTATION · I</span>
+    <h2>Reading Byzantine Neumes — Motion, Not Position</h2>
+    <div class="separator"></div>
+    <p style="max-width: 90%; margin: 0.2em auto 0.3em; font-size: 0.42em !important;">
+        Here is the payoff — and the deepest contrast with the West. Byzantine neumes are
+        <span class="accent-amber">intervallic and gestural</span>, <strong>not pitch-on-a-staff</strong>. Each sign tells you
+        <em>how far</em> and <em>which way</em> to move <em>from the note you are on</em> — never an absolute pitch. You read
+        left to right, and the relative motions accumulate.
+    </p>
+    <div class="diagram-container" style="max-width:94%;">
+        <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <!-- martyria (modal signature) -->
+            <rect x="20" y="86" width="96" height="58" rx="6" fill="#161622" stroke="#d4a053"/>
+            <text x="68" y="108" text-anchor="middle" fill="#d4a053" font-family="Playfair Display" font-size="16">&#7868;chos &#945;&#697;</text>
+            <text x="68" y="126" text-anchor="middle" fill="#e8e6e3" font-family="DM Sans" font-size="11">start on Pa</text>
+            <text x="68" y="164" text-anchor="middle" fill="#9a9a9a" font-family="DM Sans" font-size="10">martyría</text>
+            <!-- resulting pitch contour (the payoff) -->
+            <polyline points="170,132 270,132 370,110 470,88 570,110 670,88 770,110"
+                      fill="none" stroke="#6a6a7a" stroke-width="1" stroke-dasharray="3 3"/>
+            <g font-family="DM Sans" font-size="11" text-anchor="middle">
+                <!-- 1: ison (stay) -->
+                <path d="M 158 70 h 24" stroke="#e8e6e3" stroke-width="3"/>
+                <circle cx="170" cy="132" r="5" fill="#e8e6e3"/>
+                <text x="170" y="186" fill="#e8e6e3" font-weight="700">íson</text>
+                <text x="170" y="200" fill="#9a9a9a">stay &#8212; same note</text>
+                <!-- 2: oligon (up 1) -->
+                <path d="M 258 74 q 12 -14 24 0" fill="none" stroke="#4ecca3" stroke-width="3"/>
+                <circle cx="270" cy="132" r="5" fill="#4ecca3"/>
+                <text x="270" y="186" fill="#4ecca3" font-weight="700">olígon</text>
+                <text x="270" y="200" fill="#9a9a9a">up one step</text>
+                <!-- 3: oligon (up 1) -->
+                <path d="M 358 74 q 12 -14 24 0" fill="none" stroke="#4ecca3" stroke-width="3"/>
+                <circle cx="370" cy="110" r="5" fill="#4ecca3"/>
+                <text x="370" y="186" fill="#4ecca3" font-weight="700">olígon</text>
+                <text x="370" y="200" fill="#9a9a9a">up one step</text>
+                <!-- 4: petasti (up, lively) -->
+                <path d="M 456 78 q 8 -18 16 -6 q -8 4 8 6" fill="none" stroke="#9b72cf" stroke-width="3"/>
+                <circle cx="470" cy="88" r="5" fill="#9b72cf"/>
+                <text x="470" y="186" fill="#9b72cf" font-weight="700">petastí</text>
+                <text x="470" y="200" fill="#9a9a9a">up, lively lift</text>
+                <!-- 5: apostrophos (down 1) -->
+                <path d="M 558 68 q 14 6 8 22" fill="none" stroke="#cf7272" stroke-width="3"/>
+                <circle cx="570" cy="110" r="5" fill="#cf7272"/>
+                <text x="570" y="186" fill="#cf7272" font-weight="700">apóstrophos</text>
+                <text x="570" y="200" fill="#9a9a9a">down one step</text>
+                <!-- 6: oligon (up 1) -->
+                <path d="M 658 74 q 12 -14 24 0" fill="none" stroke="#4ecca3" stroke-width="3"/>
+                <circle cx="670" cy="88" r="5" fill="#4ecca3"/>
+                <text x="670" y="186" fill="#4ecca3" font-weight="700">olígon</text>
+                <text x="670" y="200" fill="#9a9a9a">up one step</text>
+                <!-- 7: apostrophos (down 1) -->
+                <path d="M 758 68 q 14 6 8 22" fill="none" stroke="#cf7272" stroke-width="3"/>
+                <circle cx="770" cy="110" r="5" fill="#cf7272"/>
+                <text x="770" y="186" fill="#cf7272" font-weight="700">apóstrophos</text>
+                <text x="770" y="200" fill="#9a9a9a">down one step</text>
+            </g>
+            <text x="838" y="136" fill="#6a6a7a" font-family="DM Sans" font-size="11">&#8594; read this way</text>
+        </svg>
+    </div>
+    <p class="note-text"><strong>How to read it:</strong> the <span class="accent-amber">martyría</span> at the left names the mode (Ēchos I) and your starting degree (Pa). After that, <em>no sign shows a fixed pitch</em> — the íson says &ldquo;stay&rdquo;, olígon &ldquo;up a step&rdquo;, apóstrophos &ldquo;down a step&rdquo;, petastí &ldquo;up, with a lift&rdquo;. The grey dots are only the <em>result</em>. Contrast the Western staff, where a note&rsquo;s <em>height on the lines</em> fixes its pitch outright.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 11: NOTATION II — CHRYSANTHINE REFORM & SOLFEGE ═══════════════════ -->
+<section>
+    <span class="section-number">10 — NOTATION · II</span>
+    <h2>The 1814 Reform &amp; the Pa&ndash;Vou&ndash;Ga Ladder</h2>
+    <div class="separator"></div>
+    <div class="two-col wide-right">
+        <div>
+            <svg viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+                <line x1="52" y1="24" x2="52" y2="240" stroke="#2a2a3a" stroke-width="1"/>
+                <g font-family="DM Sans" font-size="13" text-anchor="start">
+                    <circle cx="52" cy="232" r="6" fill="#d4a053"/><text x="70" y="237" fill="#e8e6e3">Ni &#8212; C</text>
+                    <circle cx="52" cy="202" r="6" fill="#d4a053"/><text x="70" y="207" fill="#e8e6e3">Pa &#8212; D</text>
+                    <circle cx="52" cy="172" r="6" fill="#4ecca3"/><text x="70" y="177" fill="#e8e6e3">Vou &#8212; E</text>
+                    <circle cx="52" cy="142" r="6" fill="#cf7272"/><text x="70" y="147" fill="#e8e6e3">Ga &#8212; F</text>
+                    <circle cx="52" cy="112" r="6" fill="#5b8cd4"/><text x="70" y="117" fill="#e8e6e3">Di &#8212; G</text>
+                    <circle cx="52" cy="82"  r="6" fill="#9b72cf"/><text x="70" y="87"  fill="#e8e6e3">Ke &#8212; A</text>
+                    <circle cx="52" cy="52"  r="6" fill="#d4a053"/><text x="70" y="57"  fill="#e8e6e3">Zo &#8212; B</text>
+                    <circle cx="52" cy="30"  r="6" fill="#d4a053"/><text x="70" y="35"  fill="#e8e6e3">Ni &#8212; C</text>
+                    <text x="118" y="192" fill="#6a6a7a" font-size="10">&#8593; ascending</text>
+                </g>
+            </svg>
+        </div>
+        <div>
+            <p style="font-size:0.44em !important;">
+                In <span class="accent-amber">1814</span>, the &ldquo;<span class="accent-amber">New Method</span>&rdquo; of the three
+                teachers — <span class="accent-amber">Chrysanthos of Madytos</span>, <span class="accent-amber">Gregorios the
+                Protopsaltis</span> and <span class="accent-amber">Chourmouzios the Archivist</span> — systematised the old neumes
+                into the analytical notation still taught today.
+            </p>
+            <p style="font-size:0.44em !important;">
+                They also fixed the Byzantine solfège: the seven ascending syllables
+                <span class="accent-green">Pa &#183; Vou &#183; Ga &#183; Di &#183; Ke &#183; Zo &#183; Ni</span>. But note the crucial
+                difference from the West: these name <em>degrees of the mode</em>, not absolute pitches. The staff pins a note to a
+                line; Pa&ndash;Vou&ndash;Ga names <em>where you are within the ēchos</em>, and the true tuning of each step depends on
+                the genus you are singing in.
+            </p>
+        </div>
+    </div>
+    <div style="max-width:82%; margin:0.2em auto;">
+        <div class="timeline-item"><span class="year">early</span><span class="event"><strong>Ekphonetic notation</strong>Simple signs to guide the cantillation of scripture readings aloud.</span></div>
+        <div class="timeline-item"><span class="year">c. 10th&ndash;12th c.</span><span class="event"><strong>Palaeo-Byzantine</strong>The Coislin and Chartres families — early neumes sketching melodic direction.</span></div>
+        <div class="timeline-item"><span class="year">from c. 1177</span><span class="event"><strong>Middle-Byzantine &ldquo;round&rdquo; notation</strong>A fuller, precise intervallic system — the classical neumes of the great masters.</span></div>
+        <div class="timeline-item"><span class="year">1814</span><span class="event"><strong>The Chrysanthine &ldquo;New Method&rdquo;</strong>The analytical reform and the Pa&ndash;Vou&ndash;Ga solfège used across the Orthodox world today.</span></div>
+    </div>
+</section>
+
+<!-- ═══════════════════ SLIDE 12: THE LIVING TRADITION / MOUNT ATHOS ═══════════════════ -->
+<section>
+    <span class="section-number">11 — A LIVING TRADITION</span>
+    <h2>Unbroken Song — Mount Athos &amp; Beyond</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        Unlike Western plainchant, which had to be <em>restored</em> in the 19th century after centuries of decay, Byzantine chant
+        has never fallen silent. It is sung today exactly as living practice, above all on the monastic republic of
+        <span class="accent-amber">Mount Athos</span> and in every Greek Orthodox parish.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card"><h4 class="accent-amber">The psáltis</h4><p>The cantor stands at his stand (<em>analogion</em>) and leads; the ison is held by others around him. An oral art passed master to pupil.</p></div>
+        <div class="card"><h4 class="accent-green">Mount Athos</h4><p>Twenty monasteries where the full round of chant is sung daily, and the tradition of the maïstores is guarded.</p></div>
+        <div class="card"><h4 class="accent-blue">A wider family</h4><p>The same system underlies Arabic, Romanian, Bulgarian and Serbian Orthodox chant — Byzantine song adapted to many tongues.</p></div>
+    </div>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Greek+Orthodox+chant+Mount+Athos">&#9834; Listen: Mount Athos</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Divna+Ljubojevic+Byzantine">&#9834; Listen: Divna Ljubojević</a>
+    </div>
+    <p class="note-text">Where Latin chant is a recovered repertory, Byzantine chant is a continuous one — a thread of song running unbroken from Justinian&rsquo;s Constantinople to a monastery choir tonight.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 13: EAST MEETS WEST (A/B AUDIO) ═══════════════════ -->
+<section>
+    <span class="section-number">12 — EAST &amp; WEST</span>
+    <h2>Shared Roots, Divergent Paths</h2>
+    <div class="separator"></div>
+    <p style="max-width: 86%; margin: 0.2em auto 0.4em; font-size: 0.44em !important;">
+        East and West began from the same soil — Jewish psalmody, the early Church, monophonic sacred song, eight modes, neumes
+        that show gesture before pitch. Then they parted. Compare the <em>same</em> rising-and-falling shape in the two worlds: the
+        Western tempered version, then the Byzantine soft chromatic.
+    </p>
+    <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--accent-blue);">
+            <h4 class="accent-blue">The West went vertical</h4>
+            <p>Toward <strong>polyphony</strong> and eventually equal temperament — many independent voices, harmony, the staff pinning every pitch, the tempered twelve-note scale.</p>
+        </div>
+        <div class="card" style="border-top:2px solid var(--accent-amber);">
+            <h4 class="accent-amber">The East went horizontal</h4>
+            <p>Toward an ever more refined <strong>single line over the ison</strong> — microtonal genera, oral mastery, the voice alone, unbroken to the present day.</p>
+        </div>
+    </div>
+    <div class="audio-row">
+        <button class="audio-btn blue" onclick="EM.toggle(this, [BYZ_WEST_TETRA, BYZ_ISON_D], {timbre:'voice', bpm:60, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; A · Western tempered (D&#8211;E&#9837;&#8211;F&#9839;&#8211;G)</button>
+        <button class="audio-btn" onclick="EM.toggle(this, [BYZ_SOFTCHROM_MEL, BYZ_SOFTCHROM_ISON], {timbre:'voice', bpm:60, temperament:'equal', reverb:0.6, legato:0.98})">&#9654; B · Byzantine soft chromatic</button>
+    </div>
+    <p class="audio-caption">Same contour, both over the D ison &#183; A uses piano notes; B uses the exact microtonal frequencies — hear the wide middle step colour that the tempered scale simply cannot reach</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 14: LISTENING GUIDE ═══════════════════ -->
+<section>
+    <span class="section-number">13 — LISTENING GUIDE</span>
+    <h2>How to Listen to Byzantine Chant</h2>
+    <div class="separator"></div>
+    <ul style="max-width:82%; margin:0.3em auto; font-size:0.5em;">
+        <li>Find the <span class="accent-amber">ison</span> first — the unmoving drone underneath. Once you hear it, the melody&rsquo;s every rise and fall snaps into focus.</li>
+        <li>Listen for the <span class="accent-green">&ldquo;impossible&rdquo; intervals</span> — steps that sound bent or exotic to a Western ear. That is the microtonal genus, not a singer out of tune.</li>
+        <li>Notice there are <span class="accent-purple">no instruments and no chords</span> — only voices, one line and a drone. The richness is all in melody and colour.</li>
+        <li>Let the <span class="accent-blue">teretismata</span> wash over you: when the words dissolve into <em>te-ri-rem</em>, the chant has passed beyond language into pure praise.</li>
+    </ul>
+    <div class="audio-row">
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Cappella+Romana+Byzantine">&#9834; Cappella Romana</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Divna+Ljubojevic">&#9834; Divna Ljubojević</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Byzantine+chant+Cherubic+Hymn">&#9834; Cherubic Hymn</a>
+        <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Greek+Orthodox+chant+Mount+Athos">&#9834; Mount Athos</a>
+    </div>
+    <p class="note-text">Recordings vary from monastic plainness to concert polish — but all share the ison, the single line, and the microtonal colour that mark the sound of the Christian East.</p>
+</section>
+
+<!-- ═══════════════════ SLIDE 15: LEGACY / CLOSING ═══════════════════ -->
+<section>
+    <span class="section-number">14 — LEGACY</span>
+    <h2>The Sung Theology of the East</h2>
+    <div class="separator"></div>
+    <p style="max-width: 84%; margin: 0.2em auto 0.5em; font-size: 0.44em !important;">
+        Byzantine chant is the great parallel to the Western tradition — a thousand-year art that chose the
+        <span class="accent-amber">voice alone</span>, the <span class="accent-amber">single line over the ison</span>, and a
+        <span class="accent-amber">microtonal palette</span> the West set aside. Its neumes ask you not <em>where</em> a note sits
+        but <em>how</em> the voice should move; its modes carry not just scales but whole worlds of feeling. It is theology you can hear.
+    </p>
+    <div class="card-grid cols-3">
+        <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">Voice &amp; ison</h4><p>An aesthetic of pure vocal sound over a drone that has shaped Orthodox worship for fifteen centuries.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-green);"><h4 class="accent-green">Microtonality</h4><p>A living memory that music can divide the octave far more finely than twelve tempered notes.</p></div>
+        <div class="card" style="border-top:2px solid var(--accent-purple);"><h4 class="accent-purple">Named composers</h4><p>From Romanos to Kassia to Koukouzelis — among the earliest composers, and the earliest woman composer, known by name.</p></div>
+    </div>
+    <div class="quote-box">
+        <p>&ldquo;Speaking to yourselves in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord.&rdquo;</p>
+        <span class="attribution">&mdash; St Paul, Epistle to the Ephesians 5:19 — the scriptural charter of the East&rsquo;s voice-only worship</span>
+    </div>
+    <p class="note-text">c. 6th century &ndash; present · A song that has never fallen silent.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({ hash: true, slideNumber: true, transition: 'fade', transitionSpeed: 'slow', backgroundTransition: 'fade', center: false, width: 1280, height: 900, margin: 0.02, controls: true, progress: true, history: true });
+</script>
+<script>
+(function(){
+  var h = Reveal.getConfig().height || 900; var m = Reveal.getConfig().margin || 0.02;
+  var maxH = Math.floor(h * (1 - 2 * m)) + 'px';
+  function fixSlides(){ document.querySelectorAll('.reveal .slides>section,.reveal .slides>section>section').forEach(function(s){ s.style.display = 'block'; s.style.maxHeight = maxH; }); }
+  Reveal.on('ready', fixSlides); Reveal.on('slidechanged', fixSlides);
+})();
+</script>
+<button class="fullscreen-btn" onclick="toggleFullscreen()" title="Toggle fullscreen">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002 2h3"/></svg>
+</button>
+<script>
+function toggleFullscreen() { if (!document.fullscreenElement) { document.documentElement.requestFullscreen(); } else { document.exitFullscreen(); } }
+</script>
+<script>
+/* ── Musical examples for this presentation (Byzantine chant) ──
+   Numeric values in `n` are exact frequencies in Hz, used untouched by the
+   engine (temperament:'equal') to render the true microtonal intervals. */
+/* Ēchos I (Mode 1), stepwise chant over a sustained D drone (the ison) */
+var BYZ_MODE1_MEL = [{n:'D4',d:2},{n:'E4',d:1},{n:'F4',d:1},{n:'E4',d:2},{n:'D4',d:1},{n:'E4',d:1},{n:'F4',d:1},{n:'G4',d:1},{n:'F4',d:1},{n:'E4',d:1},{n:'D4',d:3}];
+var BYZ_ISON_D    = [{n:'D3',d:15}];
+/* The soft-chromatic genus on D (72-comma: steps ~133¢ / 233¢ / 133¢) — exact Hz.
+   The 317.17→362.93 middle step is the wide ¾-tone-ish interval no piano can play. */
+var BYZ_SOFTCHROM_MEL  = [{n:293.66,d:1.5},{n:317.17,d:1.5},{n:362.93,d:1.5},{n:392.0,d:2},{n:362.93,d:1.5},{n:317.17,d:1.5},{n:293.66,d:3}];
+var BYZ_SOFTCHROM_ISON = [{n:146.83,d:14}];
+/* Teretismata — a florid, wordless melisma (te-ri-rem) in Ēchos I over the D ison */
+var BYZ_TERETISMATA_MEL  = [
+  {n:'D4',d:0.5},{n:'E4',d:0.5},{n:'F4',d:0.5},{n:'E4',d:0.5},{n:'F4',d:0.5},{n:'G4',d:0.5},{n:'A4',d:1},
+  {n:'G4',d:0.5},{n:'F4',d:0.5},{n:'G4',d:0.5},{n:'A4',d:0.5},{n:'G4',d:0.5},{n:'F4',d:0.5},{n:'E4',d:1},
+  {n:'F4',d:0.5},{n:'E4',d:0.5},{n:'D4',d:0.5},{n:'E4',d:0.5},{n:'D4',d:2}
+];
+var BYZ_TERETISMATA_ISON = [{n:'D3',d:12}];
+/* East-vs-West A/B: the Western tempered tetrachord D–Eb–F#–G (exact Hz) sharing
+   the same contour as the soft-chromatic example above */
+var BYZ_WEST_TETRA = [{n:293.66,d:1.5},{n:311.13,d:1.5},{n:369.99,d:1.5},{n:392.0,d:2},{n:369.99,d:1.5},{n:311.13,d:1.5},{n:293.66,d:3}];
+</script>
+<script>/* ============================================================================
+   EARLY MUSIC AUDIO ENGINE  —  self-contained Web Audio API synthesis
+   ----------------------------------------------------------------------------
+   Zero dependencies. Embed verbatim inside a <script> tag in each presentation.
+   Renders short, idiomatic, educational examples (chant, organum, cadences,
+   isorhythm, fauxbourdon, lute song) live in the browser.
+
+   Public API (all under the global `EM`):
+     EM.freq(name)                     -> frequency in Hz for e.g. "A4","Bb3"
+     EM.play(parts, opts)              -> schedule & play; returns a handle
+     EM.stop()                         -> stop everything immediately
+     EM.toggle(btnEl, parts, opts)     -> wire a button: click to play / stop
+     EM.playing                        -> boolean
+
+   A "part" is an array of steps: [{n, d}, ...]
+     n : note name "A4" | number (Hz) | array of those (a chord) | "rest"
+     d : duration in beats
+   `parts` may be one part (melody) or an array of parts played together.
+
+   opts: {
+     bpm        : beats per minute            (default 90)
+     timbre     : 'voice'|'organ'|'reed'|'pluck'|'bell'   (default 'voice')
+     temperament: 'equal'|'pythagorean'       (default 'equal')
+     tonic      : note name for Pythagorean centre (default 'D3')
+     gain       : 0..1 master gain            (default 0.9)
+     reverb     : 0..1 wet amount             (default 0.32 — a stone church)
+     legato     : 0..1 note overlap           (default 0.9)
+   }
+   ========================================================================== */
+const EM = (function () {
+  let ctx = null, master = null, verb = null, dry = null, wet = null;
+  let voices = [];        // active {osc/src, gain} for stop()
+  let stopTimer = null;
+
+  const NOTES = { C:0,'C#':1,Db:1,D:2,'D#':3,Eb:3,E:4,'E#':5,Fb:4,F:5,'F#':6,
+                  Gb:6,G:7,'G#':8,Ab:8,A:9,'A#':10,Bb:10,B:11,'Cb':11,'B#':0 };
+
+  function nameToMidi(name) {
+    const m = /^([A-Ga-g])(b|bb|#|##)?(-?\d)$/.exec(name.trim());
+    if (!m) return null;
+    let semi = NOTES[m[1].toUpperCase() + (m[2] || '')];
+    if (semi == null) {           // handle bb / ## fallbacks
+      semi = NOTES[m[1].toUpperCase()];
+      if (m[2] === 'bb') semi -= 2; else if (m[2] === '##') semi += 2;
+    }
+    return semi + (parseInt(m[3], 10) + 1) * 12;
+  }
+
+  // Equal-temperament frequency
+  function freq(name) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name);
+    return midi == null ? 0 : 440 * Math.pow(2, (midi - 69) / 12);
+  }
+
+  // Pythagorean: tune each pitch by stacking pure 3:2 fifths from a tonic,
+  // reducing into the correct octave. Gives the ringing pure fifths/fourths
+  // (and wide, restless thirds) characteristic of medieval polyphony.
+  function pythFreq(name, tonicName) {
+    if (typeof name === 'number') return name;
+    const midi = nameToMidi(name), tonic = nameToMidi(tonicName);
+    if (midi == null) return 0;
+    const rel = ((midi - tonic) % 12 + 12) % 12;       // pitch-class distance
+    // fifths needed to reach each pitch-class (line of fifths, centred on tonic)
+    const FIFTHS = [0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10, 5]; // C-rel index -> #fifths
+    // map semitone distance -> signed fifth count nearest to 0
+    const toFifths = { 0:0, 7:1, 2:2, 9:3, 4:4, 11:5, 6:6, 5:-1, 10:-2, 3:-3, 8:-4, 1:-5 };
+    const n = toFifths[rel] != null ? toFifths[rel] : 0;
+    let ratio = Math.pow(3 / 2, n);
+    while (ratio >= 2) ratio /= 2;
+    while (ratio < 1) ratio *= 2;
+    const baseOct = Math.floor((midi - tonic) / 12);
+    return freq(tonicName) * ratio * Math.pow(2, baseOct);
+  }
+
+  // --- Build a synthetic stone-church impulse response for the convolver -----
+  function makeIR(seconds, decay) {
+    const rate = ctx.sampleRate, len = Math.floor(rate * seconds);
+    const buf = ctx.createBuffer(2, len, rate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = buf.getChannelData(ch);
+      for (let i = 0; i < len; i++) {
+        // early reflections + exponentially decaying diffuse tail
+        const env = Math.pow(1 - i / len, decay);
+        d[i] = (Math.random() * 2 - 1) * env;
+      }
+      // sparse early reflections for a sense of stone walls
+      [0.011, 0.019, 0.027, 0.041, 0.058].forEach(function (t) {
+        const idx = Math.floor(t * rate);
+        if (idx < len) d[idx] += (ch ? -0.5 : 0.5) * Math.pow(1 - idx / len, decay);
+      });
+    }
+    return buf;
+  }
+
+  function ensure(opts) {
+    if (!ctx) {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain();
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -18; comp.ratio.value = 3; comp.attack.value = 0.01;
+      dry = ctx.createGain(); wet = ctx.createGain();
+      verb = ctx.createConvolver();
+      verb.buffer = makeIR(3.2, 2.6);
+      master.connect(comp);
+      comp.connect(dry); dry.connect(ctx.destination);
+      comp.connect(verb); verb.connect(wet); wet.connect(ctx.destination);
+    }
+    if (ctx.state === 'suspended') ctx.resume();
+    master.gain.value = opts.gain;
+    wet.gain.value = opts.reverb;
+    dry.gain.value = 1;
+  }
+
+  // Harmonic recipes per timbre: [amplitude of partial 1, 2, 3, ...]
+  const TIMBRE = {
+    voice: { partials: [1, 0.35, 0.18, 0.09, 0.05, 0.03], vib: 5.3, vibDepth: 0.006,
+             atk: 0.06, rel: 0.28, lp: 3200, decay: 0 },
+    organ: { partials: [1, 0.6, 0.5, 0.0, 0.35, 0.0, 0.2], vib: 0, vibDepth: 0,
+             atk: 0.02, rel: 0.12, lp: 4200, decay: 0 },
+    reed:  { partials: [1, 0.7, 0.55, 0.4, 0.3, 0.22, 0.16], vib: 4.5, vibDepth: 0.004,
+             atk: 0.03, rel: 0.14, lp: 3600, decay: 0 },
+    pluck: { partials: [1, 0.5, 0.3, 0.2, 0.12, 0.08], vib: 0, vibDepth: 0,
+             atk: 0.004, rel: 0.1, lp: 4000, decay: 3.2 },
+    bell:  { partials: [1, 0, 0.6, 0, 0.4, 0, 0.25], vib: 0, vibDepth: 0,
+             atk: 0.002, rel: 0.4, lp: 5000, decay: 2.0 }
+  };
+
+  // Additive periodic wave for a timbre (bandlimited, no aliasing)
+  function waveFor(t) {
+    const p = t.partials, real = new Float32Array(p.length + 1),
+          imag = new Float32Array(p.length + 1);
+    for (let i = 0; i < p.length; i++) imag[i + 1] = p[i];
+    return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+  }
+
+  function noteOn(f, t0, dur, t, wave, gainScale) {
+    if (!f) return;
+    const osc = ctx.createOscillator();
+    osc.setPeriodicWave(wave);
+    osc.frequency.value = f;
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = t.lp; lp.Q.value = 0.5;
+
+    // vibrato (voice/reed)
+    let lfo, lfoG;
+    if (t.vib) {
+      lfo = ctx.createOscillator(); lfo.frequency.value = t.vib;
+      lfoG = ctx.createGain(); lfoG.gain.value = f * t.vibDepth;
+      lfo.connect(lfoG); lfoG.connect(osc.frequency);
+      lfo.start(t0); lfo.stop(t0 + dur + t.rel + 0.05);
+    }
+
+    const peak = 0.28 * gainScale;
+    const end = t0 + dur;
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(peak, t0 + t.atk);
+    if (t.decay) {
+      // plucked / struck: decay across the whole note toward silence
+      g.gain.exponentialRampToValueAtTime(0.0002, t0 + Math.min(dur + t.rel, t.decay));
+    } else {
+      g.gain.setValueAtTime(peak, Math.max(t0 + t.atk, end - t.rel));
+      g.gain.exponentialRampToValueAtTime(0.0002, end + t.rel);
+    }
+    osc.connect(lp); lp.connect(g); g.connect(master);
+    osc.start(t0); osc.stop(end + t.rel + 0.05);
+    voices.push(osc); if (lfo) voices.push(lfo);
+  }
+
+  function normalizeParts(parts) {
+    // accept a single part or an array of parts
+    if (Array.isArray(parts) && parts.length && !Array.isArray(parts[0]) &&
+        typeof parts[0] === 'object' && 'n' in parts[0]) return [parts];
+    return parts;
+  }
+
+  function play(parts, opts) {
+    opts = Object.assign({ bpm: 90, timbre: 'voice', temperament: 'equal',
+      tonic: 'D3', gain: 0.9, reverb: 0.32, legato: 0.9 }, opts || {});
+    stop();
+    ensure(opts);
+    const t = TIMBRE[opts.timbre] || TIMBRE.voice;
+    const wave = waveFor(t);
+    const spb = 60 / opts.bpm;
+    const F = opts.temperament === 'pythagorean'
+      ? function (n) { return pythFreq(n, opts.tonic); } : freq;
+    const allParts = normalizeParts(parts);
+    let latest = 0;
+
+    allParts.forEach(function (part) {
+      let cursor = ctx.currentTime + 0.08;
+      part.forEach(function (step) {
+        const dur = step.d * spb;
+        if (step.n !== 'rest' && step.n != null) {
+          const chord = Array.isArray(step.n) ? step.n : [step.n];
+          const gs = 1 / Math.sqrt(chord.length) / Math.sqrt(allParts.length);
+          chord.forEach(function (nn) {
+            noteOn(F(nn), cursor, dur * opts.legato, t, wave, gs);
+          });
+        }
+        cursor += dur;
+      });
+      latest = Math.max(latest, cursor);
+    });
+
+    EM.playing = true;
+    const totalMs = (latest - ctx.currentTime + t.rel + 0.2) * 1000;
+    stopTimer = setTimeout(function () {
+      EM.playing = false;
+      if (EM._onend) EM._onend();
+    }, totalMs);
+    return { duration: totalMs };
+  }
+
+  function stop() {
+    if (stopTimer) { clearTimeout(stopTimer); stopTimer = null; }
+    voices.forEach(function (v) { try { v.stop(); } catch (e) {} });
+    voices = [];
+    EM.playing = false;
+    if (EM._onend) EM._onend();
+  }
+
+  // Wire a <button> to toggle playback and reflect state in its label.
+  function toggle(btn, parts, opts) {
+    const label = btn.getAttribute('data-label') || btn.textContent.trim();
+    btn.setAttribute('data-label', label);
+    if (EM.playing && EM._active === btn) { stop(); return; }
+    stop();
+    EM._active = btn;
+    play(parts, opts);
+    btn.classList.add('playing');
+    btn.innerHTML = '&#9632; Stop';
+    EM._onend = function () {
+      btn.classList.remove('playing');
+      btn.innerHTML = label;
+      EM._onend = null; EM._active = null;
+    };
+  }
+
+  return { freq: freq, play: play, stop: stop, toggle: toggle, playing: false,
+           _onend: null, _active: null };
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # A History of Early Music
 
-A growing collection of **20 interactive presentations** tracing a thousand years of Western music — from the unaccompanied plainchant of the early Church, through the birth of polyphony, the Ars Nova, the Franco-Flemish masters and the golden age of the Renaissance, to the threshold of the Baroque.
+A growing collection of **22 interactive presentations** tracing a thousand years of Western music — from the unaccompanied plainchant of the early Church, through the birth of polyphony, the Ars Nova, the Franco-Flemish masters and the golden age of the Renaissance, to the threshold of the Baroque.
 
 Each presentation is a self-contained, single-file HTML deployment using [Reveal.js](https://revealjs.com/), with hand-drawn inline-SVG diagrams, **synthesised audio examples you can play in the browser** (Web Audio API — including authentic *Pythagorean tuning* for the medieval examples), links to real recordings, and clear explanations of **how to read the notation of each age**. No build step, no bundler, no local dependencies beyond a CDN.
 
@@ -49,24 +49,32 @@ Each presentation is a self-contained, single-file HTML deployment using [Reveal
 |---|------------|-------|--------|
 | 19 | [Claudio Monteverdi — The Seconda Pratica & the Dawn of Opera](Monteverdi/) | 1567–1643 | 16 |
 
+### The Christian East · Byzantine & Slavonic Orthodoxy
+
+| # | Presentation | Dates | Slides |
+|---|------------|-------|--------|
+| 20 | [Byzantine Chant — The Sung Theology of the Christian East](Byzantine/) | 6th c. – present | 15 |
+| 21 | [Slavonic & Russian Orthodox Chant — Znamenny to the All-Night Vigil](Slavonic/) | 988 – present | 16 |
+
 ### Reading the Notation
 
 | # | Presentation | Dates | Slides |
 |---|------------|-------|--------|
-| 20 | [Reading Early Music Notation — From Gesture to Grid](Notation/) | A didactic guide | 15 |
+| 22 | [Reading Early Music Notation — From Gesture to Grid](Notation/) | A didactic guide | 15 |
 
-_309 slides across the collection._
+_340 slides across the collection._
 
 ## Themes Covered
 
 - **Notation, stage by stage** — neumes, Guido's staff & solmisation, square notation, the rhythmic modes, Franconian and Ars Nova mensural notation, white mensural notation, lute & keyboard tablature, and the road to the modern score, each with a worked "how to read it" example.
 - **Technique** — modes, organum, isorhythm, the *formes fixes*, fauxbourdon, the cyclic cantus-firmus Mass, canon & mensuration canon, pervasive imitation, suspensions, chromaticism, the division on a ground, and the basso continuo.
+- **The Christian East** — Byzantine chant (the *ison* drone, the Octoechos, the microtonal genera, St Romanos and St Kassia) and the Slavonic/Russian tradition (Znamenny chant and its hook-notation, the bells of the *zvon*, the deep oktavist basses, and the All-Night Vigil), including the wider Orthodox world.
 - **Sound** — every deck plays idiomatic examples in the browser and links out to landmark recordings.
 
 ## Technical Notes
 
 - Single-file HTML per presentation; Reveal.js 4.6.1 and fonts loaded from CDN.
-- Audio is synthesised at runtime with the Web Audio API — a shared engine with multiple period timbres (voice, organ, reed, plucked lute/harp, bell), a generated stone-church convolution reverb, and selectable equal or **Pythagorean** temperament so the medieval fifths ring true.
+- Audio is synthesised at runtime with the Web Audio API — a shared engine with multiple period timbres (voice, organ, reed, plucked lute/harp, bell), a generated stone-church convolution reverb, selectable equal or **Pythagorean** temperament so the medieval fifths ring true, and direct frequency control for the **microtonal Byzantine genera**.
 - Dark theme; responsive; keyboard-navigable.
 
 ---
