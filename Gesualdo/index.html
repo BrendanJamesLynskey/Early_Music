@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carlo Gesualdo — The Prince of Chromatic Anguish</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -57,16 +57,17 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -77,15 +78,15 @@
     <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
         <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
             <!-- A princely coronet over a chromatic staff -->
-            <g stroke="#cf7272" stroke-width="2" fill="none">
+            <g stroke="#ae594a" stroke-width="2" fill="none">
                 <path d="M 120 44 L 130 22 L 150 40 L 180 18 L 210 40 L 230 22 L 240 44 Z"/>
                 <line x1="120" y1="52" x2="240" y2="52"/>
             </g>
-            <circle cx="130" cy="22" r="4" fill="#d4a053"/>
-            <circle cx="180" cy="18" r="4" fill="#d4a053"/>
-            <circle cx="230" cy="22" r="4" fill="#d4a053"/>
+            <circle cx="130" cy="22" r="4" fill="#a18347"/>
+            <circle cx="180" cy="18" r="4" fill="#a18347"/>
+            <circle cx="230" cy="22" r="4" fill="#a18347"/>
             <!-- a 5-line staff with a descending chromatic sigh -->
-            <g stroke="#6a6a7a" stroke-width="1">
+            <g stroke="#948463" stroke-width="1">
                 <line x1="40" y1="78" x2="320" y2="78"/>
                 <line x1="40" y1="90" x2="320" y2="90"/>
                 <line x1="40" y1="102" x2="320" y2="102"/>
@@ -93,14 +94,14 @@
                 <line x1="40" y1="126" x2="320" y2="126"/>
             </g>
             <!-- chromatic descending noteheads, accidentals piling up -->
-            <text x="70" y="88" fill="#cf7272" font-family="Playfair Display" font-size="14">&#9839;</text>
-            <ellipse cx="86" cy="90" rx="7" ry="5" fill="#e8e6e3"/>
-            <ellipse cx="132" cy="96" rx="7" ry="5" fill="#cf7272"/>
-            <text x="146" y="100" fill="#9b72cf" font-family="Playfair Display" font-size="14">&#9839;</text>
-            <ellipse cx="180" cy="102" rx="7" ry="5" fill="#e8e6e3"/>
-            <text x="196" y="112" fill="#cf7272" font-family="Playfair Display" font-size="14">&#9837;</text>
-            <ellipse cx="228" cy="108" rx="7" ry="5" fill="#9b72cf"/>
-            <ellipse cx="276" cy="114" rx="7" ry="5" fill="#e8e6e3"/>
+            <text x="70" y="88" fill="#ae594a" font-family="Playfair Display" font-size="14">&#9839;</text>
+            <ellipse cx="86" cy="90" rx="7" ry="5" fill="#251e14"/>
+            <ellipse cx="132" cy="96" rx="7" ry="5" fill="#ae594a"/>
+            <text x="146" y="100" fill="#72508a" font-family="Playfair Display" font-size="14">&#9839;</text>
+            <ellipse cx="180" cy="102" rx="7" ry="5" fill="#251e14"/>
+            <text x="196" y="112" fill="#ae594a" font-family="Playfair Display" font-size="14">&#9837;</text>
+            <ellipse cx="228" cy="108" rx="7" ry="5" fill="#72508a"/>
+            <ellipse cx="276" cy="114" rx="7" ry="5" fill="#251e14"/>
         </svg>
     </div>
     <h1>Carlo Gesualdo</h1>
@@ -147,7 +148,7 @@
         sensationalised. What matters for music history is the aftermath: a man who withdrew from the world and
         turned inward, toward an art of grief, guilt and unrelieved longing.
     </p>
-    <div class="quote-box" style="border-left-color: var(--accent-rose); background: rgba(207,114,114,0.05);">
+    <div class="quote-box" style="border-left-color: var(--accent-rose); background: rgba(174,89,74,0.05);">
         <p>The murder is a matter of historical record; the music it stands beside asks not for our verdict but for our attention.</p>
         <span class="attribution">— an editorial note, offered soberly</span>
     </div>
@@ -222,7 +223,7 @@
     <div class="diagram-container">
         <svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 5-line staff -->
-            <g stroke="#6a6a7a" stroke-width="1.2">
+            <g stroke="#948463" stroke-width="1.2">
                 <line x1="40" y1="40" x2="760" y2="40"/>
                 <line x1="40" y1="55" x2="760" y2="55"/>
                 <line x1="40" y1="70" x2="760" y2="70"/>
@@ -230,43 +231,43 @@
                 <line x1="40" y1="100" x2="760" y2="100"/>
             </g>
             <!-- Chord A (high) roots at 70,55,40 -->
-            <text x="120" y="60" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <text x="120" y="45" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <ellipse cx="150" cy="70" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="150" cy="55" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="150" cy="40" rx="9" ry="6" fill="#e8e6e3"/>
+            <text x="120" y="60" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="120" y="45" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="150" cy="70" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="150" cy="55" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="150" cy="40" rx="9" ry="6" fill="#251e14"/>
             <!-- Chord B roots at 85,70,55 -->
-            <text x="290" y="75" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <ellipse cx="320" cy="85" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="320" cy="70" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="320" cy="55" rx="9" ry="6" fill="#e8e6e3"/>
+            <text x="290" y="75" fill="#72508a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="320" cy="85" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="320" cy="70" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="320" cy="55" rx="9" ry="6" fill="#251e14"/>
             <!-- Chord C roots at 100,85,70 -->
-            <text x="460" y="90" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <text x="460" y="75" fill="#cf7272" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <ellipse cx="490" cy="100" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="490" cy="85" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="490" cy="70" rx="9" ry="6" fill="#e8e6e3"/>
+            <text x="460" y="90" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="460" y="75" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="490" cy="100" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="490" cy="85" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="490" cy="70" rx="9" ry="6" fill="#251e14"/>
             <!-- Chord D roots at 115(ledger),100,85 -->
-            <line x1="644" y1="115" x2="676" y2="115" stroke="#6a6a7a" stroke-width="1.2"/>
-            <text x="630" y="105" fill="#9b72cf" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <ellipse cx="660" cy="115" rx="9" ry="6" fill="#cf7272"/>
-            <ellipse cx="660" cy="100" rx="9" ry="6" fill="#e8e6e3"/>
-            <ellipse cx="660" cy="85" rx="9" ry="6" fill="#e8e6e3"/>
+            <line x1="644" y1="115" x2="676" y2="115" stroke="#948463" stroke-width="1.2"/>
+            <text x="630" y="105" fill="#72508a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <ellipse cx="660" cy="115" rx="9" ry="6" fill="#ae594a"/>
+            <ellipse cx="660" cy="100" rx="9" ry="6" fill="#251e14"/>
+            <ellipse cx="660" cy="85" rx="9" ry="6" fill="#251e14"/>
             <!-- descending-third arrows between roots -->
-            <g stroke="#d4a053" stroke-width="1.2" fill="none">
+            <g stroke="#a18347" stroke-width="1.2" fill="none">
                 <path d="M 168 72 q 40 24 132 12" marker-end="url(#ah)"/>
                 <path d="M 338 87 q 40 24 132 12" marker-end="url(#ah)"/>
                 <path d="M 508 102 q 40 24 132 12" marker-end="url(#ah)"/>
             </g>
-            <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d4a053"/></marker></defs>
-            <text x="200" y="150" fill="#d4a053" font-family="DM Sans" font-size="12">down a 3rd</text>
-            <text x="370" y="150" fill="#d4a053" font-family="DM Sans" font-size="12">down a 3rd</text>
-            <text x="540" y="150" fill="#d4a053" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a18347"/></marker></defs>
+            <text x="200" y="150" fill="#a18347" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <text x="370" y="150" fill="#a18347" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <text x="540" y="150" fill="#a18347" font-family="DM Sans" font-size="12">down a 3rd</text>
             <!-- labels -->
-            <text x="128" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">C&#9839; major</text>
-            <text x="300" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">A major</text>
-            <text x="468" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">F&#9839; major</text>
-            <text x="636" y="185" fill="#9a9a9a" font-family="DM Sans" font-size="13">D major</text>
+            <text x="128" y="185" fill="#62543c" font-family="DM Sans" font-size="13">C&#9839; major</text>
+            <text x="300" y="185" fill="#62543c" font-family="DM Sans" font-size="13">A major</text>
+            <text x="468" y="185" fill="#62543c" font-family="DM Sans" font-size="13">F&#9839; major</text>
+            <text x="636" y="185" fill="#62543c" font-family="DM Sans" font-size="13">D major</text>
         </svg>
     </div>
     <div class="card-grid cols-3" style="max-width:96%;">
@@ -375,25 +376,25 @@
         <svg viewBox="0 0 820 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="DM Sans" font-size="13">
                 <!-- close motion (left) -->
-                <text x="30" y="30" fill="#4ecca3" font-size="12">USUAL: neighbouring chords, notes shared</text>
-                <circle cx="90" cy="90" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/><text x="90" y="95" fill="#e8e6e3" text-anchor="middle">C</text>
-                <circle cx="180" cy="90" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/><text x="180" y="95" fill="#e8e6e3" text-anchor="middle">G</text>
-                <circle cx="270" cy="90" r="30" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/><text x="270" y="95" fill="#e8e6e3" text-anchor="middle">a</text>
-                <path d="M 120 90 L 150 90" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#ag)"/>
-                <path d="M 210 90 L 240 90" stroke="#4ecca3" stroke-width="1.5" marker-end="url(#ag)"/>
-                <text x="180" y="150" fill="#6a6a7a" text-anchor="middle" font-size="11">smooth, expected</text>
+                <text x="30" y="30" fill="#3c694d" font-size="12">USUAL: neighbouring chords, notes shared</text>
+                <circle cx="90" cy="90" r="30" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/><text x="90" y="95" fill="#251e14" text-anchor="middle">C</text>
+                <circle cx="180" cy="90" r="30" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/><text x="180" y="95" fill="#251e14" text-anchor="middle">G</text>
+                <circle cx="270" cy="90" r="30" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/><text x="270" y="95" fill="#251e14" text-anchor="middle">a</text>
+                <path d="M 120 90 L 150 90" stroke="#3c694d" stroke-width="1.5" marker-end="url(#ag)"/>
+                <path d="M 210 90 L 240 90" stroke="#3c694d" stroke-width="1.5" marker-end="url(#ag)"/>
+                <text x="180" y="150" fill="#948463" text-anchor="middle" font-size="11">smooth, expected</text>
                 <!-- distant motion (right) -->
-                <text x="430" y="30" fill="#cf7272" font-size="12">GESUALDO: distant chords, roots a 3rd apart</text>
-                <circle cx="490" cy="90" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/><text x="490" y="95" fill="#e8e6e3" text-anchor="middle">C&#9839;</text>
-                <circle cx="600" cy="60" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/><text x="600" y="65" fill="#e8e6e3" text-anchor="middle">A</text>
-                <circle cx="710" cy="120" r="30" fill="#161622" stroke="#cf7272" stroke-width="1.5"/><text x="710" y="125" fill="#e8e6e3" text-anchor="middle">F&#9839;</text>
-                <path d="M 518 78 L 574 66" stroke="#cf7272" stroke-width="1.5" marker-end="url(#ar)"/>
-                <path d="M 626 76 L 686 108" stroke="#cf7272" stroke-width="1.5" marker-end="url(#ar)"/>
-                <text x="600" y="175" fill="#6a6a7a" text-anchor="middle" font-size="11">lurching, unpredictable</text>
+                <text x="430" y="30" fill="#ae594a" font-size="12">GESUALDO: distant chords, roots a 3rd apart</text>
+                <circle cx="490" cy="90" r="30" fill="#e5d9be" stroke="#ae594a" stroke-width="1.5"/><text x="490" y="95" fill="#251e14" text-anchor="middle">C&#9839;</text>
+                <circle cx="600" cy="60" r="30" fill="#e5d9be" stroke="#ae594a" stroke-width="1.5"/><text x="600" y="65" fill="#251e14" text-anchor="middle">A</text>
+                <circle cx="710" cy="120" r="30" fill="#e5d9be" stroke="#ae594a" stroke-width="1.5"/><text x="710" y="125" fill="#251e14" text-anchor="middle">F&#9839;</text>
+                <path d="M 518 78 L 574 66" stroke="#ae594a" stroke-width="1.5" marker-end="url(#ar)"/>
+                <path d="M 626 76 L 686 108" stroke="#ae594a" stroke-width="1.5" marker-end="url(#ar)"/>
+                <text x="600" y="175" fill="#948463" text-anchor="middle" font-size="11">lurching, unpredictable</text>
             </g>
             <defs>
-                <marker id="ag" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#4ecca3"/></marker>
-                <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#cf7272"/></marker>
+                <marker id="ag" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3c694d"/></marker>
+                <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ae594a"/></marker>
             </defs>
         </svg>
     </div>

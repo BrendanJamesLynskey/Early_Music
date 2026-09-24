@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francesco Landini — The Italian Trecento &amp; the Sweet Cadence</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -58,16 +58,17 @@
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -79,7 +80,7 @@
         <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
             <!-- Landini's emblem: a portative organ (organetto), his signature instrument -->
             <!-- graded pipes -->
-            <g fill="#d4a053">
+            <g fill="#a18347">
                 <rect x="120" y="34" width="7" height="52"/>
                 <rect x="131" y="26" width="7" height="60"/>
                 <rect x="142" y="19" width="7" height="67"/>
@@ -89,9 +90,9 @@
                 <rect x="186" y="34" width="7" height="52"/>
             </g>
             <!-- wind-chest / body -->
-            <rect x="110" y="86" width="92" height="20" rx="3" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
+            <rect x="110" y="86" width="92" height="20" rx="3" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/>
             <!-- keyboard -->
-            <g fill="#e8e6e3">
+            <g fill="#251e14">
                 <rect x="114" y="107" width="5" height="12"/>
                 <rect x="121" y="107" width="5" height="12"/>
                 <rect x="128" y="107" width="5" height="12"/>
@@ -102,14 +103,14 @@
                 <rect x="163" y="107" width="5" height="12"/>
             </g>
             <!-- bellows behind -->
-            <path d="M 202 90 q 34 4 34 20 q 0 16 -34 12" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
-            <path d="M 202 96 q 22 3 22 14 q 0 10 -22 8" fill="none" stroke="#6a6a7a" stroke-width="1"/>
+            <path d="M 202 90 q 34 4 34 20 q 0 16 -34 12" fill="none" stroke="#62543c" stroke-width="1.5"/>
+            <path d="M 202 96 q 22 3 22 14 q 0 10 -22 8" fill="none" stroke="#948463" stroke-width="1"/>
             <!-- laurel branches (crowned with laurel) -->
-            <g stroke="#4ecca3" stroke-width="1.6" fill="none">
+            <g stroke="#3c694d" stroke-width="1.6" fill="none">
                 <path d="M 70 120 q 12 -34 30 -52"/>
                 <path d="M 230 120 q -12 -34 -30 -52"/>
             </g>
-            <g fill="#4ecca3" opacity="0.85">
+            <g fill="#3c694d" opacity="0.85">
                 <ellipse cx="78" cy="106" rx="5" ry="2.4" transform="rotate(-40 78 106)"/>
                 <ellipse cx="84" cy="96" rx="5" ry="2.4" transform="rotate(-48 84 96)"/>
                 <ellipse cx="90" cy="86" rx="5" ry="2.4" transform="rotate(-56 90 86)"/>
@@ -215,7 +216,7 @@
         <div>
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <!-- portative organ, larger -->
-                <g fill="#d4a053">
+                <g fill="#a18347">
                     <rect x="60" y="52" width="8" height="60"/>
                     <rect x="72" y="42" width="8" height="70"/>
                     <rect x="84" y="34" width="8" height="78"/>
@@ -224,8 +225,8 @@
                     <rect x="120" y="42" width="8" height="70"/>
                     <rect x="132" y="52" width="8" height="60"/>
                 </g>
-                <rect x="50" y="112" width="100" height="24" rx="3" fill="#161622" stroke="#4ecca3" stroke-width="1.6"/>
-                <g fill="#e8e6e3">
+                <rect x="50" y="112" width="100" height="24" rx="3" fill="#e5d9be" stroke="#3c694d" stroke-width="1.6"/>
+                <g fill="#251e14">
                     <rect x="55" y="137" width="6" height="16"/>
                     <rect x="63" y="137" width="6" height="16"/>
                     <rect x="71" y="137" width="6" height="16"/>
@@ -235,8 +236,8 @@
                     <rect x="103" y="137" width="6" height="16"/>
                     <rect x="111" y="137" width="6" height="16"/>
                 </g>
-                <path d="M 150 116 q 34 4 34 22 q 0 18 -34 14" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
-                <text x="100" y="182" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="11">the <tspan fill="#4ecca3">organetto</tspan></text>
+                <path d="M 150 116 q 34 4 34 22 q 0 18 -34 14" fill="none" stroke="#62543c" stroke-width="1.5"/>
+                <text x="100" y="182" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="11">the <tspan fill="#3c694d">organetto</tspan></text>
             </svg>
         </div>
     </div>
@@ -274,25 +275,25 @@
         <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="DM Sans" font-size="13">
                 <!-- form blocks: A bb a A -->
-                <rect x="40"  y="40" width="150" height="44" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
-                <text x="115" y="60" text-anchor="middle" fill="#4ecca3" font-weight="700" font-size="15">A · Ripresa</text>
-                <text x="115" y="77" text-anchor="middle" fill="#9a9a9a" font-size="10">refrain</text>
+                <rect x="40"  y="40" width="150" height="44" rx="6" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/>
+                <text x="115" y="60" text-anchor="middle" fill="#3c694d" font-weight="700" font-size="15">A · Ripresa</text>
+                <text x="115" y="77" text-anchor="middle" fill="#62543c" font-size="10">refrain</text>
 
-                <rect x="210" y="40" width="115" height="44" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
-                <text x="267" y="60" text-anchor="middle" fill="#9b72cf" font-weight="700" font-size="15">b · Piede</text>
-                <rect x="335" y="40" width="115" height="44" rx="6" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
-                <text x="392" y="60" text-anchor="middle" fill="#9b72cf" font-weight="700" font-size="15">b · Piede</text>
-                <text x="330" y="102" text-anchor="middle" fill="#9a9a9a" font-size="10">two "feet" — new music, sung twice</text>
+                <rect x="210" y="40" width="115" height="44" rx="6" fill="#e5d9be" stroke="#72508a" stroke-width="1.5"/>
+                <text x="267" y="60" text-anchor="middle" fill="#72508a" font-weight="700" font-size="15">b · Piede</text>
+                <rect x="335" y="40" width="115" height="44" rx="6" fill="#e5d9be" stroke="#72508a" stroke-width="1.5"/>
+                <text x="392" y="60" text-anchor="middle" fill="#72508a" font-weight="700" font-size="15">b · Piede</text>
+                <text x="330" y="102" text-anchor="middle" fill="#62543c" font-size="10">two "feet" — new music, sung twice</text>
 
-                <rect x="460" y="40" width="150" height="44" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
-                <text x="535" y="60" text-anchor="middle" fill="#d4a053" font-weight="700" font-size="15">a · Volta</text>
-                <text x="535" y="102" text-anchor="middle" fill="#9a9a9a" font-size="10">new words, ripresa's music</text>
+                <rect x="460" y="40" width="150" height="44" rx="6" fill="#e5d9be" stroke="#a18347" stroke-width="1.5"/>
+                <text x="535" y="60" text-anchor="middle" fill="#a18347" font-weight="700" font-size="15">a · Volta</text>
+                <text x="535" y="102" text-anchor="middle" fill="#62543c" font-size="10">new words, ripresa's music</text>
 
-                <rect x="630" y="40" width="150" height="44" rx="6" fill="#161622" stroke="#4ecca3" stroke-width="1.5"/>
-                <text x="705" y="60" text-anchor="middle" fill="#4ecca3" font-weight="700" font-size="15">A · Ripresa</text>
-                <text x="705" y="77" text-anchor="middle" fill="#9a9a9a" font-size="10">refrain returns</text>
+                <rect x="630" y="40" width="150" height="44" rx="6" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/>
+                <text x="705" y="60" text-anchor="middle" fill="#3c694d" font-weight="700" font-size="15">A · Ripresa</text>
+                <text x="705" y="77" text-anchor="middle" fill="#62543c" font-size="10">refrain returns</text>
 
-                <text x="410" y="128" text-anchor="middle" fill="#6a6a7a" font-size="12">Form:  A &#8211; b b &#8211; a &#8211; A   (the ripresa's melody frames the verse)</text>
+                <text x="410" y="128" text-anchor="middle" fill="#948463" font-size="12">Form:  A &#8211; b b &#8211; a &#8211; A   (the ripresa's melody frames the verse)</text>
             </g>
         </svg>
     </div>
@@ -335,7 +336,7 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 5-line staff -->
-            <g stroke="#9a9a9a" stroke-width="1.1">
+            <g stroke="#62543c" stroke-width="1.1">
                 <line x1="70" y1="40"  x2="840" y2="40"/>
                 <line x1="70" y1="58"  x2="840" y2="58"/>
                 <line x1="70" y1="76"  x2="840" y2="76"/>
@@ -344,44 +345,44 @@
             </g>
             <!-- lines bottom->top: E4(112) G4(94) B4(76) D5(58) F5(40); spaces F4(103) A4(85) C5(67) E5(49); G5 above =31 -->
             <!-- Upper voice (cantus): A4 - B4 - A4 - [7]F#4 - [6]E4 - [8]G4 -->
-            <g fill="#e8e6e3">
+            <g fill="#251e14">
                 <ellipse cx="150" cy="85"  rx="9" ry="7"/>
                 <ellipse cx="230" cy="76"  rx="9" ry="7"/>
                 <ellipse cx="310" cy="85"  rx="9" ry="7"/>
             </g>
             <!-- 7 : F#4 (space y103) highlighted amber -->
-            <ellipse cx="430" cy="103" rx="9" ry="7" fill="#d4a053"/>
-            <text x="430" y="103" text-anchor="middle" dominant-baseline="central" fill="#0a0a0f" font-family="DM Sans" font-size="11" font-weight="700">&#9839;</text>
+            <ellipse cx="430" cy="103" rx="9" ry="7" fill="#a18347"/>
+            <text x="430" y="103" text-anchor="middle" dominant-baseline="central" fill="#f2e9d3" font-family="DM Sans" font-size="11" font-weight="700">&#9839;</text>
             <!-- 6 : E4 (line y112) highlighted blue -->
-            <ellipse cx="540" cy="112" rx="9" ry="7" fill="#5b8cd4"/>
+            <ellipse cx="540" cy="112" rx="9" ry="7" fill="#41579a"/>
             <!-- 8 : G4 (line y94) highlighted green -->
-            <ellipse cx="660" cy="94"  rx="10" ry="7.5" fill="#4ecca3"/>
+            <ellipse cx="660" cy="94"  rx="10" ry="7.5" fill="#3c694d"/>
 
             <!-- the under-third leap arrow: from E4 up to G4 -->
-            <path d="M 552 108 q 55 -34 96 -12" fill="none" stroke="#4ecca3" stroke-width="1.6" marker-end="url(#ah)"/>
+            <path d="M 552 108 q 55 -34 96 -12" fill="none" stroke="#3c694d" stroke-width="1.6" marker-end="url(#ah)"/>
             <defs>
                 <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto">
-                    <path d="M0,0 L8,4 L0,8 Z" fill="#4ecca3"/>
+                    <path d="M0,0 L8,4 L0,8 Z" fill="#3c694d"/>
                 </marker>
             </defs>
 
             <!-- degree labels -->
-            <text x="430" y="140" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="14" font-weight="700">7</text>
-            <text x="540" y="140" text-anchor="middle" fill="#5b8cd4" font-family="JetBrains Mono" font-size="14" font-weight="700">6</text>
-            <text x="660" y="140" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="14" font-weight="700">8</text>
-            <text x="430" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">leading tone</text>
-            <text x="540" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">dip to 6th</text>
-            <text x="660" y="158" text-anchor="middle" fill="#6a6a7a" font-family="DM Sans" font-size="10">leap a 3rd to octave</text>
-            <text x="600" y="66" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-style="italic" font-size="11">the "under-third"</text>
+            <text x="430" y="140" text-anchor="middle" fill="#a18347" font-family="JetBrains Mono" font-size="14" font-weight="700">7</text>
+            <text x="540" y="140" text-anchor="middle" fill="#41579a" font-family="JetBrains Mono" font-size="14" font-weight="700">6</text>
+            <text x="660" y="140" text-anchor="middle" fill="#3c694d" font-family="JetBrains Mono" font-size="14" font-weight="700">8</text>
+            <text x="430" y="158" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="10">leading tone</text>
+            <text x="540" y="158" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="10">dip to 6th</text>
+            <text x="660" y="158" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="10">leap a 3rd to octave</text>
+            <text x="600" y="66" text-anchor="middle" fill="#3c694d" font-family="DM Sans" font-style="italic" font-size="11">the "under-third"</text>
 
             <!-- tenor moving to the final G (an octave below) -->
-            <g fill="#9a9a9a">
+            <g fill="#62543c">
                 <ellipse cx="430" cy="185" rx="8" ry="6"/>
                 <ellipse cx="540" cy="176" rx="8" ry="6"/>
                 <ellipse cx="660" cy="185" rx="8" ry="6"/>
             </g>
-            <text x="80" y="205" fill="#6a6a7a" font-family="DM Sans" font-size="11">tenor &#8594; steps down to the final</text>
-            <text x="80" y="30"  fill="#6a6a7a" font-family="DM Sans" font-size="11">cantus (top voice)</text>
+            <text x="80" y="205" fill="#948463" font-family="DM Sans" font-size="11">tenor &#8594; steps down to the final</text>
+            <text x="80" y="30"  fill="#948463" font-family="DM Sans" font-size="11">cantus (top voice)</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> follow the top voice left to right. After the leading tone (7, amber) it does <em>not</em> resolve straight up; it drops to the 6th (6, blue), then springs up a third to the octave (8, green) as the lower voice settles onto the final. That little dip-and-leap is the Landini cadence.</p>
@@ -441,7 +442,7 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g stroke="#9a9a9a" stroke-width="1.1">
+            <g stroke="#62543c" stroke-width="1.1">
                 <line x1="60" y1="46" x2="840" y2="46"/>
                 <line x1="60" y1="64" x2="840" y2="64"/>
                 <line x1="60" y1="82" x2="840" y2="82"/>
@@ -449,26 +450,26 @@
                 <line x1="60" y1="118" x2="840" y2="118"/>
             </g>
             <!-- divisio marker letters -->
-            <text x="70" y="34" fill="#d4a053" font-family="JetBrains Mono" font-size="13">.q. quaternaria (4)</text>
-            <text x="470" y="34" fill="#4ecca3" font-family="JetBrains Mono" font-size="13">.o. octonaria (8)</text>
+            <text x="70" y="34" fill="#a18347" font-family="JetBrains Mono" font-size="13">.q. quaternaria (4)</text>
+            <text x="470" y="34" fill="#3c694d" font-family="JetBrains Mono" font-size="13">.o. octonaria (8)</text>
             <!-- group 1: 4 notes, separated by a dot -->
-            <g fill="#d4a053">
+            <g fill="#a18347">
                 <ellipse cx="110" cy="91" rx="8" ry="6"/>
                 <ellipse cx="150" cy="82" rx="8" ry="6"/>
                 <ellipse cx="190" cy="73" rx="8" ry="6"/>
                 <ellipse cx="230" cy="82" rx="8" ry="6"/>
             </g>
-            <circle cx="270" cy="82" r="3.5" fill="#e8e6e3"/>
+            <circle cx="270" cy="82" r="3.5" fill="#251e14"/>
             <!-- another quaternaria group -->
-            <g fill="#d4a053">
+            <g fill="#a18347">
                 <ellipse cx="310" cy="91" rx="8" ry="6"/>
                 <ellipse cx="350" cy="100" rx="8" ry="6"/>
                 <ellipse cx="390" cy="91" rx="8" ry="6"/>
                 <ellipse cx="430" cy="82" rx="8" ry="6"/>
             </g>
-            <circle cx="455" cy="82" r="3.5" fill="#e8e6e3"/>
+            <circle cx="455" cy="82" r="3.5" fill="#251e14"/>
             <!-- octonaria group: 8 quicker notes -->
-            <g fill="#4ecca3">
+            <g fill="#3c694d">
                 <ellipse cx="490" cy="82" rx="7" ry="5.5"/>
                 <ellipse cx="522" cy="73" rx="7" ry="5.5"/>
                 <ellipse cx="554" cy="82" rx="7" ry="5.5"/>
@@ -478,7 +479,7 @@
                 <ellipse cx="682" cy="64" rx="7" ry="5.5"/>
                 <ellipse cx="714" cy="73" rx="7" ry="5.5"/>
             </g>
-            <text x="60" y="146" fill="#6a6a7a" font-family="DM Sans" font-size="11">each dotted group = one breve, subdivided as the letter tells you · read left &#8594; right, higher = higher</text>
+            <text x="60" y="146" fill="#948463" font-family="DM Sans" font-size="11">each dotted group = one breve, subdivided as the letter tells you · read left &#8594; right, higher = higher</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> find the little letter marking the <em>divisione</em> — it says how many notes fill one breve. Read each dot-bounded group as a single beat's worth of notes. Late in the century Italian scribes increasingly borrowed the French mensural signs, and the two systems merged.</p>

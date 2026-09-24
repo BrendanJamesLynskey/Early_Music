@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tomás Luis de Victoria — The Spanish Mystic</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -58,16 +58,17 @@
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -78,28 +79,28 @@
     <div style="width: 300px; height: 150px; margin: 0 auto 0.3em auto;">
         <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
             <!-- A rose-window emblem over a rising fourth "of longing" -->
-            <g stroke="#cf7272" stroke-width="1.4" fill="none">
+            <g stroke="#ae594a" stroke-width="1.4" fill="none">
                 <circle cx="150" cy="62" r="46"/>
                 <circle cx="150" cy="62" r="30"/>
             </g>
-            <g stroke="#cf7272" stroke-width="1" opacity="0.85">
+            <g stroke="#ae594a" stroke-width="1" opacity="0.85">
                 <line x1="150" y1="16" x2="150" y2="108"/>
                 <line x1="104" y1="62" x2="196" y2="62"/>
                 <line x1="117" y1="29" x2="183" y2="95"/>
                 <line x1="183" y1="29" x2="117" y2="95"/>
             </g>
-            <circle cx="150" cy="62" r="7" fill="#cf7272"/>
+            <circle cx="150" cy="62" r="7" fill="#ae594a"/>
             <!-- a small candle-flame, for the mystic -->
-            <path d="M150 40 q7 -12 0 -22 q-7 10 0 22 Z" fill="#d4a053" opacity="0.9"/>
+            <path d="M150 40 q7 -12 0 -22 q-7 10 0 22 Z" fill="#a18347" opacity="0.9"/>
             <!-- rising-fourth notes beneath: D up to G, the leap of longing -->
-            <g stroke="#6a6a7a" stroke-width="0.8">
+            <g stroke="#948463" stroke-width="0.8">
                 <line x1="40" y1="132" x2="260" y2="132"/>
                 <line x1="40" y1="140" x2="260" y2="140"/>
             </g>
-            <ellipse cx="90" cy="140" rx="6" ry="4.4" fill="#e8e6e3"/>
-            <ellipse cx="170" cy="126" rx="6" ry="4.4" fill="#cf7272"/>
-            <path d="M96 140 Q130 116 164 126" stroke="#cf7272" stroke-width="1" fill="none"/>
-            <text x="126" y="120" fill="#6a6a7a" font-family="DM Sans" font-size="9" text-anchor="middle">a rising fourth</text>
+            <ellipse cx="90" cy="140" rx="6" ry="4.4" fill="#251e14"/>
+            <ellipse cx="170" cy="126" rx="6" ry="4.4" fill="#ae594a"/>
+            <path d="M96 140 Q130 116 164 126" stroke="#ae594a" stroke-width="1" fill="none"/>
+            <text x="126" y="120" fill="#948463" font-family="DM Sans" font-size="9" text-anchor="middle">a rising fourth</text>
         </svg>
     </div>
     <h1>Tomás Luis de Victoria</h1>
@@ -257,7 +258,7 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 5-line staff -->
-            <g stroke="#9a9a9a" stroke-width="1.1">
+            <g stroke="#62543c" stroke-width="1.1">
                 <line x1="60" y1="60" x2="860" y2="60"/>
                 <line x1="60" y1="80" x2="860" y2="80"/>
                 <line x1="60" y1="100" x2="860" y2="100"/>
@@ -265,30 +266,30 @@
                 <line x1="60" y1="140" x2="860" y2="140"/>
             </g>
             <!-- clef marker -->
-            <text x="66" y="128" fill="#cf7272" font-family="Playfair Display" font-size="46" font-weight="700">&#119070;</text>
+            <text x="66" y="128" fill="#ae594a" font-family="Playfair Display" font-size="46" font-weight="700">&#119070;</text>
             <!-- THE LEAP: low note D up to G (a fourth) -->
-            <ellipse cx="200" cy="130" rx="9" ry="6.5" fill="#e8e6e3"/>
-            <ellipse cx="300" cy="100" rx="9" ry="6.5" fill="#cf7272"/>
-            <path d="M209 128 Q250 96 291 102" stroke="#cf7272" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
-            <text x="250" y="176" fill="#cf7272" font-family="DM Sans" font-size="13" text-anchor="middle" font-weight="700">rising 4th &mdash; the "reach"</text>
+            <ellipse cx="200" cy="130" rx="9" ry="6.5" fill="#251e14"/>
+            <ellipse cx="300" cy="100" rx="9" ry="6.5" fill="#ae594a"/>
+            <path d="M209 128 Q250 96 291 102" stroke="#ae594a" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+            <text x="250" y="176" fill="#ae594a" font-family="DM Sans" font-size="13" text-anchor="middle" font-weight="700">rising 4th &mdash; the "reach"</text>
             <!-- THE SUSPENSION: upper voice held, becomes dissonant, resolves down -->
             <!-- preparation -->
-            <ellipse cx="520" cy="80" rx="9" ry="6.5" fill="#5b8cd4"/>
+            <ellipse cx="520" cy="80" rx="9" ry="6.5" fill="#41579a"/>
             <!-- suspended (tie) -->
-            <ellipse cx="620" cy="80" rx="9" ry="6.5" fill="#5b8cd4"/>
-            <path d="M529 86 Q570 100 611 86" stroke="#5b8cd4" stroke-width="1.4" fill="none"/>
+            <ellipse cx="620" cy="80" rx="9" ry="6.5" fill="#41579a"/>
+            <path d="M529 86 Q570 100 611 86" stroke="#41579a" stroke-width="1.4" fill="none"/>
             <!-- resolution down a step -->
-            <ellipse cx="700" cy="90" rx="9" ry="6.5" fill="#e8e6e3"/>
+            <ellipse cx="700" cy="90" rx="9" ry="6.5" fill="#251e14"/>
             <!-- lower voice that moves under the held note to create the clash -->
-            <ellipse cx="520" cy="130" rx="8" ry="6" fill="#6a6a7a"/>
-            <ellipse cx="620" cy="120" rx="8" ry="6" fill="#d4a053"/>
-            <ellipse cx="700" cy="120" rx="8" ry="6" fill="#6a6a7a"/>
-            <text x="520" y="200" fill="#5b8cd4" font-family="DM Sans" font-size="11" text-anchor="middle">1 · prepare</text>
-            <text x="620" y="200" fill="#d4a053" font-family="DM Sans" font-size="11" text-anchor="middle">2 · suspend (clash)</text>
-            <text x="700" y="200" fill="#e8e6e3" font-family="DM Sans" font-size="11" text-anchor="middle">3 · resolve down</text>
+            <ellipse cx="520" cy="130" rx="8" ry="6" fill="#948463"/>
+            <ellipse cx="620" cy="120" rx="8" ry="6" fill="#a18347"/>
+            <ellipse cx="700" cy="120" rx="8" ry="6" fill="#948463"/>
+            <text x="520" y="200" fill="#41579a" font-family="DM Sans" font-size="11" text-anchor="middle">1 · prepare</text>
+            <text x="620" y="200" fill="#a18347" font-family="DM Sans" font-size="11" text-anchor="middle">2 · suspend (clash)</text>
+            <text x="700" y="200" fill="#251e14" font-family="DM Sans" font-size="11" text-anchor="middle">3 · resolve down</text>
             <defs>
                 <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                    <path d="M0 0 L8 4 L0 8 Z" fill="#cf7272"/>
+                    <path d="M0 0 L8 4 L0 8 Z" fill="#ae594a"/>
                 </marker>
             </defs>
         </svg>
@@ -324,11 +325,11 @@
         <div>
             <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <!-- a candle / requiem emblem -->
-                <rect x="98" y="90" width="24" height="86" rx="3" fill="#161622" stroke="#cf7272" stroke-width="1.4"/>
-                <path d="M110 90 q14 -22 0 -44 q-14 22 0 44 Z" fill="#d4a053"/>
-                <path d="M110 66 q6 -10 0 -20 q-6 10 0 20 Z" fill="#e8e6e3"/>
-                <line x1="70" y1="176" x2="150" y2="176" stroke="#6a6a7a" stroke-width="1.4"/>
-                <text x="110" y="196" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13" text-anchor="middle">Requiem aeternam</text>
+                <rect x="98" y="90" width="24" height="86" rx="3" fill="#e5d9be" stroke="#ae594a" stroke-width="1.4"/>
+                <path d="M110 90 q14 -22 0 -44 q-14 22 0 44 Z" fill="#a18347"/>
+                <path d="M110 66 q6 -10 0 -20 q-6 10 0 20 Z" fill="#251e14"/>
+                <line x1="70" y1="176" x2="150" y2="176" stroke="#948463" stroke-width="1.4"/>
+                <text x="110" y="196" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="13" text-anchor="middle">Requiem aeternam</text>
             </svg>
         </div>
         <div>

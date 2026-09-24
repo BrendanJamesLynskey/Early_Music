@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gilles Binchois — The Master of the Burgundian Chanson</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -57,16 +57,17 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -77,21 +78,21 @@
     <div style="width: 260px; height: 150px; margin: 0 auto 0.3em auto;">
         <svg viewBox="0 0 260 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- courtly lozenge frame -->
-            <path d="M130 8 L246 75 L130 142 L14 75 Z" fill="none" stroke="#cf7272" stroke-width="1.4"/>
-            <path d="M130 22 L232 75 L130 128 L28 75 Z" fill="none" stroke="#2a2a3a" stroke-width="1"/>
+            <path d="M130 8 L246 75 L130 142 L14 75 Z" fill="none" stroke="#ae594a" stroke-width="1.4"/>
+            <path d="M130 22 L232 75 L130 128 L28 75 Z" fill="none" stroke="#caba98" stroke-width="1"/>
             <!-- a lilting chanson line drawn as a flourish -->
-            <path d="M54 96 C 84 62, 108 62, 130 78 S 178 58, 208 84" fill="none" stroke="#d4a053" stroke-width="1.6"/>
+            <path d="M54 96 C 84 62, 108 62, 130 78 S 178 58, 208 84" fill="none" stroke="#a18347" stroke-width="1.6"/>
             <!-- void mensural noteheads (diamonds) riding the line -->
-            <rect x="58" y="88" width="11" height="11" fill="none" stroke="#e8e6e3" stroke-width="1.5" transform="rotate(45 63.5 93.5)"/>
-            <rect x="94" y="66" width="11" height="11" fill="none" stroke="#4ecca3" stroke-width="1.5" transform="rotate(45 99.5 71.5)"/>
-            <rect x="124" y="72" width="11" height="11" fill="none" stroke="#cf7272" stroke-width="1.5" transform="rotate(45 129.5 77.5)"/>
-            <rect x="160" y="62" width="11" height="11" fill="none" stroke="#5b8cd4" stroke-width="1.5" transform="rotate(45 165.5 67.5)"/>
-            <rect x="198" y="80" width="11" height="11" fill="none" stroke="#e8e6e3" stroke-width="1.5" transform="rotate(45 203.5 85.5)"/>
+            <rect x="58" y="88" width="11" height="11" fill="none" stroke="#251e14" stroke-width="1.5" transform="rotate(45 63.5 93.5)"/>
+            <rect x="94" y="66" width="11" height="11" fill="none" stroke="#3c694d" stroke-width="1.5" transform="rotate(45 99.5 71.5)"/>
+            <rect x="124" y="72" width="11" height="11" fill="none" stroke="#ae594a" stroke-width="1.5" transform="rotate(45 129.5 77.5)"/>
+            <rect x="160" y="62" width="11" height="11" fill="none" stroke="#41579a" stroke-width="1.5" transform="rotate(45 165.5 67.5)"/>
+            <rect x="198" y="80" width="11" height="11" fill="none" stroke="#251e14" stroke-width="1.5" transform="rotate(45 203.5 85.5)"/>
             <!-- a small courtly rose at the crown -->
             <g transform="translate(130 30)">
-                <circle r="3.4" fill="#cf7272"/>
-                <circle r="8" fill="none" stroke="#cf7272" stroke-width="1.1"/>
-                <circle r="12.5" fill="none" stroke="#cf7272" stroke-width="0.8" opacity="0.6"/>
+                <circle r="3.4" fill="#ae594a"/>
+                <circle r="8" fill="none" stroke="#ae594a" stroke-width="1.1"/>
+                <circle r="12.5" fill="none" stroke="#ae594a" stroke-width="0.8" opacity="0.6"/>
             </g>
         </svg>
     </div>
@@ -240,26 +241,26 @@
             <g font-family="DM Sans" font-size="15" text-anchor="middle">
                 <!-- 8 blocks: music 1 = rose, music 2 = amber; refrain outlined -->
                 <!-- A -->
-                <rect x="20"  y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.85"/><rect x="20"  y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="68"  y="60" fill="#0a0a0f" font-weight="700">A</text>
+                <rect x="20"  y="34" width="96" height="40" rx="5" fill="#ae594a" opacity="0.85"/><rect x="20"  y="34" width="96" height="40" rx="5" fill="none" stroke="#251e14" stroke-width="2"/><text x="68"  y="60" fill="#f2e9d3" font-weight="700">A</text>
                 <!-- B -->
-                <rect x="128" y="34" width="96" height="40" rx="5" fill="#d4a053" opacity="0.85"/><rect x="128" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="176" y="60" fill="#0a0a0f" font-weight="700">B</text>
+                <rect x="128" y="34" width="96" height="40" rx="5" fill="#a18347" opacity="0.85"/><rect x="128" y="34" width="96" height="40" rx="5" fill="none" stroke="#251e14" stroke-width="2"/><text x="176" y="60" fill="#f2e9d3" font-weight="700">B</text>
                 <!-- a -->
-                <rect x="236" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.5"/><text x="284" y="60" fill="#e8e6e3" font-weight="700">a</text>
+                <rect x="236" y="34" width="96" height="40" rx="5" fill="#ae594a" opacity="0.5"/><text x="284" y="60" fill="#251e14" font-weight="700">a</text>
                 <!-- A -->
-                <rect x="344" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.85"/><rect x="344" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="392" y="60" fill="#0a0a0f" font-weight="700">A</text>
+                <rect x="344" y="34" width="96" height="40" rx="5" fill="#ae594a" opacity="0.85"/><rect x="344" y="34" width="96" height="40" rx="5" fill="none" stroke="#251e14" stroke-width="2"/><text x="392" y="60" fill="#f2e9d3" font-weight="700">A</text>
                 <!-- a -->
-                <rect x="452" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.5"/><text x="500" y="60" fill="#e8e6e3" font-weight="700">a</text>
+                <rect x="452" y="34" width="96" height="40" rx="5" fill="#ae594a" opacity="0.5"/><text x="500" y="60" fill="#251e14" font-weight="700">a</text>
                 <!-- b -->
-                <rect x="560" y="34" width="96" height="40" rx="5" fill="#d4a053" opacity="0.5"/><text x="608" y="60" fill="#e8e6e3" font-weight="700">b</text>
+                <rect x="560" y="34" width="96" height="40" rx="5" fill="#a18347" opacity="0.5"/><text x="608" y="60" fill="#251e14" font-weight="700">b</text>
                 <!-- A -->
-                <rect x="668" y="34" width="96" height="40" rx="5" fill="#cf7272" opacity="0.85"/><rect x="668" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="716" y="60" fill="#0a0a0f" font-weight="700">A</text>
+                <rect x="668" y="34" width="96" height="40" rx="5" fill="#ae594a" opacity="0.85"/><rect x="668" y="34" width="96" height="40" rx="5" fill="none" stroke="#251e14" stroke-width="2"/><text x="716" y="60" fill="#f2e9d3" font-weight="700">A</text>
                 <!-- B -->
-                <rect x="776" y="34" width="96" height="40" rx="5" fill="#d4a053" opacity="0.85"/><rect x="776" y="34" width="96" height="40" rx="5" fill="none" stroke="#e8e6e3" stroke-width="2"/><text x="824" y="60" fill="#0a0a0f" font-weight="700">B</text>
+                <rect x="776" y="34" width="96" height="40" rx="5" fill="#a18347" opacity="0.85"/><rect x="776" y="34" width="96" height="40" rx="5" fill="none" stroke="#251e14" stroke-width="2"/><text x="824" y="60" fill="#f2e9d3" font-weight="700">B</text>
                 <!-- legend -->
-                <text x="20" y="20" fill="#cf7272" font-size="12" text-anchor="start">&#9632; music phrase A</text>
-                <text x="180" y="20" fill="#d4a053" font-size="12" text-anchor="start">&#9632; music phrase B</text>
-                <text x="330" y="20" fill="#e8e6e3" font-size="12" text-anchor="start">outlined = the returning refrain</text>
-                <text x="20" y="100" fill="#6a6a7a" font-size="11" text-anchor="start">Only two tunes are ever heard — the refrain (capitals) binds the single stanza (lower-case) into a rounded whole.</text>
+                <text x="20" y="20" fill="#ae594a" font-size="12" text-anchor="start">&#9632; music phrase A</text>
+                <text x="180" y="20" fill="#a18347" font-size="12" text-anchor="start">&#9632; music phrase B</text>
+                <text x="330" y="20" fill="#251e14" font-size="12" text-anchor="start">outlined = the returning refrain</text>
+                <text x="20" y="100" fill="#948463" font-size="11" text-anchor="start">Only two tunes are ever heard — the refrain (capitals) binds the single stanza (lower-case) into a rounded whole.</text>
             </g>
         </svg>
     </div>
@@ -321,47 +322,47 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- CANTUS staff -->
-            <g stroke="#6a6a7a" stroke-width="1"><line x1="120" y1="24" x2="880" y2="24"/><line x1="120" y1="36" x2="880" y2="36"/><line x1="120" y1="48" x2="880" y2="48"/><line x1="120" y1="60" x2="880" y2="60"/><line x1="120" y1="72" x2="880" y2="72"/></g>
-            <text x="20" y="52" fill="#cf7272" font-family="DM Sans" font-size="14" font-weight="700">Cantus</text>
+            <g stroke="#948463" stroke-width="1"><line x1="120" y1="24" x2="880" y2="24"/><line x1="120" y1="36" x2="880" y2="36"/><line x1="120" y1="48" x2="880" y2="48"/><line x1="120" y1="60" x2="880" y2="60"/><line x1="120" y1="72" x2="880" y2="72"/></g>
+            <text x="20" y="52" fill="#ae594a" font-family="DM Sans" font-size="14" font-weight="700">Cantus</text>
             <!-- C-clef + mensuration circle (perfect / triple) -->
-            <rect x="124" y="36" width="8" height="24" fill="#d4a053"/><rect x="132" y="42" width="12" height="8" fill="#d4a053"/>
-            <circle cx="162" cy="48" r="9" fill="none" stroke="#d4a053" stroke-width="2"/>
+            <rect x="124" y="36" width="8" height="24" fill="#a18347"/><rect x="132" y="42" width="12" height="8" fill="#a18347"/>
+            <circle cx="162" cy="48" r="9" fill="none" stroke="#a18347" stroke-width="2"/>
             <!-- void noteheads (semibreves = diamonds), lilting line -->
-            <rect x="196" y="55" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 201 60)"/>
-            <rect x="246" y="43" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 251 48)"/>
-            <rect x="296" y="31" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 301 36)"/>
+            <rect x="196" y="55" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 201 60)"/>
+            <rect x="246" y="43" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 251 48)"/>
+            <rect x="296" y="31" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 301 36)"/>
             <!-- a minim = void diamond with stem -->
-            <rect x="346" y="43" width="10" height="10" fill="none" stroke="#4ecca3" stroke-width="1.6" transform="rotate(45 351 48)"/><line x1="356" y1="48" x2="356" y2="22" stroke="#4ecca3" stroke-width="1.6"/>
-            <rect x="410" y="55" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 415 60)"/>
-            <rect x="470" y="67" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 475 72)"/>
+            <rect x="346" y="43" width="10" height="10" fill="none" stroke="#3c694d" stroke-width="1.6" transform="rotate(45 351 48)"/><line x1="356" y1="48" x2="356" y2="22" stroke="#3c694d" stroke-width="1.6"/>
+            <rect x="410" y="55" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 415 60)"/>
+            <rect x="470" y="67" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 475 72)"/>
             <!-- a breve = void square (longer) -->
-            <rect x="536" y="42" width="18" height="12" fill="none" stroke="#cf7272" stroke-width="1.8"/>
+            <rect x="536" y="42" width="18" height="12" fill="none" stroke="#ae594a" stroke-width="1.8"/>
 
             <!-- TENOR staff -->
-            <g stroke="#6a6a7a" stroke-width="1"><line x1="120" y1="130" x2="880" y2="130"/><line x1="120" y1="142" x2="880" y2="142"/><line x1="120" y1="154" x2="880" y2="154"/><line x1="120" y1="166" x2="880" y2="166"/><line x1="120" y1="178" x2="880" y2="178"/></g>
-            <text x="20" y="158" fill="#d4a053" font-family="DM Sans" font-size="14" font-weight="700">Tenor</text>
-            <rect x="124" y="142" width="8" height="24" fill="#d4a053"/><rect x="132" y="148" width="12" height="8" fill="#d4a053"/>
-            <circle cx="162" cy="154" r="9" fill="none" stroke="#d4a053" stroke-width="2"/>
-            <rect x="200" y="161" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 205 166)"/>
-            <rect x="300" y="149" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 305 154)"/>
-            <rect x="410" y="161" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 415 166)"/>
+            <g stroke="#948463" stroke-width="1"><line x1="120" y1="130" x2="880" y2="130"/><line x1="120" y1="142" x2="880" y2="142"/><line x1="120" y1="154" x2="880" y2="154"/><line x1="120" y1="166" x2="880" y2="166"/><line x1="120" y1="178" x2="880" y2="178"/></g>
+            <text x="20" y="158" fill="#a18347" font-family="DM Sans" font-size="14" font-weight="700">Tenor</text>
+            <rect x="124" y="142" width="8" height="24" fill="#a18347"/><rect x="132" y="148" width="12" height="8" fill="#a18347"/>
+            <circle cx="162" cy="154" r="9" fill="none" stroke="#a18347" stroke-width="2"/>
+            <rect x="200" y="161" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 205 166)"/>
+            <rect x="300" y="149" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 305 154)"/>
+            <rect x="410" y="161" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 415 166)"/>
             <!-- longa = void rect with descending stem -->
-            <rect x="530" y="148" width="16" height="12" fill="none" stroke="#5b8cd4" stroke-width="1.8"/><line x1="546" y1="160" x2="546" y2="184" stroke="#5b8cd4" stroke-width="1.8"/>
+            <rect x="530" y="148" width="16" height="12" fill="none" stroke="#41579a" stroke-width="1.8"/><line x1="546" y1="160" x2="546" y2="184" stroke="#41579a" stroke-width="1.8"/>
 
             <!-- CONTRATENOR staff -->
-            <g stroke="#6a6a7a" stroke-width="1"><line x1="120" y1="236" x2="880" y2="236"/><line x1="120" y1="248" x2="880" y2="248"/><line x1="120" y1="260" x2="880" y2="260"/><line x1="120" y1="272" x2="880" y2="272"/><line x1="120" y1="284" x2="880" y2="284"/></g>
-            <text x="20" y="264" fill="#5b8cd4" font-family="DM Sans" font-size="14" font-weight="700">Contratenor</text>
-            <rect x="124" y="248" width="8" height="24" fill="#d4a053"/><rect x="132" y="254" width="12" height="8" fill="#d4a053"/>
-            <circle cx="162" cy="260" r="9" fill="none" stroke="#d4a053" stroke-width="2"/>
-            <rect x="200" y="267" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 205 272)"/>
-            <rect x="300" y="255" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 305 260)"/>
-            <rect x="410" y="267" width="10" height="10" fill="none" stroke="#e8e6e3" stroke-width="1.6" transform="rotate(45 415 272)"/>
-            <rect x="530" y="254" width="16" height="12" fill="none" stroke="#9b72cf" stroke-width="1.8"/>
+            <g stroke="#948463" stroke-width="1"><line x1="120" y1="236" x2="880" y2="236"/><line x1="120" y1="248" x2="880" y2="248"/><line x1="120" y1="260" x2="880" y2="260"/><line x1="120" y1="272" x2="880" y2="272"/><line x1="120" y1="284" x2="880" y2="284"/></g>
+            <text x="20" y="264" fill="#41579a" font-family="DM Sans" font-size="14" font-weight="700">Contratenor</text>
+            <rect x="124" y="248" width="8" height="24" fill="#a18347"/><rect x="132" y="254" width="12" height="8" fill="#a18347"/>
+            <circle cx="162" cy="260" r="9" fill="none" stroke="#a18347" stroke-width="2"/>
+            <rect x="200" y="267" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 205 272)"/>
+            <rect x="300" y="255" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 305 260)"/>
+            <rect x="410" y="267" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 415 272)"/>
+            <rect x="530" y="254" width="16" height="12" fill="none" stroke="#72508a" stroke-width="1.8"/>
 
             <!-- labels for note shapes -->
-            <text x="596" y="48" fill="#cf7272" font-family="DM Sans" font-size="11">&#8592; breve (void square)</text>
-            <text x="596" y="160" fill="#5b8cd4" font-family="DM Sans" font-size="11">&#8592; longa (with stem)</text>
-            <text x="370" y="20" fill="#4ecca3" font-family="DM Sans" font-size="11">&#8593; minim (stemmed)</text>
+            <text x="596" y="48" fill="#ae594a" font-family="DM Sans" font-size="11">&#8592; breve (void square)</text>
+            <text x="596" y="160" fill="#41579a" font-family="DM Sans" font-size="11">&#8592; longa (with stem)</text>
+            <text x="370" y="20" fill="#3c694d" font-family="DM Sans" font-size="11">&#8593; minim (stemmed)</text>
         </svg>
     </div>
     <div class="card-grid cols-4" style="max-width:96%;">

@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guillaume de Machaut — The Ars Nova &amp; the First Composed Mass</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -57,16 +57,17 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -77,7 +78,7 @@
     <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
         <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
             <!-- A five-line staff with mensural note shapes and an isorhythmic talea bracket -->
-            <g stroke="#6a6a7a" stroke-width="1">
+            <g stroke="#948463" stroke-width="1">
                 <line x1="20" y1="36" x2="340" y2="36"/>
                 <line x1="20" y1="52" x2="340" y2="52"/>
                 <line x1="20" y1="68" x2="340" y2="68"/>
@@ -86,19 +87,19 @@
             </g>
             <!-- mensural notes: longa, breve, semibreve, minima -->
             <!-- longa (tall body + stem) -->
-            <rect x="52" y="60" width="12" height="12" fill="#d4a053"/><line x1="64" y1="72" x2="64" y2="98" stroke="#d4a053" stroke-width="2"/>
+            <rect x="52" y="60" width="12" height="12" fill="#a18347"/><line x1="64" y1="72" x2="64" y2="98" stroke="#a18347" stroke-width="2"/>
             <!-- breve (square) -->
-            <rect x="102" y="52" width="12" height="12" fill="#e8e6e3"/>
+            <rect x="102" y="52" width="12" height="12" fill="#251e14"/>
             <!-- semibreve (lozenge) -->
-            <path d="M 150 66 l 8 -8 l 8 8 l -8 8 z" fill="#4ecca3"/>
+            <path d="M 150 66 l 8 -8 l 8 8 l -8 8 z" fill="#3c694d"/>
             <!-- minima (lozenge + upward stem) -->
-            <path d="M 196 74 l 7 -7 l 7 7 l -7 7 z" fill="#9b72cf"/><line x1="210" y1="67" x2="210" y2="44" stroke="#9b72cf" stroke-width="2"/>
+            <path d="M 196 74 l 7 -7 l 7 7 l -7 7 z" fill="#72508a"/><line x1="210" y1="67" x2="210" y2="44" stroke="#72508a" stroke-width="2"/>
             <!-- breve + longa closing -->
-            <rect x="250" y="60" width="12" height="12" fill="#e8e6e3"/>
-            <rect x="292" y="52" width="12" height="12" fill="#d4a053"/><line x1="304" y1="64" x2="304" y2="90" stroke="#d4a053" stroke-width="2"/>
+            <rect x="250" y="60" width="12" height="12" fill="#251e14"/>
+            <rect x="292" y="52" width="12" height="12" fill="#a18347"/><line x1="304" y1="64" x2="304" y2="90" stroke="#a18347" stroke-width="2"/>
             <!-- talea bracket beneath -->
-            <path d="M 40 120 L 40 126 L 320 126 L 320 120" fill="none" stroke="#cf7272" stroke-width="1.5"/>
-            <text x="180" y="138" text-anchor="middle" fill="#cf7272" font-family="JetBrains Mono" font-size="10">one talea &#183; repeated</text>
+            <path d="M 40 120 L 40 126 L 320 126 L 320 120" fill="none" stroke="#ae594a" stroke-width="1.5"/>
+            <text x="180" y="138" text-anchor="middle" fill="#ae594a" font-family="JetBrains Mono" font-size="10">one talea &#183; repeated</text>
         </svg>
     </div>
     <h1>Guillaume de Machaut</h1>
@@ -188,7 +189,7 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g stroke="#6a6a7a" stroke-width="1.2">
+            <g stroke="#948463" stroke-width="1.2">
                 <line x1="40" y1="70" x2="860" y2="70"/>
                 <line x1="40" y1="88" x2="860" y2="88"/>
                 <line x1="40" y1="106" x2="860" y2="106"/>
@@ -197,23 +198,23 @@
             </g>
             <g font-family="DM Sans">
                 <!-- Longa -->
-                <rect x="110" y="97" width="16" height="16" fill="#d4a053"/><line x1="126" y1="113" x2="126" y2="150" stroke="#d4a053" stroke-width="2"/>
-                <text x="118" y="42" text-anchor="middle" fill="#d4a053" font-size="14" font-weight="700">Longa</text>
-                <text x="118" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">longest · = 2 or 3 breves</text>
+                <rect x="110" y="97" width="16" height="16" fill="#a18347"/><line x1="126" y1="113" x2="126" y2="150" stroke="#a18347" stroke-width="2"/>
+                <text x="118" y="42" text-anchor="middle" fill="#a18347" font-size="14" font-weight="700">Longa</text>
+                <text x="118" y="172" text-anchor="middle" fill="#62543c" font-size="11">longest · = 2 or 3 breves</text>
                 <!-- Breve -->
-                <rect x="300" y="97" width="16" height="16" fill="#e8e6e3"/>
-                <text x="308" y="42" text-anchor="middle" fill="#e8e6e3" font-size="14" font-weight="700">Breve</text>
-                <text x="308" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">= 2 or 3 semibreves</text>
+                <rect x="300" y="97" width="16" height="16" fill="#251e14"/>
+                <text x="308" y="42" text-anchor="middle" fill="#251e14" font-size="14" font-weight="700">Breve</text>
+                <text x="308" y="172" text-anchor="middle" fill="#62543c" font-size="11">= 2 or 3 semibreves</text>
                 <!-- Semibreve -->
-                <path d="M 480 105 l 10 -10 l 10 10 l -10 10 z" fill="#4ecca3"/>
-                <text x="490" y="42" text-anchor="middle" fill="#4ecca3" font-size="14" font-weight="700">Semibreve</text>
-                <text x="490" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">= 2 or 3 minims</text>
+                <path d="M 480 105 l 10 -10 l 10 10 l -10 10 z" fill="#3c694d"/>
+                <text x="490" y="42" text-anchor="middle" fill="#3c694d" font-size="14" font-weight="700">Semibreve</text>
+                <text x="490" y="172" text-anchor="middle" fill="#62543c" font-size="11">= 2 or 3 minims</text>
                 <!-- Minim -->
-                <path d="M 660 113 l 9 -9 l 9 9 l -9 9 z" fill="#9b72cf"/><line x1="678" y1="104" x2="678" y2="66" stroke="#9b72cf" stroke-width="2"/>
-                <text x="672" y="42" text-anchor="middle" fill="#9b72cf" font-size="14" font-weight="700">Minim</text>
-                <text x="672" y="172" text-anchor="middle" fill="#9a9a9a" font-size="11">the new, fast value</text>
+                <path d="M 660 113 l 9 -9 l 9 9 l -9 9 z" fill="#72508a"/><line x1="678" y1="104" x2="678" y2="66" stroke="#72508a" stroke-width="2"/>
+                <text x="672" y="42" text-anchor="middle" fill="#72508a" font-size="14" font-weight="700">Minim</text>
+                <text x="672" y="172" text-anchor="middle" fill="#62543c" font-size="11">the new, fast value</text>
                 <!-- arrows of subdivision -->
-                <text x="800" y="110" fill="#6a6a7a" font-size="26">&#8600;</text>
+                <text x="800" y="110" fill="#948463" font-size="26">&#8600;</text>
             </g>
         </svg>
     </div>
@@ -235,13 +236,13 @@
                 <svg viewBox="0 0 360 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                     <g font-family="DM Sans">
                         <!-- perfect: full circle -->
-                        <circle cx="90" cy="60" r="30" fill="none" stroke="#4ecca3" stroke-width="4"/>
-                        <text x="90" y="118" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="700">&#9679; Perfect</text>
-                        <text x="90" y="138" text-anchor="middle" fill="#9a9a9a" font-size="11">divides into 3</text>
+                        <circle cx="90" cy="60" r="30" fill="none" stroke="#3c694d" stroke-width="4"/>
+                        <text x="90" y="118" text-anchor="middle" fill="#3c694d" font-size="13" font-weight="700">&#9679; Perfect</text>
+                        <text x="90" y="138" text-anchor="middle" fill="#62543c" font-size="11">divides into 3</text>
                         <!-- imperfect: semicircle (C) -->
-                        <path d="M 290 34 a 30 30 0 1 0 0 52" fill="none" stroke="#5b8cd4" stroke-width="4"/>
-                        <text x="272" y="118" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="700">&#9686; Imperfect</text>
-                        <text x="272" y="138" text-anchor="middle" fill="#9a9a9a" font-size="11">divides into 2</text>
+                        <path d="M 290 34 a 30 30 0 1 0 0 52" fill="none" stroke="#41579a" stroke-width="4"/>
+                        <text x="272" y="118" text-anchor="middle" fill="#41579a" font-size="13" font-weight="700">&#9686; Imperfect</text>
+                        <text x="272" y="138" text-anchor="middle" fill="#62543c" font-size="11">divides into 2</text>
                     </g>
                 </svg>
             </div>
@@ -278,24 +279,24 @@
         <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="JetBrains Mono" font-size="12">
                 <!-- COLOR row: 6 pitches -->
-                <text x="20" y="46" fill="#d4a053" font-size="12" font-weight="700">color</text>
-                <g fill="#d4a053">
+                <text x="20" y="46" fill="#a18347" font-size="12" font-weight="700">color</text>
+                <g fill="#a18347">
                     <circle cx="120" cy="42" r="9"/><circle cx="220" cy="42" r="9"/><circle cx="320" cy="42" r="9"/>
                     <circle cx="420" cy="42" r="9"/><circle cx="520" cy="42" r="9"/><circle cx="620" cy="42" r="9"/>
                     <circle cx="720" cy="42" r="9" opacity="0.45"/><circle cx="820" cy="42" r="9" opacity="0.45"/>
                 </g>
                 <!-- TALEA row: 4 rhythm slots, repeated -->
-                <text x="20" y="100" fill="#cf7272" font-size="12" font-weight="700">talea</text>
-                <g fill="none" stroke="#cf7272" stroke-width="2">
+                <text x="20" y="100" fill="#ae594a" font-size="12" font-weight="700">talea</text>
+                <g fill="none" stroke="#ae594a" stroke-width="2">
                     <rect x="100" y="86" width="130" height="20" rx="3"/><rect x="240" y="86" width="130" height="20" rx="3"/>
                     <rect x="380" y="86" width="130" height="20" rx="3"/><rect x="520" y="86" width="130" height="20" rx="3"/>
                     <rect x="660" y="86" width="130" height="20" rx="3"/>
                 </g>
-                <text x="165" y="100" fill="#cf7272" text-anchor="middle">T1</text><text x="305" y="100" fill="#cf7272" text-anchor="middle">T2</text>
-                <text x="445" y="100" fill="#cf7272" text-anchor="middle">T3</text><text x="585" y="100" fill="#cf7272" text-anchor="middle">T4</text>
-                <text x="725" y="100" fill="#cf7272" text-anchor="middle">T5</text>
+                <text x="165" y="100" fill="#ae594a" text-anchor="middle">T1</text><text x="305" y="100" fill="#ae594a" text-anchor="middle">T2</text>
+                <text x="445" y="100" fill="#ae594a" text-anchor="middle">T3</text><text x="585" y="100" fill="#ae594a" text-anchor="middle">T4</text>
+                <text x="725" y="100" fill="#ae594a" text-anchor="middle">T5</text>
                 <!-- alignment note -->
-                <text x="20" y="138" fill="#9a9a9a" font-size="11">6-note color &#215; 4-slot talea &#8594; patterns realign only after their least common multiple</text>
+                <text x="20" y="138" fill="#62543c" font-size="11">6-note color &#215; 4-slot talea &#8594; patterns realign only after their least common multiple</text>
             </g>
         </svg>
     </div>
@@ -396,7 +397,7 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g stroke="#6a6a7a" stroke-width="1.1">
+            <g stroke="#948463" stroke-width="1.1">
                 <line x1="60" y1="50" x2="840" y2="50"/>
                 <line x1="60" y1="68" x2="840" y2="68"/>
                 <line x1="60" y1="86" x2="840" y2="86"/>
@@ -404,20 +405,20 @@
                 <line x1="60" y1="122" x2="840" y2="122"/>
             </g>
             <!-- forward half (left, amber) -->
-            <g fill="#d4a053">
+            <g fill="#a18347">
                 <circle cx="110" cy="104" r="7"/><circle cx="170" cy="86" r="7"/><circle cx="230" cy="68" r="7"/>
                 <circle cx="290" cy="50" r="7"/><circle cx="350" cy="68" r="7"/><circle cx="410" cy="86" r="7"/>
             </g>
             <!-- mirror axis -->
-            <line x1="450" y1="34" x2="450" y2="134" stroke="#4ecca3" stroke-width="2" stroke-dasharray="4 4"/>
-            <text x="450" y="28" text-anchor="middle" fill="#4ecca3" font-family="DM Sans" font-size="11">mirror</text>
+            <line x1="450" y1="34" x2="450" y2="134" stroke="#3c694d" stroke-width="2" stroke-dasharray="4 4"/>
+            <text x="450" y="28" text-anchor="middle" fill="#3c694d" font-family="DM Sans" font-size="11">mirror</text>
             <!-- backward half (right, green — retrograde) -->
-            <g fill="#4ecca3">
+            <g fill="#3c694d">
                 <circle cx="490" cy="86" r="7"/><circle cx="550" cy="68" r="7"/><circle cx="610" cy="50" r="7"/>
                 <circle cx="670" cy="68" r="7"/><circle cx="730" cy="86" r="7"/><circle cx="790" cy="104" r="7"/>
             </g>
-            <text x="235" y="146" text-anchor="middle" fill="#d4a053" font-family="JetBrains Mono" font-size="11">melody forwards &#8594;</text>
-            <text x="640" y="146" text-anchor="middle" fill="#4ecca3" font-family="JetBrains Mono" font-size="11">&#8592; the same melody in reverse</text>
+            <text x="235" y="146" text-anchor="middle" fill="#a18347" font-family="JetBrains Mono" font-size="11">melody forwards &#8594;</text>
+            <text x="640" y="146" text-anchor="middle" fill="#3c694d" font-family="JetBrains Mono" font-size="11">&#8592; the same melody in reverse</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> the notes to the left of the green axis, read forwards, are mirrored by the notes to its right, read backwards — a retrograde. The song literally performs its own title.</p>

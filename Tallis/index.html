@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thomas Tallis — The English Survivor &amp; the 40-Voice Motet</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -58,16 +58,17 @@
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -78,12 +79,12 @@
     <div style="width: 320px; height: 140px; margin: 0 auto 0.4em auto;">
         <svg viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg">
             <!-- small crown: servant of four monarchs -->
-            <g fill="none" stroke="#5b8cd4" stroke-width="2">
+            <g fill="none" stroke="#41579a" stroke-width="2">
                 <path d="M150 22 l6 14 l8 -12 l8 12 l8 -12 l8 12 l6 -14 v18 h-52 z"/>
             </g>
-            <circle cx="150" cy="20" r="2.4" fill="#5b8cd4"/><circle cx="180" cy="16" r="2.4" fill="#5b8cd4"/><circle cx="210" cy="20" r="2.4" fill="#5b8cd4"/>
+            <circle cx="150" cy="20" r="2.4" fill="#41579a"/><circle cx="180" cy="16" r="2.4" fill="#41579a"/><circle cx="210" cy="20" r="2.4" fill="#41579a"/>
             <!-- a 5-line staff carrying a canon: one line and its shadow -->
-            <g stroke="#6a6a7a" stroke-width="1">
+            <g stroke="#948463" stroke-width="1">
                 <line x1="20" y1="66" x2="340" y2="66"/>
                 <line x1="20" y1="78" x2="340" y2="78"/>
                 <line x1="20" y1="90" x2="340" y2="90"/>
@@ -91,12 +92,12 @@
                 <line x1="20" y1="114" x2="340" y2="114"/>
             </g>
             <!-- leader melody (blue) -->
-            <polyline points="40,108 70,108 100,96 130,108 160,84 190,72 220,96 250,108" fill="none" stroke="#5b8cd4" stroke-width="2.4"/>
-            <g fill="#5b8cd4"><circle cx="40" cy="108" r="3.5"/><circle cx="70" cy="108" r="3.5"/><circle cx="100" cy="96" r="3.5"/><circle cx="130" cy="108" r="3.5"/><circle cx="160" cy="84" r="3.5"/><circle cx="190" cy="72" r="3.5"/><circle cx="220" cy="96" r="3.5"/><circle cx="250" cy="108" r="3.5"/></g>
+            <polyline points="40,108 70,108 100,96 130,108 160,84 190,72 220,96 250,108" fill="none" stroke="#41579a" stroke-width="2.4"/>
+            <g fill="#41579a"><circle cx="40" cy="108" r="3.5"/><circle cx="70" cy="108" r="3.5"/><circle cx="100" cy="96" r="3.5"/><circle cx="130" cy="108" r="3.5"/><circle cx="160" cy="84" r="3.5"/><circle cx="190" cy="72" r="3.5"/><circle cx="220" cy="96" r="3.5"/><circle cx="250" cy="108" r="3.5"/></g>
             <!-- follower: same contour, entering later, faint (the canon) -->
-            <polyline points="100,120 130,120 160,108 190,120 220,96 250,84 280,108 310,120" fill="none" stroke="#9b72cf" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
-            <g fill="#9b72cf" opacity="0.85"><circle cx="100" cy="120" r="3"/><circle cx="130" cy="120" r="3"/><circle cx="160" cy="108" r="3"/><circle cx="190" cy="120" r="3"/><circle cx="220" cy="96" r="3"/><circle cx="250" cy="84" r="3"/><circle cx="280" cy="108" r="3"/><circle cx="310" cy="120" r="3"/></g>
-            <text x="20" y="142" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">one tune, chasing itself &#8212; a canon</text>
+            <polyline points="100,120 130,120 160,108 190,120 220,96 250,84 280,108 310,120" fill="none" stroke="#72508a" stroke-width="2" stroke-dasharray="4 3" opacity="0.85"/>
+            <g fill="#72508a" opacity="0.85"><circle cx="100" cy="120" r="3"/><circle cx="130" cy="120" r="3"/><circle cx="160" cy="108" r="3"/><circle cx="190" cy="120" r="3"/><circle cx="220" cy="96" r="3"/><circle cx="250" cy="84" r="3"/><circle cx="280" cy="108" r="3"/><circle cx="310" cy="120" r="3"/></g>
+            <text x="20" y="142" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="12">one tune, chasing itself &#8212; a canon</text>
         </svg>
     </div>
     <h1>Thomas Tallis</h1>
@@ -296,51 +297,51 @@
                 <!-- helper: each box shows 5 dots for S A T Bar B -->
                 <!-- Row 1: choirs I-IV -->
                 <g>
-                    <rect x="30" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#5b8cd4" stroke-width="1.5"/>
-                    <text x="40" y="58" fill="#5b8cd4" font-size="12" font-weight="700">CHOIR I</text>
-                    <g fill="#e8e6e3"><circle cx="55" cy="88" r="6"/><circle cx="90" cy="88" r="6"/><circle cx="125" cy="88" r="6"/><circle cx="160" cy="88" r="6"/><circle cx="195" cy="88" r="6"/></g>
-                    <text x="40" y="128" fill="#6a6a7a" font-size="10">S · A · T · Bar · B</text>
+                    <rect x="30" y="40" width="190" height="70" rx="6" fill="#e5d9be" stroke="#41579a" stroke-width="1.5"/>
+                    <text x="40" y="58" fill="#41579a" font-size="12" font-weight="700">CHOIR I</text>
+                    <g fill="#251e14"><circle cx="55" cy="88" r="6"/><circle cx="90" cy="88" r="6"/><circle cx="125" cy="88" r="6"/><circle cx="160" cy="88" r="6"/><circle cx="195" cy="88" r="6"/></g>
+                    <text x="40" y="128" fill="#948463" font-size="10">S · A · T · Bar · B</text>
                 </g>
                 <g>
-                    <rect x="240" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
-                    <text x="250" y="58" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR II</text>
-                    <g fill="#9a9a9a"><circle cx="265" cy="88" r="6"/><circle cx="300" cy="88" r="6"/><circle cx="335" cy="88" r="6"/><circle cx="370" cy="88" r="6"/><circle cx="405" cy="88" r="6"/></g>
+                    <rect x="240" y="40" width="190" height="70" rx="6" fill="#e5d9be" stroke="#caba98" stroke-width="1.5"/>
+                    <text x="250" y="58" fill="#62543c" font-size="12" font-weight="700">CHOIR II</text>
+                    <g fill="#62543c"><circle cx="265" cy="88" r="6"/><circle cx="300" cy="88" r="6"/><circle cx="335" cy="88" r="6"/><circle cx="370" cy="88" r="6"/><circle cx="405" cy="88" r="6"/></g>
                 </g>
                 <g>
-                    <rect x="450" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
-                    <text x="460" y="58" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR III</text>
-                    <g fill="#9a9a9a"><circle cx="475" cy="88" r="6"/><circle cx="510" cy="88" r="6"/><circle cx="545" cy="88" r="6"/><circle cx="580" cy="88" r="6"/><circle cx="615" cy="88" r="6"/></g>
+                    <rect x="450" y="40" width="190" height="70" rx="6" fill="#e5d9be" stroke="#caba98" stroke-width="1.5"/>
+                    <text x="460" y="58" fill="#62543c" font-size="12" font-weight="700">CHOIR III</text>
+                    <g fill="#62543c"><circle cx="475" cy="88" r="6"/><circle cx="510" cy="88" r="6"/><circle cx="545" cy="88" r="6"/><circle cx="580" cy="88" r="6"/><circle cx="615" cy="88" r="6"/></g>
                 </g>
                 <g>
-                    <rect x="660" y="40" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
-                    <text x="670" y="58" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR IV</text>
-                    <g fill="#9a9a9a"><circle cx="685" cy="88" r="6"/><circle cx="720" cy="88" r="6"/><circle cx="755" cy="88" r="6"/><circle cx="790" cy="88" r="6"/><circle cx="825" cy="88" r="6"/></g>
+                    <rect x="660" y="40" width="190" height="70" rx="6" fill="#e5d9be" stroke="#caba98" stroke-width="1.5"/>
+                    <text x="670" y="58" fill="#62543c" font-size="12" font-weight="700">CHOIR IV</text>
+                    <g fill="#62543c"><circle cx="685" cy="88" r="6"/><circle cx="720" cy="88" r="6"/><circle cx="755" cy="88" r="6"/><circle cx="790" cy="88" r="6"/><circle cx="825" cy="88" r="6"/></g>
                 </g>
                 <!-- Row 2: choirs V-VIII -->
                 <g>
-                    <rect x="30" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
-                    <text x="40" y="158" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR V</text>
-                    <g fill="#9a9a9a"><circle cx="55" cy="188" r="6"/><circle cx="90" cy="188" r="6"/><circle cx="125" cy="188" r="6"/><circle cx="160" cy="188" r="6"/><circle cx="195" cy="188" r="6"/></g>
+                    <rect x="30" y="140" width="190" height="70" rx="6" fill="#e5d9be" stroke="#caba98" stroke-width="1.5"/>
+                    <text x="40" y="158" fill="#62543c" font-size="12" font-weight="700">CHOIR V</text>
+                    <g fill="#62543c"><circle cx="55" cy="188" r="6"/><circle cx="90" cy="188" r="6"/><circle cx="125" cy="188" r="6"/><circle cx="160" cy="188" r="6"/><circle cx="195" cy="188" r="6"/></g>
                 </g>
                 <g>
-                    <rect x="240" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
-                    <text x="250" y="158" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR VI</text>
-                    <g fill="#9a9a9a"><circle cx="265" cy="188" r="6"/><circle cx="300" cy="188" r="6"/><circle cx="335" cy="188" r="6"/><circle cx="370" cy="188" r="6"/><circle cx="405" cy="188" r="6"/></g>
+                    <rect x="240" y="140" width="190" height="70" rx="6" fill="#e5d9be" stroke="#caba98" stroke-width="1.5"/>
+                    <text x="250" y="158" fill="#62543c" font-size="12" font-weight="700">CHOIR VI</text>
+                    <g fill="#62543c"><circle cx="265" cy="188" r="6"/><circle cx="300" cy="188" r="6"/><circle cx="335" cy="188" r="6"/><circle cx="370" cy="188" r="6"/><circle cx="405" cy="188" r="6"/></g>
                 </g>
                 <g>
-                    <rect x="450" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#2a2a3a" stroke-width="1.5"/>
-                    <text x="460" y="158" fill="#9a9a9a" font-size="12" font-weight="700">CHOIR VII</text>
-                    <g fill="#9a9a9a"><circle cx="475" cy="188" r="6"/><circle cx="510" cy="188" r="6"/><circle cx="545" cy="188" r="6"/><circle cx="580" cy="188" r="6"/><circle cx="615" cy="188" r="6"/></g>
+                    <rect x="450" y="140" width="190" height="70" rx="6" fill="#e5d9be" stroke="#caba98" stroke-width="1.5"/>
+                    <text x="460" y="158" fill="#62543c" font-size="12" font-weight="700">CHOIR VII</text>
+                    <g fill="#62543c"><circle cx="475" cy="188" r="6"/><circle cx="510" cy="188" r="6"/><circle cx="545" cy="188" r="6"/><circle cx="580" cy="188" r="6"/><circle cx="615" cy="188" r="6"/></g>
                 </g>
                 <g>
-                    <rect x="660" y="140" width="190" height="70" rx="6" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
-                    <text x="670" y="158" fill="#d4a053" font-size="12" font-weight="700">CHOIR VIII</text>
-                    <g fill="#e8e6e3"><circle cx="685" cy="188" r="6"/><circle cx="720" cy="188" r="6"/><circle cx="755" cy="188" r="6"/><circle cx="790" cy="188" r="6"/><circle cx="825" cy="188" r="6"/></g>
+                    <rect x="660" y="140" width="190" height="70" rx="6" fill="#e5d9be" stroke="#a18347" stroke-width="1.5"/>
+                    <text x="670" y="158" fill="#a18347" font-size="12" font-weight="700">CHOIR VIII</text>
+                    <g fill="#251e14"><circle cx="685" cy="188" r="6"/><circle cx="720" cy="188" r="6"/><circle cx="755" cy="188" r="6"/><circle cx="790" cy="188" r="6"/><circle cx="825" cy="188" r="6"/></g>
                 </g>
                 <!-- flow arrows around the arc -->
-                <path d="M225 75 h10" stroke="#4ecca3" stroke-width="2" marker-end="url(#ar)"/>
-                <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#4ecca3"/></marker></defs>
-                <text x="35" y="235" fill="#4ecca3" font-size="11">&#8594; sound enters at Choir I and rolls choir-by-choir to Choir VIII, then all forty sing together</text>
+                <path d="M225 75 h10" stroke="#3c694d" stroke-width="2" marker-end="url(#ar)"/>
+                <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#3c694d"/></marker></defs>
+                <text x="35" y="235" fill="#3c694d" font-size="11">&#8594; sound enters at Choir I and rolls choir-by-choir to Choir VIII, then all forty sing together</text>
             </g>
         </svg>
     </div>
@@ -360,7 +361,7 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 5-line staff -->
-            <g stroke="#6a6a7a" stroke-width="1.2">
+            <g stroke="#948463" stroke-width="1.2">
                 <line x1="60" y1="50" x2="860" y2="50"/>
                 <line x1="60" y1="66" x2="860" y2="66"/>
                 <line x1="60" y1="82" x2="860" y2="82"/>
@@ -368,18 +369,18 @@
                 <line x1="60" y1="114" x2="860" y2="114"/>
             </g>
             <!-- LEADER (blue) — a short tune -->
-            <g fill="#5b8cd4">
+            <g fill="#41579a">
                 <ellipse cx="110" cy="98" rx="8" ry="6"/><ellipse cx="170" cy="98" rx="8" ry="6"/><ellipse cx="230" cy="106" rx="8" ry="6"/><ellipse cx="290" cy="98" rx="8" ry="6"/><ellipse cx="350" cy="90" rx="8" ry="6"/><ellipse cx="410" cy="82" rx="8" ry="6"/>
             </g>
-            <text x="95" y="150" fill="#5b8cd4" font-size="12" font-family="DM Sans" font-weight="700">VOICE 1 (leader) &#8212; starts here</text>
+            <text x="95" y="150" fill="#41579a" font-size="12" font-family="DM Sans" font-weight="700">VOICE 1 (leader) &#8212; starts here</text>
             <!-- FOLLOWER (purple) — same shape, shifted right, later -->
-            <g fill="#9b72cf" opacity="0.9">
+            <g fill="#72508a" opacity="0.9">
                 <ellipse cx="350" cy="98" rx="8" ry="6"/><ellipse cx="410" cy="98" rx="8" ry="6"/><ellipse cx="470" cy="106" rx="8" ry="6"/><ellipse cx="530" cy="98" rx="8" ry="6"/><ellipse cx="590" cy="90" rx="8" ry="6"/><ellipse cx="650" cy="82" rx="8" ry="6"/>
             </g>
-            <text x="345" y="180" fill="#9b72cf" font-size="12" font-family="DM Sans" font-weight="700">VOICE 2 (follower) &#8212; same notes, enters later</text>
+            <text x="345" y="180" fill="#72508a" font-size="12" font-family="DM Sans" font-weight="700">VOICE 2 (follower) &#8212; same notes, enters later</text>
             <!-- entry marker -->
-            <line x1="350" y1="40" x2="350" y2="124" stroke="#4ecca3" stroke-width="1.5" stroke-dasharray="4 3"/>
-            <text x="356" y="46" fill="#4ecca3" font-size="11" font-family="DM Sans">follower's entry</text>
+            <line x1="350" y1="40" x2="350" y2="124" stroke="#3c694d" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="356" y="46" fill="#3c694d" font-size="11" font-family="DM Sans">follower's entry</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> the blue and purple noteheads trace the <em>identical</em> up-and-down shape — the purple line is simply the blue one copied and slid to the right. Where they overlap (after the green dashed line), the single tune is sounding against itself in harmony. That overlap is the whole magic of a canon.</p>

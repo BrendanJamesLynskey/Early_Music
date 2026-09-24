@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guillaume Du Fay — The Burgundian Sun &amp; the Cyclic Mass</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -58,16 +58,17 @@
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -78,29 +79,29 @@
     <div style="width: 300px; height: 150px; margin: 0 auto 0.3em auto;">
         <svg viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg">
             <!-- The Burgundian sun: a radiant sun over a cathedral dome (Florence) -->
-            <g stroke="#d4a053" stroke-width="2" stroke-linecap="round">
+            <g stroke="#a18347" stroke-width="2" stroke-linecap="round">
                 <line x1="160" y1="18" x2="160" y2="6"/>
                 <line x1="196" y1="26" x2="204" y2="14"/>
                 <line x1="124" y1="26" x2="116" y2="14"/>
                 <line x1="216" y1="52" x2="230" y2="46"/>
                 <line x1="104" y1="52" x2="90" y2="46"/>
             </g>
-            <circle cx="160" cy="52" r="24" fill="none" stroke="#d4a053" stroke-width="2.5"/>
-            <circle cx="160" cy="52" r="11" fill="#d4a053"/>
+            <circle cx="160" cy="52" r="24" fill="none" stroke="#a18347" stroke-width="2.5"/>
+            <circle cx="160" cy="52" r="11" fill="#a18347"/>
             <!-- cathedral dome silhouette -->
-            <path d="M 108 150 L 108 118 Q 160 74 212 118 L 212 150 Z" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
-            <path d="M 108 118 Q 160 74 212 118" fill="none" stroke="#4ecca3" stroke-width="1.5"/>
-            <line x1="160" y1="82" x2="160" y2="70" stroke="#d4a053" stroke-width="1.5"/>
-            <circle cx="160" cy="68" r="2.5" fill="#d4a053"/>
+            <path d="M 108 150 L 108 118 Q 160 74 212 118 L 212 150 Z" fill="none" stroke="#62543c" stroke-width="1.5"/>
+            <path d="M 108 118 Q 160 74 212 118" fill="none" stroke="#3c694d" stroke-width="1.5"/>
+            <line x1="160" y1="82" x2="160" y2="70" stroke="#a18347" stroke-width="1.5"/>
+            <circle cx="160" cy="68" r="2.5" fill="#a18347"/>
             <!-- a scrap of staff at the base -->
-            <g stroke="#6a6a7a" stroke-width="0.8">
+            <g stroke="#948463" stroke-width="0.8">
                 <line x1="120" y1="132" x2="200" y2="132"/>
                 <line x1="120" y1="139" x2="200" y2="139"/>
                 <line x1="120" y1="146" x2="200" y2="146"/>
             </g>
-            <ellipse cx="138" cy="139" rx="4" ry="3" fill="#e8e6e3"/>
-            <ellipse cx="160" cy="132" rx="4" ry="3" fill="#e8e6e3"/>
-            <ellipse cx="182" cy="139" rx="4" ry="3" fill="#e8e6e3"/>
+            <ellipse cx="138" cy="139" rx="4" ry="3" fill="#251e14"/>
+            <ellipse cx="160" cy="132" rx="4" ry="3" fill="#251e14"/>
+            <ellipse cx="182" cy="139" rx="4" ry="3" fill="#251e14"/>
         </svg>
     </div>
     <h1>Guillaume Du Fay</h1>
@@ -227,7 +228,7 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 5-line staff -->
-            <g stroke="#6a6a7a" stroke-width="1.1">
+            <g stroke="#948463" stroke-width="1.1">
                 <line x1="60" y1="60" x2="860" y2="60"/>
                 <line x1="60" y1="82" x2="860" y2="82"/>
                 <line x1="60" y1="104" x2="860" y2="104"/>
@@ -237,38 +238,38 @@
             <!-- chord columns, all descending stepwise in parallel -->
             <!-- x positions 180,320,460,600,740 ; each column top/mid/bottom noteheads -->
             <!-- Chord 1 -->
-            <ellipse cx="180" cy="60"  rx="10" ry="7" fill="#d4a053"/>
-            <ellipse cx="180" cy="93"  rx="10" ry="7" fill="#4ecca3" stroke="#4ecca3"/>
-            <ellipse cx="180" cy="115" rx="10" ry="7" fill="#5b8cd4"/>
+            <ellipse cx="180" cy="60"  rx="10" ry="7" fill="#a18347"/>
+            <ellipse cx="180" cy="93"  rx="10" ry="7" fill="#3c694d" stroke="#3c694d"/>
+            <ellipse cx="180" cy="115" rx="10" ry="7" fill="#41579a"/>
             <!-- Chord 2 -->
-            <ellipse cx="320" cy="71"  rx="10" ry="7" fill="#d4a053"/>
-            <ellipse cx="320" cy="104" rx="10" ry="7" fill="#4ecca3"/>
-            <ellipse cx="320" cy="126" rx="10" ry="7" fill="#5b8cd4"/>
+            <ellipse cx="320" cy="71"  rx="10" ry="7" fill="#a18347"/>
+            <ellipse cx="320" cy="104" rx="10" ry="7" fill="#3c694d"/>
+            <ellipse cx="320" cy="126" rx="10" ry="7" fill="#41579a"/>
             <!-- Chord 3 -->
-            <ellipse cx="460" cy="82"  rx="10" ry="7" fill="#d4a053"/>
-            <ellipse cx="460" cy="115" rx="10" ry="7" fill="#4ecca3"/>
-            <ellipse cx="460" cy="137" rx="10" ry="7" fill="#5b8cd4"/>
+            <ellipse cx="460" cy="82"  rx="10" ry="7" fill="#a18347"/>
+            <ellipse cx="460" cy="115" rx="10" ry="7" fill="#3c694d"/>
+            <ellipse cx="460" cy="137" rx="10" ry="7" fill="#41579a"/>
             <!-- Chord 4 -->
-            <ellipse cx="600" cy="93"  rx="10" ry="7" fill="#d4a053"/>
-            <ellipse cx="600" cy="126" rx="10" ry="7" fill="#4ecca3"/>
-            <ellipse cx="600" cy="148" rx="10" ry="7" fill="#5b8cd4"/>
+            <ellipse cx="600" cy="93"  rx="10" ry="7" fill="#a18347"/>
+            <ellipse cx="600" cy="126" rx="10" ry="7" fill="#3c694d"/>
+            <ellipse cx="600" cy="148" rx="10" ry="7" fill="#41579a"/>
             <!-- Chord 5 -->
-            <ellipse cx="740" cy="104" rx="10" ry="7" fill="#d4a053"/>
-            <ellipse cx="740" cy="137" rx="10" ry="7" fill="#4ecca3"/>
-            <ellipse cx="740" cy="159" rx="10" ry="7" fill="#5b8cd4"/>
+            <ellipse cx="740" cy="104" rx="10" ry="7" fill="#a18347"/>
+            <ellipse cx="740" cy="137" rx="10" ry="7" fill="#3c694d"/>
+            <ellipse cx="740" cy="159" rx="10" ry="7" fill="#41579a"/>
             <!-- voice-labels / lines connecting parallel motion -->
-            <path d="M 180 60 L 740 104" stroke="#d4a053" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
-            <path d="M 180 93 L 740 137" stroke="#4ecca3" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
-            <path d="M 180 115 L 740 159" stroke="#5b8cd4" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
+            <path d="M 180 60 L 740 104" stroke="#a18347" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
+            <path d="M 180 93 L 740 137" stroke="#3c694d" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
+            <path d="M 180 115 L 740 159" stroke="#41579a" stroke-width="1" stroke-dasharray="3 4" fill="none" opacity="0.6"/>
             <!-- interval brackets on the last chord -->
-            <text x="770" y="108" fill="#d4a053" font-family="DM Sans" font-size="13">top (written)</text>
-            <text x="770" y="141" fill="#4ecca3" font-family="DM Sans" font-size="13">a 4th below (sung)</text>
-            <text x="770" y="163" fill="#5b8cd4" font-family="DM Sans" font-size="13">bottom (written)</text>
+            <text x="770" y="108" fill="#a18347" font-family="DM Sans" font-size="13">top (written)</text>
+            <text x="770" y="141" fill="#3c694d" font-family="DM Sans" font-size="13">a 4th below (sung)</text>
+            <text x="770" y="163" fill="#41579a" font-family="DM Sans" font-size="13">bottom (written)</text>
             <!-- 6th and 3rd labels between chords 1 -->
-            <line x1="140" y1="60" x2="140" y2="115" stroke="#9a9a9a" stroke-width="1"/>
-            <text x="96" y="90" fill="#9a9a9a" font-family="DM Sans" font-size="12">6th</text>
-            <line x1="152" y1="93" x2="152" y2="115" stroke="#9a9a9a" stroke-width="1"/>
-            <text x="120" y="112" fill="#9a9a9a" font-family="DM Sans" font-size="12">3rd</text>
+            <line x1="140" y1="60" x2="140" y2="115" stroke="#62543c" stroke-width="1"/>
+            <text x="96" y="90" fill="#62543c" font-family="DM Sans" font-size="12">6th</text>
+            <line x1="152" y1="93" x2="152" y2="115" stroke="#62543c" stroke-width="1"/>
+            <text x="120" y="112" fill="#62543c" font-family="DM Sans" font-size="12">3rd</text>
         </svg>
     </div>
     <div class="card-grid cols-3" style="max-width:96%;">
@@ -299,18 +300,18 @@
         <div>
             <svg viewBox="0 0 220 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <!-- Brunelleschi dome, ribbed -->
-                <path d="M 40 200 L 40 150 Q 110 40 180 150 L 180 200 Z" fill="none" stroke="#9a9a9a" stroke-width="2"/>
-                <path d="M 40 150 Q 110 40 180 150" fill="none" stroke="#d4a053" stroke-width="2.5"/>
+                <path d="M 40 200 L 40 150 Q 110 40 180 150 L 180 200 Z" fill="none" stroke="#62543c" stroke-width="2"/>
+                <path d="M 40 150 Q 110 40 180 150" fill="none" stroke="#a18347" stroke-width="2.5"/>
                 <!-- ribs -->
-                <path d="M 110 46 Q 70 100 62 150" fill="none" stroke="#6a6a7a" stroke-width="1"/>
-                <path d="M 110 46 Q 150 100 158 150" fill="none" stroke="#6a6a7a" stroke-width="1"/>
-                <path d="M 110 46 L 110 150" stroke="#6a6a7a" stroke-width="1"/>
+                <path d="M 110 46 Q 70 100 62 150" fill="none" stroke="#948463" stroke-width="1"/>
+                <path d="M 110 46 Q 150 100 158 150" fill="none" stroke="#948463" stroke-width="1"/>
+                <path d="M 110 46 L 110 150" stroke="#948463" stroke-width="1"/>
                 <!-- lantern -->
-                <rect x="102" y="30" width="16" height="18" fill="none" stroke="#d4a053" stroke-width="1.5"/>
-                <path d="M 100 30 L 110 18 L 120 30 Z" fill="#d4a053"/>
+                <rect x="102" y="30" width="16" height="18" fill="none" stroke="#a18347" stroke-width="1.5"/>
+                <path d="M 100 30 L 110 18 L 120 30 Z" fill="#a18347"/>
                 <!-- proportion marks -->
-                <line x1="40" y1="215" x2="180" y2="215" stroke="#4ecca3" stroke-width="1"/>
-                <text x="70" y="228" fill="#4ecca3" font-family="JetBrains Mono" font-size="11">proportions?</text>
+                <line x1="40" y1="215" x2="180" y2="215" stroke="#3c694d" stroke-width="1"/>
+                <text x="70" y="228" fill="#3c694d" font-family="JetBrains Mono" font-size="11">proportions?</text>
             </svg>
         </div>
     </div>
@@ -334,24 +335,24 @@
         <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- five movement boxes -->
             <g font-family="DM Sans" font-size="13" text-anchor="middle">
-                <rect x="30"  y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="105" y="82" fill="#e8e6e3">Kyrie</text>
-                <rect x="205" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="280" y="82" fill="#e8e6e3">Gloria</text>
-                <rect x="380" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="455" y="82" fill="#e8e6e3">Credo</text>
-                <rect x="555" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="630" y="82" fill="#e8e6e3">Sanctus</text>
-                <rect x="730" y="40" width="150" height="70" rx="6" fill="#161622" stroke="#d4a053"/><text x="805" y="82" fill="#e8e6e3">Agnus Dei</text>
+                <rect x="30"  y="40" width="150" height="70" rx="6" fill="#e5d9be" stroke="#a18347"/><text x="105" y="82" fill="#251e14">Kyrie</text>
+                <rect x="205" y="40" width="150" height="70" rx="6" fill="#e5d9be" stroke="#a18347"/><text x="280" y="82" fill="#251e14">Gloria</text>
+                <rect x="380" y="40" width="150" height="70" rx="6" fill="#e5d9be" stroke="#a18347"/><text x="455" y="82" fill="#251e14">Credo</text>
+                <rect x="555" y="40" width="150" height="70" rx="6" fill="#e5d9be" stroke="#a18347"/><text x="630" y="82" fill="#251e14">Sanctus</text>
+                <rect x="730" y="40" width="150" height="70" rx="6" fill="#e5d9be" stroke="#a18347"/><text x="805" y="82" fill="#251e14">Agnus Dei</text>
             </g>
             <!-- the shared cantus firmus threading through -->
             <g>
-                <text x="30" y="150" fill="#4ecca3" font-family="DM Sans" font-size="13">shared tenor (cantus firmus):</text>
-                <line x1="30" y1="170" x2="880" y2="170" stroke="#4ecca3" stroke-width="1" stroke-dasharray="2 3"/>
+                <text x="30" y="150" fill="#3c694d" font-family="DM Sans" font-size="13">shared tenor (cantus firmus):</text>
+                <line x1="30" y1="170" x2="880" y2="170" stroke="#3c694d" stroke-width="1" stroke-dasharray="2 3"/>
                 <!-- long tenor notes, one under each movement -->
-                <rect x="90"  y="163" width="26" height="14" fill="#4ecca3"/>
-                <rect x="265" y="163" width="26" height="14" fill="#4ecca3"/>
-                <rect x="440" y="163" width="26" height="14" fill="#4ecca3"/>
-                <rect x="615" y="163" width="26" height="14" fill="#4ecca3"/>
-                <rect x="790" y="163" width="26" height="14" fill="#4ecca3"/>
+                <rect x="90"  y="163" width="26" height="14" fill="#3c694d"/>
+                <rect x="265" y="163" width="26" height="14" fill="#3c694d"/>
+                <rect x="440" y="163" width="26" height="14" fill="#3c694d"/>
+                <rect x="615" y="163" width="26" height="14" fill="#3c694d"/>
+                <rect x="790" y="163" width="26" height="14" fill="#3c694d"/>
                 <!-- arrows from boxes down to the thread -->
-                <g stroke="#6a6a7a" stroke-width="1">
+                <g stroke="#948463" stroke-width="1">
                     <line x1="105" y1="110" x2="103" y2="161"/>
                     <line x1="280" y1="110" x2="278" y2="161"/>
                     <line x1="455" y1="110" x2="453" y2="161"/>

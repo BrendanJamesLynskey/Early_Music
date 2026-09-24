@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hildegard von Bingen — Visions in Sound &amp; the Ecstatic Chant</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -58,16 +58,17 @@
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -80,7 +81,7 @@
             <!-- The "Living Light": a radiant vision with tongues of flame and a rising feather -->
             <g transform="translate(150,78)">
                 <!-- rays of the Living Light -->
-                <g stroke="#d4a053" stroke-width="1.4" opacity="0.85">
+                <g stroke="#a18347" stroke-width="1.4" opacity="0.85">
                     <line x1="0" y1="0" x2="0" y2="-62"/>
                     <line x1="0" y1="0" x2="44" y2="-44"/>
                     <line x1="0" y1="0" x2="62" y2="0"/>
@@ -89,20 +90,20 @@
                     <line x1="0" y1="0" x2="-62" y2="0"/>
                     <line x1="0" y1="0" x2="-44" y2="44"/>
                 </g>
-                <g stroke="#4ecca3" stroke-width="1" opacity="0.6">
+                <g stroke="#3c694d" stroke-width="1" opacity="0.6">
                     <line x1="0" y1="0" x2="24" y2="-56"/>
                     <line x1="0" y1="0" x2="-24" y2="-56"/>
                     <line x1="0" y1="0" x2="56" y2="24"/>
                     <line x1="0" y1="0" x2="-56" y2="24"/>
                 </g>
                 <!-- concentric halos of the vision -->
-                <circle cx="0" cy="0" r="34" fill="none" stroke="#9b72cf" stroke-width="1.4" opacity="0.8"/>
-                <circle cx="0" cy="0" r="24" fill="none" stroke="#9b72cf" stroke-width="1" opacity="0.6"/>
-                <circle cx="0" cy="0" r="14" fill="#9b72cf" opacity="0.18"/>
+                <circle cx="0" cy="0" r="34" fill="none" stroke="#72508a" stroke-width="1.4" opacity="0.8"/>
+                <circle cx="0" cy="0" r="24" fill="none" stroke="#72508a" stroke-width="1" opacity="0.6"/>
+                <circle cx="0" cy="0" r="14" fill="#72508a" opacity="0.18"/>
                 <!-- a tongue of flame / feather on the breath of God -->
-                <path d="M 0 20 C -10 4 -4 -14 0 -26 C 4 -14 10 4 0 20 Z" fill="#d4a053" opacity="0.9"/>
-                <path d="M 0 14 C -5 4 -2 -8 0 -16 C 2 -8 5 4 0 14 Z" fill="#0a0a0f"/>
-                <line x1="0" y1="14" x2="0" y2="-16" stroke="#4ecca3" stroke-width="1"/>
+                <path d="M 0 20 C -10 4 -4 -14 0 -26 C 4 -14 10 4 0 20 Z" fill="#a18347" opacity="0.9"/>
+                <path d="M 0 14 C -5 4 -2 -8 0 -16 C 2 -8 5 4 0 14 Z" fill="#f2e9d3"/>
+                <line x1="0" y1="14" x2="0" y2="-16" stroke="#3c694d" stroke-width="1"/>
             </g>
         </svg>
     </div>
@@ -177,16 +178,16 @@
             <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <!-- radiant eye of vision -->
                 <g transform="translate(110,100)">
-                    <g stroke="#d4a053" stroke-width="1.2" opacity="0.7">
+                    <g stroke="#a18347" stroke-width="1.2" opacity="0.7">
                         <line x1="0" y1="0" x2="0" y2="-80"/><line x1="0" y1="0" x2="0" y2="80"/>
                         <line x1="0" y1="0" x2="80" y2="0"/><line x1="0" y1="0" x2="-80" y2="0"/>
                         <line x1="0" y1="0" x2="56" y2="-56"/><line x1="0" y1="0" x2="-56" y2="-56"/>
                         <line x1="0" y1="0" x2="56" y2="56"/><line x1="0" y1="0" x2="-56" y2="56"/>
                     </g>
-                    <circle cx="0" cy="0" r="46" fill="none" stroke="#9b72cf" stroke-width="1.4"/>
-                    <circle cx="0" cy="0" r="30" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0.7"/>
-                    <circle cx="0" cy="0" r="14" fill="#9b72cf" opacity="0.3"/>
-                    <circle cx="0" cy="0" r="5" fill="#d4a053"/>
+                    <circle cx="0" cy="0" r="46" fill="none" stroke="#72508a" stroke-width="1.4"/>
+                    <circle cx="0" cy="0" r="30" fill="none" stroke="#3c694d" stroke-width="1" opacity="0.7"/>
+                    <circle cx="0" cy="0" r="14" fill="#72508a" opacity="0.3"/>
+                    <circle cx="0" cy="0" r="5" fill="#a18347"/>
                 </g>
             </svg>
         </div>
@@ -280,53 +281,53 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 4-line staff -->
-            <g stroke="#6a6a7a" stroke-width="1.2">
+            <g stroke="#948463" stroke-width="1.2">
                 <line x1="60" y1="70" x2="860" y2="70"/>
                 <line x1="60" y1="92" x2="860" y2="92"/>
                 <line x1="60" y1="114" x2="860" y2="114"/>
                 <line x1="60" y1="136" x2="860" y2="136"/>
             </g>
             <!-- C clef marking a reference line -->
-            <rect x="66" y="103" width="10" height="22" fill="#d4a053"/><rect x="76" y="109" width="16" height="10" fill="#d4a053"/>
-            <text x="66" y="164" fill="#d4a053" font-size="11" font-family="DM Sans">clef: this line = the reference pitch</text>
+            <rect x="66" y="103" width="10" height="22" fill="#a18347"/><rect x="76" y="109" width="16" height="10" fill="#a18347"/>
+            <text x="66" y="164" fill="#a18347" font-size="11" font-family="DM Sans">clef: this line = the reference pitch</text>
             <!-- low starting note -->
-            <rect x="150" y="140" width="14" height="14" fill="#e8e6e3"/>
-            <text x="140" y="184" fill="#9a9a9a" font-size="11" font-family="DM Sans">low start</text>
+            <rect x="150" y="140" width="14" height="14" fill="#251e14"/>
+            <text x="140" y="184" fill="#62543c" font-size="11" font-family="DM Sans">low start</text>
             <!-- the WIDE LEAP: arrow shooting up -->
-            <path d="M 190 150 L 250 66" stroke="#9b72cf" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowP)"/>
+            <path d="M 190 150 L 250 66" stroke="#72508a" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowP)"/>
             <defs>
                 <marker id="arrowP" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-                    <path d="M0 0 L8 4 L0 8 Z" fill="#9b72cf"/>
+                    <path d="M0 0 L8 4 L0 8 Z" fill="#72508a"/>
                 </marker>
             </defs>
-            <text x="196" y="200" fill="#9b72cf" font-size="11" font-family="DM Sans">a wide upward leap (a fifth or more)</text>
+            <text x="196" y="200" fill="#72508a" font-size="11" font-family="DM Sans">a wide upward leap (a fifth or more)</text>
             <!-- high note reached by the leap -->
-            <rect x="256" y="58" width="14" height="14" fill="#9b72cf"/>
+            <rect x="256" y="58" width="14" height="14" fill="#72508a"/>
             <!-- the long MELISMA: a florid run of many squares on one syllable -->
-            <rect x="330" y="58" width="12" height="12" fill="#4ecca3"/>
-            <rect x="346" y="70" width="12" height="12" fill="#4ecca3"/>
-            <rect x="362" y="58" width="12" height="12" fill="#4ecca3"/>
-            <rect x="378" y="70" width="12" height="12" fill="#4ecca3"/>
-            <rect x="394" y="80" width="12" height="12" fill="#4ecca3"/>
-            <rect x="410" y="70" width="12" height="12" fill="#4ecca3"/>
-            <rect x="426" y="80" width="12" height="12" fill="#4ecca3"/>
-            <rect x="442" y="92" width="12" height="12" fill="#4ecca3"/>
-            <rect x="458" y="80" width="12" height="12" fill="#4ecca3"/>
-            <path d="M 328 48 Q 400 40 472 48" fill="none" stroke="#4ecca3" stroke-width="1.4"/>
-            <text x="330" y="200" fill="#4ecca3" font-size="11" font-family="DM Sans">one long melisma — all on a single syllable</text>
+            <rect x="330" y="58" width="12" height="12" fill="#3c694d"/>
+            <rect x="346" y="70" width="12" height="12" fill="#3c694d"/>
+            <rect x="362" y="58" width="12" height="12" fill="#3c694d"/>
+            <rect x="378" y="70" width="12" height="12" fill="#3c694d"/>
+            <rect x="394" y="80" width="12" height="12" fill="#3c694d"/>
+            <rect x="410" y="70" width="12" height="12" fill="#3c694d"/>
+            <rect x="426" y="80" width="12" height="12" fill="#3c694d"/>
+            <rect x="442" y="92" width="12" height="12" fill="#3c694d"/>
+            <rect x="458" y="80" width="12" height="12" fill="#3c694d"/>
+            <path d="M 328 48 Q 400 40 472 48" fill="none" stroke="#3c694d" stroke-width="1.4"/>
+            <text x="330" y="200" fill="#3c694d" font-size="11" font-family="DM Sans">one long melisma — all on a single syllable</text>
             <!-- descent back down -->
-            <rect x="560" y="92" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="600" y="114" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="640" y="103" width="12" height="12" fill="#e8e6e3"/>
-            <rect x="652" y="114" width="12" height="12" fill="#e8e6e3"/>
+            <rect x="560" y="92" width="14" height="14" fill="#251e14"/>
+            <rect x="600" y="114" width="14" height="14" fill="#251e14"/>
+            <rect x="640" y="103" width="12" height="12" fill="#251e14"/>
+            <rect x="652" y="114" width="12" height="12" fill="#251e14"/>
             <!-- final resting note -->
-            <rect x="720" y="136" width="16" height="16" fill="#d4a053"/>
-            <text x="694" y="184" fill="#d4a053" font-size="11" font-family="DM Sans">rests on the final</text>
+            <rect x="720" y="136" width="16" height="16" fill="#a18347"/>
+            <text x="694" y="184" fill="#a18347" font-size="11" font-family="DM Sans">rests on the final</text>
             <!-- custos -->
-            <path d="M 820 114 l 10 -8 l 6 8" fill="none" stroke="#5b8cd4" stroke-width="2"/>
-            <text x="798" y="164" fill="#5b8cd4" font-size="11" font-family="DM Sans">custos &#8594;</text>
+            <path d="M 820 114 l 10 -8 l 6 8" fill="none" stroke="#41579a" stroke-width="2"/>
+            <text x="798" y="164" fill="#41579a" font-size="11" font-family="DM Sans">custos &#8594;</text>
             <!-- text underlay -->
-            <text x="150" y="212" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="13">O &#8212; vi &#8212; ri &#8212; &#8212; &#8212; dis &#8212; si &#8212; ma</text>
+            <text x="150" y="212" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="13">O &#8212; vi &#8212; ri &#8212; &#8212; &#8212; dis &#8212; si &#8212; ma</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> read left to right; higher on the staff = higher in pitch. The clef names one line, and every note is read relative to it. A cluster of squares over one syllable is a <em>melisma</em> — read a spread group left-to-right, a stacked group bottom-to-top. There is <em>no written rhythm</em>: the notes are broadly equal and shaped by the words. What marks this as Hildegard is the sudden <span class="accent-purple">leap</span> up and the exceptionally long <span class="accent-green">melisma</span>.</p>

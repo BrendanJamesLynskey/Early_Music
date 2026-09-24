@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plainchant — The Sung Prayer of the Latin Church &amp; the Birth of Notation</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -57,16 +57,17 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -77,22 +78,22 @@
     <div style="width: 300px; height: 120px; margin: 0 auto 0.4em auto;">
         <svg viewBox="0 0 360 130" xmlns="http://www.w3.org/2000/svg">
             <!-- A 4-line chant staff with square neumes -->
-            <g stroke="#6a6a7a" stroke-width="1">
+            <g stroke="#948463" stroke-width="1">
                 <line x1="20" y1="40" x2="340" y2="40"/>
                 <line x1="20" y1="58" x2="340" y2="58"/>
                 <line x1="20" y1="76" x2="340" y2="76"/>
                 <line x1="20" y1="94" x2="340" y2="94"/>
             </g>
             <!-- C clef -->
-            <text x="26" y="66" fill="#d4a053" font-family="Playfair Display" font-size="26" font-weight="700">C</text>
+            <text x="26" y="66" fill="#a18347" font-family="Playfair Display" font-size="26" font-weight="700">C</text>
             <!-- square neumes (punctum, podatus, clivis, melisma) -->
-            <rect x="70" y="67" width="11" height="11" fill="#e8e6e3"/>
-            <rect x="100" y="76" width="11" height="11" fill="#9b72cf"/><rect x="100" y="58" width="11" height="11" fill="#9b72cf"/>
-            <rect x="132" y="49" width="11" height="11" fill="#4ecca3"/><rect x="132" y="67" width="11" height="11" fill="#4ecca3"/>
-            <rect x="168" y="58" width="11" height="11" fill="#e8e6e3"/><rect x="182" y="49" width="11" height="11" fill="#e8e6e3"/><rect x="196" y="58" width="11" height="11" fill="#e8e6e3"/><rect x="210" y="67" width="11" height="11" fill="#e8e6e3"/>
-            <rect x="250" y="76" width="11" height="11" fill="#d4a053"/><rect x="264" y="58" width="11" height="11" fill="#d4a053"/>
-            <rect x="300" y="67" width="11" height="11" fill="#e8e6e3"/>
-            <text x="20" y="118" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">Ky &#8212; ri &#8212; e &#8212; e &#8212; le &#8212; i &#8212; son</text>
+            <rect x="70" y="67" width="11" height="11" fill="#251e14"/>
+            <rect x="100" y="76" width="11" height="11" fill="#72508a"/><rect x="100" y="58" width="11" height="11" fill="#72508a"/>
+            <rect x="132" y="49" width="11" height="11" fill="#3c694d"/><rect x="132" y="67" width="11" height="11" fill="#3c694d"/>
+            <rect x="168" y="58" width="11" height="11" fill="#251e14"/><rect x="182" y="49" width="11" height="11" fill="#251e14"/><rect x="196" y="58" width="11" height="11" fill="#251e14"/><rect x="210" y="67" width="11" height="11" fill="#251e14"/>
+            <rect x="250" y="76" width="11" height="11" fill="#a18347"/><rect x="264" y="58" width="11" height="11" fill="#a18347"/>
+            <rect x="300" y="67" width="11" height="11" fill="#251e14"/>
+            <text x="20" y="118" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="12">Ky &#8212; ri &#8212; e &#8212; e &#8212; le &#8212; i &#8212; son</text>
         </svg>
     </div>
     <h1>Plainchant</h1>
@@ -159,29 +160,29 @@
         <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="DM Sans" font-size="13">
                 <!-- headers -->
-                <text x="30" y="26" fill="#6a6a7a" font-size="11">FINAL</text>
-                <text x="150" y="26" fill="#4ecca3" font-size="11">AUTHENTIC</text>
-                <text x="470" y="26" fill="#5b8cd4" font-size="11">PLAGAL</text>
+                <text x="30" y="26" fill="#948463" font-size="11">FINAL</text>
+                <text x="150" y="26" fill="#3c694d" font-size="11">AUTHENTIC</text>
+                <text x="470" y="26" fill="#41579a" font-size="11">PLAGAL</text>
                 <!-- rows: D E F G -->
                 <g>
-                  <text x="30" y="66" fill="#d4a053" font-weight="700">D</text>
-                  <rect x="150" y="50" width="260" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="160" y="67" fill="#e8e6e3">I · Dorian — bright, versatile</text>
-                  <rect x="470" y="50" width="300" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="480" y="67" fill="#e8e6e3">II · Hypodorian — grave, solemn</text>
+                  <text x="30" y="66" fill="#a18347" font-weight="700">D</text>
+                  <rect x="150" y="50" width="260" height="24" rx="4" fill="#e5d9be" stroke="#3c694d"/><text x="160" y="67" fill="#251e14">I · Dorian — bright, versatile</text>
+                  <rect x="470" y="50" width="300" height="24" rx="4" fill="#e5d9be" stroke="#41579a"/><text x="480" y="67" fill="#251e14">II · Hypodorian — grave, solemn</text>
                 </g>
                 <g>
-                  <text x="30" y="106" fill="#d4a053" font-weight="700">E</text>
-                  <rect x="150" y="90" width="260" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="160" y="107" fill="#e8e6e3">III · Phrygian — tense, mystical</text>
-                  <rect x="470" y="90" width="300" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="480" y="107" fill="#e8e6e3">IV · Hypophrygian — plaintive</text>
+                  <text x="30" y="106" fill="#a18347" font-weight="700">E</text>
+                  <rect x="150" y="90" width="260" height="24" rx="4" fill="#e5d9be" stroke="#3c694d"/><text x="160" y="107" fill="#251e14">III · Phrygian — tense, mystical</text>
+                  <rect x="470" y="90" width="300" height="24" rx="4" fill="#e5d9be" stroke="#41579a"/><text x="480" y="107" fill="#251e14">IV · Hypophrygian — plaintive</text>
                 </g>
                 <g>
-                  <text x="30" y="146" fill="#d4a053" font-weight="700">F</text>
-                  <rect x="150" y="130" width="260" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="160" y="147" fill="#e8e6e3">V · Lydian — joyful, radiant</text>
-                  <rect x="470" y="130" width="300" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="480" y="147" fill="#e8e6e3">VI · Hypolydian — devout, tender</text>
+                  <text x="30" y="146" fill="#a18347" font-weight="700">F</text>
+                  <rect x="150" y="130" width="260" height="24" rx="4" fill="#e5d9be" stroke="#3c694d"/><text x="160" y="147" fill="#251e14">V · Lydian — joyful, radiant</text>
+                  <rect x="470" y="130" width="300" height="24" rx="4" fill="#e5d9be" stroke="#41579a"/><text x="480" y="147" fill="#251e14">VI · Hypolydian — devout, tender</text>
                 </g>
                 <g>
-                  <text x="30" y="186" fill="#d4a053" font-weight="700">G</text>
-                  <rect x="150" y="170" width="260" height="24" rx="4" fill="#161622" stroke="#4ecca3"/><text x="160" y="187" fill="#e8e6e3">VII · Mixolydian — angelic, youthful</text>
-                  <rect x="470" y="170" width="300" height="24" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="480" y="187" fill="#e8e6e3">VIII · Hypomixolydian — poised</text>
+                  <text x="30" y="186" fill="#a18347" font-weight="700">G</text>
+                  <rect x="150" y="170" width="260" height="24" rx="4" fill="#e5d9be" stroke="#3c694d"/><text x="160" y="187" fill="#251e14">VII · Mixolydian — angelic, youthful</text>
+                  <rect x="470" y="170" width="300" height="24" rx="4" fill="#e5d9be" stroke="#41579a"/><text x="480" y="187" fill="#251e14">VIII · Hypomixolydian — poised</text>
                 </g>
             </g>
         </svg>
@@ -225,34 +226,34 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 900 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g font-family="DM Sans" font-size="12" fill="#9a9a9a">
+            <g font-family="DM Sans" font-size="12" fill="#62543c">
                 <!-- punctum -->
-                <rect x="40" y="60" width="16" height="16" fill="#e8e6e3"/>
-                <text x="48" y="100" text-anchor="middle" fill="#e8e6e3" font-size="13" font-weight="700">Punctum</text>
+                <rect x="40" y="60" width="16" height="16" fill="#251e14"/>
+                <text x="48" y="100" text-anchor="middle" fill="#251e14" font-size="13" font-weight="700">Punctum</text>
                 <text x="48" y="118" text-anchor="middle">one note</text>
                 <!-- virga -->
-                <rect x="150" y="50" width="16" height="16" fill="#e8e6e3"/><line x1="150" y1="50" x2="150" y2="88" stroke="#e8e6e3" stroke-width="2"/>
-                <text x="158" y="100" text-anchor="middle" fill="#e8e6e3" font-size="13" font-weight="700">Virga</text>
+                <rect x="150" y="50" width="16" height="16" fill="#251e14"/><line x1="150" y1="50" x2="150" y2="88" stroke="#251e14" stroke-width="2"/>
+                <text x="158" y="100" text-anchor="middle" fill="#251e14" font-size="13" font-weight="700">Virga</text>
                 <text x="158" y="118" text-anchor="middle">one (higher) note</text>
                 <!-- podatus (pes) ascending pair -->
-                <rect x="270" y="66" width="16" height="16" fill="#4ecca3"/><rect x="270" y="48" width="16" height="16" fill="#4ecca3"/>
-                <text x="278" y="100" text-anchor="middle" fill="#4ecca3" font-size="13" font-weight="700">Podatus</text>
+                <rect x="270" y="66" width="16" height="16" fill="#3c694d"/><rect x="270" y="48" width="16" height="16" fill="#3c694d"/>
+                <text x="278" y="100" text-anchor="middle" fill="#3c694d" font-size="13" font-weight="700">Podatus</text>
                 <text x="278" y="118" text-anchor="middle">two rising notes</text>
                 <!-- clivis descending pair -->
-                <rect x="390" y="48" width="16" height="16" fill="#cf7272"/><rect x="404" y="66" width="16" height="16" fill="#cf7272"/>
-                <text x="405" y="100" text-anchor="middle" fill="#cf7272" font-size="13" font-weight="700">Clivis</text>
+                <rect x="390" y="48" width="16" height="16" fill="#ae594a"/><rect x="404" y="66" width="16" height="16" fill="#ae594a"/>
+                <text x="405" y="100" text-anchor="middle" fill="#ae594a" font-size="13" font-weight="700">Clivis</text>
                 <text x="405" y="118" text-anchor="middle">two falling notes</text>
                 <!-- torculus low-high-low -->
-                <rect x="520" y="62" width="14" height="14" fill="#9b72cf"/><rect x="534" y="46" width="14" height="14" fill="#9b72cf"/><rect x="548" y="62" width="14" height="14" fill="#9b72cf"/>
-                <text x="541" y="100" text-anchor="middle" fill="#9b72cf" font-size="13" font-weight="700">Torculus</text>
+                <rect x="520" y="62" width="14" height="14" fill="#72508a"/><rect x="534" y="46" width="14" height="14" fill="#72508a"/><rect x="548" y="62" width="14" height="14" fill="#72508a"/>
+                <text x="541" y="100" text-anchor="middle" fill="#72508a" font-size="13" font-weight="700">Torculus</text>
                 <text x="541" y="118" text-anchor="middle">up then down</text>
                 <!-- porrectus high-low-high -->
-                <rect x="660" y="46" width="14" height="14" fill="#5b8cd4"/><rect x="674" y="62" width="14" height="14" fill="#5b8cd4"/><rect x="688" y="46" width="14" height="14" fill="#5b8cd4"/>
-                <text x="681" y="100" text-anchor="middle" fill="#5b8cd4" font-size="13" font-weight="700">Porrectus</text>
+                <rect x="660" y="46" width="14" height="14" fill="#41579a"/><rect x="674" y="62" width="14" height="14" fill="#41579a"/><rect x="688" y="46" width="14" height="14" fill="#41579a"/>
+                <text x="681" y="100" text-anchor="middle" fill="#41579a" font-size="13" font-weight="700">Porrectus</text>
                 <text x="681" y="118" text-anchor="middle">down then up</text>
                 <!-- climacus descending run -->
-                <rect x="790" y="42" width="14" height="14" fill="#d4a053"/><rect x="804" y="56" width="12" height="12" fill="#d4a053"/><rect x="816" y="68" width="12" height="12" fill="#d4a053"/>
-                <text x="808" y="100" text-anchor="middle" fill="#d4a053" font-size="13" font-weight="700">Climacus</text>
+                <rect x="790" y="42" width="14" height="14" fill="#a18347"/><rect x="804" y="56" width="12" height="12" fill="#a18347"/><rect x="816" y="68" width="12" height="12" fill="#a18347"/>
+                <text x="808" y="100" text-anchor="middle" fill="#a18347" font-size="13" font-weight="700">Climacus</text>
                 <text x="808" y="118" text-anchor="middle">a falling run</text>
             </g>
         </svg>
@@ -281,15 +282,15 @@
             <!-- Solmisation ladder -->
             <svg viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <g font-family="DM Sans" font-size="13">
-                    <line x1="40" y1="20" x2="40" y2="220" stroke="#2a2a3a" stroke-width="1"/>
+                    <line x1="40" y1="20" x2="40" y2="220" stroke="#caba98" stroke-width="1"/>
                     <g text-anchor="start">
-                        <circle cx="40" cy="210" r="6" fill="#d4a053"/><text x="56" y="215" fill="#e8e6e3">Ut &#8212; C</text>
-                        <circle cx="40" cy="176" r="6" fill="#d4a053"/><text x="56" y="181" fill="#e8e6e3">Re &#8212; D</text>
-                        <circle cx="40" cy="142" r="6" fill="#4ecca3"/><text x="56" y="147" fill="#e8e6e3">Mi &#8212; E</text>
-                        <circle cx="40" cy="118" r="6" fill="#cf7272"/><text x="56" y="123" fill="#e8e6e3">Fa &#8212; F</text>
-                        <text x="90" y="135" fill="#cf7272" font-size="10">&#8592; semitone</text>
-                        <circle cx="40" cy="84" r="6" fill="#5b8cd4"/><text x="56" y="89" fill="#e8e6e3">Sol &#8212; G</text>
-                        <circle cx="40" cy="50" r="6" fill="#9b72cf"/><text x="56" y="55" fill="#e8e6e3">La &#8212; A</text>
+                        <circle cx="40" cy="210" r="6" fill="#a18347"/><text x="56" y="215" fill="#251e14">Ut &#8212; C</text>
+                        <circle cx="40" cy="176" r="6" fill="#a18347"/><text x="56" y="181" fill="#251e14">Re &#8212; D</text>
+                        <circle cx="40" cy="142" r="6" fill="#3c694d"/><text x="56" y="147" fill="#251e14">Mi &#8212; E</text>
+                        <circle cx="40" cy="118" r="6" fill="#ae594a"/><text x="56" y="123" fill="#251e14">Fa &#8212; F</text>
+                        <text x="90" y="135" fill="#ae594a" font-size="10">&#8592; semitone</text>
+                        <circle cx="40" cy="84" r="6" fill="#41579a"/><text x="56" y="89" fill="#251e14">Sol &#8212; G</text>
+                        <circle cx="40" cy="50" r="6" fill="#72508a"/><text x="56" y="55" fill="#251e14">La &#8212; A</text>
                     </g>
                 </g>
             </svg>
@@ -313,27 +314,27 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 4-line staff -->
-            <g stroke="#6a6a7a" stroke-width="1.2">
+            <g stroke="#948463" stroke-width="1.2">
                 <line x1="60" y1="60" x2="860" y2="60"/>
                 <line x1="60" y1="82" x2="860" y2="82"/>
                 <line x1="60" y1="104" x2="860" y2="104"/>
                 <line x1="60" y1="126" x2="860" y2="126"/>
             </g>
             <!-- C clef on the 3rd line (marks Do) -->
-            <rect x="66" y="93" width="10" height="22" fill="#d4a053"/><rect x="76" y="99" width="16" height="10" fill="#d4a053"/>
-            <text x="70" y="150" fill="#d4a053" font-size="11" font-family="DM Sans">C-clef: this line = Do (C)</text>
+            <rect x="66" y="93" width="10" height="22" fill="#a18347"/><rect x="76" y="99" width="16" height="10" fill="#a18347"/>
+            <text x="70" y="150" fill="#a18347" font-size="11" font-family="DM Sans">C-clef: this line = Do (C)</text>
             <!-- notes -->
-            <rect x="150" y="115" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="200" y="126" width="14" height="14" fill="#4ecca3"/><rect x="200" y="104" width="14" height="14" fill="#4ecca3"/>
-            <rect x="260" y="93" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="320" y="82" width="14" height="14" fill="#cf7272"/><rect x="334" y="104" width="14" height="14" fill="#cf7272"/>
-            <rect x="400" y="93" width="12" height="12" fill="#9b72cf"/><rect x="412" y="82" width="12" height="12" fill="#9b72cf"/><rect x="424" y="93" width="12" height="12" fill="#9b72cf"/>
-            <rect x="500" y="104" width="14" height="14" fill="#e8e6e3"/>
+            <rect x="150" y="115" width="14" height="14" fill="#251e14"/>
+            <rect x="200" y="126" width="14" height="14" fill="#3c694d"/><rect x="200" y="104" width="14" height="14" fill="#3c694d"/>
+            <rect x="260" y="93" width="14" height="14" fill="#251e14"/>
+            <rect x="320" y="82" width="14" height="14" fill="#ae594a"/><rect x="334" y="104" width="14" height="14" fill="#ae594a"/>
+            <rect x="400" y="93" width="12" height="12" fill="#72508a"/><rect x="412" y="82" width="12" height="12" fill="#72508a"/><rect x="424" y="93" width="12" height="12" fill="#72508a"/>
+            <rect x="500" y="104" width="14" height="14" fill="#251e14"/>
             <!-- custos (guide) at line end -->
-            <path d="M 820 104 l 10 -8 l 6 8" fill="none" stroke="#5b8cd4" stroke-width="2"/>
-            <text x="798" y="150" fill="#5b8cd4" font-size="11" font-family="DM Sans">custos &#8594;</text>
+            <path d="M 820 104 l 10 -8 l 6 8" fill="none" stroke="#41579a" stroke-width="2"/>
+            <text x="798" y="150" fill="#41579a" font-size="11" font-family="DM Sans">custos &#8594;</text>
             <!-- text underlay -->
-            <text x="150" y="180" fill="#9a9a9a" font-family="Playfair Display" font-style="italic" font-size="15">Al &#8212; le &#8212; &#8212; lu &#8212; ia</text>
+            <text x="150" y="180" fill="#62543c" font-family="Playfair Display" font-style="italic" font-size="15">Al &#8212; le &#8212; &#8212; lu &#8212; ia</text>
         </svg>
     </div>
     <div class="card-grid cols-4" style="max-width:96%;">

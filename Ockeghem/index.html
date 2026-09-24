@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Johannes Ockeghem — The Master of Canon &amp; Flowing Polyphony</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -58,16 +58,17 @@
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -78,20 +79,20 @@
     <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
         <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
             <!-- Emblem: two identical voices in canon, one chasing the other on a staff -->
-            <g stroke="#6a6a7a" stroke-width="1">
+            <g stroke="#948463" stroke-width="1">
                 <line x1="20" y1="44" x2="340" y2="44"/>
                 <line x1="20" y1="62" x2="340" y2="62"/>
                 <line x1="20" y1="80" x2="340" y2="80"/>
                 <line x1="20" y1="98" x2="340" y2="98"/>
             </g>
             <!-- leader voice (purple), a rising-falling line -->
-            <path d="M 46 89 C 90 62, 120 53, 150 71 S 210 44, 250 62 S 310 80, 336 62" fill="none" stroke="#9b72cf" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M 46 89 C 90 62, 120 53, 150 71 S 210 44, 250 62 S 310 80, 336 62" fill="none" stroke="#72508a" stroke-width="2.4" stroke-linecap="round"/>
             <!-- follower voice (green), the same shape entered later, offset down & right -->
-            <path d="M 92 98 C 136 71, 166 62, 196 80 S 256 53, 296 71 S 340 89, 360 71" fill="none" stroke="#4ecca3" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+            <path d="M 92 98 C 136 71, 166 62, 196 80 S 256 53, 296 71 S 340 89, 360 71" fill="none" stroke="#3c694d" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
             <!-- entry markers -->
-            <circle cx="46" cy="89" r="4" fill="#9b72cf"/>
-            <circle cx="92" cy="98" r="4" fill="#4ecca3"/>
-            <text x="20" y="128" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">one line, two voices &#8212; the follower chases the leader</text>
+            <circle cx="46" cy="89" r="4" fill="#72508a"/>
+            <circle cx="92" cy="98" r="4" fill="#3c694d"/>
+            <text x="20" y="128" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="12">one line, two voices &#8212; the follower chases the leader</text>
         </svg>
     </div>
     <h1>Johannes Ockeghem</h1>
@@ -176,31 +177,31 @@
         <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="DM Sans" font-size="12">
                 <!-- four voice tracks -->
-                <text x="16" y="42" fill="#9b72cf" font-size="11" font-weight="700">Superius</text>
-                <text x="16" y="90" fill="#4ecca3" font-size="11" font-weight="700">Altus</text>
-                <text x="16" y="138" fill="#d4a053" font-size="11" font-weight="700">Tenor</text>
-                <text x="16" y="186" fill="#5b8cd4" font-size="11" font-weight="700">Bassus</text>
+                <text x="16" y="42" fill="#72508a" font-size="11" font-weight="700">Superius</text>
+                <text x="16" y="90" fill="#3c694d" font-size="11" font-weight="700">Altus</text>
+                <text x="16" y="138" fill="#a18347" font-size="11" font-weight="700">Tenor</text>
+                <text x="16" y="186" fill="#41579a" font-size="11" font-weight="700">Bassus</text>
                 <!-- baseline tracks -->
-                <g stroke="#2a2a3a" stroke-width="1">
+                <g stroke="#caba98" stroke-width="1">
                     <line x1="110" y1="38" x2="880" y2="38"/>
                     <line x1="110" y1="86" x2="880" y2="86"/>
                     <line x1="110" y1="134" x2="880" y2="134"/>
                     <line x1="110" y1="182" x2="880" y2="182"/>
                 </g>
                 <!-- phrase arcs, deliberately staggered so cadences (arc-ends) never line up -->
-                <path d="M 120 38 Q 210 10 320 38 Q 410 66 520 38 Q 640 8 760 38 Q 830 54 880 38" fill="none" stroke="#9b72cf" stroke-width="2.4"/>
-                <path d="M 150 86 Q 250 58 360 86 Q 470 114 590 86 Q 700 58 810 86" fill="none" stroke="#4ecca3" stroke-width="2.4"/>
-                <path d="M 120 134 Q 230 162 350 134 Q 450 108 560 134 Q 690 162 820 134 Q 860 124 880 134" fill="none" stroke="#d4a053" stroke-width="2.4"/>
-                <path d="M 190 182 Q 300 154 420 182 Q 520 206 640 182 Q 760 156 880 182" fill="none" stroke="#5b8cd4" stroke-width="2.4"/>
+                <path d="M 120 38 Q 210 10 320 38 Q 410 66 520 38 Q 640 8 760 38 Q 830 54 880 38" fill="none" stroke="#72508a" stroke-width="2.4"/>
+                <path d="M 150 86 Q 250 58 360 86 Q 470 114 590 86 Q 700 58 810 86" fill="none" stroke="#3c694d" stroke-width="2.4"/>
+                <path d="M 120 134 Q 230 162 350 134 Q 450 108 560 134 Q 690 162 820 134 Q 860 124 880 134" fill="none" stroke="#a18347" stroke-width="2.4"/>
+                <path d="M 190 182 Q 300 154 420 182 Q 520 206 640 182 Q 760 156 880 182" fill="none" stroke="#41579a" stroke-width="2.4"/>
                 <!-- cadence markers (where a voice momentarily rests) -->
                 <g>
-                    <circle cx="320" cy="38" r="4" fill="#9b72cf"/><circle cx="520" cy="38" r="4" fill="#9b72cf"/>
-                    <circle cx="360" cy="86" r="4" fill="#4ecca3"/><circle cx="590" cy="86" r="4" fill="#4ecca3"/>
-                    <circle cx="350" cy="134" r="4" fill="#d4a053"/><circle cx="560" cy="134" r="4" fill="#d4a053"/>
-                    <circle cx="420" cy="182" r="4" fill="#5b8cd4"/><circle cx="640" cy="182" r="4" fill="#5b8cd4"/>
+                    <circle cx="320" cy="38" r="4" fill="#72508a"/><circle cx="520" cy="38" r="4" fill="#72508a"/>
+                    <circle cx="360" cy="86" r="4" fill="#3c694d"/><circle cx="590" cy="86" r="4" fill="#3c694d"/>
+                    <circle cx="350" cy="134" r="4" fill="#a18347"/><circle cx="560" cy="134" r="4" fill="#a18347"/>
+                    <circle cx="420" cy="182" r="4" fill="#41579a"/><circle cx="640" cy="182" r="4" fill="#41579a"/>
                 </g>
                 <!-- guide line showing the eye no shared vertical cadence -->
-                <text x="300" y="222" fill="#6a6a7a" font-size="11" font-style="italic">the dots (cadences) never fall on the same vertical &#8212; so the flow is unbroken</text>
+                <text x="300" y="222" fill="#948463" font-size="11" font-style="italic">the dots (cadences) never fall on the same vertical &#8212; so the flow is unbroken</text>
             </g>
         </svg>
     </div>
@@ -257,8 +258,8 @@
         <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="DM Sans">
                 <!-- ROW 1: the single written line -->
-                <text x="20" y="30" fill="#9a9a9a" font-size="12" font-weight="700">THE ONE WRITTEN LINE</text>
-                <g stroke="#6a6a7a" stroke-width="1.1">
+                <text x="20" y="30" fill="#62543c" font-size="12" font-weight="700">THE ONE WRITTEN LINE</text>
+                <g stroke="#948463" stroke-width="1.1">
                     <line x1="60" y1="48" x2="860" y2="48"/>
                     <line x1="60" y1="64" x2="860" y2="64"/>
                     <line x1="60" y1="80" x2="860" y2="80"/>
@@ -266,10 +267,10 @@
                     <line x1="60" y1="112" x2="860" y2="112"/>
                 </g>
                 <!-- two mensuration signs: circle (perfect / slow) & semicircle (imperfect / fast) -->
-                <circle cx="82" cy="80" r="12" fill="none" stroke="#9b72cf" stroke-width="2.4"/>
-                <path d="M 118 68 A 12 12 0 1 0 118 92" fill="none" stroke="#4ecca3" stroke-width="2.4"/>
+                <circle cx="82" cy="80" r="12" fill="none" stroke="#72508a" stroke-width="2.4"/>
+                <path d="M 118 68 A 12 12 0 1 0 118 92" fill="none" stroke="#3c694d" stroke-width="2.4"/>
                 <!-- the notes (void mensural noteheads) -->
-                <g fill="none" stroke="#e8e6e3" stroke-width="2">
+                <g fill="none" stroke="#251e14" stroke-width="2">
                     <ellipse cx="170" cy="96" rx="8" ry="6"/>
                     <ellipse cx="250" cy="80" rx="8" ry="6"/>
                     <ellipse cx="330" cy="88" rx="8" ry="6"/>
@@ -279,25 +280,25 @@
                     <ellipse cx="650" cy="80" rx="8" ry="6"/>
                     <ellipse cx="730" cy="96" rx="8" ry="6"/>
                 </g>
-                <text x="150" y="140" fill="#9b72cf" font-size="11">&#9711; sign 1 = perfect (slower)</text>
-                <text x="420" y="140" fill="#4ecca3" font-size="11">&#9092; sign 2 = imperfect (faster)</text>
+                <text x="150" y="140" fill="#72508a" font-size="11">&#9711; sign 1 = perfect (slower)</text>
+                <text x="420" y="140" fill="#3c694d" font-size="11">&#9092; sign 2 = imperfect (faster)</text>
 
                 <!-- ROW 2: voice I, slow, notes spread wide -->
-                <text x="20" y="180" fill="#9b72cf" font-size="12" font-weight="700">VOICE I &#8212; slow, spread wide</text>
-                <g stroke="#3a3350" stroke-width="1"><line x1="60" y1="196" x2="860" y2="196"/></g>
-                <g fill="#9b72cf">
+                <text x="20" y="180" fill="#72508a" font-size="12" font-weight="700">VOICE I &#8212; slow, spread wide</text>
+                <g stroke="#beaf8e" stroke-width="1"><line x1="60" y1="196" x2="860" y2="196"/></g>
+                <g fill="#72508a">
                     <circle cx="120" cy="196" r="6"/><circle cx="230" cy="196" r="6"/><circle cx="340" cy="196" r="6"/><circle cx="450" cy="196" r="6"/><circle cx="560" cy="196" r="6"/><circle cx="670" cy="196" r="6"/>
                 </g>
 
                 <!-- ROW 3: voice II, fast, notes packed tight (runs ahead) -->
-                <text x="20" y="250" fill="#4ecca3" font-size="12" font-weight="700">VOICE II &#8212; fast, packed tight (pulls ahead)</text>
-                <g stroke="#204a3e" stroke-width="1"><line x1="60" y1="266" x2="860" y2="266"/></g>
-                <g fill="#4ecca3">
+                <text x="20" y="250" fill="#3c694d" font-size="12" font-weight="700">VOICE II &#8212; fast, packed tight (pulls ahead)</text>
+                <g stroke="#a4b8ab" stroke-width="1"><line x1="60" y1="266" x2="860" y2="266"/></g>
+                <g fill="#3c694d">
                     <circle cx="120" cy="266" r="6"/><circle cx="188" cy="266" r="6"/><circle cx="256" cy="266" r="6"/><circle cx="324" cy="266" r="6"/><circle cx="392" cy="266" r="6"/><circle cx="460" cy="266" r="6"/><circle cx="528" cy="266" r="6"/><circle cx="596" cy="266" r="6"/>
                 </g>
                 <!-- divergence arrow -->
-                <path d="M 690 210 L 690 252" stroke="#d4a053" stroke-width="1.4" marker-end="none" stroke-dasharray="3 3"/>
-                <text x="700" y="238" fill="#d4a053" font-size="11">the gap opens up</text>
+                <path d="M 690 210 L 690 252" stroke="#a18347" stroke-width="1.4" marker-end="none" stroke-dasharray="3 3"/>
+                <text x="700" y="238" fill="#a18347" font-size="11">the gap opens up</text>
             </g>
         </svg>
     </div>
@@ -325,16 +326,16 @@
         <div>
             <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <g font-family="DM Sans" font-size="12">
-                    <text x="10" y="20" fill="#9a9a9a" font-size="11">one line, chosen clefs &#8594; different modes</text>
+                    <text x="10" y="20" fill="#62543c" font-size="11">one line, chosen clefs &#8594; different modes</text>
                     <!-- staff -->
-                    <g stroke="#6a6a7a" stroke-width="1"><line x1="20" y1="60" x2="220" y2="60"/><line x1="20" y1="76" x2="220" y2="76"/><line x1="20" y1="92" x2="220" y2="92"/><line x1="20" y1="108" x2="220" y2="108"/></g>
-                    <text x="24" y="70" fill="#9b72cf" font-size="18" font-weight="700">?</text>
-                    <g fill="#e8e6e3"><circle cx="80" cy="92" r="5"/><circle cx="110" cy="76" r="5"/><circle cx="140" cy="84" r="5"/><circle cx="170" cy="68" r="5"/></g>
+                    <g stroke="#948463" stroke-width="1"><line x1="20" y1="60" x2="220" y2="60"/><line x1="20" y1="76" x2="220" y2="76"/><line x1="20" y1="92" x2="220" y2="92"/><line x1="20" y1="108" x2="220" y2="108"/></g>
+                    <text x="24" y="70" fill="#72508a" font-size="18" font-weight="700">?</text>
+                    <g fill="#251e14"><circle cx="80" cy="92" r="5"/><circle cx="110" cy="76" r="5"/><circle cx="140" cy="84" r="5"/><circle cx="170" cy="68" r="5"/></g>
                     <!-- read-as chips -->
-                    <rect x="20" y="140" width="90" height="22" rx="4" fill="#161622" stroke="#4ecca3"/><text x="30" y="155" fill="#e8e6e3" font-size="11">read: Dorian</text>
-                    <rect x="130" y="140" width="90" height="22" rx="4" fill="#161622" stroke="#d4a053"/><text x="140" y="155" fill="#e8e6e3" font-size="11">read: Lydian</text>
-                    <rect x="20" y="170" width="90" height="22" rx="4" fill="#161622" stroke="#5b8cd4"/><text x="30" y="185" fill="#e8e6e3" font-size="11">read: Phrygian</text>
-                    <rect x="130" y="170" width="90" height="22" rx="4" fill="#161622" stroke="#9b72cf"/><text x="140" y="185" fill="#e8e6e3" font-size="11">read: Mixolyd.</text>
+                    <rect x="20" y="140" width="90" height="22" rx="4" fill="#e5d9be" stroke="#3c694d"/><text x="30" y="155" fill="#251e14" font-size="11">read: Dorian</text>
+                    <rect x="130" y="140" width="90" height="22" rx="4" fill="#e5d9be" stroke="#a18347"/><text x="140" y="155" fill="#251e14" font-size="11">read: Lydian</text>
+                    <rect x="20" y="170" width="90" height="22" rx="4" fill="#e5d9be" stroke="#41579a"/><text x="30" y="185" fill="#251e14" font-size="11">read: Phrygian</text>
+                    <rect x="130" y="170" width="90" height="22" rx="4" fill="#e5d9be" stroke="#72508a"/><text x="140" y="185" fill="#251e14" font-size="11">read: Mixolyd.</text>
                 </g>
             </svg>
         </div>
@@ -396,45 +397,45 @@
         <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- staggered entries: 36 short strokes entering one after another, four blocks of nine -->
             <g>
-                <text x="10" y="20" fill="#9a9a9a" font-family="DM Sans" font-size="12">36 entries, each a step later &#8212; the same phrase piling into a vast wall of sound</text>
+                <text x="10" y="20" fill="#62543c" font-family="DM Sans" font-size="12">36 entries, each a step later &#8212; the same phrase piling into a vast wall of sound</text>
                 <g stroke-width="3" stroke-linecap="round">
                     <!-- generated visually: rows of diagonal offsets -->
-                    <line x1="40"  y1="120" x2="90"  y2="45" stroke="#9b72cf"/>
-                    <line x1="62"  y1="120" x2="112" y2="45" stroke="#a87fd6"/>
-                    <line x1="84"  y1="120" x2="134" y2="45" stroke="#4ecca3"/>
-                    <line x1="106" y1="120" x2="156" y2="45" stroke="#5cd0aa"/>
-                    <line x1="128" y1="120" x2="178" y2="45" stroke="#d4a053"/>
-                    <line x1="150" y1="120" x2="200" y2="45" stroke="#dcae67"/>
-                    <line x1="172" y1="120" x2="222" y2="45" stroke="#5b8cd4"/>
-                    <line x1="194" y1="120" x2="244" y2="45" stroke="#729edb"/>
-                    <line x1="216" y1="120" x2="266" y2="45" stroke="#cf7272"/>
-                    <line x1="238" y1="120" x2="288" y2="45" stroke="#9b72cf"/>
-                    <line x1="260" y1="120" x2="310" y2="45" stroke="#a87fd6"/>
-                    <line x1="282" y1="120" x2="332" y2="45" stroke="#4ecca3"/>
-                    <line x1="304" y1="120" x2="354" y2="45" stroke="#5cd0aa"/>
-                    <line x1="326" y1="120" x2="376" y2="45" stroke="#d4a053"/>
-                    <line x1="348" y1="120" x2="398" y2="45" stroke="#dcae67"/>
-                    <line x1="370" y1="120" x2="420" y2="45" stroke="#5b8cd4"/>
-                    <line x1="392" y1="120" x2="442" y2="45" stroke="#729edb"/>
-                    <line x1="414" y1="120" x2="464" y2="45" stroke="#cf7272"/>
-                    <line x1="436" y1="120" x2="486" y2="45" stroke="#9b72cf"/>
-                    <line x1="458" y1="120" x2="508" y2="45" stroke="#a87fd6"/>
-                    <line x1="480" y1="120" x2="530" y2="45" stroke="#4ecca3"/>
-                    <line x1="502" y1="120" x2="552" y2="45" stroke="#5cd0aa"/>
-                    <line x1="524" y1="120" x2="574" y2="45" stroke="#d4a053"/>
-                    <line x1="546" y1="120" x2="596" y2="45" stroke="#dcae67"/>
-                    <line x1="568" y1="120" x2="618" y2="45" stroke="#5b8cd4"/>
-                    <line x1="590" y1="120" x2="640" y2="45" stroke="#729edb"/>
-                    <line x1="612" y1="120" x2="662" y2="45" stroke="#cf7272"/>
-                    <line x1="634" y1="120" x2="684" y2="45" stroke="#9b72cf"/>
-                    <line x1="656" y1="120" x2="706" y2="45" stroke="#a87fd6"/>
-                    <line x1="678" y1="120" x2="728" y2="45" stroke="#4ecca3"/>
-                    <line x1="700" y1="120" x2="750" y2="45" stroke="#5cd0aa"/>
-                    <line x1="722" y1="120" x2="772" y2="45" stroke="#d4a053"/>
-                    <line x1="744" y1="120" x2="794" y2="45" stroke="#dcae67"/>
-                    <line x1="766" y1="120" x2="816" y2="45" stroke="#5b8cd4"/>
-                    <line x1="788" y1="120" x2="838" y2="45" stroke="#729edb"/>
-                    <line x1="810" y1="120" x2="860" y2="45" stroke="#cf7272"/>
+                    <line x1="40"  y1="120" x2="90"  y2="45" stroke="#72508a"/>
+                    <line x1="62"  y1="120" x2="112" y2="45" stroke="#67467b"/>
+                    <line x1="84"  y1="120" x2="134" y2="45" stroke="#3c694d"/>
+                    <line x1="106" y1="120" x2="156" y2="45" stroke="#386248"/>
+                    <line x1="128" y1="120" x2="178" y2="45" stroke="#a18347"/>
+                    <line x1="150" y1="120" x2="200" y2="45" stroke="#997f48"/>
+                    <line x1="172" y1="120" x2="222" y2="45" stroke="#41579a"/>
+                    <line x1="194" y1="120" x2="244" y2="45" stroke="#374980"/>
+                    <line x1="216" y1="120" x2="266" y2="45" stroke="#ae594a"/>
+                    <line x1="238" y1="120" x2="288" y2="45" stroke="#72508a"/>
+                    <line x1="260" y1="120" x2="310" y2="45" stroke="#67467b"/>
+                    <line x1="282" y1="120" x2="332" y2="45" stroke="#3c694d"/>
+                    <line x1="304" y1="120" x2="354" y2="45" stroke="#386248"/>
+                    <line x1="326" y1="120" x2="376" y2="45" stroke="#a18347"/>
+                    <line x1="348" y1="120" x2="398" y2="45" stroke="#997f48"/>
+                    <line x1="370" y1="120" x2="420" y2="45" stroke="#41579a"/>
+                    <line x1="392" y1="120" x2="442" y2="45" stroke="#374980"/>
+                    <line x1="414" y1="120" x2="464" y2="45" stroke="#ae594a"/>
+                    <line x1="436" y1="120" x2="486" y2="45" stroke="#72508a"/>
+                    <line x1="458" y1="120" x2="508" y2="45" stroke="#67467b"/>
+                    <line x1="480" y1="120" x2="530" y2="45" stroke="#3c694d"/>
+                    <line x1="502" y1="120" x2="552" y2="45" stroke="#386248"/>
+                    <line x1="524" y1="120" x2="574" y2="45" stroke="#a18347"/>
+                    <line x1="546" y1="120" x2="596" y2="45" stroke="#997f48"/>
+                    <line x1="568" y1="120" x2="618" y2="45" stroke="#41579a"/>
+                    <line x1="590" y1="120" x2="640" y2="45" stroke="#374980"/>
+                    <line x1="612" y1="120" x2="662" y2="45" stroke="#ae594a"/>
+                    <line x1="634" y1="120" x2="684" y2="45" stroke="#72508a"/>
+                    <line x1="656" y1="120" x2="706" y2="45" stroke="#67467b"/>
+                    <line x1="678" y1="120" x2="728" y2="45" stroke="#3c694d"/>
+                    <line x1="700" y1="120" x2="750" y2="45" stroke="#386248"/>
+                    <line x1="722" y1="120" x2="772" y2="45" stroke="#a18347"/>
+                    <line x1="744" y1="120" x2="794" y2="45" stroke="#997f48"/>
+                    <line x1="766" y1="120" x2="816" y2="45" stroke="#41579a"/>
+                    <line x1="788" y1="120" x2="838" y2="45" stroke="#374980"/>
+                    <line x1="810" y1="120" x2="860" y2="45" stroke="#ae594a"/>
                 </g>
             </g>
         </svg>

@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Troubadours, Trouvères &amp; Minnesänger — The Song of Courtly Love</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #161622;
-    --accent-amber: #d4a053; --accent-green: #4ecca3; --accent-purple: #9b72cf;
-    --accent-rose: #cf7272; --accent-blue: #5b8cd4;
-    --text-primary: #e8e6e3; --text-secondary: #9a9a9a; --text-muted: #6a6a7a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
+    --accent-amber: #a18347; --accent-green: #3c694d; --accent-purple: #72508a;
+    --accent-rose: #ae594a; --accent-blue: #41579a;
+    --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
+    --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
 .reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
@@ -29,7 +29,7 @@
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
 .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
-.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(212, 160, 83, 0.04); border-radius: 0 6px 6px 0; }
+.quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
 .quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
 .quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
@@ -57,16 +57,17 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
 .audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
-.audio-btn:hover { background: #e0b36a; transform: translateY(-1px); }
-.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #6ee0bb; }
-.audio-btn.purple { background: var(--accent-purple); color: #fff; } .audio-btn.purple:hover { background: #b18ce0; }
-.audio-btn.blue { background: var(--accent-blue); color: #fff; } .audio-btn.blue:hover { background: #79a5e6; }
-.audio-btn.playing { background: var(--accent-rose); color: #fff; }
+.audio-btn:hover { background: #947a42; transform: translateY(-1px); }
+.audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
+.audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
+.audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
+.audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
 .rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
-.rec-link:hover { border-color: var(--accent-blue); color: #9dc0f0; }
+.rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
+<style>.reveal .slide-number{background-color:transparent}</style>
 </head>
 <body>
 <div class="reveal">
@@ -77,26 +78,26 @@
     <div style="width: 320px; height: 130px; margin: 0 auto 0.4em auto;">
         <svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg">
             <!-- A single monophonic staff line — the courtly song is one voice alone -->
-            <g stroke="#6a6a7a" stroke-width="1">
+            <g stroke="#948463" stroke-width="1">
                 <line x1="20" y1="52" x2="340" y2="52"/>
                 <line x1="20" y1="70" x2="340" y2="70"/>
                 <line x1="20" y1="88" x2="340" y2="88"/>
                 <line x1="20" y1="106" x2="340" y2="106"/>
             </g>
             <!-- C clef -->
-            <text x="24" y="80" fill="#cf7272" font-family="Playfair Display" font-size="26" font-weight="700">C</text>
+            <text x="24" y="80" fill="#ae594a" font-family="Playfair Display" font-size="26" font-weight="700">C</text>
             <!-- a single arching melody of square notes (rose = the lover's line) -->
-            <rect x="66" y="97" width="11" height="11" fill="#cf7272"/>
-            <rect x="94" y="79" width="11" height="11" fill="#cf7272"/>
-            <rect x="122" y="61" width="11" height="11" fill="#e8e6e3"/>
-            <rect x="150" y="52" width="11" height="11" fill="#e8e6e3"/>
-            <rect x="178" y="61" width="11" height="11" fill="#d4a053"/><rect x="192" y="52" width="11" height="11" fill="#d4a053"/>
-            <rect x="228" y="70" width="11" height="11" fill="#e8e6e3"/>
-            <rect x="256" y="88" width="11" height="11" fill="#cf7272"/>
-            <rect x="290" y="97" width="11" height="11" fill="#cf7272"/>
+            <rect x="66" y="97" width="11" height="11" fill="#ae594a"/>
+            <rect x="94" y="79" width="11" height="11" fill="#ae594a"/>
+            <rect x="122" y="61" width="11" height="11" fill="#251e14"/>
+            <rect x="150" y="52" width="11" height="11" fill="#251e14"/>
+            <rect x="178" y="61" width="11" height="11" fill="#a18347"/><rect x="192" y="52" width="11" height="11" fill="#a18347"/>
+            <rect x="228" y="70" width="11" height="11" fill="#251e14"/>
+            <rect x="256" y="88" width="11" height="11" fill="#ae594a"/>
+            <rect x="290" y="97" width="11" height="11" fill="#ae594a"/>
             <!-- a small lark taking flight above the stave -->
-            <path d="M 300 30 q 10 -12 22 -4 q -12 -2 -20 8 q 12 -3 20 4 q -12 0 -22 -8 z" fill="#9b72cf"/>
-            <text x="20" y="132" fill="#6a6a7a" font-family="Playfair Display" font-style="italic" font-size="12">Can vei la lau &#8212; ze &#8212; ta mo &#8212; ver</text>
+            <path d="M 300 30 q 10 -12 22 -4 q -12 -2 -20 8 q 12 -3 20 4 q -12 0 -22 -8 z" fill="#72508a"/>
+            <text x="20" y="132" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="12">Can vei la lau &#8212; ze &#8212; ta mo &#8212; ver</text>
         </svg>
     </div>
     <h1>Troubadours, Trouvères &amp; Minnesänger</h1>
@@ -143,33 +144,33 @@
         <svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <g font-family="DM Sans">
                 <!-- three region panels -->
-                <rect x="30"  y="30" width="260" height="180" rx="10" fill="#161622" stroke="#cf7272" stroke-width="1.5"/>
-                <rect x="320" y="30" width="260" height="180" rx="10" fill="#161622" stroke="#d4a053" stroke-width="1.5"/>
-                <rect x="610" y="30" width="260" height="180" rx="10" fill="#161622" stroke="#9b72cf" stroke-width="1.5"/>
+                <rect x="30"  y="30" width="260" height="180" rx="10" fill="#e5d9be" stroke="#ae594a" stroke-width="1.5"/>
+                <rect x="320" y="30" width="260" height="180" rx="10" fill="#e5d9be" stroke="#a18347" stroke-width="1.5"/>
+                <rect x="610" y="30" width="260" height="180" rx="10" fill="#e5d9be" stroke="#72508a" stroke-width="1.5"/>
                 <!-- arrows of transmission -->
-                <path d="M 292 120 L 318 120" stroke="#6a6a7a" stroke-width="2" marker-end="url(#ah)"/>
-                <path d="M 582 120 L 608 120" stroke="#6a6a7a" stroke-width="2" marker-end="url(#ah)"/>
-                <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#6a6a7a"/></marker></defs>
+                <path d="M 292 120 L 318 120" stroke="#948463" stroke-width="2" marker-end="url(#ah)"/>
+                <path d="M 582 120 L 608 120" stroke="#948463" stroke-width="2" marker-end="url(#ah)"/>
+                <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#948463"/></marker></defs>
                 <!-- south -->
-                <text x="160" y="66" text-anchor="middle" fill="#cf7272" font-size="17" font-weight="700">Troubadours</text>
-                <text x="160" y="90" text-anchor="middle" fill="#9a9a9a" font-size="12">Southern France</text>
-                <text x="160" y="110" text-anchor="middle" fill="#e8e6e3" font-size="13">langue d&#8217;oc · Occitan</text>
-                <text x="160" y="146" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Guillaume IX of Aquitaine</text>
-                <text x="160" y="166" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Bernart de Ventadorn</text>
-                <text x="160" y="186" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Comtessa de Dia</text>
+                <text x="160" y="66" text-anchor="middle" fill="#ae594a" font-size="17" font-weight="700">Troubadours</text>
+                <text x="160" y="90" text-anchor="middle" fill="#62543c" font-size="12">Southern France</text>
+                <text x="160" y="110" text-anchor="middle" fill="#251e14" font-size="13">langue d&#8217;oc · Occitan</text>
+                <text x="160" y="146" text-anchor="middle" fill="#62543c" font-size="11.5">Guillaume IX of Aquitaine</text>
+                <text x="160" y="166" text-anchor="middle" fill="#62543c" font-size="11.5">Bernart de Ventadorn</text>
+                <text x="160" y="186" text-anchor="middle" fill="#62543c" font-size="11.5">Comtessa de Dia</text>
                 <!-- north -->
-                <text x="450" y="66" text-anchor="middle" fill="#d4a053" font-size="17" font-weight="700">Trouvères</text>
-                <text x="450" y="90" text-anchor="middle" fill="#9a9a9a" font-size="12">Northern France</text>
-                <text x="450" y="110" text-anchor="middle" fill="#e8e6e3" font-size="13">langue d&#8217;o&#239;l · Old French</text>
-                <text x="450" y="146" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Adam de la Halle</text>
-                <text x="450" y="166" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Thibaut IV of Champagne</text>
+                <text x="450" y="66" text-anchor="middle" fill="#a18347" font-size="17" font-weight="700">Trouvères</text>
+                <text x="450" y="90" text-anchor="middle" fill="#62543c" font-size="12">Northern France</text>
+                <text x="450" y="110" text-anchor="middle" fill="#251e14" font-size="13">langue d&#8217;o&#239;l · Old French</text>
+                <text x="450" y="146" text-anchor="middle" fill="#62543c" font-size="11.5">Adam de la Halle</text>
+                <text x="450" y="166" text-anchor="middle" fill="#62543c" font-size="11.5">Thibaut IV of Champagne</text>
                 <!-- empire -->
-                <text x="740" y="66" text-anchor="middle" fill="#9b72cf" font-size="17" font-weight="700">Minnesänger</text>
-                <text x="740" y="90" text-anchor="middle" fill="#9a9a9a" font-size="12">German lands</text>
-                <text x="740" y="110" text-anchor="middle" fill="#e8e6e3" font-size="13">Middle High German</text>
-                <text x="740" y="146" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Walther von der</text>
-                <text x="740" y="166" text-anchor="middle" fill="#9a9a9a" font-size="11.5">Vogelweide</text>
-                <text x="740" y="192" text-anchor="middle" fill="#6a6a7a" font-size="10.5" font-style="italic"><tspan>Minne = courtly love</tspan></text>
+                <text x="740" y="66" text-anchor="middle" fill="#72508a" font-size="17" font-weight="700">Minnesänger</text>
+                <text x="740" y="90" text-anchor="middle" fill="#62543c" font-size="12">German lands</text>
+                <text x="740" y="110" text-anchor="middle" fill="#251e14" font-size="13">Middle High German</text>
+                <text x="740" y="146" text-anchor="middle" fill="#62543c" font-size="11.5">Walther von der</text>
+                <text x="740" y="166" text-anchor="middle" fill="#62543c" font-size="11.5">Vogelweide</text>
+                <text x="740" y="192" text-anchor="middle" fill="#948463" font-size="10.5" font-style="italic"><tspan>Minne = courtly love</tspan></text>
             </g>
         </svg>
     </div>
@@ -229,7 +230,7 @@
         <a class="rec-link" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=Bernart+de+Ventadorn+Can+vei+la+lauzeta">&#9834; Listen: <em>Can vei la lauzeta</em> (recording)</a>
     </div>
     <p class="audio-caption">A stepwise, arching love-melody in the style of Bernart — synthesised single voice, free rhythm, pure fifths</p>
-    <div class="quote-box" style="border-left-color:var(--accent-rose); background:rgba(207,114,114,0.05);">
+    <div class="quote-box" style="border-left-color:var(--accent-rose); background:rgba(174,89,74,0.05);">
         <p>&#8220;Can vei la lauzeta mover / de joi sas alas contra&#8217;l rai&#8221; — When I see the lark beat its wings for joy against the sun&#8217;s ray&#8230;</p>
         <span class="attribution">— Bernart de Ventadorn, opening of his most celebrated <em>canso</em></span>
     </div>
@@ -256,12 +257,12 @@
         <div>
             <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
                 <g font-family="DM Sans">
-                    <circle cx="110" cy="70" r="46" fill="#161622" stroke="#9b72cf" stroke-width="2"/>
-                    <text x="110" y="64" text-anchor="middle" fill="#9b72cf" font-size="15" font-weight="700">A chantar</text>
-                    <text x="110" y="84" text-anchor="middle" fill="#9a9a9a" font-size="10.5">the one that</text>
-                    <text x="110" y="98" text-anchor="middle" fill="#9a9a9a" font-size="10.5">survives</text>
-                    <text x="110" y="150" text-anchor="middle" fill="#e8e6e3" font-size="12.5">Comtessa de Dia</text>
-                    <text x="110" y="170" text-anchor="middle" fill="#6a6a7a" font-size="10.5" font-style="italic">a trobairitz of Occitania</text>
+                    <circle cx="110" cy="70" r="46" fill="#e5d9be" stroke="#72508a" stroke-width="2"/>
+                    <text x="110" y="64" text-anchor="middle" fill="#72508a" font-size="15" font-weight="700">A chantar</text>
+                    <text x="110" y="84" text-anchor="middle" fill="#62543c" font-size="10.5">the one that</text>
+                    <text x="110" y="98" text-anchor="middle" fill="#62543c" font-size="10.5">survives</text>
+                    <text x="110" y="150" text-anchor="middle" fill="#251e14" font-size="12.5">Comtessa de Dia</text>
+                    <text x="110" y="170" text-anchor="middle" fill="#948463" font-size="10.5" font-style="italic">a trobairitz of Occitania</text>
                 </g>
             </svg>
         </div>
@@ -366,33 +367,33 @@
     <div class="diagram-container">
         <svg viewBox="0 0 900 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- 4-line staff -->
-            <g stroke="#6a6a7a" stroke-width="1.2">
+            <g stroke="#948463" stroke-width="1.2">
                 <line x1="60" y1="46" x2="860" y2="46"/>
                 <line x1="60" y1="66" x2="860" y2="66"/>
                 <line x1="60" y1="86" x2="860" y2="86"/>
                 <line x1="60" y1="106" x2="860" y2="106"/>
             </g>
             <!-- C clef -->
-            <rect x="66" y="76" width="10" height="22" fill="#cf7272"/><rect x="76" y="82" width="16" height="10" fill="#cf7272"/>
-            <text x="66" y="132" fill="#cf7272" font-size="11" font-family="DM Sans">C-clef: this line = Do</text>
+            <rect x="66" y="76" width="10" height="22" fill="#ae594a"/><rect x="76" y="82" width="16" height="10" fill="#ae594a"/>
+            <text x="66" y="132" fill="#ae594a" font-size="11" font-family="DM Sans">C-clef: this line = Do</text>
             <!-- a single monophonic line of square neumes -->
-            <rect x="150" y="97" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="200" y="86" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="250" y="66" width="14" height="14" fill="#4ecca3"/><rect x="264" y="56" width="14" height="14" fill="#4ecca3"/>
-            <rect x="320" y="66" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="380" y="86" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="440" y="76" width="12" height="12" fill="#d4a053"/><rect x="452" y="66" width="12" height="12" fill="#d4a053"/><rect x="464" y="76" width="12" height="12" fill="#d4a053"/>
-            <rect x="540" y="97" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="600" y="86" width="14" height="14" fill="#e8e6e3"/>
-            <rect x="660" y="106" width="14" height="14" fill="#cf7272"/>
+            <rect x="150" y="97" width="14" height="14" fill="#251e14"/>
+            <rect x="200" y="86" width="14" height="14" fill="#251e14"/>
+            <rect x="250" y="66" width="14" height="14" fill="#3c694d"/><rect x="264" y="56" width="14" height="14" fill="#3c694d"/>
+            <rect x="320" y="66" width="14" height="14" fill="#251e14"/>
+            <rect x="380" y="86" width="14" height="14" fill="#251e14"/>
+            <rect x="440" y="76" width="12" height="12" fill="#a18347"/><rect x="452" y="66" width="12" height="12" fill="#a18347"/><rect x="464" y="76" width="12" height="12" fill="#a18347"/>
+            <rect x="540" y="97" width="14" height="14" fill="#251e14"/>
+            <rect x="600" y="86" width="14" height="14" fill="#251e14"/>
+            <rect x="660" y="106" width="14" height="14" fill="#ae594a"/>
             <!-- custos -->
-            <path d="M 820 86 l 10 -8 l 6 8" fill="none" stroke="#5b8cd4" stroke-width="2"/>
-            <text x="798" y="132" fill="#5b8cd4" font-size="11" font-family="DM Sans">custos &#8594;</text>
+            <path d="M 820 86 l 10 -8 l 6 8" fill="none" stroke="#41579a" stroke-width="2"/>
+            <text x="798" y="132" fill="#41579a" font-size="11" font-family="DM Sans">custos &#8594;</text>
             <!-- text underlay -->
-            <text x="150" y="160" fill="#9a9a9a" font-family="Playfair Display" font-style="italic" font-size="14">A &#8212; mors &#8212; et &#8212; joi &#8212; e</text>
+            <text x="150" y="160" fill="#62543c" font-family="Playfair Display" font-style="italic" font-size="14">A &#8212; mors &#8212; et &#8212; joi &#8212; e</text>
             <!-- rhythm ambiguity: two readings below -->
-            <text x="150" y="188" fill="#4ecca3" font-size="11" font-family="JetBrains Mono">reading 1 &#9834; even flow: &#9833; &#9833; &#9833; &#9833; &#9833; &#9833;</text>
-            <text x="500" y="188" fill="#d4a053" font-size="11" font-family="JetBrains Mono">reading 2 &#9834; long&#8211;short lilt: &#9833;. &#9834; &#9833;. &#9834;</text>
+            <text x="150" y="188" fill="#3c694d" font-size="11" font-family="JetBrains Mono">reading 1 &#9834; even flow: &#9833; &#9833; &#9833; &#9833; &#9833; &#9833;</text>
+            <text x="500" y="188" fill="#a18347" font-size="11" font-family="JetBrains Mono">reading 2 &#9834; long&#8211;short lilt: &#9833;. &#9834; &#9833;. &#9834;</text>
         </svg>
     </div>
     <div class="card-grid cols-3" style="max-width:96%;">
@@ -454,7 +455,7 @@
         <div class="card" style="border-top:2px solid var(--accent-amber);"><h4 class="accent-amber">The vernacular</h4><p>Song in the everyday tongue, on themes of love and the world — the seed of every later art-song and chanson.</p></div>
         <div class="card" style="border-top:2px solid var(--accent-blue);"><h4 class="accent-blue">The courtly ideal</h4><p>The code of refined love that shaped mediaeval and Renaissance poetry, and echoes in love-song to this day.</p></div>
     </div>
-    <div class="quote-box" style="border-left-color:var(--accent-rose); background:rgba(207,114,114,0.05);">
+    <div class="quote-box" style="border-left-color:var(--accent-rose); background:rgba(174,89,74,0.05);">
         <p>&#8220;Chantars no pot gaire valer, si d&#8217;ins dal cor no mou lo chans&#8221; — Singing can be worth little if the song does not move from within the heart.</p>
         <span class="attribution">— Bernart de Ventadorn, opening of a <em>canso</em></span>
     </div>
