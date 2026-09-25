@@ -6,7 +6,7 @@
 <title>Carlo Gesualdo — The Prince of Chromatic Anguish</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
@@ -16,36 +16,36 @@
     --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Crimson Pro', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'IM Fell English', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; }
 .reveal h2 { font-size: 1.6em; font-weight: 700; }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Cutive Mono', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent-amber); }
 .reveal .progress span { background: var(--accent-amber); }
 .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Crimson Pro', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
 .card:hover { border-color: var(--accent-amber); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Crimson Pro', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Cutive Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Cutive Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
 .reveal ul { list-style: none; padding-left: 0; }
 .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
@@ -56,18 +56,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
-.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn { font-family: 'Crimson Pro', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
 .audio-btn:hover { background: #947a42; transform: translateY(-1px); }
 .audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
 .audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
 .audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
 .audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
-.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link { font-family: 'Cutive Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
 .rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 <div class="reveal">
@@ -94,12 +95,12 @@
                 <line x1="40" y1="126" x2="320" y2="126"/>
             </g>
             <!-- chromatic descending noteheads, accidentals piling up -->
-            <text x="70" y="88" fill="#ae594a" font-family="Playfair Display" font-size="14">&#9839;</text>
+            <text x="70" y="88" fill="#ae594a" font-family="IM Fell English" font-size="14">&#9839;</text>
             <ellipse cx="86" cy="90" rx="7" ry="5" fill="#251e14"/>
             <ellipse cx="132" cy="96" rx="7" ry="5" fill="#ae594a"/>
-            <text x="146" y="100" fill="#72508a" font-family="Playfair Display" font-size="14">&#9839;</text>
+            <text x="146" y="100" fill="#72508a" font-family="IM Fell English" font-size="14">&#9839;</text>
             <ellipse cx="180" cy="102" rx="7" ry="5" fill="#251e14"/>
-            <text x="196" y="112" fill="#ae594a" font-family="Playfair Display" font-size="14">&#9837;</text>
+            <text x="196" y="112" fill="#ae594a" font-family="IM Fell English" font-size="14">&#9837;</text>
             <ellipse cx="228" cy="108" rx="7" ry="5" fill="#72508a"/>
             <ellipse cx="276" cy="114" rx="7" ry="5" fill="#251e14"/>
         </svg>
@@ -231,25 +232,25 @@
                 <line x1="40" y1="100" x2="760" y2="100"/>
             </g>
             <!-- Chord A (high) roots at 70,55,40 -->
-            <text x="120" y="60" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <text x="120" y="45" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="120" y="60" fill="#ae594a" font-family="IM Fell English" font-size="18">&#9839;</text>
+            <text x="120" y="45" fill="#ae594a" font-family="IM Fell English" font-size="18">&#9839;</text>
             <ellipse cx="150" cy="70" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="150" cy="55" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="150" cy="40" rx="9" ry="6" fill="#251e14"/>
             <!-- Chord B roots at 85,70,55 -->
-            <text x="290" y="75" fill="#72508a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="290" y="75" fill="#72508a" font-family="IM Fell English" font-size="18">&#9839;</text>
             <ellipse cx="320" cy="85" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="320" cy="70" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="320" cy="55" rx="9" ry="6" fill="#251e14"/>
             <!-- Chord C roots at 100,85,70 -->
-            <text x="460" y="90" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
-            <text x="460" y="75" fill="#ae594a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="460" y="90" fill="#ae594a" font-family="IM Fell English" font-size="18">&#9839;</text>
+            <text x="460" y="75" fill="#ae594a" font-family="IM Fell English" font-size="18">&#9839;</text>
             <ellipse cx="490" cy="100" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="490" cy="85" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="490" cy="70" rx="9" ry="6" fill="#251e14"/>
             <!-- Chord D roots at 115(ledger),100,85 -->
             <line x1="644" y1="115" x2="676" y2="115" stroke="#948463" stroke-width="1.2"/>
-            <text x="630" y="105" fill="#72508a" font-family="Playfair Display" font-size="18">&#9839;</text>
+            <text x="630" y="105" fill="#72508a" font-family="IM Fell English" font-size="18">&#9839;</text>
             <ellipse cx="660" cy="115" rx="9" ry="6" fill="#ae594a"/>
             <ellipse cx="660" cy="100" rx="9" ry="6" fill="#251e14"/>
             <ellipse cx="660" cy="85" rx="9" ry="6" fill="#251e14"/>
@@ -260,14 +261,14 @@
                 <path d="M 508 102 q 40 24 132 12" marker-end="url(#ah)"/>
             </g>
             <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a18347"/></marker></defs>
-            <text x="200" y="150" fill="#a18347" font-family="DM Sans" font-size="12">down a 3rd</text>
-            <text x="370" y="150" fill="#a18347" font-family="DM Sans" font-size="12">down a 3rd</text>
-            <text x="540" y="150" fill="#a18347" font-family="DM Sans" font-size="12">down a 3rd</text>
+            <text x="200" y="150" fill="#a18347" font-family="Crimson Pro" font-size="12">down a 3rd</text>
+            <text x="370" y="150" fill="#a18347" font-family="Crimson Pro" font-size="12">down a 3rd</text>
+            <text x="540" y="150" fill="#a18347" font-family="Crimson Pro" font-size="12">down a 3rd</text>
             <!-- labels -->
-            <text x="128" y="185" fill="#62543c" font-family="DM Sans" font-size="13">C&#9839; major</text>
-            <text x="300" y="185" fill="#62543c" font-family="DM Sans" font-size="13">A major</text>
-            <text x="468" y="185" fill="#62543c" font-family="DM Sans" font-size="13">F&#9839; major</text>
-            <text x="636" y="185" fill="#62543c" font-family="DM Sans" font-size="13">D major</text>
+            <text x="128" y="185" fill="#62543c" font-family="Crimson Pro" font-size="13">C&#9839; major</text>
+            <text x="300" y="185" fill="#62543c" font-family="Crimson Pro" font-size="13">A major</text>
+            <text x="468" y="185" fill="#62543c" font-family="Crimson Pro" font-size="13">F&#9839; major</text>
+            <text x="636" y="185" fill="#62543c" font-family="Crimson Pro" font-size="13">D major</text>
         </svg>
     </div>
     <div class="card-grid cols-3" style="max-width:96%;">
@@ -374,7 +375,7 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 820 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g font-family="DM Sans" font-size="13">
+            <g font-family="Crimson Pro" font-size="13">
                 <!-- close motion (left) -->
                 <text x="30" y="30" fill="#3c694d" font-size="12">USUAL: neighbouring chords, notes shared</text>
                 <circle cx="90" cy="90" r="30" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/><text x="90" y="95" fill="#251e14" text-anchor="middle">C</text>

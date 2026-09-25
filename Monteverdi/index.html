@@ -6,7 +6,7 @@
 <title>Claudio Monteverdi — The Seconda Pratica &amp; the Dawn of Opera</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
@@ -16,36 +16,36 @@
     --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Crimson Pro', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'IM Fell English', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; }
 .reveal h2 { font-size: 1.6em; font-weight: 700; }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Cutive Mono', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent-amber); }
 .reveal .progress span { background: var(--accent-amber); }
 .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Crimson Pro', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
 .card:hover { border-color: var(--accent-amber); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Crimson Pro', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Cutive Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Cutive Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
 .reveal ul { list-style: none; padding-left: 0; }
 .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
@@ -56,18 +56,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
-.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn { font-family: 'Crimson Pro', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
 .audio-btn:hover { background: #947a42; transform: translateY(-1px); }
 .audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
 .audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
 .audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
 .audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
-.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link { font-family: 'Cutive Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
 .rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 <div class="reveal">
@@ -99,10 +100,10 @@
             <ellipse cx="250" cy="48" rx="7" ry="5" fill="#72508a"/>
             <ellipse cx="300" cy="41" rx="7" ry="5" fill="#a18347"/>
             <!-- figured-bass numbers under the stave -->
-            <text x="82" y="112" fill="#41579a" font-family="JetBrains Mono" font-size="12">5</text>
-            <text x="146" y="112" fill="#41579a" font-family="JetBrains Mono" font-size="12">6</text>
-            <text x="246" y="112" fill="#41579a" font-family="JetBrains Mono" font-size="12">7</text>
-            <text x="20" y="132" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="12">the bass sustains &#8212; the words command</text>
+            <text x="82" y="112" fill="#41579a" font-family="Cutive Mono" font-size="12">5</text>
+            <text x="146" y="112" fill="#41579a" font-family="Cutive Mono" font-size="12">6</text>
+            <text x="246" y="112" fill="#41579a" font-family="Cutive Mono" font-size="12">7</text>
+            <text x="20" y="132" fill="#948463" font-family="IM Fell English" font-style="italic" font-size="12">the bass sustains &#8212; the words command</text>
         </svg>
     </div>
     <h1>Claudio Monteverdi</h1>
@@ -261,8 +262,8 @@
                 <ellipse cx="390" cy="54" rx="6" ry="4"/><ellipse cx="430" cy="54" rx="6" ry="4"/><ellipse cx="470" cy="54" rx="6" ry="4"/><ellipse cx="510" cy="54" rx="6" ry="4"/>
             </g>
             <ellipse cx="600" cy="30" rx="7" ry="5" fill="#ae594a"/>
-            <text x="70" y="20" fill="#948463" font-family="DM Sans" font-size="12">sixteen rapid repeated notes on one pitch &#8230;</text>
-            <text x="560" y="20" fill="#ae594a" font-family="DM Sans" font-size="12">&#8230; then a leap</text>
+            <text x="70" y="20" fill="#948463" font-family="Crimson Pro" font-size="12">sixteen rapid repeated notes on one pitch &#8230;</text>
+            <text x="560" y="20" fill="#ae594a" font-family="Crimson Pro" font-size="12">&#8230; then a leap</text>
         </svg>
     </div>
     <div class="audio-row">
@@ -329,7 +330,7 @@
                 <line x1="60" y1="30" x2="840" y2="30"/><line x1="60" y1="44" x2="840" y2="44"/>
                 <line x1="60" y1="58" x2="840" y2="58"/><line x1="60" y1="72" x2="840" y2="72"/><line x1="60" y1="86" x2="840" y2="86"/>
             </g>
-            <text x="66" y="24" fill="#3c694d" font-family="DM Sans" font-size="11">what the player builds &#8594; realised chords</text>
+            <text x="66" y="24" fill="#3c694d" font-family="Crimson Pro" font-size="11">what the player builds &#8594; realised chords</text>
             <!-- realised chords (stacked noteheads) above each bass note -->
             <g fill="#3c694d">
                 <ellipse cx="200" cy="86" rx="6" ry="4"/><ellipse cx="200" cy="72" rx="6" ry="4"/><ellipse cx="200" cy="58" rx="6" ry="4"/>
@@ -338,7 +339,7 @@
                 <ellipse cx="760" cy="79" rx="6" ry="4"/><ellipse cx="760" cy="58" rx="6" ry="4"/><ellipse cx="760" cy="44" rx="6" ry="4"/>
             </g>
             <!-- realise arrow -->
-            <text x="30" y="150" fill="#a18347" font-family="Playfair Display" font-style="italic" font-size="16">realise &#8595;</text>
+            <text x="30" y="150" fill="#a18347" font-family="IM Fell English" font-style="italic" font-size="16">realise &#8595;</text>
             <!-- Bottom staff: the WRITTEN bass line + figures -->
             <g stroke="#948463" stroke-width="1.1">
                 <line x1="60" y1="160" x2="840" y2="160"/><line x1="60" y1="174" x2="840" y2="174"/>
@@ -346,7 +347,7 @@
             </g>
             <!-- F-clef dots (bass clef marker) -->
             <circle cx="86" cy="171" r="2.4" fill="#a18347"/><circle cx="86" cy="181" r="2.4" fill="#a18347"/>
-            <text x="68" y="240" fill="#a18347" font-family="DM Sans" font-size="11">F-clef: the written bass line</text>
+            <text x="68" y="240" fill="#a18347" font-family="Crimson Pro" font-size="11">F-clef: the written bass line</text>
             <!-- bass notes -->
             <g fill="#251e14">
                 <ellipse cx="200" cy="188" rx="7" ry="5"/>
@@ -355,7 +356,7 @@
                 <ellipse cx="760" cy="202" rx="7" ry="5"/>
             </g>
             <!-- figures under the bass notes -->
-            <g fill="#41579a" font-family="JetBrains Mono" font-size="16" text-anchor="middle">
+            <g fill="#41579a" font-family="Cutive Mono" font-size="16" text-anchor="middle">
                 <text x="200" y="242">5</text>
                 <text x="400" y="242">6</text>
                 <text x="600" y="238">7</text>
@@ -385,8 +386,8 @@
                 <line x1="60" y1="72" x2="840" y2="72"/><line x1="60" y1="88" x2="840" y2="88"/><line x1="60" y1="104" x2="840" y2="104"/>
             </g>
             <!-- time signature: 3 over 4 (triple metre) -->
-            <text x="72" y="66" fill="#a18347" font-family="Playfair Display" font-weight="700" font-size="24">3</text>
-            <text x="72" y="98" fill="#a18347" font-family="Playfair Display" font-weight="700" font-size="24">4</text>
+            <text x="72" y="66" fill="#a18347" font-family="IM Fell English" font-weight="700" font-size="24">3</text>
+            <text x="72" y="98" fill="#a18347" font-family="IM Fell English" font-weight="700" font-size="24">4</text>
             <!-- barlines dividing measures -->
             <g stroke="#3c694d" stroke-width="1.6">
                 <line x1="300" y1="40" x2="300" y2="104"/>
@@ -402,9 +403,9 @@
                 <ellipse cx="360" cy="64" rx="7" ry="5"/><ellipse cx="420" cy="72" rx="7" ry="5"/><ellipse cx="490" cy="80" rx="7" ry="5"/>
                 <ellipse cx="600" cy="72" rx="7" ry="5"/><ellipse cx="660" cy="64" rx="7" ry="5"/><ellipse cx="740" cy="88" rx="7" ry="5"/>
             </g>
-            <text x="120" y="132" fill="#3c694d" font-family="DM Sans" font-size="12">measure 1</text>
-            <text x="380" y="132" fill="#3c694d" font-family="DM Sans" font-size="12">measure 2</text>
-            <text x="620" y="132" fill="#3c694d" font-family="DM Sans" font-size="12">measure 3</text>
+            <text x="120" y="132" fill="#3c694d" font-family="Crimson Pro" font-size="12">measure 1</text>
+            <text x="380" y="132" fill="#3c694d" font-family="Crimson Pro" font-size="12">measure 2</text>
+            <text x="620" y="132" fill="#3c694d" font-family="Crimson Pro" font-size="12">measure 3</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> the <span class="accent-amber">time signature</span> (here 3/4) sets how many beats fill each measure; the vertical <span class="accent-green">barlines</span> mark off those equal measures, and a thick double bar closes the piece. The first beat after each barline carries a natural stress — the "downbeat" that gives Baroque music its dancing, driving pulse.</p>

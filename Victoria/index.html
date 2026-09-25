@@ -6,7 +6,7 @@
 <title>Tomás Luis de Victoria — The Spanish Mystic</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
@@ -16,36 +16,36 @@
     --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Crimson Pro', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'IM Fell English', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; }
 .reveal h2 { font-size: 1.6em; font-weight: 700; }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Cutive Mono', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent-amber); }
 .reveal .progress span { background: var(--accent-amber); }
 .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Crimson Pro', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
 .card:hover { border-color: var(--accent-amber); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Crimson Pro', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Cutive Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Cutive Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
 .reveal ul { list-style: none; padding-left: 0; }
 .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
@@ -57,18 +57,19 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
-.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn { font-family: 'Crimson Pro', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
 .audio-btn:hover { background: #947a42; transform: translateY(-1px); }
 .audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
 .audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
 .audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
 .audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
-.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link { font-family: 'Cutive Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
 .rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 <div class="reveal">
@@ -100,7 +101,7 @@
             <ellipse cx="90" cy="140" rx="6" ry="4.4" fill="#251e14"/>
             <ellipse cx="170" cy="126" rx="6" ry="4.4" fill="#ae594a"/>
             <path d="M96 140 Q130 116 164 126" stroke="#ae594a" stroke-width="1" fill="none"/>
-            <text x="126" y="120" fill="#948463" font-family="DM Sans" font-size="9" text-anchor="middle">a rising fourth</text>
+            <text x="126" y="120" fill="#948463" font-family="Crimson Pro" font-size="9" text-anchor="middle">a rising fourth</text>
         </svg>
     </div>
     <h1>Tomás Luis de Victoria</h1>
@@ -266,12 +267,12 @@
                 <line x1="60" y1="140" x2="860" y2="140"/>
             </g>
             <!-- clef marker -->
-            <text x="66" y="128" fill="#ae594a" font-family="Playfair Display" font-size="46" font-weight="700">&#119070;</text>
+            <text x="66" y="128" fill="#ae594a" font-family="IM Fell English" font-size="46" font-weight="700">&#119070;</text>
             <!-- THE LEAP: low note D up to G (a fourth) -->
             <ellipse cx="200" cy="130" rx="9" ry="6.5" fill="#251e14"/>
             <ellipse cx="300" cy="100" rx="9" ry="6.5" fill="#ae594a"/>
             <path d="M209 128 Q250 96 291 102" stroke="#ae594a" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
-            <text x="250" y="176" fill="#ae594a" font-family="DM Sans" font-size="13" text-anchor="middle" font-weight="700">rising 4th &mdash; the "reach"</text>
+            <text x="250" y="176" fill="#ae594a" font-family="Crimson Pro" font-size="13" text-anchor="middle" font-weight="700">rising 4th &mdash; the "reach"</text>
             <!-- THE SUSPENSION: upper voice held, becomes dissonant, resolves down -->
             <!-- preparation -->
             <ellipse cx="520" cy="80" rx="9" ry="6.5" fill="#41579a"/>
@@ -284,9 +285,9 @@
             <ellipse cx="520" cy="130" rx="8" ry="6" fill="#948463"/>
             <ellipse cx="620" cy="120" rx="8" ry="6" fill="#a18347"/>
             <ellipse cx="700" cy="120" rx="8" ry="6" fill="#948463"/>
-            <text x="520" y="200" fill="#41579a" font-family="DM Sans" font-size="11" text-anchor="middle">1 · prepare</text>
-            <text x="620" y="200" fill="#a18347" font-family="DM Sans" font-size="11" text-anchor="middle">2 · suspend (clash)</text>
-            <text x="700" y="200" fill="#251e14" font-family="DM Sans" font-size="11" text-anchor="middle">3 · resolve down</text>
+            <text x="520" y="200" fill="#41579a" font-family="Crimson Pro" font-size="11" text-anchor="middle">1 · prepare</text>
+            <text x="620" y="200" fill="#a18347" font-family="Crimson Pro" font-size="11" text-anchor="middle">2 · suspend (clash)</text>
+            <text x="700" y="200" fill="#251e14" font-family="Crimson Pro" font-size="11" text-anchor="middle">3 · resolve down</text>
             <defs>
                 <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
                     <path d="M0 0 L8 4 L0 8 Z" fill="#ae594a"/>
@@ -329,7 +330,7 @@
                 <path d="M110 90 q14 -22 0 -44 q-14 22 0 44 Z" fill="#a18347"/>
                 <path d="M110 66 q6 -10 0 -20 q-6 10 0 20 Z" fill="#251e14"/>
                 <line x1="70" y1="176" x2="150" y2="176" stroke="#948463" stroke-width="1.4"/>
-                <text x="110" y="196" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="13" text-anchor="middle">Requiem aeternam</text>
+                <text x="110" y="196" fill="#948463" font-family="IM Fell English" font-style="italic" font-size="13" text-anchor="middle">Requiem aeternam</text>
             </svg>
         </div>
         <div>

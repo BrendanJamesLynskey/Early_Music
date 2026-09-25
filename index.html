@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A History of Early Music — Interactive Presentations</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -14,47 +14,47 @@
     --text-primary: #251e14; --text-secondary: #62543c; --text-muted: #948463;
     --border-subtle: #caba98;
 }
-body { background: var(--bg-primary); color: var(--text-primary); font-family: 'DM Sans', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: 'Crimson Pro', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
 
 /* Header */
 header { text-align: center; padding: 4rem 2rem 2.5rem 2rem; max-width: 760px; }
 header .emblem { width: 84px; height: 84px; margin: 0 auto 1.6rem auto; animation: spin 120s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-header h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.8rem; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.6rem; }
-header .subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.2rem; }
+header h1 { font-family: 'IM Fell English', serif; font-weight: 900; font-size: 2.8rem; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.6rem; }
+header .subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.2rem; }
 header .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0 auto 1.4rem auto; }
 header p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; max-width: 600px; margin: 0 auto; }
 
 /* Grid */
 .grid-section { width: 100%; max-width: 900px; padding: 0 2rem 3rem 2rem; }
-.grid-section h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; }
+.grid-section h2 { font-family: 'IM Fell English', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; }
 .presentations { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.section-divider { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin: 1.6rem 0 0.5rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-subtle); }
+.section-divider { font-family: 'Crimson Pro', sans-serif; font-size: 0.7rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin: 1.6rem 0 0.5rem 0; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border-subtle); }
 
 /* Card */
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 1.5rem 1.4rem; transition: border-color 0.3s, transform 0.2s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
 .card:hover { border-color: var(--accent-amber); transform: translateY(-2px); }
 .card .accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 10px 10px 0 0; }
-.card .number { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
-.card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.15rem; line-height: 1.25; }
-.card .dates { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+.card .number { font-family: 'Cutive Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+.card h3 { font-family: 'IM Fell English', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.15rem; line-height: 1.25; }
+.card .dates { font-family: 'Cutive Mono', monospace; font-size: 0.62rem; color: var(--text-muted); margin-bottom: 0.4rem; }
 .card .description { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; flex: 1; margin-bottom: 1rem; }
 .card .meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
-.tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; padding: 0.2em 0.55em; border-radius: 4px; background: rgba(114,80,138,0.1); color: var(--accent-purple); }
+.tag { display: inline-block; font-family: 'Cutive Mono', monospace; font-size: 0.65rem; padding: 0.2em 0.55em; border-radius: 4px; background: rgba(114,80,138,0.1); color: var(--accent-purple); }
 .tag.amber { background: rgba(161,131,71,0.1); color: var(--accent-amber); }
 .tag.green { background: rgba(60,105,77,0.1); color: var(--accent-green); }
 .tag.rose  { background: rgba(174,89,74,0.1); color: var(--accent-rose); }
 .tag.blue  { background: rgba(65,87,154,0.1); color: var(--accent-blue); }
-.launch-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-top: auto; width: fit-content; }
+.launch-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Crimson Pro', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; margin-top: auto; width: fit-content; }
 .launch-btn:hover { background: #947a42; transform: translateY(-1px); }
 .launch-btn svg { width: 14px; height: 14px; fill: var(--bg-primary); }
 
 /* Influence map */
 .influence-section { width: 100%; max-width: 980px; padding: 0 2rem 3rem 2rem; }
-.influence-section h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+.influence-section h2 { font-family: 'IM Fell English', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
 .influence-section .section-intro { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; max-width: 720px; }
 .influence-map { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; overflow-x: auto; }
-.influence-map svg text { font-family: 'DM Sans', sans-serif; }
+.influence-map svg text { font-family: 'Crimson Pro', sans-serif; }
 .influence-legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-subtle); }
 .influence-legend .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: var(--text-muted); }
 .influence-legend .legend-line { width: 24px; height: 2px; border-radius: 1px; }
@@ -62,7 +62,7 @@ header p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; m
 /* Feature row (how to navigate / audio note) */
 .notebox { width: 100%; max-width: 900px; padding: 0 2rem 1rem 2rem; }
 .notebox .inner { background: var(--bg-card); border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-green); border-radius: 10px; padding: 1.1rem 1.3rem; }
-.notebox h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem; }
+.notebox h4 { font-family: 'IM Fell English', serif; font-size: 1rem; margin-bottom: 0.4rem; }
 .notebox p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.65; }
 
 /* Footer */
@@ -77,6 +77,7 @@ footer a:hover { text-decoration: underline; }
 }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 

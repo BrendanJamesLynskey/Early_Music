@@ -6,7 +6,7 @@
 <title>Gilles Binchois — The Master of the Burgundian Chanson</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
@@ -16,36 +16,36 @@
     --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Crimson Pro', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'IM Fell English', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; }
 .reveal h2 { font-size: 1.6em; font-weight: 700; }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Cutive Mono', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent-amber); }
 .reveal .progress span { background: var(--accent-amber); }
 .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Crimson Pro', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
 .card:hover { border-color: var(--accent-amber); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Crimson Pro', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Cutive Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Cutive Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
 .reveal ul { list-style: none; padding-left: 0; }
 .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
@@ -56,18 +56,19 @@
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; align-items: start; text-align: left; max-width: 90%; margin: 0.6em auto; }
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
-.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn { font-family: 'Crimson Pro', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
 .audio-btn:hover { background: #947a42; transform: translateY(-1px); }
 .audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
 .audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
 .audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
 .audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
-.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link { font-family: 'Cutive Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
 .rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 <div class="reveal">
@@ -238,7 +239,7 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g font-family="DM Sans" font-size="15" text-anchor="middle">
+            <g font-family="Crimson Pro" font-size="15" text-anchor="middle">
                 <!-- 8 blocks: music 1 = rose, music 2 = amber; refrain outlined -->
                 <!-- A -->
                 <rect x="20"  y="34" width="96" height="40" rx="5" fill="#ae594a" opacity="0.85"/><rect x="20"  y="34" width="96" height="40" rx="5" fill="none" stroke="#251e14" stroke-width="2"/><text x="68"  y="60" fill="#f2e9d3" font-weight="700">A</text>
@@ -323,7 +324,7 @@
         <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
             <!-- CANTUS staff -->
             <g stroke="#948463" stroke-width="1"><line x1="120" y1="24" x2="880" y2="24"/><line x1="120" y1="36" x2="880" y2="36"/><line x1="120" y1="48" x2="880" y2="48"/><line x1="120" y1="60" x2="880" y2="60"/><line x1="120" y1="72" x2="880" y2="72"/></g>
-            <text x="20" y="52" fill="#ae594a" font-family="DM Sans" font-size="14" font-weight="700">Cantus</text>
+            <text x="20" y="52" fill="#ae594a" font-family="Crimson Pro" font-size="14" font-weight="700">Cantus</text>
             <!-- C-clef + mensuration circle (perfect / triple) -->
             <rect x="124" y="36" width="8" height="24" fill="#a18347"/><rect x="132" y="42" width="12" height="8" fill="#a18347"/>
             <circle cx="162" cy="48" r="9" fill="none" stroke="#a18347" stroke-width="2"/>
@@ -340,7 +341,7 @@
 
             <!-- TENOR staff -->
             <g stroke="#948463" stroke-width="1"><line x1="120" y1="130" x2="880" y2="130"/><line x1="120" y1="142" x2="880" y2="142"/><line x1="120" y1="154" x2="880" y2="154"/><line x1="120" y1="166" x2="880" y2="166"/><line x1="120" y1="178" x2="880" y2="178"/></g>
-            <text x="20" y="158" fill="#a18347" font-family="DM Sans" font-size="14" font-weight="700">Tenor</text>
+            <text x="20" y="158" fill="#a18347" font-family="Crimson Pro" font-size="14" font-weight="700">Tenor</text>
             <rect x="124" y="142" width="8" height="24" fill="#a18347"/><rect x="132" y="148" width="12" height="8" fill="#a18347"/>
             <circle cx="162" cy="154" r="9" fill="none" stroke="#a18347" stroke-width="2"/>
             <rect x="200" y="161" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 205 166)"/>
@@ -351,7 +352,7 @@
 
             <!-- CONTRATENOR staff -->
             <g stroke="#948463" stroke-width="1"><line x1="120" y1="236" x2="880" y2="236"/><line x1="120" y1="248" x2="880" y2="248"/><line x1="120" y1="260" x2="880" y2="260"/><line x1="120" y1="272" x2="880" y2="272"/><line x1="120" y1="284" x2="880" y2="284"/></g>
-            <text x="20" y="264" fill="#41579a" font-family="DM Sans" font-size="14" font-weight="700">Contratenor</text>
+            <text x="20" y="264" fill="#41579a" font-family="Crimson Pro" font-size="14" font-weight="700">Contratenor</text>
             <rect x="124" y="248" width="8" height="24" fill="#a18347"/><rect x="132" y="254" width="12" height="8" fill="#a18347"/>
             <circle cx="162" cy="260" r="9" fill="none" stroke="#a18347" stroke-width="2"/>
             <rect x="200" y="267" width="10" height="10" fill="none" stroke="#251e14" stroke-width="1.6" transform="rotate(45 205 272)"/>
@@ -360,9 +361,9 @@
             <rect x="530" y="254" width="16" height="12" fill="none" stroke="#72508a" stroke-width="1.8"/>
 
             <!-- labels for note shapes -->
-            <text x="596" y="48" fill="#ae594a" font-family="DM Sans" font-size="11">&#8592; breve (void square)</text>
-            <text x="596" y="160" fill="#41579a" font-family="DM Sans" font-size="11">&#8592; longa (with stem)</text>
-            <text x="370" y="20" fill="#3c694d" font-family="DM Sans" font-size="11">&#8593; minim (stemmed)</text>
+            <text x="596" y="48" fill="#ae594a" font-family="Crimson Pro" font-size="11">&#8592; breve (void square)</text>
+            <text x="596" y="160" fill="#41579a" font-family="Crimson Pro" font-size="11">&#8592; longa (with stem)</text>
+            <text x="370" y="20" fill="#3c694d" font-family="Crimson Pro" font-size="11">&#8593; minim (stemmed)</text>
         </svg>
     </div>
     <div class="card-grid cols-4" style="max-width:96%;">

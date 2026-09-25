@@ -6,7 +6,7 @@
 <title>Hildegard von Bingen — Visions in Sound &amp; the Ecstatic Chant</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
@@ -16,36 +16,36 @@
     --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Crimson Pro', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'IM Fell English', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; }
 .reveal h2 { font-size: 1.6em; font-weight: 700; }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Cutive Mono', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent-amber); }
 .reveal .progress span { background: var(--accent-amber); }
 .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Crimson Pro', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
 .card:hover { border-color: var(--accent-amber); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Crimson Pro', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Cutive Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Cutive Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
 .reveal ul { list-style: none; padding-left: 0; }
 .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
@@ -57,18 +57,19 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
-.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn { font-family: 'Crimson Pro', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
 .audio-btn:hover { background: #947a42; transform: translateY(-1px); }
 .audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
 .audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
 .audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
 .audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
-.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link { font-family: 'Cutive Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
 .rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 <div class="reveal">
@@ -289,10 +290,10 @@
             </g>
             <!-- C clef marking a reference line -->
             <rect x="66" y="103" width="10" height="22" fill="#a18347"/><rect x="76" y="109" width="16" height="10" fill="#a18347"/>
-            <text x="66" y="164" fill="#a18347" font-size="11" font-family="DM Sans">clef: this line = the reference pitch</text>
+            <text x="66" y="164" fill="#a18347" font-size="11" font-family="Crimson Pro">clef: this line = the reference pitch</text>
             <!-- low starting note -->
             <rect x="150" y="140" width="14" height="14" fill="#251e14"/>
-            <text x="140" y="184" fill="#62543c" font-size="11" font-family="DM Sans">low start</text>
+            <text x="140" y="184" fill="#62543c" font-size="11" font-family="Crimson Pro">low start</text>
             <!-- the WIDE LEAP: arrow shooting up -->
             <path d="M 190 150 L 250 66" stroke="#72508a" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrowP)"/>
             <defs>
@@ -300,7 +301,7 @@
                     <path d="M0 0 L8 4 L0 8 Z" fill="#72508a"/>
                 </marker>
             </defs>
-            <text x="196" y="200" fill="#72508a" font-size="11" font-family="DM Sans">a wide upward leap (a fifth or more)</text>
+            <text x="196" y="200" fill="#72508a" font-size="11" font-family="Crimson Pro">a wide upward leap (a fifth or more)</text>
             <!-- high note reached by the leap -->
             <rect x="256" y="58" width="14" height="14" fill="#72508a"/>
             <!-- the long MELISMA: a florid run of many squares on one syllable -->
@@ -314,7 +315,7 @@
             <rect x="442" y="92" width="12" height="12" fill="#3c694d"/>
             <rect x="458" y="80" width="12" height="12" fill="#3c694d"/>
             <path d="M 328 48 Q 400 40 472 48" fill="none" stroke="#3c694d" stroke-width="1.4"/>
-            <text x="330" y="200" fill="#3c694d" font-size="11" font-family="DM Sans">one long melisma — all on a single syllable</text>
+            <text x="330" y="200" fill="#3c694d" font-size="11" font-family="Crimson Pro">one long melisma — all on a single syllable</text>
             <!-- descent back down -->
             <rect x="560" y="92" width="14" height="14" fill="#251e14"/>
             <rect x="600" y="114" width="14" height="14" fill="#251e14"/>
@@ -322,12 +323,12 @@
             <rect x="652" y="114" width="12" height="12" fill="#251e14"/>
             <!-- final resting note -->
             <rect x="720" y="136" width="16" height="16" fill="#a18347"/>
-            <text x="694" y="184" fill="#a18347" font-size="11" font-family="DM Sans">rests on the final</text>
+            <text x="694" y="184" fill="#a18347" font-size="11" font-family="Crimson Pro">rests on the final</text>
             <!-- custos -->
             <path d="M 820 114 l 10 -8 l 6 8" fill="none" stroke="#41579a" stroke-width="2"/>
-            <text x="798" y="164" fill="#41579a" font-size="11" font-family="DM Sans">custos &#8594;</text>
+            <text x="798" y="164" fill="#41579a" font-size="11" font-family="Crimson Pro">custos &#8594;</text>
             <!-- text underlay -->
-            <text x="150" y="212" fill="#948463" font-family="Playfair Display" font-style="italic" font-size="13">O &#8212; vi &#8212; ri &#8212; &#8212; &#8212; dis &#8212; si &#8212; ma</text>
+            <text x="150" y="212" fill="#948463" font-family="IM Fell English" font-style="italic" font-size="13">O &#8212; vi &#8212; ri &#8212; &#8212; &#8212; dis &#8212; si &#8212; ma</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> read left to right; higher on the staff = higher in pitch. The clef names one line, and every note is read relative to it. A cluster of squares over one syllable is a <em>melisma</em> — read a spread group left-to-right, a stacked group bottom-to-top. There is <em>no written rhythm</em>: the notes are broadly equal and shaped by the words. What marks this as Hildegard is the sudden <span class="accent-purple">leap</span> up and the exceptionally long <span class="accent-green">melisma</span>.</p>

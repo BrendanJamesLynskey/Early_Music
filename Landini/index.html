@@ -6,7 +6,7 @@
 <title>Francesco Landini — The Italian Trecento &amp; the Sweet Cadence</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital,wght@0,400;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Cutive+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-primary: #f2e9d3; --bg-secondary: #e9dec4; --bg-card: #e5d9be;
@@ -16,36 +16,36 @@
     --border-subtle: #caba98;
 }
 .reveal-viewport { background: var(--bg-primary); }
-.reveal { font-family: 'DM Sans', sans-serif; color: var(--text-primary); }
-.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
+.reveal { font-family: 'Crimson Pro', sans-serif; color: var(--text-primary); }
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 { font-family: 'IM Fell English', serif; color: var(--text-primary); text-transform: none; letter-spacing: -0.01em; line-height: 1.15; }
 .reveal h1 { font-size: 2.2em; font-weight: 900; }
 .reveal h2 { font-size: 1.6em; font-weight: 700; }
 .reveal h3 { font-size: 1.15em; font-weight: 700; }
 .reveal p, .reveal li { font-size: 0.62em; line-height: 1.65; color: var(--text-secondary); }
-.reveal .slide-number { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.48em; }
+.reveal .slide-number { color: var(--text-muted); font-family: 'Cutive Mono', monospace; font-size: 0.48em; }
 .reveal .controls { color: var(--accent-amber); }
 .reveal .progress span { background: var(--accent-amber); }
 .accent-amber { color: var(--accent-amber); } .accent-green { color: var(--accent-green); }
 .accent-purple { color: var(--accent-purple); } .accent-rose { color: var(--accent-rose); }
 .accent-blue { color: var(--accent-blue); }
-.subtitle { font-family: 'DM Sans', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
+.subtitle { font-family: 'Crimson Pro', sans-serif; font-size: 0.42em !important; font-weight: 400; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.4em; }
 .quote-box { border-left: 3px solid var(--accent-amber); padding: 0.45em 1em; margin: 0.8em auto; max-width: 80%; text-align: left; background: rgba(161,131,71,0.04); border-radius: 0 6px 6px 0; }
-.quote-box p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
-.quote-box .attribution { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
+.quote-box p { font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.44em !important; color: var(--text-primary); margin: 0; line-height: 1.6; }
+.quote-box .attribution { font-family: 'Crimson Pro', sans-serif; font-style: normal; font-size: 0.42em !important; color: var(--text-muted); margin-top: 0.4em; display: block; }
 .card-grid { display: grid; gap: 0.45em; margin: 0.6em auto; max-width: 90%; }
 .card-grid.cols-2 { grid-template-columns: 1fr 1fr; } .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; } .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 0.55em 0.7em; text-align: left; transition: border-color 0.3s; }
 .card:hover { border-color: var(--accent-amber); }
-.card h4 { font-family: 'DM Sans', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
+.card h4 { font-family: 'Crimson Pro', sans-serif; font-size: 0.60em; font-weight: 700; margin: 0 0 0.3em 0; }
 .card p { font-size: 0.44em !important; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 .card .icon { font-size: 1.2em; margin-bottom: 0.2em; display: block; }
 .timeline-item { display: flex; align-items: flex-start; gap: 0.8em; text-align: left; margin: 0.25em 0; }
-.timeline-item .year { font-family: 'JetBrains Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
+.timeline-item .year { font-family: 'Cutive Mono', monospace; font-size: 0.54em; color: var(--accent-amber); min-width: 3.6em; padding-top: 0.15em; font-weight: 500; }
 .timeline-item .event { font-size: 0.50em; color: var(--text-secondary); line-height: 1.5; border-left: 2px solid var(--border-subtle); padding-left: 0.8em; }
 .timeline-item .event strong { color: var(--text-primary); display: block; margin-bottom: 0.1em; }
 .diagram-container { margin: 0.6em auto; max-width: 85%; }
 .separator { width: 40px; height: 2px; background: var(--accent-amber); border-radius: 1px; margin: 0.4em auto; }
-.section-number { font-family: 'JetBrains Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
+.section-number { font-family: 'Cutive Mono', monospace; font-size: 0.5em; color: var(--text-muted); letter-spacing: 0.2em; display: block; margin-bottom: 0.3em; }
 .reveal section .note-text { font-size: 0.44em !important; color: var(--text-muted); font-style: italic; margin-top: 0.6em; }
 .reveal ul { list-style: none; padding-left: 0; }
 .reveal ul li { padding-left: 0.5em; position: relative; margin-bottom: 0.3em; }
@@ -57,18 +57,19 @@
 .two-col.wide-left { grid-template-columns: 1.3fr 0.7fr; } .two-col.wide-right { grid-template-columns: 0.7fr 1.3fr; }
 /* ── Audio & listening (Early Music additions) ── */
 .audio-row { display: flex; gap: 0.6em; flex-wrap: wrap; align-items: center; justify-content: center; margin: 0.55em auto; }
-.audio-btn { font-family: 'DM Sans', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
+.audio-btn { font-family: 'Crimson Pro', sans-serif; font-size: 0.44em; font-weight: 600; color: var(--bg-primary); background: var(--accent-amber); border: none; border-radius: 20px; padding: 0.6em 1.1em; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-flex; align-items: center; gap: 0.4em; }
 .audio-btn:hover { background: #947a42; transform: translateY(-1px); }
 .audio-btn.green { background: var(--accent-green); } .audio-btn.green:hover { background: #275038; }
 .audio-btn.purple { background: var(--accent-purple); color: #120d06; } .audio-btn.purple:hover { background: #5c3e70; }
 .audio-btn.blue { background: var(--accent-blue); color: #120d06; } .audio-btn.blue:hover { background: #31437c; }
 .audio-btn.playing { background: var(--accent-rose); color: #120d06; }
 .audio-caption { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.2em; font-style: italic; }
-.rec-link { font-family: 'JetBrains Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
+.rec-link { font-family: 'Cutive Mono', monospace; font-size: 0.38em; color: var(--accent-blue); text-decoration: none; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 0.4em 0.7em; transition: border-color 0.2s, color 0.2s; display: inline-flex; align-items: center; gap: 0.35em; }
 .rec-link:hover { border-color: var(--accent-blue); color: #293559; }
 .staff-note { font-size: 0.4em !important; color: var(--text-muted); text-align: center; margin-top: 0.3em; }
 </style>
 <style>.reveal .slide-number{background-color:transparent}</style>
+<style>:root{font-synthesis-weight:none}</style>
 </head>
 <body>
 <div class="reveal">
@@ -237,7 +238,7 @@
                     <rect x="111" y="137" width="6" height="16"/>
                 </g>
                 <path d="M 150 116 q 34 4 34 22 q 0 18 -34 14" fill="none" stroke="#62543c" stroke-width="1.5"/>
-                <text x="100" y="182" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="11">the <tspan fill="#3c694d">organetto</tspan></text>
+                <text x="100" y="182" text-anchor="middle" fill="#948463" font-family="Crimson Pro" font-size="11">the <tspan fill="#3c694d">organetto</tspan></text>
             </svg>
         </div>
     </div>
@@ -273,7 +274,7 @@
     </p>
     <div class="diagram-container">
         <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-            <g font-family="DM Sans" font-size="13">
+            <g font-family="Crimson Pro" font-size="13">
                 <!-- form blocks: A bb a A -->
                 <rect x="40"  y="40" width="150" height="44" rx="6" fill="#e5d9be" stroke="#3c694d" stroke-width="1.5"/>
                 <text x="115" y="60" text-anchor="middle" fill="#3c694d" font-weight="700" font-size="15">A · Ripresa</text>
@@ -352,7 +353,7 @@
             </g>
             <!-- 7 : F#4 (space y103) highlighted amber -->
             <ellipse cx="430" cy="103" rx="9" ry="7" fill="#a18347"/>
-            <text x="430" y="103" text-anchor="middle" dominant-baseline="central" fill="#f2e9d3" font-family="DM Sans" font-size="11" font-weight="700">&#9839;</text>
+            <text x="430" y="103" text-anchor="middle" dominant-baseline="central" fill="#f2e9d3" font-family="Crimson Pro" font-size="11" font-weight="700">&#9839;</text>
             <!-- 6 : E4 (line y112) highlighted blue -->
             <ellipse cx="540" cy="112" rx="9" ry="7" fill="#41579a"/>
             <!-- 8 : G4 (line y94) highlighted green -->
@@ -367,13 +368,13 @@
             </defs>
 
             <!-- degree labels -->
-            <text x="430" y="140" text-anchor="middle" fill="#a18347" font-family="JetBrains Mono" font-size="14" font-weight="700">7</text>
-            <text x="540" y="140" text-anchor="middle" fill="#41579a" font-family="JetBrains Mono" font-size="14" font-weight="700">6</text>
-            <text x="660" y="140" text-anchor="middle" fill="#3c694d" font-family="JetBrains Mono" font-size="14" font-weight="700">8</text>
-            <text x="430" y="158" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="10">leading tone</text>
-            <text x="540" y="158" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="10">dip to 6th</text>
-            <text x="660" y="158" text-anchor="middle" fill="#948463" font-family="DM Sans" font-size="10">leap a 3rd to octave</text>
-            <text x="600" y="66" text-anchor="middle" fill="#3c694d" font-family="DM Sans" font-style="italic" font-size="11">the "under-third"</text>
+            <text x="430" y="140" text-anchor="middle" fill="#a18347" font-family="Cutive Mono" font-size="14" font-weight="700">7</text>
+            <text x="540" y="140" text-anchor="middle" fill="#41579a" font-family="Cutive Mono" font-size="14" font-weight="700">6</text>
+            <text x="660" y="140" text-anchor="middle" fill="#3c694d" font-family="Cutive Mono" font-size="14" font-weight="700">8</text>
+            <text x="430" y="158" text-anchor="middle" fill="#948463" font-family="Crimson Pro" font-size="10">leading tone</text>
+            <text x="540" y="158" text-anchor="middle" fill="#948463" font-family="Crimson Pro" font-size="10">dip to 6th</text>
+            <text x="660" y="158" text-anchor="middle" fill="#948463" font-family="Crimson Pro" font-size="10">leap a 3rd to octave</text>
+            <text x="600" y="66" text-anchor="middle" fill="#3c694d" font-family="Crimson Pro" font-style="italic" font-size="11">the "under-third"</text>
 
             <!-- tenor moving to the final G (an octave below) -->
             <g fill="#62543c">
@@ -381,8 +382,8 @@
                 <ellipse cx="540" cy="176" rx="8" ry="6"/>
                 <ellipse cx="660" cy="185" rx="8" ry="6"/>
             </g>
-            <text x="80" y="205" fill="#948463" font-family="DM Sans" font-size="11">tenor &#8594; steps down to the final</text>
-            <text x="80" y="30"  fill="#948463" font-family="DM Sans" font-size="11">cantus (top voice)</text>
+            <text x="80" y="205" fill="#948463" font-family="Crimson Pro" font-size="11">tenor &#8594; steps down to the final</text>
+            <text x="80" y="30"  fill="#948463" font-family="Crimson Pro" font-size="11">cantus (top voice)</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> follow the top voice left to right. After the leading tone (7, amber) it does <em>not</em> resolve straight up; it drops to the 6th (6, blue), then springs up a third to the octave (8, green) as the lower voice settles onto the final. That little dip-and-leap is the Landini cadence.</p>
@@ -450,8 +451,8 @@
                 <line x1="60" y1="118" x2="840" y2="118"/>
             </g>
             <!-- divisio marker letters -->
-            <text x="70" y="34" fill="#a18347" font-family="JetBrains Mono" font-size="13">.q. quaternaria (4)</text>
-            <text x="470" y="34" fill="#3c694d" font-family="JetBrains Mono" font-size="13">.o. octonaria (8)</text>
+            <text x="70" y="34" fill="#a18347" font-family="Cutive Mono" font-size="13">.q. quaternaria (4)</text>
+            <text x="470" y="34" fill="#3c694d" font-family="Cutive Mono" font-size="13">.o. octonaria (8)</text>
             <!-- group 1: 4 notes, separated by a dot -->
             <g fill="#a18347">
                 <ellipse cx="110" cy="91" rx="8" ry="6"/>
@@ -479,7 +480,7 @@
                 <ellipse cx="682" cy="64" rx="7" ry="5.5"/>
                 <ellipse cx="714" cy="73" rx="7" ry="5.5"/>
             </g>
-            <text x="60" y="146" fill="#948463" font-family="DM Sans" font-size="11">each dotted group = one breve, subdivided as the letter tells you · read left &#8594; right, higher = higher</text>
+            <text x="60" y="146" fill="#948463" font-family="Crimson Pro" font-size="11">each dotted group = one breve, subdivided as the letter tells you · read left &#8594; right, higher = higher</text>
         </svg>
     </div>
     <p class="note-text"><strong>How to read it:</strong> find the little letter marking the <em>divisione</em> — it says how many notes fill one breve. Read each dot-bounded group as a single beat's worth of notes. Late in the century Italian scribes increasingly borrowed the French mensural signs, and the two systems merged.</p>
