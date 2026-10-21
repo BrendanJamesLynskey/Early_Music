@@ -1,3 +1,7 @@
+<!-- portfolio-strip:start (brief 40) -->
+<sub>**Brendan Lynskey** · [Portfolio home](https://brendanjameslynskey.github.io/) · [Interactive sites](https://brendanjameslynskey.github.io/#sites)</sub>
+<!-- portfolio-strip:end -->
+
 # A History of Early Music
 
 A growing collection of **22 interactive presentations** tracing a thousand years of Western music — from the unaccompanied plainchant of the early Church, through the birth of polyphony, the Ars Nova, the Franco-Flemish masters and the golden age of the Renaissance, to the threshold of the Baroque.
